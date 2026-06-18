@@ -447,23 +447,109 @@ footer{
 .asset-callout p{font-size:14px;color:rgba(255,255,255,0.82);line-height:1.7;margin:0}
 .asset-callout strong{color:var(--white)}
 
-/* ── RESPONSIVE ── */
+/* ── HAMBURGER ── */
+.nav-hamburger{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0;
+}
+.nav-hamburger span{
+  display:block;width:22px;height:2px;
+  background:var(--white);border-radius:1px;
+  transition:transform 0.25s,opacity 0.25s;
+}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ── RESPONSIVE · 900px (tablets + phones) ── */
 @media(max-width:900px){
-  nav{padding:0 24px}
-  .hero-content{padding:120px 24px 60px}
-  section{padding:72px 24px}
+  /* Nav */
+  nav{padding:0 20px;position:relative}
+  .nav-hamburger{display:flex}
+  .nav-links{
+    display:none;position:absolute;top:64px;left:0;right:0;
+    flex-direction:column;gap:0;
+    background:rgba(0,8,31,0.98);backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border);
+    padding:8px 0 16px;z-index:200;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{
+    padding:14px 24px;border-bottom:1px solid var(--border);
+    font-size:13px;letter-spacing:1px;
+  }
+  .nav-links a:last-child{border-bottom:none}
+  .nav-cta{
+    margin:12px 24px 0 !important;padding:12px 20px !important;
+    text-align:center;border-radius:4px;
+  }
+
+  /* Layout */
+  .hero-content{padding:120px 20px 60px}
+  .slide-dots{left:20px}
+  section{padding:72px 20px}
+  footer{padding:24px 20px}
+
+  /* Grids → single column */
   .layers-grid,.moat-grid,.traction-row,.workflow-grid,.showcase-grid,
-  .loop-diagram,.economics-stats,.reasoning-flow,.reasoning-explainer,.asset-grid{grid-template-columns:1fr}
-  .loop-arrow{padding-top:0;padding:12px 0}
-  .flow-arrow{padding:12px 0}
-  .cred-grid{grid-template-columns:1fr}
-  .founder-grid{grid-template-columns:1fr}
-  .founder-photo{width:100%;height:240px;object-position:center 20%}
-  footer{padding:24px}
+  .economics-stats,.reasoning-explainer,.asset-grid,
+  .cred-grid,.founder-grid{grid-template-columns:1fr}
+
+  /* Loop diagram */
+  .loop-diagram{
+    grid-template-columns:1fr;
+    padding:28px 20px;
+  }
+  .loop-arrow{
+    padding:4px 0;font-size:20px;
+    transform:rotate(90deg);
+  }
+
+  /* Reasoning flow */
+  .reasoning-flow{
+    grid-template-columns:1fr;
+  }
+  .flow-arrow{
+    padding:4px 0;font-size:20px;
+    transform:rotate(90deg);
+  }
+
+  /* Numbers */
+  .traction-big{font-size:40px}
+
+  /* Misc */
   .hero-stats{gap:24px}
   .game-changer-banner{flex-direction:column}
-  .psps-flow{grid-template-columns:1fr!important}
+  .psps-flow{grid-template-columns:1fr !important}
   .psps-arrow-col{transform:rotate(90deg);padding:4px 0}
+  .founder-photo{width:100%;height:240px;object-position:center 20%}
+}
+
+/* ── RESPONSIVE · 480px (phones) ── */
+@media(max-width:480px){
+  nav{height:56px}
+  .nav-links{top:56px}
+  .hero-content{padding:100px 16px 48px}
+  .slide-dots{left:16px;bottom:20px}
+  section{padding:56px 16px}
+  footer{padding:20px 16px;flex-direction:column;align-items:flex-start;gap:12px}
+  .footer-links{flex-wrap:wrap;gap:16px}
+  h1{font-size:clamp(34px,9vw,48px)}
+  h2{font-size:clamp(26px,7vw,40px)}
+  .hero-sub{font-size:15px}
+  .section-sub{font-size:15px}
+  .traction-big{font-size:34px}
+  .hero-stats{gap:16px}
+  .hero-stat-num{font-size:22px}
+  .loop-diagram{padding:20px 14px}
+  .loop-step{padding:0 8px}
+  .moat-card,.layer-card{padding:28px 20px}
+  .traction-num{padding:28px 20px}
+  .problem-card{padding:28px 20px}
+  .game-changer-banner{padding:20px}
+  .asset-callout{padding:20px}
+  .psps-callout{padding:16px 18px}
+  .founder-grid{gap:28px}
 }
 /* ── PSPS RESTORATION BOTTLENECK ── */
 .psps-bg{background:var(--navy-mid);border-top:1px solid rgba(255,120,50,0.25);border-bottom:1px solid rgba(255,120,50,0.25);padding:80px 24px}
