@@ -8,6 +8,7 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon_32.png">
 <link rel="apple-touch-icon" sizes="192x192" href="icon_192.png">
+<link rel="preload" as="image" href="assets/slide1.webp" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
@@ -50,12 +51,12 @@
 <section class="hero">
   <div class="hero-scanline"></div>
   <div class="slideshow" id="slideshow">
-    <div class="slide active" style="background-image:url('assets/slide1.jpg')"></div>
-    <div class="slide" style="background-image:url('assets/slide2.jpg')"></div>
-    <div class="slide" style="background-image:url('assets/slide3.jpg')"></div>
-    <div class="slide" style="background-image:url('assets/slide4.jpg')"></div>
-    <div class="slide" style="background-image:url('assets/slide5.jpg')"></div>
-    <div class="slide" style="background-image:url('assets/slide6.jpg')"></div>
+    <div class="slide active" style="background-image:url('assets/slide1.jpg');background-image:image-set(url('assets/slide1.webp') type('image/webp'), url('assets/slide1.jpg') type('image/jpeg'))"></div>
+    <div class="slide" data-bg-jpg="assets/slide2.jpg" data-bg-webp="assets/slide2.webp"></div>
+    <div class="slide" data-bg-jpg="assets/slide3.jpg" data-bg-webp="assets/slide3.webp"></div>
+    <div class="slide" data-bg-jpg="assets/slide4.jpg" data-bg-webp="assets/slide4.webp"></div>
+    <div class="slide" data-bg-jpg="assets/slide5.jpg" data-bg-webp="assets/slide5.webp"></div>
+    <div class="slide" data-bg-jpg="assets/slide6.jpg" data-bg-webp="assets/slide6.webp"></div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-grid-lines"></div>
@@ -121,7 +122,7 @@
 
 <!-- EDITORIAL IMAGE BREAK -->
 <section class="img-break" aria-hidden="true">
-  <div class="img-break-bg" style="background-image:url('assets/slide2.jpg')"></div>
+  <div class="img-break-bg" data-bg-jpg="assets/slide2.jpg" data-bg-webp="assets/slide2.webp"></div>
   <div class="img-break-overlay"></div>
   <div class="img-break-caption">
     <span class="ibc-label">// EPRI Circuit 5 · Live Detection · 81% mAP</span>
@@ -659,5 +660,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script data-goatcounter="https://umangai.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

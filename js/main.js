@@ -1,4 +1,21 @@
 
+// Lazy-load deferred background images (everything but the first hero slide)
+function loadBg(el) {
+  const jpg = el.dataset.bgJpg, webp = el.dataset.bgWebp;
+  if (!jpg) return;
+  el.style.backgroundImage = `url('${jpg}')`;
+  el.style.backgroundImage = `image-set(url('${webp}') type('image/webp'), url('${jpg}') type('image/jpeg'))`;
+  delete el.dataset.bgJpg;
+  delete el.dataset.bgWebp;
+}
+const deferredLoad = window.requestIdleCallback || (fn => setTimeout(fn, 300));
+deferredLoad(() => document.querySelectorAll('.slide[data-bg-jpg]').forEach(loadBg));
+
+const bgObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { loadBg(e.target); bgObserver.unobserve(e.target); } });
+}, { rootMargin: '200px' });
+document.querySelectorAll('.img-break-bg[data-bg-jpg]').forEach(el => bgObserver.observe(el));
+
 // Slideshow
 let current = 0;
 const slides = document.querySelectorAll('.slide');

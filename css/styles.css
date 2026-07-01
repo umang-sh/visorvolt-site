@@ -772,8 +772,13 @@ h2 em{font-style:italic;color:var(--accent)}
   background:
     linear-gradient(135deg,rgba(14,21,32,0.97),rgba(14,21,32,0.94)),
     url('../assets/slide4.jpg') center/cover no-repeat;
+  background-image:
+    linear-gradient(135deg,rgba(14,21,32,0.97),rgba(14,21,32,0.94)),
+    image-set(url('../assets/slide4.webp') type('image/webp'), url('../assets/slide4.jpg') type('image/jpeg'));
+  background-size:cover;background-position:center;background-repeat:no-repeat;
   border-top:1px solid var(--border);
   text-align:center;position:relative;overflow:hidden;
+  content-visibility:auto;contain-intrinsic-size:auto 600px;
 }
 .cta-bg::before{
   content:'';position:absolute;inset:0;
