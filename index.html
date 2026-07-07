@@ -4,6 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VisorVolt — Autonomous Grid Intelligence</title>
+<meta name="description" content="AI inspection intelligence for critical energy infrastructure. Detect grid assets, novel classes, and defects from drone imagery — no labeling, no onboarding project, on-premises or cloud. 81% mAP on the EPRI benchmark.">
+<link rel="canonical" href="https://visorvolt.ai/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VisorVolt">
+<meta property="og:url" content="https://visorvolt.ai/">
+<meta property="og:title" content="VisorVolt — Autonomous Grid Intelligence">
+<meta property="og:description" content="AI inspection intelligence for critical energy infrastructure. Detect assets, novel classes, and defects from drone imagery — no labeling, on-premises or cloud. 81% mAP on the EPRI benchmark.">
+<meta property="og:image" content="https://visorvolt.ai/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VisorVolt — AI Inspection Intelligence for Critical Energy Infrastructure">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VisorVolt — Autonomous Grid Intelligence">
+<meta name="twitter:description" content="AI inspection intelligence for critical energy infrastructure — no labeling, on-premises or cloud. 81% mAP on the EPRI benchmark.">
+<meta name="twitter:image" content="https://visorvolt.ai/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon_32.png">
@@ -37,7 +54,8 @@
   </button>
   <div class="nav-links" id="nav-links">
     <a href="#platform">Platform</a>
-    <a href="#economics">Agentic Loop</a>
+    <a href="#flywheel">Overview</a>
+    <a href="#economics">Self-Improving</a>
     <a href="#reasoning">Reasoning</a>
     <a href="#assets">Assets</a>
     <a href="#psps">PSPS</a>
@@ -194,7 +212,7 @@
   </div>
   <div class="flywheel-frame reveal">
     <div class="flywheel-embed">
-      <iframe src="assets/flywheel_flow.html?v=12" title="VisorVolt platform — end-to-end intelligence flow" loading="lazy" scrolling="no"></iframe>
+      <iframe src="assets/flywheel_flow.html?v=13" title="VisorVolt platform — end-to-end intelligence flow" scrolling="no"></iframe>
     </div>
   </div>
 </section>
@@ -469,7 +487,7 @@
         <div class="asset-icon">🗼</div>
         <div class="asset-dot asset-dot-active"></div>
         <div class="asset-name">Power Distribution</div>
-        <div class="asset-desc">Poles, crossarms, transformers, insulators, fuses, conductors · 9 classes · 81% mAP</div>
+        <div class="asset-desc">Poles, crossarms, transformers, insulators, fuses, conductors + 3 more · 9 classes · 81% mAP</div>
         <div class="asset-status-label">Production</div>
       </div>
 
@@ -523,8 +541,8 @@
       <div class="psps-stat-div"></div>
       <div class="psps-stat">
         <div class="psps-big">May<br>2026</div>
-        <div class="psps-label">NERC Wildfire AI Report</div>
-        <div class="psps-note">FERC formally endorses predictive AI for wildfire risk</div>
+        <div class="psps-label">FERC Wildfire AI Report</div>
+        <div class="psps-note">Federal regulator formally endorses predictive AI for wildfire risk</div>
       </div>
     </div>
 
@@ -574,8 +592,26 @@
 
       <div class="te-stat">
         <div class="te-number">81<span class="te-pct">%</span></div>
-        <div class="te-title">mAP@0.5 on EPRI benchmark</div>
-        <div class="te-detail">9 classes · 10× over generic AI · zero client labeling</div>
+        <div class="te-title">Standard assets · mAP@0.5</div>
+        <div class="te-detail">9 asset classes · EPRI IEEE DataPort benchmark · zero client labeling</div>
+      </div>
+
+      <div class="te-stat">
+        <div class="te-number">93.8<span class="te-pct">%</span></div>
+        <div class="te-title">Novel classes · verified precision</div>
+        <div class="te-detail">Discovered &amp; auto-labeled with 0 new client labels · capacitor bank</div>
+      </div>
+
+      <div class="te-stat">
+        <div class="te-number">0.74</div>
+        <div class="te-title">Defect detection · F1</div>
+        <div class="te-detail">Insulator faults — broken discs, flashover · CPLID benchmark</div>
+      </div>
+
+      <div class="te-stat">
+        <div class="te-number">10<span class="te-pct">×</span></div>
+        <div class="te-title">Accuracy over generic AI</div>
+        <div class="te-detail">Same held-out aerial benchmark · domain-specialised detection</div>
       </div>
 
       <div class="te-stat">
@@ -665,11 +701,14 @@
   <div class="footer-copy">© 2026 VisorVolt Inc. &nbsp;·&nbsp; Allerton Street, Redwood City, CA 94063</div>
   <div class="footer-links">
     <a href="#platform">Platform</a>
+    <a href="#flywheel">Overview</a>
     <a href="#economics">Self-Improving</a>
+    <a href="#reasoning">Reasoning</a>
     <a href="#assets">Assets</a>
     <a href="#psps">PSPS</a>
+    <a href="#traction">Traction</a>
     <a href="#founder">Founder</a>
-    <a href="mailto:umang@visorvolt.ai">Contact</a>
+    <a href="#contact">Contact</a>
   </div>
 </footer>
 

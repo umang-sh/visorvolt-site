@@ -21,7 +21,7 @@
   --serif:'Playfair Display',Georgia,serif;
   --sans:'DM Sans',sans-serif;
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:84px}   /* fixed 64px nav + breathing room, so anchors land below it */
 body{
   background:var(--navy);
   color:var(--white);
@@ -393,7 +393,7 @@ h2 em{font-style:italic;color:var(--accent)}
 .loop-tri{
   width:100%;max-width:600px;margin:56px auto 48px;
 }
-.lt-svg{width:100%;height:auto;display:block}
+.lt-svg{width:100%;height:auto;display:block;overflow:visible}   /* let corner node labels render outside the viewBox instead of clipping */
 .lt-dot{offset-distance:0%}
 .lt-dot-1{
   offset-path:path("M300,68 L68,480");
@@ -732,12 +732,12 @@ h2 em{font-style:italic;color:var(--accent)}
   margin-top:80px;border-top:1px solid var(--border);padding-top:64px;
 }
 .te-stat{
-  padding:0 48px 0 0;display:flex;flex-direction:column;gap:12px;
+  padding:0 48px;display:flex;flex-direction:column;gap:12px;
   border-right:1px solid var(--border);
 }
-.te-stat:first-child{padding-left:0}
-.te-stat:last-child{padding-right:0;border-right:none}
-.te-stat:not(:first-child){padding-left:48px}
+.te-stat:nth-child(3n+1){padding-left:0}
+.te-stat:nth-child(3n){padding-right:0;border-right:none}
+.te-stat:nth-child(n+4){border-top:1px solid var(--border);margin-top:56px;padding-top:56px}
 .te-number{
   font-family:var(--mono);font-size:clamp(72px,10vw,120px);
   font-weight:500;color:var(--orange);line-height:0.9;letter-spacing:-2px;
@@ -911,6 +911,7 @@ footer{
   .traction-editorial{grid-template-columns:1fr;gap:0;border-top:none;padding-top:0;margin-top:48px}
   .te-stat{padding:36px 0 !important;border-right:none;border-bottom:1px solid var(--border)}
   .te-stat:first-child{border-top:1px solid var(--border)}
+  .te-stat:nth-child(n+4){border-top:none;margin-top:0}   /* reset desktop 2-row dividers when stacked */
   .te-number{font-size:clamp(60px,18vw,96px)}
 
   /* Founder */

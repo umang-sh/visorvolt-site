@@ -179,7 +179,7 @@
   .footer .hook b{color:var(--current);font-weight:800;}
   .ticker{height:46px;overflow:hidden;z-index:9;display:flex;align-items:center;
     background:linear-gradient(0deg,#0b1119,#0a0f17);border-top:1px solid rgba(247,177,43,.4);}
-  .ticker .track{display:inline-flex;white-space:nowrap;animation:marquee 20s linear infinite;will-change:transform;}
+  .ticker .track{display:inline-flex;white-space:nowrap;will-change:transform;}   /* transform driven by JS RAF (see buildTicker) */
   .ticker .grp{display:inline-flex;align-items:center;}
   .ticker .it{font-family:var(--mono);font-size:15px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--current);padding:0 5px;}
   .ticker .sep{color:var(--arc);font-size:14px;margin:0 24px;}
@@ -305,10 +305,22 @@
   var fnodes=[0,1,2,3].map(function(i){return g('f'+i);});
   var reduce=false; /* marketing graphic: always play the full animated sequence */
   var items=['No new labels','No retraining','No new flights','Self-improving models','Human-reviewed','Into GIS · SAP · work orders','From imagery you already fly'];
-  function grp(){var el=document.createElement('span');el.className='grp';
-    items.forEach(function(t){var s=document.createElement('span');s.className='sep';s.textContent='⚡';el.appendChild(s);
-      var it=document.createElement('span');it.className='it';it.textContent=t;el.appendChild(it);});return el;}
-  track.appendChild(grp());track.appendChild(grp());
+  function addItems(el){items.forEach(function(t){
+    var s=document.createElement('span');s.className='sep';s.textContent='⚡';el.appendChild(s);
+    var it=document.createElement('span');it.className='it';it.textContent=t;el.appendChild(it);});}
+  // Build ONE half wider than the ticker (repeat items until it overfills), then clone it,
+  // so the -50% marquee always loops seamlessly with no blank gap. Duration ∝ width → constant speed.
+  var tickerHalf=0;   // px width of one half of the track; the marquee wraps every tickerHalf px
+  function buildTicker(){
+    track.innerHTML='';
+    var target=(typeof STAGEW!=='undefined'?STAGEW:1480);
+    var half=document.createElement('span');half.className='grp';track.appendChild(half);
+    var n=0;
+    do{ addItems(half); n++; } while((n<2 || half.offsetWidth < target+60) && n<12);
+    track.appendChild(half.cloneNode(true));
+    tickerHalf=half.offsetWidth;
+  }
+  buildTicker();
   var W=100,R=W*0.5,ang=[-90,0,90,180];
   fnodes.forEach(function(n,i){var a=ang[i]*Math.PI/180;var d=n.querySelector('.d');d.style.left=(W/2+R*Math.cos(a))+'px';d.style.top=(W/2+R*Math.sin(a))+'px';});
 
@@ -400,7 +412,9 @@
   window.__TOTAL=TOTAL; window.__capture=false;
   if(reduce){ window.__renderAt(6600); return; }
   var t0=null;
-  function loop(ts){ if(!window.__capture){ if(t0===null)t0=ts; window.__renderAt(ts-t0);} requestAnimationFrame(loop);}
+  function loop(ts){ if(!window.__capture){ if(t0===null)t0=ts; var e=ts-t0; window.__renderAt(e);
+      if(tickerHalf>0){ track.style.transform='translateX('+(-((e*0.065)%tickerHalf)).toFixed(2)+'px)'; } }   // ticker driven by the same RAF as the rest → never desyncs/freezes
+    requestAnimationFrame(loop);}
   requestAnimationFrame(loop);
   g('replay').addEventListener('click',function(){t0=null;});
 })();
