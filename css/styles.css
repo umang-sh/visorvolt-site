@@ -233,6 +233,31 @@ h2 em{font-style:italic;color:var(--accent)}
 }
 .psb-sep{color:var(--border-slate);font-size:14px}
 
+/* ── PLATFORM AT A GLANCE (flywheel) ── */
+.flywheel-section{
+  background:#080b11;              /* matches graphic's void edge → seamless blend */
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  overflow:hidden;
+}
+.flywheel-frame{
+  /* Asymmetric: LEFT edge aligns to the 1240 content column (matches the heading),
+     RIGHT edge extends to ~24px from the viewport edge → as big as possible while aligned. */
+  margin:52px 0 0;
+  margin-left:max(0px, calc(50vw - 700px));   /* 700 = 1240/2 + 80px section padding */
+  margin-right:-56px;                          /* cancels most of the 80px right padding → 24px gutter */
+}
+.flywheel-embed{
+  position:relative;width:100%;
+  aspect-ratio:1480 / 1108;       /* exact stage ratio, no letterboxing */
+  background:#080b11;
+}
+.flywheel-embed iframe{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  border:0;display:block;
+}
+
 /* ── EDITORIAL IMAGE BREAK ── */
 .img-break{
   position:relative;height:65vh;min-height:400px;max-height:700px;overflow:hidden;
@@ -846,7 +871,8 @@ footer{
   .hero-content{padding:120px 20px 60px}
   .slide-dots{left:20px}
   section{padding:72px 20px}
-  .problem-bg,.why-bg,.assets-bg,.psps-bg,.agentic-bg{padding:72px 20px}
+  .problem-bg,.why-bg,.assets-bg,.psps-bg,.agentic-bg,.flywheel-section{padding:72px 20px}
+  .flywheel-frame{margin:32px 0 0}   /* reset asymmetric offsets on mobile */
   footer{padding:24px 20px}
 
   /* Timeline: stack vertically */
