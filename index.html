@@ -3,29 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VisorVolt — Autonomous Grid Intelligence</title>
-<meta name="description" content="Self-improving inspection AI for the electric grid. New asset classes onboard in days with zero customer labeling, and the deployed model improves after it ships. The full pipeline, including AI verification, runs inside your NERC CIP boundary; our on-prem verifier outperforms a leading cloud model on our domain (F1 0.80 vs 0.71). 81% mAP@0.50 on the EPRI benchmark.">
+<title>VisorVolt: 40 images. Any domain.</title>
+<meta name="description" content="You give us 40 images per site; the system generates and verifies the rest of its own training data. A median 87% of a fully hand-labeled model across public benchmark datasets: telecom, medical, microscopy, thermal, subsea, documents, aerial and the electric grid. Runs fully air-gapped inside your network.">
 <link rel="canonical" href="https://visorvolt.ai/">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VisorVolt">
 <meta property="og:url" content="https://visorvolt.ai/">
-<meta property="og:title" content="VisorVolt — Autonomous Grid Intelligence">
-<meta property="og:description" content="Inspection AI that expands to new equipment with zero customer labeling and improves after deployment. Fully air-gapped: on-prem verification outperforms a leading cloud model on our domain (F1 0.80 vs 0.71). 81% mAP@0.50 on the EPRI benchmark.">
+<meta property="og:title" content="VisorVolt: 40 images. Any domain.">
+<meta property="og:description" content="You give us 40 images per site; the system generates and verifies the rest of its own training data. A median 87% of a fully hand-labeled model across public benchmark datasets: telecom, medical, microscopy, thermal, subsea, documents, aerial and the electric grid. Runs fully air-gapped inside your network.">
 <meta property="og:image" content="https://visorvolt.ai/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="VisorVolt — AI Inspection Intelligence for Critical Energy Infrastructure">
+<meta property="og:image:alt" content="VisorVolt: 40 images. Any domain.">
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="VisorVolt — Autonomous Grid Intelligence">
-<meta name="twitter:description" content="Inspection AI that expands to new equipment with zero customer labeling and improves after deployment. Fully air-gapped, and our on-prem verifier beats a leading cloud model on our domain. 81% mAP@0.50 on the EPRI benchmark.">
+<meta name="twitter:title" content="VisorVolt: 40 images. Any domain.">
+<meta name="twitter:description" content="You give us 40 images per site; the system generates and verifies the rest of its own training data. A median 87% of a fully hand-labeled model across public benchmark datasets: telecom, medical, microscopy, thermal, subsea, documents, aerial and the electric grid. Runs fully air-gapped inside your network.">
 <meta name="twitter:image" content="https://visorvolt.ai/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon_32.png">
 <link rel="apple-touch-icon" sizes="192x192" href="icon_192.png">
-<link rel="preload" as="image" href="assets/slide1.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero/grid.webp" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
@@ -46,21 +46,18 @@
       <text font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="800" letter-spacing="-1">
         <tspan x="100" y="58" fill="#FFFFFF">Visor</tspan><tspan fill="#BF7B30">Volt</tspan>
       </text>
-      <text x="100" y="78" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400" fill="#6B8BB0" letter-spacing="2.5">AUTONOMOUS GRID INTELLIGENCE</text>
+      <text x="100" y="78" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400" fill="#6B8BB0" letter-spacing="2.5">DOMAIN-AGNOSTIC VISION</text>
     </svg>
   </a>
   <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <div class="nav-links" id="nav-links">
-    <a href="#platform">Platform</a>
-    <a href="#flywheel">Overview</a>
-    <a href="#differentiation">Differentiation</a>
-    <a href="#economics">Self-Improving</a>
-    <a href="#reasoning">Reasoning</a>
-    <a href="#assets">Assets</a>
-    <a href="#psps">PSPS</a>
-    <a href="#traction">Traction</a>
+    <a href="#platform">How It Works</a>
+    <a href="#domains">Proof</a>
+    <a href="#moat">Why VisorVolt</a>
+    <a href="#rigor">What We Publish</a>
+    <a href="#assets">Grid Case Study</a>
     <a href="#founder">Founder</a>
     <a href="mailto:umang@visorvolt.ai" class="nav-cta">Request Demo</a>
   </div>
@@ -69,103 +66,247 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-scanline"></div>
-  <div class="slideshow" id="slideshow">
-    <div class="slide active" style="background-image:url('assets/slide1.jpg');background-image:image-set(url('assets/slide1.webp') type('image/webp'), url('assets/slide1.jpg') type('image/jpeg'))"></div>
-    <div class="slide" data-bg-jpg="assets/slide2.jpg" data-bg-webp="assets/slide2.webp"></div>
-    <div class="slide" data-bg-jpg="assets/slide3.jpg" data-bg-webp="assets/slide3.webp"></div>
-    <div class="slide" data-bg-jpg="assets/slide4.jpg" data-bg-webp="assets/slide4.webp"></div>
-    <div class="slide" data-bg-jpg="assets/slide5.jpg" data-bg-webp="assets/slide5.webp"></div>
-    <div class="slide" data-bg-jpg="assets/slide6.jpg" data-bg-webp="assets/slide6.webp"></div>
+  <div class="slideshow" id="slideshow" role="img" aria-label="Real detections from six different industries: Electric grid, Construction, Logistics, Microscopy, Thermal, Agriculture">
+    <div class="slide active" style="background-image:url('assets/hero/grid.jpg');background-image:image-set(url('assets/hero/grid.webp') type('image/webp'), url('assets/hero/grid.jpg') type('image/jpeg'))"></div>
+    <div class="slide" data-bg-jpg="assets/hero/construction.jpg" data-bg-webp="assets/hero/construction.webp"></div>
+    <div class="slide" data-bg-jpg="assets/hero/logistics.jpg" data-bg-webp="assets/hero/logistics.webp"></div>
+    <div class="slide" data-bg-jpg="assets/hero/microscopy.jpg" data-bg-webp="assets/hero/microscopy.webp"></div>
+    <div class="slide" data-bg-jpg="assets/hero/thermal.jpg" data-bg-webp="assets/hero/thermal.webp"></div>
+    <div class="slide" data-bg-jpg="assets/hero/agriculture.jpg" data-bg-webp="assets/hero/agriculture.webp"></div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-grid-lines"></div>
   <div class="hero-content">
-    <div class="hero-tag">// Grid Intelligence</div>
-    <h1>You never label.<br><em>It never stops learning.</em></h1>
-    <p class="hero-sub">Our inspection AI generates and verifies its own training data, so new asset classes go live in days at <strong>zero labeling cost to you</strong>. <strong>Fully air-gapped</strong>: the entire pipeline runs inside your own network, and our on-prem verifier outperforms a leading cloud model on grid inspection.</p>
+    <div class="hero-tag">// Domain-Agnostic Vision</div>
+    <h1>40 images. Any domain.<br><em>It never stops learning.</em></h1>
+    <p class="hero-sub">You give us <strong>40 images per site</strong>. The system labels the rest, checks its own work, and ships a detector at a median <strong>87% of fully-supervised accuracy</strong> on public benchmarks. Tested on <strong>39 datasets, none of them ours, none of them failed</strong>. Runs inside your network.</p>
     <div class="hero-actions">
       <a href="mailto:umang@visorvolt.ai" class="btn-primary">Request a demo →</a>
       <a href="#platform" class="btn-outline">See how it works</a>
     </div>
-    <div class="hero-stats">
-      <div>
-        <span class="hero-stat-num">0</span>
-        <span class="hero-stat-label">Labels from your team · ever</span>
-      </div>
-      <div>
-        <span class="hero-stat-num">Days</span>
-        <span class="hero-stat-label">New class live · zero customer labeling</span>
-      </div>
-      <div>
-        <span class="hero-stat-num">100%</span>
-        <span class="hero-stat-label">Inside your network · zero external calls</span>
-      </div>
-      <div>
-        <span class="hero-stat-num">81%</span>
-        <span class="hero-stat-label">mAP@0.50 · held-out EPRI benchmark</span>
-      </div>
+<div class="hero-strip">
+      <span class="hs-lead">Same system, zero retuning &rarr;</span>
+      <a class="hs-item" href="#domains"><img src="assets/strip/wind-corrosion.jpg" alt="Wind detections" loading="lazy" width="420" height="420"><span>Wind</span></a>
+      <a class="hs-item" href="#domains"><img src="assets/strip/cell-towers.jpg" alt="Telecom detections" loading="lazy" width="420" height="420"><span>Telecom</span></a>
+      <a class="hs-item" href="#domains"><img src="assets/strip/truck-movement.jpg" alt="Logistics detections" loading="lazy" width="420" height="420"><span>Logistics</span></a>
+      <a class="hs-item" href="#domains"><img src="assets/strip/flir-camera-objects.jpg" alt="Thermal detections" loading="lazy" width="420" height="420"><span>Thermal</span></a>
+      <a class="hs-item" href="#domains"><img src="assets/strip/corrosion-bi3q3.jpg" alt="Bridges detections" loading="lazy" width="420" height="420"><span>Bridges</span></a>
+      <a class="hs-item" href="#domains"><img src="assets/strip/stomata-cells.jpg" alt="Microscopy detections" loading="lazy" width="420" height="420"><span>Microscopy</span></a>
+      <a class="hs-more" href="#domains">+33 more<br>datasets &rarr;</a>
     </div>
   </div>
   <div class="slide-dots" id="dots">
-    <div class="dot active"></div><div class="dot"></div><div class="dot"></div>
-    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
   </div>
 </section>
 
-<!-- PROBLEM -->
 <section class="problem-bg" id="problem">
   <div class="section-inner">
     <div class="eyebrow reveal">// The Problem</div>
-    <h2 class="reveal">The grid is failing<br><em>faster than anyone can see.</em></h2>
-    <div class="problem-impact">
-      <div class="pi-stat reveal">
-        <div class="pi-big">D<span class="pi-plus">+</span></div>
-        <div class="pi-label">US Grid Infrastructure Grade</div>
-        <div class="pi-context">ASCE report · America's power distribution networks</div>
+    <h2 class="reveal">Every vision project<br><em>dies in the same place.</em></h2>
+    <div class="stat-grid stat-grid--4">
+      <div class="stat reveal">
+        <div class="stat-fig">0.000</div>
+        <div class="stat-label">What an open-vocabulary detector scores on your class</div>
+        <div class="stat-note">Measured, median across 39 public datasets, before any labels</div>
       </div>
-      <div class="pi-stat reveal">
-        <div class="pi-big">$1.3<span class="pi-unit">T</span></div>
-        <div class="pi-label">Capital gap before structural failure</div>
-        <div class="pi-context">Capex required to prevent compounding collapse</div>
+      <div class="stat reveal">
+        <div class="stat-fig">1000s</div>
+        <div class="stat-label">Hand-drawn boxes for every asset, by an expert</div>
+        <div class="stat-note">The people who can label your data are the people you can least spare</div>
       </div>
-      <div class="pi-stat reveal">
-        <div class="pi-big">17<span class="pi-unit">K</span><span class="pi-mi">mi</span></div>
-        <div class="pi-label">Patrolled manually per PSPS event</div>
-        <div class="pi-context">65 helicopters · 1,800 ground personnel · days lost</div>
+      <div class="stat reveal">
+        <div class="stat-fig">Months</div>
+        <div class="stat-label">Per new asset, every time</div>
+        <div class="stat-note">Each asset is a fresh labeling project on your budget and timeline</div>
       </div>
-      <div class="pi-stat reveal">
-        <div class="pi-big">$200<span class="pi-unit">K</span><span class="pi-mi">+</span></div>
-        <div class="pi-label">Per NERC FAC-003 violation</div>
-        <div class="pi-context">Triggered by defects drone footage already captured</div>
+      <div class="stat reveal">
+        <div class="stat-fig">Day 1</div>
+        <div class="stat-label">When the shipped model starts drifting</div>
+        <div class="stat-note">Fixed training sets decay against field conditions from the day they deploy</div>
       </div>
     </div>
-    <p class="problem-close reveal">Your drone footage already has the answers.<br>Nobody is reading it.</p>
+    <p class="problem-close reveal">The imagery already has the answers.<br>Labeling is what stops you reading it.</p>
   </div>
 </section>
 
-<!-- EDITORIAL IMAGE BREAK -->
-<section class="img-break" aria-hidden="true">
-  <div class="img-break-bg" data-bg-jpg="assets/slide2.jpg" data-bg-webp="assets/slide2.webp"></div>
-  <div class="img-break-overlay"></div>
-  <div class="img-break-caption">
-    <span class="ibc-label">// EPRI Circuit 5 · Live Detection · 81% mAP@0.50</span>
-    <span class="ibc-classes">
-      <span class="cls cls-pole">Poles</span>
-      <span class="cls cls-transformer">Transformers</span>
-      <span class="cls cls-insulator">Insulators</span>
-      <span class="cls cls-crossarm">Crossarms</span>
-      <span class="cls cls-conductor">Conductors</span>
-      <span class="cls cls-fuse">Fuses</span>
-    </span>
+<section id="domains">
+  <div class="section-inner">
+    <div class="eyebrow reveal">// The Proof</div>
+    <h2 class="reveal">39 datasets. None of them ours.<br><em>None of them failed.</em></h2>
+    <p class="sec-lede">Two rows below: the assets first, then the damage. Every box is a real detection on a held-out frame, and nothing was rebuilt between any of them.</p>
+
+    <div class="proof-row">
+      <div class="proof-head">
+        <span class="proof-num">Assets</span>
+        <p class="sec-lede">We set the pass mark <strong>before</strong> we ran: any dataset under 55% of a fully-labeled model counts as a failure. <strong>Zero of 39 hit it.</strong> Nothing was rebuilt between them: no per-domain engineering, no architecture changes, no tuning. The system had <strong>never seen any of these domains</strong> before the 40 images you give it. Every box below is a real detection on a held-out frame.</p>
+      </div>
+      <div class="dom-grid">
+      <figure class="dom-card">
+        <img src="assets/domains/cell-towers.jpg" alt="Telecom, real detections from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Telecom</span>
+          <span class="dom-meta">Tower joints · public benchmark · <code>joint</code></span>
+          <span class="dom-score">75%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/domains/construction-safety-gsnvb.jpg" alt="Construction, real detections from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Construction</span>
+          <span class="dom-meta">Site safety · <code>person</code></span>
+          <span class="dom-score">96%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/domains/flir-camera-objects.jpg" alt="Thermal, real detections from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Thermal</span>
+          <span class="dom-meta">Night imagery · <code>person</code></span>
+          <span class="dom-score">77%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/domains/stomata-cells.jpg" alt="Microscopy, real detections from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Microscopy</span>
+          <span class="dom-meta">Plant stomata · <code>open</code></span>
+          <span class="dom-score">82%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/domains/truck-movement.jpg" alt="Logistics, chassis detection in a container terminal, real output from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Logistics</span>
+          <span class="dom-meta">Container terminal · <code>otr_chassis</code></span>
+          <span class="dom-score">93%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/domains/aerial-pool.jpg" alt="Aerial survey, real detections from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Aerial Survey</span>
+          <span class="dom-meta">Overhead drone · <code>bodysurface</code></span>
+          <span class="dom-score">85%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/domains/document-parts.jpg" alt="Documents, real detections from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Documents</span>
+          <span class="dom-meta">Table extraction · <code>table</code></span>
+          <span class="dom-score">97%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+    </div>
+    
+      <p class="dom-foot">Held-out measurement against a fully-supervised model trained on the <em>entire</em> labeled dataset for each task. Across all <strong>39</strong> datasets, <strong>none falls below 55%</strong>. The full-system median across public benchmark datasets is <strong>87%</strong>. <span class="wf-fine"><strong>Per-dataset figures carry roughly &#177;3 to 5 points of seed-draw variance. The median across all datasets is stable; a single tile is not. We publish the tile anyway, with its uncertainty.</strong> One dataset is not shown at all: the subsea benchmark (<code>underwater-objects</code>), because our own audit found its fully-supervised comparison model too weak to divide by, so the ratio is not ours to quote.</span> <span class="wf-fine">Honest range, measured: about <strong>90%</strong> on well-conditioned problems and about <strong>87%</strong> on genuinely hard ones. We quote a band, and tell you which end you are in before you buy.</span></p>
+    </div>
+
+    <div class="proof-row"><span id="defects"></span>
+      <div class="proof-head">
+        <span class="proof-num">Defects</span>
+        <p class="sec-lede">Finding an asset is the easy half. The value is in the damage. And damage is exactly where hand-labeling hurts most, because defects are rare, subjective, and expensive for a domain expert to sit and box. <strong>Same 40-image-per-site recipe, no changes.</strong> Every box below is a real detection on a held-out frame.</p>
+      </div>
+      <div class="dom-grid">
+      <figure class="dom-card">
+        <img src="assets/defects/wind-corrosion.jpg" alt="Wind turbine blade corrosion detected on a real inspection frame" loading="lazy" width="900" height="900">
+        <figcaption>
+          <span class="dom-name">Wind Energy</span>
+          <span class="dom-meta">Blade leading-edge corrosion · <code>corrosion</code></span>
+          <span class="dom-score">0.94<em>detection confidence · field imagery</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/defects/corrosion-bi3q3.jpg" alt="Civil / Bridges defect detection, real output from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Civil / Bridges</span>
+          <span class="dom-meta">Structural cracking · <code>crack</code></span>
+          <span class="dom-score">79%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/defects/leaf-disease-nsdsr.jpg" alt="Agriculture defect detection, real output from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Agriculture</span>
+          <span class="dom-meta">Crop mildew · <code>mildew</code></span>
+          <span class="dom-score">80%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/defects/cable-damage.jpg" alt="Industrial defect detection, real output from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Industrial</span>
+          <span class="dom-meta">Cable break · <code>break</code></span>
+          <span class="dom-score">60%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+    </div>
+    
+      <p class="dom-foot">Corrosion, cracks, mildew and breaks, four industries, one system, nothing rebuilt between them. The industrial cable-break case at 60% is the weakest and it is here on purpose: thin, low-contrast damage on a busy background is the hardest thing we do, and you should see that before you buy, not after. <span class="wf-fine"><strong>Per-dataset figures carry roughly &#177;3 to 5 points of seed-draw variance. The median across all datasets is stable; a single tile is not. We publish the tile anyway, with its uncertainty.</strong> The wind blade is field imagery from a live inspection model, not one of the 39 benchmark datasets, so it carries its detection confidence. We don't quote a percentage we haven't measured.</span></p>
+    </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section id="platform">
+<section class="why-bg" id="platform">
   <div class="section-inner">
     <div class="eyebrow reveal">// How It Works</div>
     <h2 class="reveal">From raw imagery<br>to <em>operational intelligence.</em></h2>
-    <p class="section-sub reveal">Three phases. Zero customer labeling. On-premises or in your own cloud environment.</p>
+    <p class="section-sub reveal">Three phases, one loop, on-premises or in your own cloud environment. No labeling project on your side.</p>
+
+    <figure class="howfig reveal">
+      <svg viewBox="0 0 1080 250" role="img" aria-labelledby="howtitle howdesc" class="howsvg">
+        <title id="howtitle">How VisorVolt works</title>
+        <desc id="howdesc">You hand over 40 images for the site, chosen by us. The system labels the rest of your imagery, verifies each label, trains a detector, deploys it, and the deployed detector feeds the loop so accuracy improves with every flight.</desc>
+        <defs>
+          <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#D49040"/>
+          </marker>
+        </defs>
+        <g font-family="DM Mono, monospace">
+          <g>
+            <rect x="8" y="60" width="176" height="96" rx="9" fill="rgba(212,144,64,.10)" stroke="#D49040" stroke-width="1.4"/>
+            <text x="96" y="96" text-anchor="middle" fill="#D49040" font-size="30" font-weight="700">40</text>
+            <text x="96" y="118" text-anchor="middle" fill="#EEF2F8" font-size="13">images you give us</text>
+            <text x="96" y="136" text-anchor="middle" fill="#7A8BA5" font-size="10.5">once, per site &#183; we pick them</text>
+          </g>
+          <line x1="192" y1="108" x2="232" y2="108" stroke="#D49040" stroke-width="1.6" marker-end="url(#ar)"/>
+          <g>
+            <rect x="240" y="34" width="404" height="148" rx="9" fill="rgba(140,180,210,.06)" stroke="rgba(140,180,210,.30)" stroke-width="1.2" stroke-dasharray="4 4"/>
+            <text x="442" y="26" text-anchor="middle" fill="#8AAAC2" font-size="10.5" letter-spacing="1.6">THE FLYWHEEL · RUNS ON YOUR HARDWARE</text>
+            <rect x="258" y="66" width="112" height="84" rx="7" fill="rgba(255,255,255,.05)" stroke="rgba(140,180,210,.28)"/>
+            <text x="314" y="98" text-anchor="middle" fill="#EEF2F8" font-size="12.5">Auto-label</text>
+            <text x="314" y="116" text-anchor="middle" fill="#7A8BA5" font-size="10">your unlabeled</text>
+            <text x="314" y="130" text-anchor="middle" fill="#7A8BA5" font-size="10">imagery</text>
+            <line x1="378" y1="108" x2="404" y2="108" stroke="#8AAAC2" stroke-width="1.4" marker-end="url(#ar)"/>
+            <rect x="412" y="66" width="112" height="84" rx="7" fill="rgba(255,255,255,.05)" stroke="rgba(140,180,210,.28)"/>
+            <text x="468" y="98" text-anchor="middle" fill="#EEF2F8" font-size="12.5">Verify</text>
+            <text x="468" y="116" text-anchor="middle" fill="#7A8BA5" font-size="10">keep the good,</text>
+            <text x="468" y="130" text-anchor="middle" fill="#7A8BA5" font-size="10">drop the rest</text>
+            <line x1="532" y1="108" x2="558" y2="108" stroke="#8AAAC2" stroke-width="1.4" marker-end="url(#ar)"/>
+            <rect x="566" y="66" width="62" height="84" rx="7" fill="rgba(255,255,255,.05)" stroke="rgba(140,180,210,.28)"/>
+            <text x="597" y="103" text-anchor="middle" fill="#EEF2F8" font-size="12.5">Train</text>
+            <text x="597" y="121" text-anchor="middle" fill="#7A8BA5" font-size="10">detector</text>
+          </g>
+          <line x1="652" y1="108" x2="692" y2="108" stroke="#D49040" stroke-width="1.6" marker-end="url(#ar)"/>
+          <g>
+            <rect x="700" y="60" width="176" height="96" rx="9" fill="rgba(212,144,64,.10)" stroke="#D49040" stroke-width="1.4"/>
+            <text x="788" y="98" text-anchor="middle" fill="#EEF2F8" font-size="14" font-weight="700">Deployed</text>
+            <text x="788" y="118" text-anchor="middle" fill="#7A8BA5" font-size="10.5">on your hardware,</text>
+            <text x="788" y="134" text-anchor="middle" fill="#7A8BA5" font-size="10.5">inside your network</text>
+          </g>
+          <path d="M788 160 L788 214 Q788 224 778 224 L452 224 Q442 224 442 214 L442 190" fill="none" stroke="#D49040" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+          <text x="616" y="242" text-anchor="middle" fill="#D49040" font-size="11">every new flight feeds the loop: accuracy climbs after deployment, not down</text>
+          <g>
+            <rect x="900" y="60" width="172" height="96" rx="9" fill="rgba(140,180,210,.06)" stroke="rgba(140,180,210,.30)" stroke-width="1.2"/>
+            <text x="986" y="94" text-anchor="middle" fill="#EEF2F8" font-size="13" font-weight="700">Self-improving</text>
+            <text x="986" y="114" text-anchor="middle" fill="#7A8BA5" font-size="10.5">an agent watches results</text>
+            <text x="986" y="130" text-anchor="middle" fill="#7A8BA5" font-size="10.5">and fixes model or data</text>
+          </g>
+        </g>
+      </svg>
+      <figcaption>40 images per site, once, and we pick the 40. Everything to the right of that runs on your hardware, without a labeling project on your side.</figcaption>
+    </figure>
 
     <div class="timeline reveal">
       <div class="timeline-steps">
@@ -175,9 +316,9 @@
             <div class="tn-number">01</div>
           </div>
           <div class="timeline-content">
-            <div class="tc-phase">// Phase 01 · Day 1–14</div>
+            <div class="tc-phase">// Phase 01 · Days, not months</div>
             <h3 class="tc-title">Asset Inventory</h3>
-            <p class="tc-desc">Upload imagery. Get a GIS-ready inventory: 9 classes, 81% mAP@0.50. No labeling work from your team, ever.</p>
+            <p class="tc-desc">Upload imagery. Get a structured inventory of the classes you care about. We label them, not you.</p>
           </div>
         </div>
 
@@ -186,9 +327,9 @@
             <div class="tn-number">02</div>
           </div>
           <div class="timeline-content">
-            <div class="tc-phase">// Phase 02 · Days per new class</div>
+            <div class="tc-phase">// Phase 02 · Days per new asset</div>
             <h3 class="tc-title">Auto Expansion</h3>
-            <p class="tc-desc">A brand-new asset class onboarded in days, with <strong>zero customer labeling</strong>. The system detects, verifies, and self-labels it at 87–90% precision. No labeling work from you, and none of the months-long labeling projects competitors need.</p>
+            <p class="tc-desc">A brand-new asset onboarded in days. <strong>40 images per site.</strong> The system labels, verifies and trains on everything else. Multiple assets come out of that one pool of 40. None of the months-long labeling projects competitors need.</p>
           </div>
         </div>
 
@@ -199,152 +340,31 @@
           <div class="timeline-content">
             <div class="tc-phase">// Phase 03 · Ongoing</div>
             <h3 class="tc-title">Defect Intelligence</h3>
-            <p class="tc-desc">Anomalies flagged with confidence scores. Work orders and NERC evidence packages generated autonomously.</p>
+            <p class="tc-desc">Anomalies flagged with confidence scores. Work orders and compliance evidence packages generated autonomously.</p>
           </div>
         </div>
 
-      </div>
-    </div>
-  </div>
-</section>
+      
+    </div>    </div>
 
-<!-- PLATFORM AT A GLANCE (flywheel) -->
-<section class="flywheel-section" id="flywheel">
-  <div class="section-inner">
-    <div class="eyebrow reveal">// The Platform</div>
-    <h2 class="reveal">One system.<br><em>Raw imagery to operational intelligence.</em></h2>
-    <p class="section-sub reveal">Standard assets, novel classes, and defects — detected, self-improved, and delivered straight into the systems your team already uses.</p>
-  </div>
-  <div class="flywheel-frame reveal">
+    <div class="how-proof reveal"><span id="flywheel"></span>
+      <p class="how-proof-line">Standard assets, novel assets, and defects: detected, self-improved, and delivered in open formats your team can work with. Measured at scale, held-out: on 22 held-out public datasets the loop improved the deployed detector <strong>20 times out of 22</strong>, recovering a median <strong>18% of the remaining gap to full supervision</strong> without any further labeling on your side.</p>
+    </div>
+    <div class="flywheel-frame reveal">
     <div class="flywheel-embed">
-      <iframe src="assets/flywheel_flow.html?v=13" title="VisorVolt platform — end-to-end intelligence flow" scrolling="no"></iframe>
+      <iframe src="assets/flywheel_flow.html?v=13" title="VisorVolt platform, end-to-end intelligence flow" scrolling="no"></iframe>
     </div>
+  </div>
+
   </div>
 </section>
 
-<!-- WHY VISORVOLT -->
-<section class="why-bg" id="moat">
-  <div class="section-inner">
-    <div class="eyebrow reveal">// Why VisorVolt</div>
-    <h2 class="reveal">Built for the grid.<br><em>Not adapted to it.</em></h2>
-
-    <div class="why-features">
-
-      <div class="wf-row reveal">
-        <div class="wf-left">
-          <div class="wf-metric">81<span class="wf-unit">%</span></div>
-          <div class="wf-metric-sub">mAP · EPRI benchmark</div>
-        </div>
-        <div class="wf-right">
-          <h3 class="wf-title">Proof the domain is hard</h3>
-          <p class="wf-desc">Off-the-shelf models score around 8% on aerial grid imagery. That is why every serious player has to train. The real question is what that training costs, and what happens to the model after it ships. Our production system: 81% mAP@0.50 (63.4% at the stricter COCO 0.50:0.95 average) on real EPRI Circuit 5 data. Held-out evaluation, mAP@0.50: Pole 97% · Transformer 94% · Crossarm 89% · Insulator 84% · Conductor 83% · Fuse 80%.</p>
-        </div>
-      </div>
-
-      <div class="wf-row reveal">
-        <div class="wf-left">
-          <div class="wf-metric">0</div>
-          <div class="wf-metric-sub">labels from you</div>
-        </div>
-        <div class="wf-right">
-          <h3 class="wf-title">You never label a single image</h3>
-          <p class="wf-desc">The system bootstraps a brand-new asset class from ~40 seed examples it generates and verifies <strong>itself</strong> — reaching 92% of a fully hand-labeled detector's accuracy — and adding it never costs you accuracy on the classes you already run. Your team labels nothing, ever. Competitors need thousands of hand-drawn boxes and months of onboarding; you upload imagery and get results.</p>
-        </div>
-      </div>
-
-      <div class="wf-row reveal">
-        <div class="wf-left">
-          <div class="wf-metric">0</div>
-          <div class="wf-metric-sub">migration required</div>
-        </div>
-        <div class="wf-right">
-          <h3 class="wf-title">Works inside what you already have</h3>
-          <p class="wf-desc">Detection writes natively into Esri ArcGIS, Hexagon, or any OGC-compatible platform. No parallel system. No export pipeline. No new infrastructure.</p>
-        </div>
-      </div>
-
-      <div class="wf-row reveal">
-        <div class="wf-left">
-          <div class="wf-metric">0</div>
-          <div class="wf-metric-sub">cloud required</div>
-        </div>
-        <div class="wf-right">
-          <h3 class="wf-title">Beats the cloud. Without the cloud.</h3>
-          <p class="wf-desc">Everyone else's inspection AI phones home to the cloud for the hard part: verifying what it found. Ours doesn't. Our air-gapped verifier <strong>outperforms a leading cloud model on our domain (F1 0.80 vs 0.71)</strong>, with nothing leaving your network. The full pipeline, including AI-based verification, runs inside the utility's own NERC CIP boundary with zero external calls, on-premises or in your own cloud environment. BCSI compliant. The only inspection AI you can actually run inside a substation.</p>
-        </div>
-      </div>
-
-      <div class="wf-row reveal">
-        <div class="wf-left">
-          <div class="wf-metric">&lt;2<span class="wf-unit">min</span></div>
-          <div class="wf-metric-sub">compliance packages</div>
-        </div>
-        <div class="wf-right">
-          <h3 class="wf-title">Compliance on autopilot</h3>
-          <p class="wf-desc">NERC FAC-003 evidence packages generated autonomously from detection output. Days of manual preparation collapse to minutes — every inspection, automatically documented.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- COMPETITIVE DIFFERENTIATION -->
-<section class="why-bg" id="differentiation">
-  <div class="section-inner">
-    <div class="eyebrow reveal">// The Difference</div>
-    <h2 class="reveal">Every serious vendor trains on utility data.<br><em>The question is who pays for it.</em></h2>
-    <p class="section-sub reveal">Buzz Solutions and AiDash both fine-tune models on customer-labeled data. That means every new asset class is a new labeling project the utility pays for, and every deployed model begins decaying the day it ships. We are architecturally different: our system generates and verifies its own training data. The difference is not a benchmark score. It is who pays to expand coverage, and what happens to accuracy after deployment.</p>
-
-    <div class="why-features">
-
-      <div class="wf-row reveal">
-        <div class="wf-left">
-          <div class="wf-metric">$0</div>
-          <div class="wf-metric-sub">labeling cost to you</div>
-        </div>
-        <div class="wf-right">
-          <h3 class="wf-title">Who pays to expand coverage</h3>
-          <p class="wf-desc">With label-dependent vendors, every new asset class means a labeling project on the utility's budget and timeline. Our system generates and verifies its own training data, so new asset classes onboard in days at zero labeling cost to the customer.</p>
-        </div>
-      </div>
-
-      <div class="wf-row reveal">
-        <div class="wf-left">
-          <div class="wf-metric">&#8599;</div>
-          <div class="wf-metric-sub">accuracy after deployment</div>
-        </div>
-        <div class="wf-right">
-          <h3 class="wf-title">What happens after it ships</h3>
-          <p class="wf-desc">A model trained on a fixed, hand-labeled dataset starts drifting from field conditions the day it ships, and the fix is another labeling round. Our deployed models feed the same self-labeling loop they were built with, so accuracy improves with every flight rather than degrading.</p>
-        </div>
-      </div>
-
-      <div class="wf-row reveal">
-        <div class="wf-left">
-          <div class="wf-metric">CIP</div>
-          <div class="wf-metric-sub">boundary · zero egress</div>
-        </div>
-        <div class="wf-right">
-          <h3 class="wf-title">Where it runs</h3>
-          <p class="wf-desc">The full pipeline, including AI-based verification, runs inside the utility's own NERC CIP boundary with zero external calls. It deploys on-premises or in the customer's own cloud environment. Cloud-dependent vendors cannot match this.</p>
-        </div>
-      </div>
-
-    </div>
-    <p class="problem-close reveal">Same category. Different economics.</p>
-  </div>
-</section>
-
-<!-- SELF-IMPROVING AGENTIC LOOP -->
 <section class="agentic-bg" id="economics">
   <div class="section-inner">
-
-    <div class="eyebrow reveal">// Self-Improving</div>
+    <div class="eyebrow reveal">// After It Ships</div>
     <h2 class="reveal">A research scientist<br><em>that never sleeps.</em></h2>
-    <p class="section-sub reveal">Self-improvement isn't a script — it's an autonomous agent that reads every model result and diagnoses the root cause: <strong>a model problem, or a data problem?</strong> If it's the <strong>model</strong>, the agent tunes hyperparameters, reads the latest research papers, and updates the model itself. If it's the <strong>data</strong>, it triggers the auto-label flywheel to harvest and self-verify new training examples. Proven, not promised: the flywheel has recovered a novel class's missing detections on its own — lifting its accuracy with zero new labels. All on-premises, overnight, with zero action from your team.</p>
-
-    <!-- Autonomous Loop Triangle -->
+    <p class="section-sub reveal">A model trained on a fixed, hand-labeled dataset starts drifting from field conditions the day it ships, and the fix is another labeling round. Our deployed models feed the same self-labeling loop they were built with, so accuracy improves after deployment rather than degrading.</p>
+    <p class="section-sub reveal">Self-improvement isn't a script, it's an autonomous agent that reads every model result and diagnoses the root cause: <strong>a model problem, or a data problem?</strong> If it's the <strong>model</strong>, the agent tunes the training configuration and proposes an updated model. If it's the <strong>data</strong>, it triggers the auto-label flywheel to harvest and self-verify new training examples. The monitoring, the diagnosis and the overnight experiments run on-premises with <strong>no ML engineer of yours in the loop</strong>. <strong>Nothing deploys itself: a human approves every promotion.</strong> <span class="wf-fine">// Roadmap: having the agent read and apply methods from current literature is a roadmap item, not a shipped capability.</span></p>
     <div class="loop-tri reveal">
       <svg class="lt-svg" viewBox="0 0 600 568" fill="none" xmlns="http://www.w3.org/2000/svg">
 
@@ -405,7 +425,6 @@
 
       </svg>
     </div>
-
     <!-- Mission Control Panel -->
     <div class="mission-panel reveal">
 
@@ -414,9 +433,9 @@
           <span class="mp-live-dot"></span>
           <span class="mp-live-label">VisorVolt Agent</span>
         </div>
-        <div class="mp-header-center">improvement-loop · running autonomously · overnight</div>
+        <div class="mp-header-center">improvement-loop · illustrative run · overnight</div>
         <div class="mp-header-right">
-          <span class="mp-live-badge">● LIVE</span>
+          <span class="mp-live-badge">● ILLUSTRATIVE</span>
         </div>
       </div>
 
@@ -449,7 +468,7 @@
           </div>
           <div class="mp-stage-label">Diagnose</div>
           <div class="mp-stage-value mp-value-sm">model<br>issue</div>
-          <div class="mp-stage-detail">agent ruled: model problem, not data · precision plateau on a thin class · reading recent papers to select the fix</div>
+          <div class="mp-stage-detail">agent ruled: model problem, not data · precision plateau on a thin class · selecting the fix from its own logged experiments</div>
           <div class="mp-stage-tag">// reasoning agent · read the results, chose the branch</div>
         </div>
 
@@ -466,17 +485,17 @@
             <div class="mp-stage-num">03</div>
           </div>
           <div class="mp-stage-label">Fix</div>
-          <div class="mp-stage-value mp-value-green">+2.4<span class="mp-value-unit">pp</span></div>
-          <div class="mp-stage-detail">method from a recent paper applied · hyperparameters tuned · model updated · zero human touch</div>
-          <div class="mp-stage-tag">// tuned the model · read the literature</div>
+          <div class="mp-stage-value mp-value-green">+5.7<span class="mp-value-unit">AP50</span></div>
+          <div class="mp-stage-detail">training configuration tuned · harvest re-verified · candidate model queued · a human approves the promotion</div>
+          <div class="mp-stage-tag">// held-out EPRI · two logged iterations · 0.727 → 0.784</div>
         </div>
 
       </div>
 
       <div class="mp-footer">
-        <span class="mp-footer-item">No client labeling — ever</span>
+        <span class="mp-footer-item">40 images per site. We pick the 40, and the system does the rest.</span>
         <span class="mp-footer-sep">·</span>
-        <span class="mp-footer-item">Reads papers · tunes models · triggers the flywheel</span>
+        <span class="mp-footer-item">Watches results · tunes models · triggers the flywheel</span>
         <span class="mp-footer-sep">·</span>
         <span class="mp-footer-item">&lt;2s per frame</span>
         <span class="mp-footer-sep">·</span>
@@ -485,85 +504,296 @@
 
     </div>
 
+  
   </div>
 </section>
 
-<!-- MULTI-SOURCE REASONING -->
+<section id="moat">
+  <div class="section-inner">
+    <div class="eyebrow reveal">// Why VisorVolt</div>
+    <h2 class="reveal">Every serious vendor trains on your data.<br><em>The question is who pays for it.</em></h2>
+    <span id="differentiation"></span>
+    <p class="section-sub reveal">In the grid, Buzz Solutions and AiDash both fine-tune on customer-labeled data, and the same economics hold in every other vertical. Every new asset is a new labeling project the customer pays for, and every deployed model begins decaying the day it ships. We are architecturally different: our system generates and verifies its own training data. The difference is not a benchmark score. It is who pays to expand coverage, and what happens to accuracy after deployment.</p>
+
+    <div class="why-features">
+      <div class="wf-row reveal">
+        <div class="wf-left">
+          <div class="stat stat--inline">
+            <div class="stat-fig">8<span class="stat-unit">%</span></div>
+            <div class="stat-label">what off-the-shelf scores on this imagery</div>
+          </div>
+        </div>
+        <div class="wf-right">
+          <h3 class="wf-title">Proof the domain is hard</h3>
+          <p class="wf-desc">Off-the-shelf models score about <strong>8%</strong> on this imagery, and <strong>0.000</strong> on a class they have never seen. Everyone has to train. The only questions that matter are who pays for the labels, and what happens to the model after it ships. <span class="wf-fine">Our grid system: 81% mAP@0.50, held-out EPRI data. The fully-supervised baseline we measure against beats the published benchmark baseline on 23 of 37 public datasets, so it is not a strawman.</span></p>
+        </div>
+      </div>
+      <div class="wf-row reveal">
+        <div class="wf-left">
+          <div class="stat stat--inline">
+            <div class="stat-fig">$0</div>
+            <div class="stat-label">labeling cost to you</div>
+          </div>
+        </div>
+        <div class="wf-right">
+          <h3 class="wf-title">Who pays to expand coverage</h3>
+          <p class="wf-desc">With label-dependent vendors, every new asset is a labeling project on your budget and your timeline. Our system generates and verifies its own training data, so new assets onboard in days from 40 images per site, with no labeling project on your side. Multiple assets come out of that one pool of 40. <span class="wf-fine">Measured on one domain, one site pair, three asset classes and one archive, at one loop iteration.</span></p>
+        </div>
+      </div>
+      <div class="wf-row reveal">
+        <div class="wf-left">
+          <div class="stat stat--inline">
+            <div class="stat-fig">0</div>
+            <div class="stat-label">cloud required</div>
+          </div>
+        </div>
+        <div class="wf-right">
+          <h3 class="wf-title">Beats the cloud. Without the cloud.</h3>
+          <p class="wf-desc">Everyone else phones home to the cloud for the hard part, checking what it found. Ours doesn't. Our on-prem verifier <strong>scores F1 0.80 against a leading cloud model’s 0.71</strong> on our domain, held-out, with nothing leaving your network, and it tells you <strong>when it is unsure</strong>, so a self-labeling system stays auditable without ground truth. The full pipeline, including AI-based verification, runs inside the utility's own NERC CIP boundary, and cloud-dependent vendors cannot match that. <span class="wf-fine">Runs entirely inside your NERC CIP boundary, zero external calls, on-prem or in your own cloud. <span>// Roadmap: formal BCSI attestation is in progress and is not certified today.</span></span></p>
+        </div>
+      </div>
+      <div class="wf-row reveal">
+        <div class="wf-left">
+          <div class="stat stat--inline">
+            <div class="stat-fig">9<span class="stat-unit">&times;</span></div>
+            <div class="stat-label">fewer false alarms</div>
+          </div>
+        </div>
+        <div class="wf-right">
+          <h3 class="wf-title">The number buyers actually feel</h3>
+          <p class="wf-desc">Accuracy is not what wastes a crew&rsquo;s day. False alarms are. On frames containing none of the target assets, the pooled 40-image site model emits <strong>11.5 false detections per 100 frames</strong> against <strong>104.8</strong> for the three separate single-asset models it replaces, roughly <strong>9 times fewer</strong>. <span class="wf-fine">Deployment-style measurement on asset-free frames at detection score 0.50. Two changes did it and neither was a model change: we stopped discarding the archive frames the harvest found nothing in, and we put a floor under the harvest threshold. The 9&times; is against separate per-asset models. Against our own larger 80-image build we claim only <strong>comparable false alarms on half the labels</strong>.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap-strip reveal">
+      <div class="rs-head">// Roadmap, so you know what is not built yet</div>
+      <div class="rs-items">
+        <div class="rs-item"><h4>Works inside what you already have <span class="wf-fine">// Roadmap</span></h4><p>Detection runs on your hardware and writes to open, standard geospatial formats, so nothing has to move to a new system. <span class="wf-fine">// Roadmap: native connectors into the major GIS and asset platforms are on the roadmap and are not shipped today. We are not going to claim an integration we have not built.</span></p></div>
+        <div class="rs-item"><h4>Compliance on autopilot <span class="wf-fine">// Roadmap</span></h4><p><span class="wf-fine">// Roadmap.</span> Automatic NERC FAC-003 evidence packages assembled from detection output are a roadmap item, not a shipped capability. The detections that would feed them are measured and on this page; the packaging is not built yet, and we are not going to imply it is.</p></div>
+      </div>
+    </div>
+
+    <p class="problem-close reveal">Same category. Different economics.</p>
+  </div>
+</section>
+
+<section class="cta-bg cta-band">
+  <div class="cta-inner">
+    <p class="cta-band-line reveal">Forty images, and we choose which ones. Everything after that runs on your hardware.</p>
+    <div class="reveal"><a href="mailto:umang@visorvolt.ai" class="btn-primary">Request a demo &rarr;</a></div>
+  </div>
+</section>
+
+<section class="why-bg" id="rigor">
+  <div class="section-inner">
+    <div class="eyebrow reveal">// What We Publish</div>
+    <h2 class="reveal">What we publish<br><em>that others don't.</em></h2>
+    <p class="section-sub reveal">Every vendor shows you the wins. Here is the rest of the record, because the failures are what tell you whether the wins are real.</p>
+    <div class="ledger">
+      <article class="ledger-item reveal">
+        <div class="ledger-fig">1&ndash;8<span class="stat-unit">%</span></div>
+        <div class="ledger-key">what off-the-shelf actually scores</div>
+        <h3 class="ledger-title">The things that did not work</h3>
+        <p class="ledger-body">Open-vocabulary detectors scored <strong>1 to 8 percent</strong> on this imagery. <strong>Three verifier approaches failed</strong>, each in a different way. Full fine-tuning <strong>collapsed three separate times</strong>, at three different class counts, before we retired it. Every one of those is in our research record with the run that produced it.</p>
+      </article>
+      <article class="ledger-item reveal">
+        <div class="ledger-fig">0</div>
+        <div class="ledger-key">synthetic-data wins claimed</div>
+        <h3 class="ledger-title">The experiment we lost</h3>
+        <p class="ledger-body">Synthetic data augmentation was run head to head against real photographs and <strong>lost</strong>. It is not claimed as a win anywhere in this product, on this page, or in our deck. It was the most carefully engineered pipeline we had built at the time, and it still hurt training.</p>
+      </article>
+      <article class="ledger-item reveal">
+        <div class="ledger-fig">6<span class="stat-unit">/12</span></div>
+        <div class="ledger-key">forecasts falsified, on record</div>
+        <h3 class="ledger-title">We sell measurement, not prediction</h3>
+        <p class="ledger-body"><strong>Four separate up-front difficulty predictors failed out of sample</strong>, which is why we will not forecast how well your assets will work and will instead measure it on your imagery. <strong>Twelve pre-registered forecasts are on record: six held, six were falsified.</strong> Each was written down and committed before the result existed, which is the only reason we can tell you which half is which.</p>
+      </article>
+      <article class="ledger-item reveal">
+        <div class="ledger-fig">0.87</div>
+        <div class="ledger-key">promised &middot; 0.43&ndash;0.73 delivered</div>
+        <h3 class="ledger-title">Known defect, stated</h3>
+        <p class="ledger-body">The 40-frame calibration <strong>does not transfer to the full archive.</strong> It reports roughly <strong>0.87 precision for every asset while the truth spans 0.43 to 0.73</strong>, and it cannot even rank which asset is worst. That means a customer running the loop today cannot tell from the system alone how clean its auto-labels are. <strong>The fix is under test and ships before we call onboarding autonomous.</strong> We would rather you read this here than discover it yourself.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="traction">
+  <div class="section-inner">
+    <div class="eyebrow reveal">// The Numbers</div>
+    <h2 class="reveal">Model validated.<br><em>US outreach beginning.</em></h2>
+    <div class="stat-grid stat-grid--4 stat-grid--tight">
+      <div class="stat stat--sm reveal">
+        <div class="stat-fig">40</div>
+        <div class="stat-label">Images from you</div>
+        <div class="stat-note">That is the whole ask, for the whole site</div>
+      </div>
+      <div class="stat stat--sm reveal">
+        <div class="stat-fig">Days</div>
+        <div class="stat-label">New asset live</div>
+        <div class="stat-note">No labeling project on your side</div>
+      </div>
+      <div class="stat stat--sm reveal">
+        <div class="stat-fig">100<span class="stat-unit">%</span></div>
+        <div class="stat-label">Inside your network</div>
+        <div class="stat-note">Zero external calls</div>
+      </div>
+      <div class="stat stat--sm reveal">
+        <div class="stat-fig">87<span class="stat-unit">%</span></div>
+        <div class="stat-label">Of the accuracy</div>
+        <div class="stat-note">Median of a fully hand-labeled detector, public benchmark datasets</div>
+      </div>
+    </div>
+    <div class="stat-grid stat-grid--3">
+      <div class="stat reveal">
+        <div class="stat-fig">81<span class="stat-unit">%</span></div>
+        <div class="stat-label">Standard assets &middot; mAP@0.50</div>
+        <div class="stat-note">9 asset classes &middot; EPRI IEEE DataPort benchmark, held-out &middot; 63.4% at the stricter COCO 0.50:0.95 average</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-fig">11.5</div>
+        <div class="stat-label">False detections per 100 asset-free frames</div>
+        <div class="stat-note">Deployment-style measurement at detection score 0.50 &middot; against 104.8 for the three separate single-asset models it replaces, roughly 9&times; fewer &middot; comparable false alarms to our own 80-image build, on half the labels</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-fig">0.80</div>
+        <div class="stat-label">On-prem verifier F1 &middot; held-out</div>
+        <div class="stat-note">Air-gapped verifier scores F1 0.80 against a leading cloud model&rsquo;s 0.71 on our domain &middot; zero data egress</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-fig">0.95</div>
+        <div class="stat-label">Defect classification F1 &middot; in-distribution</div>
+        <div class="stat-note">Nest on hardware, F1 0.947 in-distribution &middot; missing insulator cap F1 0.812 in-distribution and 0.568 on deployment-style out-of-distribution crops, up from 0.000 before fine-tuning</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-fig">~8<span class="stat-unit">%</span></div>
+        <div class="stat-label">Off-the-shelf AI on the same benchmark</div>
+        <div class="stat-note">Proof the domain is hard: everyone has to train &middot; the question is what that training costs</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-fig">9</div>
+        <div class="stat-label">US target accounts</div>
+        <div class="stat-note">Rural co-ops and wildfire-state IOUs &middot; O-1 Visa &middot; direct US presence</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="reasoning">
   <div class="section-inner">
-    <div class="eyebrow reveal">// Imagery-First Intelligence</div>
-    <h2 class="reveal">Starts with your first flight.<br><em>Grows smarter with every data layer.</em></h2>
-    <p class="section-sub reveal">No GIS exports required. No SCADA access. No 90-day onboarding project. Start with what you already fly.</p>
+    <div class="eyebrow reveal">// What You Can Add Later</div>
+    <h2 class="reveal">Starts with your first upload.<br><em>Grows with every data layer.</em></h2>
+    <p class="section-sub reveal">No GIS exports required. No SCADA access. No 90-day onboarding project. Start with the imagery you already collect, and add the other data you hold when you are ready. Only the first row ships today.</p>
 
     <div class="reasoning-tiers reveal">
 
       <div class="rtier rtier-1">
         <div class="rtier-left">
-          <div class="rtier-input">Drone / Satellite Imagery</div>
-          <div class="rtier-tag">// Core — Day One</div>
+          <div class="rtier-input">The imagery you already collect</div>
+          <div class="rtier-tag">// Core, Day One</div>
         </div>
         <div class="rtier-bar rtier-bar-1"></div>
         <div class="rtier-right">
-          <div class="rtier-output">Cracked insulator detected → Dispatch flag generated</div>
-          <div class="rtier-outcome">Condition detection: all 9 asset classes</div>
+          <div class="rtier-output">Asset located, condition flagged, exported to your team</div>
+          <div class="rtier-outcome">Condition detection across every asset you onboard</div>
         </div>
       </div>
 
       <div class="rtier rtier-2">
         <div class="rtier-left">
-          <div class="rtier-input">+ GIS Metadata &amp; Weather</div>
+          <div class="rtier-input">+ Location and environment data you already hold</div>
           <div class="rtier-tag">// Roadmap</div>
         </div>
         <div class="rtier-bar rtier-bar-2"></div>
         <div class="rtier-right">
-          <div class="rtier-output">High-wind event + ageing insulator → Critical dispatch, 24h window</div>
+          <div class="rtier-output">Asset condition read against local conditions &rarr; risk-ranked queue</div>
           <div class="rtier-outcome">Roadmap: predictive risk scoring</div>
         </div>
       </div>
 
       <div class="rtier rtier-3">
         <div class="rtier-left">
-          <div class="rtier-input">+ Load History &amp; Thermal Data</div>
+          <div class="rtier-input">+ Operating history and sensor data</div>
           <div class="rtier-tag">// Roadmap</div>
         </div>
         <div class="rtier-bar rtier-bar-3"></div>
         <div class="rtier-right">
-          <div class="rtier-output">Critical load circuit + thermal stress → Pre-emptive repair before failure</div>
+          <div class="rtier-output">Condition trend against operating stress &rarr; intervene before failure</div>
           <div class="rtier-outcome">Roadmap: predictive maintenance</div>
         </div>
       </div>
 
     </div>
+    <p class="rtier-foot reveal">In the electric grid those layers read as weather and circuit load. In a different industry they read as something else. The rows are the shape of the product, not a list of utility features. <a href="#assets">See the grid worked through in full &rarr;</a></p>
   </div>
 </section>
 
-<!-- ASSET COVERAGE -->
 <section class="assets-bg" id="assets">
   <div class="section-inner">
-    <div class="eyebrow reveal">// Asset Coverage</div>
-    <h2 class="reveal">One platform.<br><em>Any infrastructure.</em></h2>
-    <p class="section-sub reveal">New asset class onboarded in days, not the months competitors need. Proven on the EPRI benchmark: capacitor banks and junction boxes detected at 87–90% precision with zero customer labeling.</p>
+    <div class="eyebrow reveal">// Case Study &middot; Electric Grid</div>
+    <h2 class="reveal">The grid, in depth.<br><em>Our deepest deployment, not our identity.</em></h2>
+    <p class="section-sub reveal">One domain, worked through over two years and 22 circuits of real EPRI imagery: the proof that the recipe holds up under sustained production use, not just on a benchmark. Everything above this section is domain-agnostic. Everything in it is the grid.</p>
+  </div>
 
-    <div class="asset-list reveal">
+  <div class="img-break" aria-hidden="true">
+  <div class="img-break-bg" data-bg-jpg="assets/slide2.jpg" data-bg-webp="assets/slide2.webp"></div>
+  <div class="img-break-overlay"></div>
+  <div class="img-break-caption">
+    <span class="ibc-label">// EPRI Circuit 5 · Detection output · 81% mAP@0.50, held-out</span>
+    <span class="ibc-classes">
+      <span class="cls cls-pole">Poles</span>
+      <span class="cls cls-transformer">Transformers</span>
+      <span class="cls cls-insulator">Insulators</span>
+      <span class="cls cls-crossarm">Crossarms</span>
+      <span class="cls cls-conductor">Conductors</span>
+      <span class="cls cls-fuse">Fuses</span>
+    </span>
+  </div>
+</div>
+
+  <div class="section-inner">
+    <div class="case-block">
+      <h3 class="case-head">01 &middot; What is deployed</h3>
+      <div class="stat-grid stat-grid--4 stat-grid--tight">
+      <div class="stat stat--sm reveal">
+        <div class="stat-fig">D<span class="stat-unit">+</span></div>
+        <div class="stat-label">US Grid Infrastructure Grade</div>
+        <div class="stat-note">ASCE report &middot; America&rsquo;s power distribution networks</div>
+      </div>
+      <div class="stat stat--sm reveal">
+        <div class="stat-fig">$1.3<span class="stat-unit">T</span></div>
+        <div class="stat-label">Capital gap before structural failure</div>
+        <div class="stat-note">Capex required to prevent compounding collapse</div>
+      </div>
+      <div class="stat stat--sm reveal">
+        <div class="stat-fig">$200<span class="stat-unit">K+</span></div>
+        <div class="stat-label">Per NERC FAC-003 violation</div>
+        <div class="stat-note">Triggered by defects drone footage already captured</div>
+      </div>
+      <div class="stat stat--sm reveal">
+        <div class="stat-fig">81<span class="stat-unit">%</span></div>
+        <div class="stat-label">mAP@0.50 on held-out circuits</div>
+        <div class="stat-note">9 asset classes, and a novel asset the detector had never been trained on onboarded from 40 images alone</div>
+      </div>
+      </div>
+      <div class="asset-list reveal">
 
       <div class="asset-row asset-row-active">
-        <div class="asset-icon">🗼</div>
         <div class="asset-dot asset-dot-active"></div>
         <div class="asset-name">Power Distribution</div>
-        <div class="asset-desc">Poles, crossarms, transformers, insulators, fuses, conductors + 3 more · 9 classes · 81% mAP</div>
+        <div class="asset-desc">Poles, crossarms, transformers, insulators, fuses, conductors + 3 more · 9 classes · 81% mAP@0.50, held-out</div>
         <div class="asset-status-label">Production</div>
       </div>
 
       <div class="asset-row asset-row-active">
-        <div class="asset-icon">⚡</div>
         <div class="asset-dot asset-dot-active"></div>
         <div class="asset-name">Transmission Infrastructure</div>
         <div class="asset-desc">Towers, conductor bundles, high-voltage insulator assemblies</div>
-        <div class="asset-status-label">Production</div>
+        <div class="asset-status-label">Validated</div>
       </div>
 
       <div class="asset-row">
-        <div class="asset-icon">🏭</div>
         <div class="asset-dot"></div>
         <div class="asset-name">Substations</div>
         <div class="asset-desc">Switchgear, transformers, bus structures · same architecture, same timeline</div>
@@ -571,45 +801,38 @@
       </div>
 
       <div class="asset-row asset-row-active">
-        <div class="asset-icon">🔥</div>
         <div class="asset-dot asset-dot-active"></div>
         <div class="asset-name">Wildfire-Risk Circuits</div>
-        <div class="asset-desc">Vegetation encroachment and conductor clearance across high-risk corridors</div>
+        <div class="asset-desc">Conductor and hardware condition across high-risk corridors</div>
         <div class="asset-status-label">Active Use Case</div>
       </div>
 
     </div>
-  </div>
-</section>
+  
 
-<!-- PSPS RESTORATION -->
-<section class="psps-bg" id="psps">
-  <div class="section-inner">
-    <div class="eyebrow reveal" style="color:var(--orange)">// Use Case Spotlight</div>
-    <h2 class="reveal">Post-PSPS Restoration.<br><em>The inspection problem no one has solved.</em></h2>
-    <p class="section-sub reveal">Restoration is gated by a manual, daylight-only patrol of every de-energised circuit mile.</p>
-
-    <div class="psps-stats reveal">
-      <div class="psps-stat">
-        <div class="psps-big">17,000<span class="psps-unit">mi</span></div>
-        <div class="psps-label">Patrolled in a single PSPS event</div>
-        <div class="psps-note">PG&amp;E · 65 helicopters · 1,800 ground personnel</div>
-      </div>
-      <div class="psps-stat-div"></div>
-      <div class="psps-stat">
-        <div class="psps-big">$7.87<span class="psps-unit">M</span></div>
-        <div class="psps-label">SCE Fine — January 2025</div>
-        <div class="psps-note">Restoration notification failures</div>
-      </div>
-      <div class="psps-stat-div"></div>
-      <div class="psps-stat">
-        <div class="psps-big">May<br>2026</div>
-        <div class="psps-label">FERC Wildfire AI Report</div>
-        <div class="psps-note">Federal regulator formally endorses predictive AI for wildfire risk</div>
-      </div>
     </div>
 
-    <div class="psps-flow-open reveal">
+    <div class="case-block"><span id="psps"></span>
+      <h3 class="case-head">02 &middot; Post-PSPS restoration</h3>
+      <p class="case-lede reveal">Restoration is gated by a manual, daylight-only patrol of every de-energised circuit mile.</p>
+      <div class="stat-grid stat-grid--3 stat-grid--tight">
+      <div class="stat stat--sm reveal">
+        <div class="stat-fig">17,000<span class="stat-unit">mi</span></div>
+        <div class="stat-label">Patrolled in a single PSPS event</div>
+        <div class="stat-note">PG&amp;E &middot; 65 helicopters &middot; 1,800 ground personnel</div>
+      </div>
+      <div class="stat stat--sm reveal">
+        <div class="stat-fig">$7.87<span class="stat-unit">M</span></div>
+        <div class="stat-label">SCE Fine, January 2025</div>
+        <div class="stat-note">Restoration notification failures</div>
+      </div>
+      <div class="stat stat--sm reveal">
+        <div class="stat-fig">May 2026</div>
+        <div class="stat-label">FERC Wildfire AI Report</div>
+        <div class="stat-note">Federal regulator formally endorses predictive AI for wildfire risk</div>
+      </div>
+      </div>
+      <div class="psps-flow-open reveal">
 
       <div class="pfo-step">
         <div class="pfo-num">// 01</div>
@@ -622,7 +845,7 @@
       <div class="pfo-step pfo-step-highlight">
         <div class="pfo-badge">// VisorVolt</div>
         <div class="pfo-name">Aerial Pass</div>
-        <div class="pfo-desc">Drone imagery processed — damage flagged in minutes, not days.</div>
+        <div class="pfo-desc">Drone imagery processed, damage flagged in minutes, not days.</div>
       </div>
 
       <div class="pfo-connector"><div class="pfo-line"></div></div>
@@ -642,77 +865,19 @@
       </div>
 
     </div>
-  </div>
-</section>
-
-<!-- TRACTION -->
-<section id="traction">
-  <div class="section-inner">
-    <div class="eyebrow reveal">// Current Traction</div>
-    <h2 class="reveal">Model validated.<br><em>US outreach beginning.</em></h2>
-
-    <div class="traction-editorial reveal">
-
-      <div class="te-stat">
-        <div class="te-number">81<span class="te-pct">%</span></div>
-        <div class="te-title">Standard assets · mAP@0.50</div>
-        <div class="te-detail">9 asset classes · EPRI IEEE DataPort benchmark · 63.4% at the stricter COCO 0.50:0.95 average · zero client labeling</div>
-      </div>
-
-      <div class="te-stat">
-        <div class="te-number">93.8<span class="te-pct">%</span></div>
-        <div class="te-title">Novel classes · verified precision</div>
-        <div class="te-detail">Discovered &amp; auto-labeled with 0 new client labels · capacitor bank</div>
-      </div>
-
-      <div class="te-stat">
-        <div class="te-number">0.80</div>
-        <div class="te-title">On-prem verifier F1 · beats cloud</div>
-        <div class="te-detail">Air-gapped verifier outperforms a leading cloud model on our domain (F1 0.80 vs 0.71) · zero data egress</div>
-      </div>
-
-      <div class="te-stat">
-        <div class="te-number">0</div>
-        <div class="te-title">Client labels · ever</div>
-        <div class="te-detail">A new class bootstraps from ~40 seed examples the system generates &amp; verifies itself · 92% of a fully hand-labeled detector · EPRI benchmark</div>
-      </div>
-
-      <div class="te-stat">
-        <div class="te-number">0.74</div>
-        <div class="te-title">Defect detection · F1</div>
-        <div class="te-detail">Insulator faults — broken discs, flashover · CPLID benchmark</div>
-      </div>
-
-      <div class="te-stat">
-        <div class="te-number">~8<span class="te-pct">%</span></div>
-        <div class="te-title">Off-the-shelf AI on the same benchmark</div>
-        <div class="te-detail">Proof the domain is hard: everyone has to train · the question is what that training costs</div>
-      </div>
-
-      <div class="te-stat">
-        <div class="te-number">2<span class="te-pct">wk</span></div>
-        <div class="te-title">POC to results</div>
-        <div class="te-detail">100 images from your programme · fixed fee · no commitment</div>
-      </div>
-
-      <div class="te-stat">
-        <div class="te-number">9</div>
-        <div class="te-title">US target accounts</div>
-        <div class="te-detail">Rural co-ops and wildfire-state IOUs · O-1 Visa · direct US presence</div>
-      </div>
+  
 
     </div>
   </div>
 </section>
 
-<!-- FOUNDER -->
 <section class="founder-bg" id="founder">
   <div class="section-inner">
     <div class="eyebrow reveal">// The Founder</div>
     <h2 class="reveal">Built by someone who<br><em>has done this before.</em></h2>
     <div class="founder-grid">
       <div class="reveal" style="flex-shrink:0">
-        <img class="founder-photo" src="assets/founder.jpg" alt="Umang Sharma — Founder & CEO, VisorVolt">
+        <img class="founder-photo" src="assets/founder.jpg" alt="Umang Sharma, Founder & CEO, VisorVolt">
       </div>
       <div>
         <div class="founder-name reveal">Umang Sharma</div>
@@ -740,13 +905,12 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-bg" id="contact">
   <div class="cta-inner">
     <div class="eyebrow reveal" style="color:var(--orange)">// Get Started</div>
     <h2 class="reveal">Start with imagery<br><em>you're already collecting.</em></h2>
     <p class="section-sub reveal" style="margin:0 auto 40px">
-      100 images. 14 days. A structured asset inventory — no labeling, no infrastructure change, no commitment.
+      40 images per site, and we pick the 40. Days, not months. A structured asset inventory, with no labeling project on your side, no infrastructure change and no commitment.
     </p>
     <div class="cta-actions reveal">
       <a href="mailto:umang@visorvolt.ai" class="btn-primary" style="font-size:15px;padding:15px 32px">Request a demo →</a>
@@ -770,19 +934,19 @@
       <text font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="800" letter-spacing="-1">
         <tspan x="100" y="58" fill="#EEF2F8">Visor</tspan><tspan fill="#BF7B30">Volt</tspan>
       </text>
-      <text x="100" y="78" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400" fill="#6B8BB0" letter-spacing="2.5">AUTONOMOUS GRID INTELLIGENCE</text>
+      <text x="100" y="78" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400" fill="#6B8BB0" letter-spacing="2.5">DOMAIN-AGNOSTIC VISION</text>
     </svg>
   </div>
   <div class="footer-copy">© 2026 VisorVolt Inc. &nbsp;·&nbsp; Allerton Street, Redwood City, CA 94063</div>
   <div class="footer-links">
-    <a href="#platform">Platform</a>
-    <a href="#flywheel">Overview</a>
-    <a href="#differentiation">Differentiation</a>
-    <a href="#economics">Self-Improving</a>
-    <a href="#reasoning">Reasoning</a>
-    <a href="#assets">Assets</a>
-    <a href="#psps">PSPS</a>
-    <a href="#traction">Traction</a>
+    <a href="#platform">How It Works</a>
+    <a href="#domains">Proof</a>
+    <a href="#economics">After It Ships</a>
+    <a href="#moat">Why VisorVolt</a>
+    <a href="#rigor">What We Publish</a>
+    <a href="#traction">The Numbers</a>
+    <a href="#reasoning">Data Layers</a>
+    <a href="#assets">Grid Case Study</a>
     <a href="#founder">Founder</a>
     <a href="#contact">Contact</a>
   </div>
