@@ -916,6 +916,9 @@ footer{
 /* ---------- DOMAINS: cross-domain proof grid ---------- */
 .sec-lede{max-width:820px;color:var(--slate);font-size:17px;line-height:1.65;margin:0 0 38px}
 .dom-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:18px}
+/* the defects row carries 5 tiles: let it run 5-up on wide screens rather than
+   leaving a single orphan on a second line */
+@media(min-width:1180px){.proof-row:last-child .dom-grid{grid-template-columns:repeat(5,1fr)}}
 .dom-card{margin:0;background:var(--card);border:1px solid var(--border-slate);border-radius:10px;
   overflow:hidden;transition:transform .25s ease,border-color .25s ease}
 .dom-card:hover{transform:translateY(-3px);border-color:rgba(212,144,64,.45)}

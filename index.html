@@ -66,11 +66,11 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-scanline"></div>
-  <div class="slideshow" id="slideshow" role="img" aria-label="Real detections from six different industries: Electric grid, Construction, Logistics, Microscopy, Thermal, Agriculture">
+  <div class="slideshow" id="slideshow" role="img" aria-label="Real detections from six different industries: Electric grid, Construction, Logistics, Manufacturing, Thermal, Agriculture">
     <div class="slide active" style="background-image:url('assets/hero/grid.jpg');background-image:image-set(url('assets/hero/grid.webp') type('image/webp'), url('assets/hero/grid.jpg') type('image/jpeg'))"></div>
     <div class="slide" data-bg-jpg="assets/hero/construction.jpg" data-bg-webp="assets/hero/construction.webp"></div>
     <div class="slide" data-bg-jpg="assets/hero/logistics.jpg" data-bg-webp="assets/hero/logistics.webp"></div>
-    <div class="slide" data-bg-jpg="assets/hero/microscopy.jpg" data-bg-webp="assets/hero/microscopy.webp"></div>
+    <div class="slide" data-bg-jpg="assets/hero/manufacturing.jpg" data-bg-webp="assets/hero/manufacturing.webp"></div>
     <div class="slide" data-bg-jpg="assets/hero/thermal.jpg" data-bg-webp="assets/hero/thermal.webp"></div>
     <div class="slide" data-bg-jpg="assets/hero/agriculture.jpg" data-bg-webp="assets/hero/agriculture.webp"></div>
   </div>
@@ -241,9 +241,17 @@
           <span class="dom-score">60%<em>of a hand-labeled model</em></span>
         </figcaption>
       </figure>
+      <figure class="dom-card">
+        <img src="assets/defects/pcb-open.jpg" alt="Electronics manufacturing, open-circuit defects detected on a held-out inspection frame" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Electronics Mfg</span>
+          <span class="dom-meta">PCB inspection &middot; <code>open</code></span>
+          <span class="dom-score">96%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
     </div>
     
-      <p class="dom-foot">Corrosion, cracks, mildew and breaks, four industries, one system, nothing rebuilt between them. The industrial cable-break case at 60% is the weakest and it is here on purpose: thin, low-contrast damage on a busy background is the hardest thing we do, and you should see that before you buy, not after. <span class="wf-fine"><strong>Per-dataset figures carry roughly &#177;3 to 5 points of seed-draw variance. The median across all datasets is stable; a single tile is not. We publish the tile anyway, with its uncertainty.</strong> The wind blade is field imagery from a live inspection model, not one of the 39 benchmark datasets, so it carries its detection confidence. We don't quote a percentage we haven't measured.</span></p>
+      <p class="dom-foot">Corrosion, cracks, mildew, breaks and open circuits, five industries, one system, nothing rebuilt between them. The industrial cable-break case at 60% is the weakest and it is here on purpose: thin, low-contrast damage on a busy background is the hardest thing we do, and you should see that before you buy, not after. <span class="wf-fine"><strong>Per-dataset figures carry roughly &#177;3 to 5 points of seed-draw variance. The median across all datasets is stable; a single tile is not. We publish the tile anyway, with its uncertainty.</strong> The wind blade is field imagery from a live inspection model, not one of the 39 benchmark datasets, so it carries its detection confidence. We don't quote a percentage we haven't measured. The electronics tile is also outside the 39: a separate MIT-licensed PCB benchmark, scored on its official held-out test split, and we flag that its fully-supervised ceiling is unusually high (AP50 0.98), so 96% is a strong result on an easy dataset rather than a hard-won one. The 40-image onboarding step ran verbatim there; the upstream proposer had its backbone unfrozen for that one dataset, which we record rather than gloss.</span></p>
     </div>
   </div>
 </section>
