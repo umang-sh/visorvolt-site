@@ -27,8 +27,10 @@ function goTo(i) {
   slides[current].classList.add('active');
   dots[current].classList.add('active');
 }
-dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
-setInterval(() => goTo((current + 1) % slides.length), 4500);
+if (slides.length && dots.length === slides.length) {
+  dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+  setInterval(() => goTo((current + 1) % slides.length), 4500);
+}
 
 // Hamburger nav
 const ham = document.getElementById('nav-hamburger');

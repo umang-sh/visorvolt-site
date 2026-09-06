@@ -86,11 +86,11 @@ nav{
 .hero-overlay{
   position:absolute;inset:0;z-index:1;
   background:linear-gradient(
-    120deg,
-    rgba(14,21,32,0.95) 0%,
-    rgba(14,21,32,0.80) 45%,
-    rgba(14,21,32,0.30) 70%,
-    rgba(14,21,32,0.45) 100%
+    112deg,
+    rgba(14,21,32,0.94) 0%,
+    rgba(14,21,32,0.86) 38%,
+    rgba(14,21,32,0.38) 62%,
+    rgba(14,21,32,0.14) 100%
   );
 }
 .hero-grid-lines{
@@ -1068,4 +1068,84 @@ footer{
   .stat-grid--4 .stat:nth-child(4n+1),.stat-grid--3 .stat:nth-child(3n+1){padding-left:0}
   .proof-row + .proof-row{margin-top:56px;padding-top:40px}
   .how-proof{margin-top:48px;padding-left:16px}
+}
+
+/* ============================================================
+   REDESIGN 2026-09 — horizontal positioning, two-agent system
+   ============================================================ */
+
+/* --- hero: single still, no carousel --- */
+.hero-still{position:absolute;inset:0;background-size:cover;background-position:62% center;}
+.hero-cap{
+  position:absolute;bottom:18px;right:22px;z-index:6;
+  font-family:var(--mono);font-size:10px;letter-spacing:.6px;
+  color:rgba(255,255,255,0.42);text-align:right;line-height:1.5;
+}
+
+/* --- two-agent system --- */
+.agents{max-width:1080px;margin:0 auto}
+.agent-diagram{
+  border:1px solid rgba(140,180,210,0.22);
+  border-radius:10px;padding:34px 30px 26px;
+  background:rgba(140,180,210,0.04);
+  position:relative;margin-bottom:14px;
+}
+.agent-diagram svg{width:100%;height:auto;display:block}
+.agent-boundary{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:1.6px;
+  text-transform:uppercase;color:#8AAAC2;text-align:center;
+  padding-top:18px;margin-top:20px;
+  border-top:1px dashed rgba(140,180,210,0.28);
+}
+.agent-boundary b{color:var(--orange);font-weight:500}
+.agent-cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;
+}
+.agent-card{
+  border:1px solid rgba(255,255,255,0.09);border-radius:8px;
+  padding:24px 22px;background:rgba(255,255,255,0.02);
+}
+.agent-card.is-human{border-color:rgba(191,123,48,0.35);background:rgba(191,123,48,0.05)}
+.ac-kicker{
+  font-family:var(--mono);font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--orange);margin-bottom:10px;
+}
+.agent-card.is-human .ac-kicker{color:var(--orange-lt)}
+.ac-title{font-size:19px;font-weight:600;color:var(--white);margin-bottom:10px;line-height:1.25}
+.ac-body{font-size:14.5px;line-height:1.6;color:rgba(255,255,255,0.7);margin-bottom:14px}
+.ac-metric{
+  font-family:var(--mono);font-size:12px;line-height:1.55;
+  color:rgba(255,255,255,0.52);border-top:1px solid rgba(255,255,255,0.08);padding-top:12px;
+}
+.ac-metric b{color:var(--white);font-weight:500}
+
+/* --- the record / ledger --- */
+.ledger-tbl{
+  width:100%;border-collapse:collapse;margin-top:28px;
+  font-size:14.5px;
+}
+.ledger-tbl th{
+  text-align:left;font-family:var(--mono);font-size:10px;
+  letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);
+  font-weight:400;padding:0 14px 12px 0;border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.ledger-tbl td{
+  padding:14px 14px 14px 0;border-bottom:1px solid rgba(255,255,255,0.06);
+  color:rgba(255,255,255,0.74);vertical-align:top;line-height:1.5;
+}
+.ledger-tbl td:first-child{color:var(--white)}
+.v-held{color:#28C840;font-family:var(--mono);font-size:12.5px;white-space:nowrap}
+.v-fals{color:var(--orange-lt);font-family:var(--mono);font-size:12.5px;white-space:nowrap}
+.ledger-close{
+  margin-top:28px;font-size:16px;line-height:1.65;
+  color:rgba(255,255,255,0.8);max-width:680px;
+}
+.ledger-close b{color:var(--white)}
+
+@media(max-width:860px){
+  .agent-cards{grid-template-columns:1fr}
+  .agent-diagram{padding:22px 16px 18px;overflow-x:auto}
+  .agent-diagram svg{min-width:720px}
+  .ledger-tbl{font-size:13px}
+  .ledger-tbl td,.ledger-tbl th{padding-right:8px}
 }

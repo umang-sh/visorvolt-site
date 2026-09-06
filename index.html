@@ -66,22 +66,15 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-scanline"></div>
-  <div class="slideshow" id="slideshow" role="img" aria-label="Real detections from six different industries: Electric grid, Construction, Logistics, Manufacturing, Thermal, Agriculture">
-    <div class="slide active" style="background-image:url('assets/hero/grid.jpg');background-image:image-set(url('assets/hero/grid.webp') type('image/webp'), url('assets/hero/grid.jpg') type('image/jpeg'))"></div>
-    <div class="slide" data-bg-jpg="assets/hero/construction.jpg" data-bg-webp="assets/hero/construction.webp"></div>
-    <div class="slide" data-bg-jpg="assets/hero/logistics.jpg" data-bg-webp="assets/hero/logistics.webp"></div>
-    <div class="slide" data-bg-jpg="assets/hero/manufacturing.jpg" data-bg-webp="assets/hero/manufacturing.webp"></div>
-    <div class="slide" data-bg-jpg="assets/hero/thermal.jpg" data-bg-webp="assets/hero/thermal.webp"></div>
-    <div class="slide" data-bg-jpg="assets/hero/agriculture.jpg" data-bg-webp="assets/hero/agriculture.webp"></div>
-  </div>
+  <div class="hero-still" role="img" aria-label="Warehouse pallets detected and numbered by a VisorVolt model trained on 40 labelled images" style="background-image:url('assets/warehouse/hero-pallets.jpg')"></div>
   <div class="hero-overlay"></div>
   <div class="hero-grid-lines"></div>
   <div class="hero-content">
     <div class="hero-tag">// Domain-Agnostic Vision</div>
-    <h1>40 images. Any domain.<br><em>It never stops learning.</em></h1>
-    <p class="hero-sub">You give us <strong>40 images per site</strong>. The system labels the rest, checks its own work, and ships a detector at a median <strong>87% of fully-supervised accuracy</strong> on public benchmarks. Tested on <strong>39 datasets, none of them ours, none of them failed</strong>. Runs inside your network.</p>
+    <h1>Any domain. 40 images.<br><em>A working detector.</em></h1>
+    <p class="hero-sub">Show us 40 images of what you care about &mdash; a pallet, a cracked insulator, a solder bridge, a microwave dish. You get back a detector that reaches a median <strong>86% of what a fully-labelled model achieves</strong>, measured across <strong>39 public datasets we didn&rsquo;t choose</strong>. No annotation project. No ML team. It runs inside your network, and it keeps improving after it ships.</p>
     <div class="hero-actions">
-      <a href="mailto:umang@visorvolt.ai" class="btn-primary">Request a demo →</a>
+      <a href="mailto:umang@visorvolt.ai" class="btn-primary">Request a demo &rarr;</a>
       <a href="#platform" class="btn-outline">See how it works</a>
     </div>
 <div class="hero-strip">
@@ -89,15 +82,13 @@
       <a class="hs-item" href="#domains"><img src="assets/strip/wind-corrosion.jpg" alt="Wind detections" loading="lazy" width="420" height="420"><span>Wind</span></a>
       <a class="hs-item" href="#domains"><img src="assets/strip/cell-towers.jpg" alt="Telecom detections" loading="lazy" width="420" height="420"><span>Telecom</span></a>
       <a class="hs-item" href="#domains"><img src="assets/strip/truck-movement.jpg" alt="Logistics detections" loading="lazy" width="420" height="420"><span>Logistics</span></a>
-      <a class="hs-item" href="#domains"><img src="assets/strip/flir-camera-objects.jpg" alt="Thermal detections" loading="lazy" width="420" height="420"><span>Thermal</span></a>
+      <a class="hs-item" href="#domains"><img src="assets/strip/pcb-open.jpg" alt="Electronics manufacturing detections" loading="lazy" width="420" height="420"><span>Electronics</span></a>
       <a class="hs-item" href="#domains"><img src="assets/strip/corrosion-bi3q3.jpg" alt="Bridges detections" loading="lazy" width="420" height="420"><span>Bridges</span></a>
       <a class="hs-item" href="#domains"><img src="assets/strip/stomata-cells.jpg" alt="Microscopy detections" loading="lazy" width="420" height="420"><span>Microscopy</span></a>
       <a class="hs-more" href="#domains">+33 more<br>datasets &rarr;</a>
     </div>
   </div>
-  <div class="slide-dots" id="dots">
-    <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-  </div>
+  <div class="hero-cap">Real model output &middot; 40 labelled images<br>Public benchmark imagery (LOCO, TUM, CC0)</div>
 </section>
 
 <section class="problem-bg" id="problem">
@@ -371,148 +362,76 @@
   <div class="section-inner">
     <div class="eyebrow reveal">// After It Ships</div>
     <h2 class="reveal">A research scientist<br><em>that never sleeps.</em></h2>
-    <p class="section-sub reveal">A model trained on a fixed, hand-labeled dataset starts drifting from field conditions the day it ships, and the fix is another labeling round. Our deployed models feed the same self-labeling loop they were built with, so accuracy improves after deployment rather than degrading.</p>
-    <p class="section-sub reveal">Self-improvement isn't a script, it's an autonomous agent that reads every model result and diagnoses the root cause: <strong>a model problem, or a data problem?</strong> If it's the <strong>model</strong>, the agent tunes the training configuration and proposes an updated model. If it's the <strong>data</strong>, it triggers the auto-label flywheel to harvest and self-verify new training examples. The monitoring, the diagnosis and the overnight experiments run on-premises with <strong>no ML engineer of yours in the loop</strong>. <strong>Nothing deploys itself: a human approves every promotion.</strong> <span class="wf-fine">// Roadmap: having the agent read and apply methods from current literature is a roadmap item, not a shipped capability.</span></p>
-    <div class="loop-tri reveal">
-      <svg class="lt-svg" viewBox="0 0 600 568" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <p class="section-sub reveal">A model trained on a fixed, hand-labelled dataset starts drifting from field conditions the day it ships, and the fix is another labelling round. Ours ships with <strong>two agents, and you run both</strong>. One improves the <strong>data</strong>: it harvests your own archive, verifies what it finds, and retrains. One improves the <strong>model</strong>: it reads every result, decides whether it is looking at a <strong>model problem or a data problem</strong>, runs the experiment overnight, and keeps what wins. Both run on your hardware, inside your network, with <strong>no ML engineer of yours in the loop</strong> &mdash; and <strong>nothing deploys itself. A human approves every promotion.</strong></p>
 
-        <!-- Subtle node glows -->
-        <circle cx="300" cy="68" r="72" fill="rgba(191,123,48,0.055)"/>
-        <circle cx="68" cy="480" r="72" fill="rgba(64,200,232,0.055)"/>
-        <circle cx="532" cy="480" r="72" fill="rgba(40,200,64,0.055)"/>
-
-        <!-- Triangle interior fill -->
-        <polygon points="300,68 68,480 532,480" fill="rgba(238,242,248,0.012)"/>
-
-        <!-- Triangle edges -->
-        <line x1="300" y1="68" x2="68" y2="480" stroke="rgba(238,242,248,0.10)" stroke-width="1.5"/>
-        <line x1="68" y1="480" x2="532" y2="480" stroke="rgba(238,242,248,0.10)" stroke-width="1.5"/>
-        <line x1="532" y1="480" x2="300" y2="68" stroke="rgba(238,242,248,0.10)" stroke-width="1.5"/>
-
-        <!-- Traveling dots -->
-        <circle class="lt-dot lt-dot-1" r="5.5" fill="#BF7B30"/>
-        <circle class="lt-dot lt-dot-2" r="5.5" fill="#40C8E8"/>
-        <circle class="lt-dot lt-dot-3" r="5.5" fill="#28C840"/>
-
-        <!-- ── DETECT node (top) ── -->
-        <circle cx="300" cy="68" r="36" stroke="#BF7B30" stroke-width="1.5" fill="rgba(10,14,22,0.97)"/>
-        <text x="300" y="62" text-anchor="middle" font-family="DM Mono,monospace" font-size="13" letter-spacing="1.5" fill="#BF7B30">01</text>
-        <text x="300" y="78" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" letter-spacing="0.5" fill="rgba(191,123,48,0.55)">detect</text>
-        <!-- Label above -->
-        <text x="300" y="14" text-anchor="middle" font-family="DM Mono,monospace" font-size="16" letter-spacing="3" fill="rgba(191,123,48,0.92)">DETECT</text>
-        <text x="300" y="31" text-anchor="middle" font-family="DM Mono,monospace" font-size="11" letter-spacing="0.5" fill="rgba(191,123,48,0.48)">drone · satellite · LiDAR</text>
-
-        <!-- ── DIAGNOSE node (bottom-left) ── -->
-        <circle cx="68" cy="480" r="36" stroke="#40C8E8" stroke-width="1.5" fill="rgba(10,14,22,0.97)"/>
-        <text x="68" y="474" text-anchor="middle" font-family="DM Mono,monospace" font-size="13" letter-spacing="1.5" fill="#40C8E8">02</text>
-        <text x="68" y="490" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" letter-spacing="0.5" fill="rgba(64,200,232,0.55)">diagnose</text>
-        <!-- Label below -->
-        <text x="68" y="528" text-anchor="middle" font-family="DM Mono,monospace" font-size="16" letter-spacing="3" fill="rgba(64,200,232,0.92)">DIAGNOSE</text>
-        <text x="68" y="547" text-anchor="middle" font-family="DM Mono,monospace" font-size="11" letter-spacing="0.5" fill="rgba(64,200,232,0.48)">model vs. data agent</text>
-
-        <!-- ── FIX node (bottom-right) ── -->
-        <circle cx="532" cy="480" r="36" stroke="#28C840" stroke-width="1.5" fill="rgba(10,14,22,0.97)"/>
-        <text x="532" y="474" text-anchor="middle" font-family="DM Mono,monospace" font-size="13" letter-spacing="1.5" fill="#28C840">03</text>
-        <text x="532" y="490" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" letter-spacing="0.5" fill="rgba(40,200,64,0.55)">fix</text>
-        <!-- Label below -->
-        <text x="532" y="528" text-anchor="middle" font-family="DM Mono,monospace" font-size="16" letter-spacing="3" fill="rgba(40,200,64,0.92)">FIX</text>
-        <text x="532" y="547" text-anchor="middle" font-family="DM Mono,monospace" font-size="11" letter-spacing="0.5" fill="rgba(40,200,64,0.48)">tune model · or · flywheel</text>
-
-        <!-- ── Edge annotations (new info only) ── -->
-        <!-- Left edge: Detect→Diagnose, positioned along left edge outside triangle -->
-        <text x="178" y="265" text-anchor="end" font-family="DM Mono,monospace" font-size="14" letter-spacing="0.5" fill="rgba(238,242,248,0.50)">anomaly flagged ›</text>
-        <!-- Right edge: Fix→Detect, positioned along right edge outside triangle -->
-        <text x="422" y="265" text-anchor="start" font-family="DM Mono,monospace" font-size="14" letter-spacing="0.5" fill="rgba(238,242,248,0.50)">‹ model deployed</text>
-        <!-- Bottom edge: near Diagnose→Fix, y~455 -->
-        <text x="300" y="457" text-anchor="middle" font-family="DM Mono,monospace" font-size="14" letter-spacing="0.5" fill="rgba(238,242,248,0.50)">domain analysis</text>
-
-        <!-- ── Center content ── -->
-        <text x="300" y="304" text-anchor="middle" font-family="DM Mono,monospace" font-size="9.5" letter-spacing="3.5" fill="rgba(238,242,248,0.22)">LOOP CYCLE</text>
-        <text x="300" y="348" text-anchor="middle" font-family="DM Mono,monospace" font-size="40" font-weight="700" fill="rgba(238,242,248,0.055)" letter-spacing="-1">&lt;24h</text>
-        <text x="300" y="370" text-anchor="middle" font-family="DM Mono,monospace" font-size="9.5" letter-spacing="1.5" fill="rgba(238,242,248,0.18)">flight → improvement</text>
-
-      </svg>
-    </div>
-    <!-- Mission Control Panel -->
-    <div class="mission-panel reveal">
-
-      <div class="mp-header">
-        <div class="mp-header-left">
-          <span class="mp-live-dot"></span>
-          <span class="mp-live-label">VisorVolt Agent</span>
-        </div>
-        <div class="mp-header-center">improvement-loop · illustrative run · overnight</div>
-        <div class="mp-header-right">
-          <span class="mp-live-badge">● ILLUSTRATIVE</span>
-        </div>
+    <div class="agents reveal">
+      <div class="agent-diagram">
+        <svg viewBox="0 0 1000 300" role="img" aria-labelledby="agtitle agdesc">
+          <title id="agtitle">Two agents around one deployed detector</title>
+          <desc id="agdesc">Forty images produce a deployed detector. A model agent above it diagnoses results, runs experiments and proposes an updated model. A data agent below it harvests your archive, verifies candidates and retrains. Both loops run on your hardware, and every promotion is approved by a person.</desc>
+          <defs>
+            <marker id="agar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="#D49040"/>
+            </marker>
+            <marker id="agarb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="#8AAAC2"/>
+            </marker>
+          </defs>
+          <g font-family="DM Mono, monospace">
+            <!-- input -->
+            <rect x="6" y="118" width="150" height="64" rx="8" fill="rgba(212,144,64,.10)" stroke="#D49040" stroke-width="1.4"/>
+            <text x="81" y="146" text-anchor="middle" fill="#D49040" font-size="26" font-weight="700">40</text>
+            <text x="81" y="167" text-anchor="middle" fill="#EEF2F8" font-size="12">images, once</text>
+            <line x1="162" y1="150" x2="200" y2="150" stroke="#D49040" stroke-width="1.6" marker-end="url(#agar)"/>
+            <!-- detector -->
+            <rect x="208" y="112" width="196" height="76" rx="8" fill="rgba(255,255,255,.06)" stroke="#D49040" stroke-width="1.6"/>
+            <text x="306" y="145" text-anchor="middle" fill="#EEF2F8" font-size="15" font-weight="700">Deployed detector</text>
+            <text x="306" y="167" text-anchor="middle" fill="#7A8BA5" font-size="10.5">on your hardware</text>
+            <line x1="410" y1="150" x2="448" y2="150" stroke="#D49040" stroke-width="1.6" marker-end="url(#agar)"/>
+            <!-- results -->
+            <rect x="456" y="118" width="132" height="64" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(140,180,210,.35)" stroke-width="1.2"/>
+            <text x="522" y="155" text-anchor="middle" fill="#EEF2F8" font-size="14">results</text>
+            <!-- MODEL AGENT loop, above -->
+            <path d="M522 114 L522 56 Q522 46 512 46 L316 46 Q306 46 306 56 L306 106" fill="none" stroke="#D49040" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#agar)"/>
+            <text x="414" y="26" text-anchor="middle" fill="#D49040" font-size="12.5" font-weight="700" letter-spacing="1.6">MODEL AGENT</text>
+            <text x="414" y="40" text-anchor="middle" fill="#7A8BA5" font-size="10.5">diagnose &rarr; experiment &rarr; propose</text>
+            <text x="760" y="70" fill="#D49040" font-size="11">runs overnight</text>
+            <!-- DATA AGENT loop, below -->
+            <path d="M522 186 L522 244 Q522 254 512 254 L316 254 Q306 254 306 244 L306 194" fill="none" stroke="#8AAAC2" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#agarb)"/>
+            <text x="414" y="276" text-anchor="middle" fill="#8AAAC2" font-size="12.5" font-weight="700" letter-spacing="1.6">DATA AGENT</text>
+            <text x="414" y="290" text-anchor="middle" fill="#7A8BA5" font-size="10.5">harvest &rarr; verify &rarr; retrain</text>
+            <text x="820" y="232" text-anchor="end" fill="#8AAAC2" font-size="11">runs continuously</text>
+            <!-- archive feed -->
+            <rect x="828" y="222" width="166" height="60" rx="8" fill="rgba(140,180,210,.06)" stroke="rgba(140,180,210,.30)" stroke-width="1.2"/>
+            <text x="911" y="247" text-anchor="middle" fill="#EEF2F8" font-size="12">your unlabelled</text>
+            <text x="911" y="264" text-anchor="middle" fill="#EEF2F8" font-size="12">archive</text>
+            <line x1="824" y1="252" x2="700" y2="252" stroke="#8AAAC2" stroke-width="1.3" marker-end="url(#agarb)"/>
+          </g>
+        </svg>
+        <div class="agent-boundary">Everything above runs on your hardware, inside your network &nbsp;&middot;&nbsp; <b>you approve every promotion</b></div>
       </div>
-
-      <div class="mp-stages">
-
-        <div class="mp-stage mp-stage-detect">
-          <div class="mp-stage-header">
-            <div class="mp-status-badge mp-status-done">
-              <span class="mp-status-dot"></span>COMPLETE
-            </div>
-            <div class="mp-stage-num">01</div>
-          </div>
-          <div class="mp-stage-label">Detect</div>
-          <div class="mp-stage-value">0.61<span class="mp-value-unit">conf</span></div>
-          <div class="mp-stage-detail">cracked_insulator · below threshold 0.72 · flagged for autonomous review</div>
-          <div class="mp-stage-tag">// aerial_frame_2847.jpg · &lt;2s inference</div>
-        </div>
-
-        <div class="mp-connector">
-          <div class="mp-conn-track"><div class="mp-conn-pulse mp-conn-pulse-1"></div></div>
-          <span class="mp-conn-arr">›</span>
-        </div>
-
-        <div class="mp-stage mp-stage-diagnose">
-          <div class="mp-stage-header">
-            <div class="mp-status-badge mp-status-done mp-status-cyan">
-              <span class="mp-status-dot"></span>COMPLETE
-            </div>
-            <div class="mp-stage-num">02</div>
-          </div>
-          <div class="mp-stage-label">Diagnose</div>
-          <div class="mp-stage-value mp-value-sm">model<br>issue</div>
-          <div class="mp-stage-detail">agent ruled: model problem, not data · precision plateau on a thin class · selecting the fix from its own logged experiments</div>
-          <div class="mp-stage-tag">// reasoning agent · read the results, chose the branch</div>
-        </div>
-
-        <div class="mp-connector">
-          <div class="mp-conn-track"><div class="mp-conn-pulse mp-conn-pulse-2"></div></div>
-          <span class="mp-conn-arr">›</span>
-        </div>
-
-        <div class="mp-stage mp-stage-fix">
-          <div class="mp-stage-header">
-            <div class="mp-status-badge mp-status-running">
-              <span class="mp-status-dot mp-dot-pulse"></span>RUNNING
-            </div>
-            <div class="mp-stage-num">03</div>
-          </div>
-          <div class="mp-stage-label">Fix</div>
-          <div class="mp-stage-value mp-value-green">+5.7<span class="mp-value-unit">AP50</span></div>
-          <div class="mp-stage-detail">training configuration tuned · harvest re-verified · candidate model queued · a human approves the promotion</div>
-          <div class="mp-stage-tag">// held-out EPRI · two logged iterations · 0.727 → 0.784</div>
-        </div>
-
-      </div>
-
-      <div class="mp-footer">
-        <span class="mp-footer-item">40 images per site. We pick the 40, and the system does the rest.</span>
-        <span class="mp-footer-sep">·</span>
-        <span class="mp-footer-item">Watches results · tunes models · triggers the flywheel</span>
-        <span class="mp-footer-sep">·</span>
-        <span class="mp-footer-item">&lt;2s per frame</span>
-        <span class="mp-footer-sep">·</span>
-        <span class="mp-footer-item">Accuracy compounds with every flight</span>
-      </div>
-
     </div>
 
-  
+    <div class="agent-cards reveal">
+      <div class="agent-card">
+        <div class="ac-kicker">// Data agent</div>
+        <h3 class="ac-title">It mines the imagery you already have</h3>
+        <p class="ac-body">Harvests your unlabelled archive, verifies every candidate it finds, discards what fails, and retrains on what survives &mdash; without anyone drawing a box.</p>
+        <div class="ac-metric">Measured, held-out: the loop improved the deployed detector on <b>20 of 22</b> public datasets, recovering a median <b>18% of the remaining gap</b> to full supervision with no new labelling.</div>
+      </div>
+      <div class="agent-card">
+        <div class="ac-kicker">// Model agent</div>
+        <h3 class="ac-title">It runs its own experiments and keeps what wins</h3>
+        <p class="ac-body">Reads every result, separates a <strong>model problem</strong> from a <strong>data problem</strong>, tunes the training configuration or triggers a fresh harvest, and proposes an updated model by morning.</p>
+        <div class="ac-metric">The same machinery retired <b>four of our own</b> difficulty predictors when their forecasts failed. <a href="#rigor" style="color:var(--orange-lt)">See the record &rarr;</a></div>
+      </div>
+      <div class="agent-card is-human">
+        <div class="ac-kicker">// You</div>
+        <h3 class="ac-title">Nothing ships without this step</h3>
+        <p class="ac-body">Review what changed and why, then approve or reject. The agents run unattended; the promotion does not.</p>
+        <div class="ac-metric">Autonomous experimentation, <b>human-gated deployment</b>. <span class="wf-fine">// Roadmap: having the model agent read and apply methods from current literature is a roadmap item, not a shipped capability.</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
