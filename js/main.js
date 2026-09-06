@@ -16,21 +16,48 @@ const bgObserver = new IntersectionObserver(entries => {
 }, { rootMargin: '200px' });
 document.querySelectorAll('.img-break-bg[data-bg-jpg]').forEach(el => bgObserver.observe(el));
 
-// Slideshow
-let current = 0;
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-function goTo(i) {
-  slides[current].classList.remove('active');
-  dots[current].classList.remove('active');
-  current = i;
-  slides[current].classList.add('active');
-  dots[current].classList.add('active');
-}
-if (slides.length && dots.length === slides.length) {
-  dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
-  setInterval(() => goTo((current + 1) % slides.length), 4500);
-}
+// Hero run — 5 detection frames, crossfade
+(function(){
+  const run = document.getElementById('hero-run');
+  if (!run) return;
+  const slides = [...run.querySelectorAll('.hs')];
+  const dotWrap = document.getElementById('hero-dots');
+  const capEl = document.getElementById('hero-cap-t');
+  if (slides.length < 2) return;
+
+  // decode the deferred frames once the first has painted
+  const warm = () => slides.forEach(s => {
+    if (s.dataset.src) { s.style.backgroundImage = `url('${s.dataset.src}')`; delete s.dataset.src; }
+  });
+  (window.requestIdleCallback || (fn => setTimeout(fn, 400)))(warm);
+
+  const dots = slides.map((_, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', `Show frame ${i + 1} of ${slides.length}`);
+    b.addEventListener('click', () => { go(i); pause(); });
+    dotWrap.appendChild(b);
+    return b;
+  });
+
+  let cur = 0, timer = null;
+  function go(i) {
+    slides[cur].classList.remove('active');
+    dots[cur].setAttribute('aria-current', 'false');
+    cur = i;
+    slides[cur].classList.add('active');
+    dots[cur].setAttribute('aria-current', 'true');
+    if (capEl) capEl.innerHTML = slides[cur].dataset.cap || '';
+  }
+  function play() { timer = setInterval(() => go((cur + 1) % slides.length), 5200); }
+  function pause() { clearInterval(timer); timer = null; }
+
+  go(0);
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) play();
+  run.addEventListener('mouseenter', pause);
+  run.addEventListener('mouseleave', () => { if (!timer) play(); });
+  document.addEventListener('visibilitychange', () => document.hidden ? pause() : (timer || play()));
+})();
 
 // Hamburger nav
 const ham = document.getElementById('nav-hamburger');

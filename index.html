@@ -66,29 +66,29 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-scanline"></div>
-  <div class="hero-still" role="img" aria-label="Warehouse pallets detected and numbered by a VisorVolt model trained on 40 labelled images" style="background-image:url('assets/warehouse/hero-pallets.jpg')"></div>
+  <div class="hero-run" id="hero-run" role="img" aria-label="Real detections from five deployments: telecom antennas, distribution-grid hardware, warehouse pallets, crossarms, racked inventory">
+    <div class="hs active" style="background-image:url('assets/hero-set/01-telecom.jpg')" data-cap="Telecom &middot; panel antennas + RRUs"></div>
+    <div class="hs" data-src="assets/hero-set/02-grid-multiclass.jpg" data-cap="Grid &middot; five asset classes, one pass"></div>
+    <div class="hs" data-src="assets/hero-set/03-warehouse-count.jpg" data-cap="Warehouse &middot; pallets found and counted"></div>
+    <div class="hs" data-src="assets/hero-set/04-crossarm.jpg" data-cap="Grid &middot; held-out circuit, never trained on"></div>
+    <div class="hs" data-src="assets/hero-set/05-warehouse-racking.jpg" data-cap="Warehouse &middot; dense racking, 12 pallets"></div>
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-grid-lines"></div>
   <div class="hero-content">
     <div class="hero-tag">// Domain-Agnostic Vision</div>
     <h1>Any domain. 40 images.<br><em>A working detector.</em></h1>
-    <p class="hero-sub">Show us 40 images of what you care about &mdash; a pallet, a cracked insulator, a solder bridge, a microwave dish. You get back a detector that reaches a median <strong>86% of what a fully-labelled model achieves</strong>, measured across <strong>39 public datasets we didn&rsquo;t choose</strong>. No annotation project. No ML team. It runs inside your network, and it keeps improving after it ships.</p>
+    <p class="hero-sub">A median <strong>86% of a fully-labelled model</strong>, across <strong>39 public datasets we didn&rsquo;t choose</strong>. No annotation project. No ML team.</p>
     <div class="hero-actions">
       <a href="mailto:umang@visorvolt.ai" class="btn-primary">Request a demo &rarr;</a>
       <a href="#platform" class="btn-outline">See how it works</a>
     </div>
-<div class="hero-strip">
-      <span class="hs-lead">Same system, zero retuning &rarr;</span>
-      <a class="hs-item" href="#domains"><img src="assets/strip/wind-corrosion.jpg" alt="Wind detections" loading="lazy" width="420" height="420"><span>Wind</span></a>
-      <a class="hs-item" href="#domains"><img src="assets/strip/cell-towers.jpg" alt="Telecom detections" loading="lazy" width="420" height="420"><span>Telecom</span></a>
-      <a class="hs-item" href="#domains"><img src="assets/strip/truck-movement.jpg" alt="Logistics detections" loading="lazy" width="420" height="420"><span>Logistics</span></a>
-      <a class="hs-item" href="#domains"><img src="assets/strip/pcb-open.jpg" alt="Electronics manufacturing detections" loading="lazy" width="420" height="420"><span>Electronics</span></a>
-      <a class="hs-item" href="#domains"><img src="assets/strip/corrosion-bi3q3.jpg" alt="Bridges detections" loading="lazy" width="420" height="420"><span>Bridges</span></a>
-      <a class="hs-item" href="#domains"><img src="assets/strip/stomata-cells.jpg" alt="Microscopy detections" loading="lazy" width="420" height="420"><span>Microscopy</span></a>
-      <a class="hs-more" href="#domains">+33 more<br>datasets &rarr;</a>
-    </div>
+<a href="#domains" class="hero-more">See all 39 datasets &rarr;</a>
   </div>
-  <div class="hero-cap">Real model output &middot; 40 labelled images<br>Public benchmark imagery (LOCO, TUM, CC0)</div>
+  <div class="hero-meta">
+    <div class="hero-cap"><b id="hero-cap-t">Telecom &middot; panel antennas + RRUs</b><br>Real model output &middot; 40 labelled images</div>
+    <div class="hero-dots" id="hero-dots"></div>
+  </div>
 </section>
 
 <section class="problem-bg" id="problem">
@@ -125,12 +125,12 @@
   <div class="section-inner">
     <div class="eyebrow reveal">// The Proof</div>
     <h2 class="reveal">39 datasets. None of them ours.<br><em>None of them failed.</em></h2>
-    <p class="sec-lede">Two rows below: the assets first, then the damage. Every box is a real detection on a held-out frame, and nothing was rebuilt between any of them.</p>
+    <p class="sec-lede">Assets first, then damage. Every box is a real detection on a held-out frame.</p>
 
     <div class="proof-row">
       <div class="proof-head">
         <span class="proof-num">Assets</span>
-        <p class="sec-lede">We set the pass mark <strong>before</strong> we ran: any dataset under 55% of a fully-labeled model counts as a failure. <strong>Zero of 39 hit it.</strong> Nothing was rebuilt between them: no per-domain engineering, no architecture changes, no tuning. The system had <strong>never seen any of these domains</strong> before the 40 images you give it. Every box below is a real detection on a held-out frame.</p>
+        <p class="sec-lede">Pass mark set <strong>before</strong> we ran: under 55% of a fully-labeled model counts as a failure. <strong>Zero of 39 hit it</strong> &mdash; no per-domain tuning, no architecture changes.</p>
       </div>
       <div class="dom-grid">
       <figure class="dom-card">
@@ -191,13 +191,13 @@
       </figure>
     </div>
     
-      <p class="dom-foot">Held-out measurement against a fully-supervised model trained on the <em>entire</em> labeled dataset for each task. Across all <strong>39</strong> datasets, <strong>none falls below 55%</strong>. The full-system median across public benchmark datasets is <strong>87%</strong>. <span class="wf-fine"><strong>Per-dataset figures carry roughly &#177;3 to 5 points of seed-draw variance. The median across all datasets is stable; a single tile is not. We publish the tile anyway, with its uncertainty.</strong> One dataset is not shown at all: the subsea benchmark (<code>underwater-objects</code>), because our own audit found its fully-supervised comparison model too weak to divide by, so the ratio is not ours to quote.</span> <span class="wf-fine">Honest range, measured: about <strong>90%</strong> on well-conditioned problems and about <strong>87%</strong> on genuinely hard ones. We quote a band, and tell you which end you are in before you buy.</span></p>
+      <p class="dom-foot">Each score is against a model trained on that task&rsquo;s <em>entire</em> labeled dataset. Median <strong>87%</strong>, <strong>none below 55%</strong>. <span class="wf-fine">Single tiles carry &#177;3&ndash;5 points of seed-draw variance; the median is stable. Harder problems land nearer 87%, well-conditioned ones nearer 90% &mdash; we tell you which end you are in before you buy. One benchmark (<code>underwater-objects</code>) is withheld: its comparison model was too weak to divide by.</span></p>
     </div>
 
     <div class="proof-row"><span id="defects"></span>
       <div class="proof-head">
         <span class="proof-num">Defects</span>
-        <p class="sec-lede">Finding an asset is the easy half. The value is in the damage. And damage is exactly where hand-labeling hurts most, because defects are rare, subjective, and expensive for a domain expert to sit and box. <strong>Same 40-image-per-site recipe, no changes.</strong> Every box below is a real detection on a held-out frame.</p>
+        <p class="sec-lede">Finding the asset is the easy half; the value is in the damage &mdash; rare, subjective, and expensive for an expert to box. <strong>Same recipe, unchanged.</strong></p>
       </div>
       <div class="dom-grid">
       <figure class="dom-card">
@@ -242,7 +242,7 @@
       </figure>
     </div>
     
-      <p class="dom-foot">Corrosion, cracks, mildew, breaks and open circuits, five industries, one system, nothing rebuilt between them. The industrial cable-break case at 60% is the weakest and it is here on purpose: thin, low-contrast damage on a busy background is the hardest thing we do, and you should see that before you buy, not after. <span class="wf-fine"><strong>Per-dataset figures carry roughly &#177;3 to 5 points of seed-draw variance. The median across all datasets is stable; a single tile is not. We publish the tile anyway, with its uncertainty.</strong> The wind blade is field imagery from a live inspection model, not one of the 39 benchmark datasets, so it carries its detection confidence. We don't quote a percentage we haven't measured. The electronics tile is also outside the 39: a separate MIT-licensed PCB benchmark, scored on its official held-out test split, and we flag that its fully-supervised ceiling is unusually high (AP50 0.98), so 96% is a strong result on an easy dataset rather than a hard-won one. The 40-image onboarding step ran verbatim there; the upstream proposer had its backbone unfrozen for that one dataset, which we record rather than gloss.</span></p>
+      <p class="dom-foot">Five industries, one system, nothing rebuilt between them. <strong>The cable break at 60% is the weakest and it is here on purpose</strong> &mdash; thin, low-contrast damage on a busy background is the hardest thing we do, and you should see it before you buy. <span class="wf-fine">&#177;3&ndash;5 points of seed-draw variance per tile. The wind blade is live field imagery, not one of the 39, so it carries detection confidence rather than a ratio we haven&rsquo;t measured. The electronics tile is a separate PCB benchmark whose supervised ceiling is unusually high (AP50 0.98) &mdash; a strong result on an easy dataset.</span></p>
     </div>
   </div>
 </section>
@@ -251,7 +251,7 @@
   <div class="section-inner">
     <div class="eyebrow reveal">// How It Works</div>
     <h2 class="reveal">From raw imagery<br>to <em>operational intelligence.</em></h2>
-    <p class="section-sub reveal">Three phases, one loop, on-premises or in your own cloud environment. No labeling project on your side.</p>
+    <p class="section-sub reveal">Three phases, one loop, on your hardware or your own cloud.</p>
 
     <figure class="howfig reveal">
       <svg viewBox="0 0 1080 250" role="img" aria-labelledby="howtitle howdesc" class="howsvg">
@@ -317,7 +317,7 @@
           <div class="timeline-content">
             <div class="tc-phase">// Phase 01 · Days, not months</div>
             <h3 class="tc-title">Asset Inventory</h3>
-            <p class="tc-desc">Upload imagery. Get a structured inventory of the classes you care about. We label them, not you.</p>
+            <p class="tc-desc">Upload imagery. Get a structured inventory of the classes you care about.</p>
           </div>
         </div>
 
@@ -328,7 +328,7 @@
           <div class="timeline-content">
             <div class="tc-phase">// Phase 02 · Days per new asset</div>
             <h3 class="tc-title">Auto Expansion</h3>
-            <p class="tc-desc">A brand-new asset onboarded in days. <strong>40 images per site.</strong> The system labels, verifies and trains on everything else. Multiple assets come out of that one pool of 40. None of the months-long labeling projects competitors need.</p>
+            <p class="tc-desc">A brand-new asset onboarded in days from <strong>40 images per site</strong> &mdash; and multiple assets come out of that one pool of 40.</p>
           </div>
         </div>
 
@@ -347,7 +347,7 @@
     </div>    </div>
 
     <div class="how-proof reveal"><span id="flywheel"></span>
-      <p class="how-proof-line">Standard assets, novel assets, and defects: detected, self-improved, and delivered in open formats your team can work with. Measured at scale, held-out: on 22 held-out public datasets the loop improved the deployed detector <strong>20 times out of 22</strong>, recovering a median <strong>18% of the remaining gap to full supervision</strong> without any further labeling on your side.</p>
+      <p class="how-proof-line">Assets, novel assets and defects &mdash; detected, self-improved, delivered in open formats. Held-out across 22 public datasets, the loop improved the deployed detector <strong>20 times out of 22</strong>, recovering a median <strong>18% of the remaining gap</strong> with no further labelling on your side.</p>
     </div>
     <div class="flywheel-frame reveal">
     <div class="flywheel-embed">
@@ -362,7 +362,7 @@
   <div class="section-inner">
     <div class="eyebrow reveal">// After It Ships</div>
     <h2 class="reveal">A research scientist<br><em>that never sleeps.</em></h2>
-    <p class="section-sub reveal">A model trained on a fixed, hand-labelled dataset starts drifting from field conditions the day it ships, and the fix is another labelling round. Ours ships with <strong>two agents, and you run both</strong>. One improves the <strong>data</strong>: it harvests your own archive, verifies what it finds, and retrains. One improves the <strong>model</strong>: it reads every result, decides whether it is looking at a <strong>model problem or a data problem</strong>, runs the experiment overnight, and keeps what wins. Both run on your hardware, inside your network, with <strong>no ML engineer of yours in the loop</strong> &mdash; and <strong>nothing deploys itself. A human approves every promotion.</strong></p>
+    <p class="section-sub reveal">A fixed, hand-labelled model starts drifting the day it ships. Ours ships with <strong>two agents, and you run both</strong> &mdash; one improves the <strong>data</strong>, one improves the <strong>model</strong>. Both run inside your network, with no ML engineer of yours in the loop. <strong>Nothing deploys itself: a human approves every promotion.</strong></p>
 
     <div class="agents reveal">
       <div class="agent-diagram">
@@ -440,7 +440,7 @@
     <div class="eyebrow reveal">// Why VisorVolt</div>
     <h2 class="reveal">Every serious vendor trains on your data.<br><em>The question is who pays for it.</em></h2>
     <span id="differentiation"></span>
-    <p class="section-sub reveal">In the grid, Buzz Solutions and AiDash both fine-tune on customer-labeled data, and the same economics hold in every other vertical. Every new asset is a new labeling project the customer pays for, and every deployed model begins decaying the day it ships. We are architecturally different: our system generates and verifies its own training data. The difference is not a benchmark score. It is who pays to expand coverage, and what happens to accuracy after deployment.</p>
+    <p class="section-sub reveal">Every vendor trains on your data. Almost all of them make you label it, one vertical at a time, so each new asset is a fresh annotation project on your budget. Ours generates and verifies its own. The difference is not a benchmark score &mdash; it is who pays to expand coverage, and which direction accuracy moves after deployment.</p>
 
     <div class="why-features">
       <div class="wf-row reveal">
@@ -452,7 +452,7 @@
         </div>
         <div class="wf-right">
           <h3 class="wf-title">Proof the domain is hard</h3>
-          <p class="wf-desc">Off-the-shelf models score about <strong>8%</strong> on this imagery, and <strong>0.000</strong> on a class they have never seen. Everyone has to train. The only questions that matter are who pays for the labels, and what happens to the model after it ships. <span class="wf-fine">Our grid system: 81% mAP@0.50, held-out EPRI data. The fully-supervised baseline we measure against beats the published benchmark baseline on 23 of 37 public datasets, so it is not a strawman.</span></p>
+          <p class="wf-desc">Off-the-shelf models score about <strong>8%</strong> here, and <strong>0.000</strong> on a class they have never seen. Everyone has to train. The only questions are who pays for the labels and what happens after it ships. <span class="wf-fine">Our grid system: 81% mAP@0.50, held-out. Our supervised baseline beats the published one on 23 of 37 datasets, so it is not a strawman.</span></p>
         </div>
       </div>
       <div class="wf-row reveal">
@@ -464,7 +464,7 @@
         </div>
         <div class="wf-right">
           <h3 class="wf-title">Who pays to expand coverage</h3>
-          <p class="wf-desc">With label-dependent vendors, every new asset is a labeling project on your budget and your timeline. Our system generates and verifies its own training data, so new assets onboard in days from 40 images per site, with no labeling project on your side. Multiple assets come out of that one pool of 40. <span class="wf-fine">Measured on one domain, one site pair, three asset classes and one archive, at one loop iteration.</span></p>
+          <p class="wf-desc">For label-dependent vendors, every new asset is a project on your budget and your timeline. Ours generates and verifies its own training data &mdash; new assets in days, from 40 images per site, several out of the same 40. <span class="wf-fine">Measured on one domain, one site pair, three asset classes, one loop iteration.</span></p>
         </div>
       </div>
       <div class="wf-row reveal">
@@ -476,7 +476,7 @@
         </div>
         <div class="wf-right">
           <h3 class="wf-title">Beats the cloud. Without the cloud.</h3>
-          <p class="wf-desc">Everyone else phones home to the cloud for the hard part, checking what it found. Ours doesn't. Our on-prem verifier <strong>scores F1 0.80 against a leading cloud model’s 0.71</strong> on our domain, held-out, with nothing leaving your network, and it tells you <strong>when it is unsure</strong>, so a self-labeling system stays auditable without ground truth. The full pipeline, including AI-based verification, runs inside the utility's own NERC CIP boundary, and cloud-dependent vendors cannot match that. <span class="wf-fine">Runs entirely inside your NERC CIP boundary, zero external calls, on-prem or in your own cloud. <span>// Roadmap: formal BCSI attestation is in progress and is not certified today.</span></span></p>
+          <p class="wf-desc">Everyone else phones home to the cloud for the hard part &mdash; checking what it found. Ours doesn&rsquo;t. Our on-prem verifier <strong>scores F1 0.80 against a leading cloud model&rsquo;s 0.71</strong>, held-out, with nothing leaving your network &mdash; and it tells you <strong>when it is unsure</strong>. The whole pipeline, verification included, runs inside your NERC CIP boundary. <span class="wf-fine">Zero external calls. // Roadmap: formal BCSI attestation is in progress, not certified today.</span></p>
         </div>
       </div>
       <div class="wf-row reveal">
@@ -488,7 +488,7 @@
         </div>
         <div class="wf-right">
           <h3 class="wf-title">The number buyers actually feel</h3>
-          <p class="wf-desc">Accuracy is not what wastes a crew&rsquo;s day. False alarms are. On frames containing none of the target assets, the pooled 40-image site model emits <strong>11.5 false detections per 100 frames</strong> against <strong>104.8</strong> for the three separate single-asset models it replaces, roughly <strong>9 times fewer</strong>. <span class="wf-fine">Deployment-style measurement on asset-free frames at detection score 0.50. Two changes did it and neither was a model change: we stopped discarding the archive frames the harvest found nothing in, and we put a floor under the harvest threshold. The 9&times; is against separate per-asset models. Against our own larger 80-image build we claim only <strong>comparable false alarms on half the labels</strong>.</span></p>
+          <p class="wf-desc">Accuracy is not what wastes a crew&rsquo;s day. False alarms are. On frames containing none of the target assets, the pooled 40-image model emits <strong>11.5 false detections per 100 frames</strong> against <strong>104.8</strong> for the three single-asset models it replaces &mdash; roughly <strong>9&times; fewer</strong>. <span class="wf-fine">At detection score 0.50 on asset-free frames. Neither fix was a model change. Against our own 80-image build we claim only comparable false alarms on half the labels.</span></p>
         </div>
       </div>
     </div>
@@ -496,8 +496,8 @@
     <div class="roadmap-strip reveal">
       <div class="rs-head">// Roadmap, so you know what is not built yet</div>
       <div class="rs-items">
-        <div class="rs-item"><h4>Works inside what you already have <span class="wf-fine">// Roadmap</span></h4><p>Detection runs on your hardware and writes to open, standard geospatial formats, so nothing has to move to a new system. <span class="wf-fine">// Roadmap: native connectors into the major GIS and asset platforms are on the roadmap and are not shipped today. We are not going to claim an integration we have not built.</span></p></div>
-        <div class="rs-item"><h4>Compliance on autopilot <span class="wf-fine">// Roadmap</span></h4><p><span class="wf-fine">// Roadmap.</span> Automatic NERC FAC-003 evidence packages assembled from detection output are a roadmap item, not a shipped capability. The detections that would feed them are measured and on this page; the packaging is not built yet, and we are not going to imply it is.</p></div>
+        <div class="rs-item"><h4>Works inside what you already have</h4><p>Detection runs on your hardware and writes to open, standard formats, so nothing has to move to a new system. <span class="wf-fine">// Roadmap: native connectors into the major GIS and asset platforms are not shipped today, and we will not claim an integration we have not built.</span></p></div>
+        <div class="rs-item"><h4>Compliance evidence, assembled <span class="wf-fine">// Roadmap</span></h4><p>Automatic NERC FAC-003 packages built from detection output. <span class="wf-fine">// The detections that would feed them are measured and on this page. The packaging is not built yet, and we will not imply it is.</span></p></div>
       </div>
     </div>
 
@@ -507,7 +507,7 @@
 
 <section class="cta-bg cta-band">
   <div class="cta-inner">
-    <p class="cta-band-line reveal">Forty images, and we choose which ones. Everything after that runs on your hardware.</p>
+    <p class="cta-band-line reveal">Forty images. Everything after that runs on your hardware.</p>
     <div class="reveal"><a href="mailto:umang@visorvolt.ai" class="btn-primary">Request a demo &rarr;</a></div>
   </div>
 </section>
@@ -516,31 +516,31 @@
   <div class="section-inner">
     <div class="eyebrow reveal">// What We Publish</div>
     <h2 class="reveal">What we publish<br><em>that others don't.</em></h2>
-    <p class="section-sub reveal">Every vendor shows you the wins. Here is the rest of the record, because the failures are what tell you whether the wins are real.</p>
+    <p class="section-sub reveal">Every vendor shows you the wins. The failures are what tell you the wins are real.</p>
     <div class="ledger">
       <article class="ledger-item reveal">
         <div class="ledger-fig">1&ndash;8<span class="stat-unit">%</span></div>
         <div class="ledger-key">what off-the-shelf actually scores</div>
         <h3 class="ledger-title">The things that did not work</h3>
-        <p class="ledger-body">Open-vocabulary detectors scored <strong>1 to 8 percent</strong> on this imagery. <strong>Three verifier approaches failed</strong>, each in a different way. Full fine-tuning <strong>collapsed three separate times</strong>, at three different class counts, before we retired it. Every one of those is in our research record with the run that produced it.</p>
+        <p class="ledger-body">Open-vocabulary detectors scored <strong>1&ndash;8%</strong> here. <strong>Three verifier approaches failed</strong>, each differently. Full fine-tuning <strong>collapsed three times</strong> before we retired it. Each is in the record with the run that produced it.</p>
       </article>
       <article class="ledger-item reveal">
         <div class="ledger-fig">0</div>
         <div class="ledger-key">synthetic-data wins claimed</div>
         <h3 class="ledger-title">The experiment we lost</h3>
-        <p class="ledger-body">Synthetic data augmentation was run head to head against real photographs and <strong>lost</strong>. It is not claimed as a win anywhere in this product, on this page, or in our deck. It was the most carefully engineered pipeline we had built at the time, and it still hurt training.</p>
+        <p class="ledger-body">Synthetic augmentation ran head to head against real photographs and <strong>lost</strong>. It is claimed nowhere &mdash; not in the product, not on this page, not in the deck. It was our most carefully engineered pipeline at the time and it still hurt training.</p>
       </article>
       <article class="ledger-item reveal">
         <div class="ledger-fig">6<span class="stat-unit">/12</span></div>
         <div class="ledger-key">forecasts falsified, on record</div>
         <h3 class="ledger-title">We sell measurement, not prediction</h3>
-        <p class="ledger-body"><strong>Four separate up-front difficulty predictors failed out of sample</strong>, which is why we will not forecast how well your assets will work and will instead measure it on your imagery. <strong>Twelve pre-registered forecasts are on record: six held, six were falsified.</strong> Each was written down and committed before the result existed, which is the only reason we can tell you which half is which.</p>
+        <p class="ledger-body"><strong>Four up-front difficulty predictors failed out of sample</strong> &mdash; which is why we measure your assets rather than forecast them. <strong>Twelve pre-registered forecasts on record: six held, six falsified.</strong> Each was committed before the result existed, which is the only reason we can tell you which half is which.</p>
       </article>
       <article class="ledger-item reveal">
         <div class="ledger-fig">0.87</div>
         <div class="ledger-key">promised &middot; 0.43&ndash;0.73 delivered</div>
         <h3 class="ledger-title">Known defect, stated</h3>
-        <p class="ledger-body">The 40-frame calibration <strong>does not transfer to the full archive.</strong> It reports roughly <strong>0.87 precision for every asset while the truth spans 0.43 to 0.73</strong>, and it cannot even rank which asset is worst. That means a customer running the loop today cannot tell from the system alone how clean its auto-labels are. <strong>The fix is under test and ships before we call onboarding autonomous.</strong> We would rather you read this here than discover it yourself.</p>
+        <p class="ledger-body">The 40-frame calibration <strong>does not transfer to the full archive</strong>: it reports about <strong>0.87 precision for every asset while the truth spans 0.43&ndash;0.73</strong>, and cannot rank which is worst. A customer running the loop today cannot tell from the system alone how clean its auto-labels are. <strong>The fix is under test and ships before we call onboarding autonomous.</strong></p>
       </article>
     </div>
   </div>
@@ -611,7 +611,7 @@
   <div class="section-inner">
     <div class="eyebrow reveal">// What You Can Add Later</div>
     <h2 class="reveal">Starts with your first upload.<br><em>Grows with every data layer.</em></h2>
-    <p class="section-sub reveal">No GIS exports required. No SCADA access. No 90-day onboarding project. Start with the imagery you already collect, and add the other data you hold when you are ready. Only the first row ships today.</p>
+    <p class="section-sub reveal">No GIS exports, no SCADA access, no 90-day onboarding. Start with the imagery you already collect. <strong>Only the first row ships today.</strong></p>
 
     <div class="reasoning-tiers reveal">
 
@@ -652,7 +652,7 @@
       </div>
 
     </div>
-    <p class="rtier-foot reveal">In the electric grid those layers read as weather and circuit load. In a different industry they read as something else. The rows are the shape of the product, not a list of utility features. <a href="#assets">See the grid worked through in full &rarr;</a></p>
+    <p class="rtier-foot reveal">In the grid those layers read as weather and circuit load; in another industry, as something else. The rows are the shape of the product, not a list of utility features. <a href="#assets">See the grid worked through in full &rarr;</a></p>
   </div>
 </section>
 
@@ -660,7 +660,7 @@
   <div class="section-inner">
     <div class="eyebrow reveal">// Case Study &middot; Electric Grid</div>
     <h2 class="reveal">The grid, in depth.<br><em>Our deepest deployment, not our identity.</em></h2>
-    <p class="section-sub reveal">One domain, worked through over two years and 22 circuits of real EPRI imagery: the proof that the recipe holds up under sustained production use, not just on a benchmark. Everything above this section is domain-agnostic. Everything in it is the grid.</p>
+    <p class="section-sub reveal">Two years and 22 circuits of real EPRI imagery &mdash; the recipe under sustained production use, not just on a benchmark. <strong>Everything above this section is domain-agnostic. Everything in it is the grid.</strong></p>
   </div>
 
   <div class="img-break" aria-hidden="true">
@@ -837,7 +837,7 @@
     <div class="eyebrow reveal" style="color:var(--orange)">// Get Started</div>
     <h2 class="reveal">Start with imagery<br><em>you're already collecting.</em></h2>
     <p class="section-sub reveal" style="margin:0 auto 40px">
-      40 images per site, and we pick the 40. Days, not months. A structured asset inventory, with no labeling project on your side, no infrastructure change and no commitment.
+      40 images per site, and we pick the 40. Days, not months. No labelling project, no infrastructure change, no commitment.
     </p>
     <div class="cta-actions reveal">
       <a href="mailto:umang@visorvolt.ai" class="btn-primary" style="font-size:15px;padding:15px 32px">Request a demo →</a>
