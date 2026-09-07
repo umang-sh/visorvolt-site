@@ -509,22 +509,73 @@
 
     </div>    </div>
 
-    <div class="hand-strip reveal"><span id="handover"></span>
-      <div class="hand-step">
-        <div class="hand-when">Weeks 1&ndash;4 &middot; with you</div>
-        <h4>Our engineers deploy forward</h4>
-        <p>On your site, on your hardware, on your imagery. We pick the 40 frames, stand up the loop, tune the false-alarm threshold to what your crews will tolerate, and wire the output into the systems you already run.</p>
-      </div>
-      <div class="hand-arrow" aria-hidden="true">
-        <svg viewBox="0 0 56 20"><g fill="none" stroke="#D49040" stroke-width="1.6" stroke-linecap="round"><path d="M4 10 h40"/><path d="M38 5 l6 5 -6 5"/></g></svg>
-        <span>handover</span>
-      </div>
-      <div class="hand-step">
-        <div class="hand-when">From then on &middot; yours</div>
-        <h4>Your team runs it</h4>
-        <p>Same agents, same hardware, your operators. Start a run, review what it proposes, promote what you accept. Our support line stays open &mdash; but nothing in the loop waits on us, and improving it is not a line item.</p>
-      </div>
-    </div>
+    <figure class="handfig reveal" id="handover">
+      <svg viewBox="0 0 1080 232" role="img" aria-label="How delivery works: our engineers deploy on your site for the first weeks, then hand the system over to your team" class="handsvg">
+        <defs>
+          <linearGradient id="hRail" x1="0" x2="1">
+            <stop offset="0%" stop-color="#D49040"/><stop offset="48%" stop-color="#D49040"/>
+            <stop offset="58%" stop-color="#8AAAC2"/><stop offset="100%" stop-color="#8AAAC2"/>
+          </linearGradient>
+          <radialGradient id="hGa"><stop offset="0%" stop-color="#D49040" stop-opacity=".20"/><stop offset="100%" stop-color="#D49040" stop-opacity="0"/></radialGradient>
+          <radialGradient id="hGb"><stop offset="0%" stop-color="#8AAAC2" stop-opacity=".17"/><stop offset="100%" stop-color="#8AAAC2" stop-opacity="0"/></radialGradient>
+        </defs>
+
+        <circle cx="250" cy="112" r="215" fill="url(#hGa)"/>
+        <circle cx="830" cy="112" r="215" fill="url(#hGb)"/>
+
+        <g font-family="DM Mono, monospace">
+          <!-- the rail -->
+          <line x1="40" y1="112" x2="1040" y2="112" stroke="url(#hRail)" stroke-width="2.4" opacity=".7"/>
+
+          <!-- us -->
+          <text x="40" y="34" fill="#D49040" font-size="10" letter-spacing="2.2" textLength="152" lengthAdjust="spacingAndGlyphs">WEEKS 1&ndash;4 &#183; WITH YOU</text>
+          <g class="h-side h-us">
+            <circle cx="72" cy="112" r="26" fill="rgba(212,144,64,.10)" stroke="#D49040" stroke-width="1.5"/>
+            <g fill="none" stroke="#D49040" stroke-width="1.5" stroke-linecap="round">
+              <circle cx="66" cy="106" r="4"/><path d="M59 121 a7 7 0 0 1 14 0"/>
+              <circle cx="80" cy="104" r="3.2" opacity=".6"/><path d="M75 118 a5.5 5.5 0 0 1 11 0" opacity=".6"/>
+            </g>
+            <text x="112" y="102" fill="#EEF2F8" font-size="15" font-weight="700">We stand it up</text>
+            <text x="112" y="124" fill="#7A8BA5" font-size="11.5">our engineers, on your site</text>
+          </g>
+          <g class="h-chips h-ca">
+            <g class="h-chip"><rect x="40" y="156" width="140" height="30" rx="15" fill="rgba(212,144,64,.07)" stroke="rgba(212,144,64,.38)"/><text x="110" y="175" text-anchor="middle" fill="#D49040" font-size="11" textLength="112" lengthAdjust="spacingAndGlyphs">we pick the 40</text></g>
+            <g class="h-chip"><rect x="190" y="156" width="152" height="30" rx="15" fill="rgba(212,144,64,.07)" stroke="rgba(212,144,64,.38)"/><text x="266" y="175" text-anchor="middle" fill="#D49040" font-size="11" textLength="124" lengthAdjust="spacingAndGlyphs">we tune the dial</text></g>
+            <g class="h-chip"><rect x="352" y="156" width="152" height="30" rx="15" fill="rgba(212,144,64,.07)" stroke="rgba(212,144,64,.38)"/><text x="428" y="175" text-anchor="middle" fill="#D49040" font-size="11" textLength="124" lengthAdjust="spacingAndGlyphs">we wire it in</text></g>
+          </g>
+
+          <!-- the handover -->
+          <circle class="h-ring" cx="540" cy="112" r="40" fill="none" stroke="#D49040" stroke-width="1.2"/>
+          <circle cx="540" cy="112" r="27" fill="#0D1420" stroke="rgba(140,180,210,.45)" stroke-width="1.4"/>
+          <g class="h-baton" fill="none" stroke="#D49040" stroke-width="1.8" stroke-linecap="round">
+            <path d="M531 103 l9 9 -9 9" /><path d="M544 103 l9 9 -9 9" opacity=".55"/>
+          </g>
+          <text x="540" y="70" text-anchor="middle" fill="#8AAAC2" font-size="9.5" letter-spacing="2.2" textLength="76" lengthAdjust="spacingAndGlyphs">HANDOVER</text>
+
+          <!-- you -->
+          <text x="1040" y="34" text-anchor="end" fill="#8AAAC2" font-size="10" letter-spacing="2.2" textLength="150" lengthAdjust="spacingAndGlyphs">FROM THEN ON &#183; YOURS</text>
+          <g class="h-side h-you">
+            <circle cx="1008" cy="112" r="26" fill="rgba(140,180,210,.10)" stroke="#8AAAC2" stroke-width="1.5"/>
+            <g fill="none" stroke="#8AAAC2" stroke-width="1.5" stroke-linecap="round">
+              <circle cx="1002" cy="106" r="4"/><path d="M995 121 a7 7 0 0 1 14 0"/>
+              <circle cx="1016" cy="104" r="3.2" opacity=".6"/><path d="M1011 118 a5.5 5.5 0 0 1 11 0" opacity=".6"/>
+            </g>
+            <text x="968" y="102" text-anchor="end" fill="#EEF2F8" font-size="15" font-weight="700">You run it</text>
+            <text x="968" y="124" text-anchor="end" fill="#7A8BA5" font-size="11.5">your operators, your call</text>
+          </g>
+          <g class="h-chips h-cb">
+            <g class="h-chip"><rect x="584" y="156" width="150" height="30" rx="15" fill="rgba(140,180,210,.07)" stroke="rgba(140,180,210,.40)"/><text x="659" y="175" text-anchor="middle" fill="#8AAAC2" font-size="11" textLength="118" lengthAdjust="spacingAndGlyphs">you start runs</text></g>
+            <g class="h-chip"><rect x="746" y="156" width="140" height="30" rx="15" fill="rgba(140,180,210,.07)" stroke="rgba(140,180,210,.40)"/><text x="816" y="175" text-anchor="middle" fill="#8AAAC2" font-size="11" textLength="106" lengthAdjust="spacingAndGlyphs">you approve</text></g>
+            <g class="h-chip"><rect x="898" y="156" width="142" height="30" rx="15" fill="rgba(140,180,210,.07)" stroke="rgba(140,180,210,.40)"/><text x="969" y="175" text-anchor="middle" fill="#8AAAC2" font-size="11" textLength="118" lengthAdjust="spacingAndGlyphs">it improves itself</text></g>
+          </g>
+
+          <text x="540" y="216" text-anchor="middle" fill="#3E4A5E" font-size="10">no services retainer &#183; nothing in the loop waits on us</text>
+
+          <g class="h-tok"><circle r="13" fill="#D49040" opacity=".16"/><circle r="6.5" fill="#D49040" opacity=".4"/><circle r="3.6" fill="#F5C98A"/></g>
+        </g>
+      </svg>
+      <figcaption>Hands-on while we onboard you. Self-serve once it is yours.</figcaption>
+    </figure>
 
     <div class="how-proof reveal"><span id="flywheel"></span>
       <p class="how-proof-line">Assets, novel assets and defects &mdash; detected, self-improved, delivered in open formats. Held-out across 22 public datasets, the loop improved the deployed detector <strong>20 times out of 22</strong>, closing a typical <strong>18% of the remaining gap</strong> with no further labelling on your side.</p>
