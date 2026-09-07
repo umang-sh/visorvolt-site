@@ -957,16 +957,16 @@ footer{
 .howfig figcaption{margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.02em}
 @media(max-width:720px){.howfig{overflow-x:auto}.howsvg{min-width:760px}}
 
-/* --- flywheel: one packet, all the way round --- */
-.fw-stage{opacity:.72}
-.fw-stage rect{transition:stroke .3s,fill .3s}
-.fw-live{opacity:.8}
-.fw-return{opacity:.4}
+/* --- flywheel: packets going all the way round --- */
+.fw-stage{opacity:.78}
+.fw-hl{opacity:0}
+.fw-live{opacity:.82}
+.fw-return{opacity:.42}
 .fw-dot{opacity:0}
 .fw-pulse{opacity:0}
 .fw-watch{opacity:.30}
 
-/* 11s circuit: seed -> auto-label -> verify -> train -> deployed -> back in */
+/* 7s circuit: seed -> auto-label -> verify -> train -> deployed -> back in */
 @keyframes fwRun{
   0%   {opacity:0;transform:translate(196px,108px)}
   3%   {opacity:1;transform:translate(196px,108px)}
@@ -981,444 +981,61 @@ footer{
   66%  {opacity:1;transform:translate(788px,196px)}
   71%  {opacity:1;transform:translate(788px,224px)}
   85%  {opacity:1;transform:translate(452px,224px)}
-  92%  {opacity:1;transform:translate(442px,196px)}
-  97%  {opacity:0;transform:translate(442px,186px)}
-  100% {opacity:0;transform:translate(442px,186px)}
+  93%  {opacity:1;transform:translate(442px,194px)}
+  98%  {opacity:0;transform:translate(442px,184px)}
+  100% {opacity:0;transform:translate(442px,184px)}
 }
-/* each stage lights as the packet reaches it */
+/* each stage flashes as the packet lands on it */
+@keyframes fwHl{
+  0%,9%    {opacity:0}
+  15%,21%  {opacity:1}
+  29%,100% {opacity:0}
+}
 @keyframes fwStage{
-  0%,8%    {opacity:.55}
-  14%,22%  {opacity:1}
-  30%,100% {opacity:.55}
+  0%,9%    {opacity:.78}
+  15%,21%  {opacity:1}
+  29%,100% {opacity:.78}
 }
 @keyframes fwLive{
-  0%,52%   {opacity:.65}
-  60%,72%  {opacity:1}
-  80%,100% {opacity:.65}
+  0%,52%   {opacity:.82}
+  59%,70%  {opacity:1}
+  78%,100% {opacity:.82}
 }
 @keyframes fwPulse{
-  0%,56%  {opacity:0;transform:scale(.72);transform-origin:788px 108px}
-  62%     {opacity:.55;transform:scale(.86)}
-  76%     {opacity:0;transform:scale(1.12)}
-  100%    {opacity:0;transform:scale(1.12)}
+  0%,55%  {opacity:0;transform:scale(.7);transform-origin:788px 108px}
+  61%     {opacity:.7;transform:scale(.88)}
+  78%     {opacity:0;transform:scale(1.18)}
+  100%    {opacity:0;transform:scale(1.18)}
 }
 @keyframes fwMarch{from{stroke-dashoffset:0}to{stroke-dashoffset:-36}}
 @keyframes fwReturn{
-  0%,62%  {opacity:.32}
+  0%,62%  {opacity:.42}
   70%,94% {opacity:1}
-  100%    {opacity:.32}
+  100%    {opacity:.42}
 }
-@keyframes fwWatch{
-  0%,100% {opacity:.25}
-  50%     {opacity:.85}
-}
-@keyframes fwRing{
-  0%,100% {stroke-opacity:.30}
-  50%     {stroke-opacity:.62}
-}
-.howsvg .p1{animation:fwRun 11s cubic-bezier(.62,0,.36,1) infinite}
-.howsvg .p2{animation:fwRun 11s cubic-bezier(.62,0,.36,1) infinite;animation-delay:-5.5s}
-.howsvg .fw-s1{animation:fwStage 11s ease infinite;animation-delay:0s}
-.howsvg .fw-s2{animation:fwStage 11s ease infinite;animation-delay:1.65s}
-.howsvg .fw-s3{animation:fwStage 11s ease infinite;animation-delay:3.3s}
-.howsvg .fw-live{animation:fwLive 11s ease infinite}
-.howsvg .fw-pulse{animation:fwPulse 11s ease-out infinite}
-.howsvg .fw-return{animation:fwReturn 11s ease infinite,fwMarch 2.2s linear infinite}
-.howsvg .fw-ring{animation:fwRing 11s ease infinite}
-.howsvg .fw-watch{animation:fwWatch 3.4s ease-in-out infinite}
+@keyframes fwWatch{0%,100%{opacity:.22}50%{opacity:.9}}
+@keyframes fwRing{0%,100%{stroke-opacity:.28}50%{stroke-opacity:.68}}
+
+.howsvg .p1{animation:fwRun 7s cubic-bezier(.55,0,.4,1) infinite}
+.howsvg .p2{animation:fwRun 7s cubic-bezier(.55,0,.4,1) infinite;animation-delay:-1.75s}
+.howsvg .p3{animation:fwRun 7s cubic-bezier(.55,0,.4,1) infinite;animation-delay:-3.5s}
+.howsvg .p4{animation:fwRun 7s cubic-bezier(.55,0,.4,1) infinite;animation-delay:-5.25s}
+.howsvg .fw-s1{animation:fwStage 7s ease infinite}
+.howsvg .fw-s2{animation:fwStage 7s ease infinite;animation-delay:1.05s}
+.howsvg .fw-s3{animation:fwStage 7s ease infinite;animation-delay:2.1s}
+.howsvg .fw-s1 .fw-hl{animation:fwHl 7s ease infinite}
+.howsvg .fw-s2 .fw-hl{animation:fwHl 7s ease infinite;animation-delay:1.05s}
+.howsvg .fw-s3 .fw-hl{animation:fwHl 7s ease infinite;animation-delay:2.1s}
+.howsvg .fw-live{animation:fwLive 7s ease infinite}
+.howsvg .fw-pulse{animation:fwPulse 7s ease-out infinite}
+.howsvg .fw-return{animation:fwReturn 7s ease infinite,fwMarch 1.1s linear infinite}
+.howsvg .fw-ring{animation:fwRing 7s ease infinite}
+.howsvg .fw-watch{animation:fwWatch 2.4s ease-in-out infinite}
 @media(prefers-reduced-motion:reduce){
-  .howsvg .fw-dot,.howsvg .fw-pulse{display:none}
+  .howsvg .fw-dot,.howsvg .fw-pulse,.howsvg .fw-hl{display:none}
   .howsvg .fw-stage,.howsvg .fw-live,.howsvg .fw-return,
   .howsvg .fw-ring,.howsvg .fw-watch{animation:none;opacity:1;stroke-opacity:1}
 }
-
-/* ---------- HERO: cross-domain proof strip ---------- */
-.hero-strip{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;margin:26px 0 4px}
-.hs-lead{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--muted);align-self:center;max-width:104px;line-height:1.5}
-.hs-item{display:block;text-decoration:none;position:relative;border-radius:9px;overflow:hidden;
-  border:1px solid rgba(212,144,64,.30);transition:transform .22s ease,border-color .22s ease}
-.hs-item:hover{transform:translateY(-4px);border-color:var(--orange-lt)}
-.hs-item img{display:block;width:104px;height:104px;object-fit:cover}
-.hs-item span{position:absolute;left:0;right:0;bottom:0;padding:5px 7px;
-  font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;
-  color:var(--white);background:linear-gradient(transparent,rgba(8,13,20,.90)55%)}
-.hs-more{align-self:center;font-family:var(--mono);font-size:12px;line-height:1.45;
-  color:var(--orange-lt);text-decoration:none;letter-spacing:.03em}
-.hs-more:hover{text-decoration:underline}
-@media(max-width:900px){.hs-item img{width:86px;height:86px}.hs-lead{max-width:none;width:100%}}
-@media(max-width:560px){.hs-item img{width:74px;height:74px}.hero-strip{gap:9px}}
-
-/* ══════════════════════════════════════════════════════════════
-   STAT — the single stat component. Replaces pi-stat, te-stat,
-   psps-stat and wf-metric. One figure, one label, one context note.
-   Modifiers: --sm (compact), --inline (metric column of a wf-row).
-   ══════════════════════════════════════════════════════════════ */
-.stat-grid{display:grid;gap:0;margin-top:72px;border-top:1px solid var(--border);padding-top:56px}
-.stat-grid--4{grid-template-columns:repeat(4,1fr)}
-.stat-grid--3{grid-template-columns:repeat(3,1fr)}
-.stat-grid--tight{margin-top:48px;padding-top:40px}
-.stat-grid + .stat-grid{margin-top:0;border-top:none;padding-top:0}
-.stat{display:flex;flex-direction:column;gap:10px;padding:32px 40px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
-.stat-grid--4 .stat:nth-child(4n),.stat-grid--3 .stat:nth-child(3n){border-right:none}
-.stat-grid--4 .stat:nth-child(4n+1),.stat-grid--3 .stat:nth-child(3n+1){padding-left:0}
-.stat-fig{
-  font-family:var(--mono);font-size:clamp(44px,4.6vw,72px);font-weight:500;
-  color:var(--orange);line-height:.92;letter-spacing:-2px;font-variant-numeric:tabular-nums;
-}
-.stat--sm .stat-fig{font-size:clamp(32px,3vw,46px);letter-spacing:-1px}
-.stat-unit{font-size:.45em;letter-spacing:0;vertical-align:super;opacity:.75}
-.stat-label{font-size:15px;font-weight:600;color:var(--white);line-height:1.32}
-.stat--sm .stat-label{font-size:13.5px}
-.stat-note{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.3px;line-height:1.65}
-.stat--inline{padding:0;border:none;gap:8px}
-.stat--inline .stat-fig{font-size:clamp(40px,4vw,60px)}
-.stat--inline .stat-label{
-  font-family:var(--mono);font-size:10.5px;font-weight:400;color:var(--muted);
-  letter-spacing:1.6px;text-transform:uppercase;line-height:1.5;
-}
-
-/* ── PROOF: two labelled rows in one section ── */
-.proof-row{margin-top:56px}
-.proof-row + .proof-row{margin-top:88px;border-top:1px solid var(--border);padding-top:64px}
-.proof-head{display:flex;align-items:baseline;gap:28px;margin-bottom:28px}
-.proof-num{
-  font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--orange);flex:0 0 auto;padding-top:4px;
-}
-.proof-head .sec-lede{margin:0;flex:1 1 auto}
-
-/* ── HOW IT WORKS: the measured-loop line ── */
-.how-proof{margin-top:72px;border-left:2px solid rgba(212,144,64,.45);padding:4px 0 4px 22px}
-.how-proof-line{margin:0;font-size:16px;line-height:1.7;color:var(--muted)}
-
-/* ── WHY IT WINS: roadmap strip, deliberately quieter than a wf-row ── */
-.roadmap-strip{margin-top:64px;border-top:1px dashed rgba(140,180,210,.28);padding-top:28px}
-.rs-head{font-family:var(--mono);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
-.rs-items{display:grid;grid-template-columns:1fr 1fr;gap:36px}
-.rs-item h4{margin:0 0 8px;font-size:14.5px;font-weight:600;color:rgba(238,242,248,.72)}
-.rs-item p{margin:0;font-size:13px;line-height:1.68;color:var(--muted)}
-
-/* ── MID-PAGE CTA band ── */
-.cta-band{padding:72px 80px}
-.cta-band-line{
-  font-family:var(--serif,'Playfair Display',Georgia,serif);font-size:clamp(22px,2.6vw,34px);
-  line-height:1.3;color:var(--white);margin:0 0 28px;text-wrap:balance;
-}
-
-/* ── WHAT WE PUBLISH: ledger, a different layout from wf-row on purpose ── */
-.ledger{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:64px;border-top:1px solid var(--border)}
-.ledger-item{padding:40px 44px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
-.ledger-item:nth-child(2n){border-right:none}
-.ledger-item:nth-child(2n+1){padding-left:0}
-.ledger-fig{
-  font-family:var(--mono);font-size:clamp(34px,3.2vw,50px);font-weight:500;color:var(--orange);
-  line-height:.95;letter-spacing:-1px;font-variant-numeric:tabular-nums;
-}
-.ledger-fig .stat-unit{font-size:.45em;vertical-align:super;opacity:.75}
-.ledger-key{font-family:var(--mono);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-top:10px}
-.ledger-title{font-size:17px;font-weight:600;color:var(--white);margin:22px 0 10px;line-height:1.3}
-.ledger-body{font-size:14.5px;color:var(--muted);line-height:1.72;margin:0}
-
-/* ── GRID CASE STUDY: sub-headed blocks ── */
-.case-block{margin-top:64px}
-.case-block + .case-block{margin-top:88px;border-top:1px solid var(--border);padding-top:56px}
-.case-head{font-family:var(--mono);font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:var(--orange);margin:0}
-.case-lede{margin:18px 0 0;font-size:16px;color:var(--muted);line-height:1.72;max-width:64ch}
-.rtier-foot{margin-top:36px;font-size:14px;line-height:1.72;color:var(--muted);max-width:76ch}
-.rtier-foot a{color:var(--orange);text-decoration:none}
-.rtier-foot a:hover{text-decoration:underline}
-.assets-bg .img-break{margin:56px 0 0}
-
-@media(max-width:1100px){
-  .stat-grid--4{grid-template-columns:repeat(2,1fr)}
-  .stat-grid--4 .stat:nth-child(2n){border-right:none}
-  .stat-grid--4 .stat:nth-child(4n+1){padding-left:40px}
-  .stat-grid--4 .stat:nth-child(2n+1){padding-left:0}
-  .ledger,.rs-items{grid-template-columns:1fr}
-  .ledger-item{border-right:none;padding-left:0;padding-right:0}
-  .cta-band{padding:56px 20px}
-  .proof-head{flex-direction:column;gap:12px}
-}
-@media(max-width:640px){
-  .stat-grid,.stat-grid--4,.stat-grid--3{grid-template-columns:1fr;margin-top:40px;padding-top:32px}
-  .stat{padding:28px 0;border-right:none}
-  .stat-grid--4 .stat:nth-child(4n+1),.stat-grid--3 .stat:nth-child(3n+1){padding-left:0}
-  .proof-row + .proof-row{margin-top:56px;padding-top:40px}
-  .how-proof{margin-top:48px;padding-left:16px}
-}
-
-/* ============================================================
-   REDESIGN 2026-09 — horizontal positioning, two-agent system
-   ============================================================ */
-
-/* --- hero: single still, no carousel --- */
-.hero-run{position:absolute;inset:0}
-.hero-run .hs{
-  position:absolute;inset:0;background-size:cover;background-position:62% center;
-  opacity:0;transition:opacity 1.1s ease;will-change:opacity;
-}
-.hero-run .hs.active{opacity:1}
-.hero-dots{display:flex;gap:7px}
-.hero-dots button{
-  width:26px;height:3px;border:0;padding:0;border-radius:2px;cursor:pointer;
-  background:rgba(255,255,255,0.25);transition:background .25s;
-}
-.hero-dots button[aria-current="true"]{background:var(--orange)}
-.hero-dots button:focus-visible{outline:2px solid var(--orange-lt);outline-offset:3px}
-@media(max-width:900px){.hero-meta{right:20px;bottom:14px}.hero-cap{font-size:9px}}
-@media(prefers-reduced-motion:reduce){.hero-run .hs{transition:none}}
-.hero-meta{
-  position:absolute;right:32px;bottom:24px;z-index:6;
-  display:flex;flex-direction:column;align-items:flex-end;gap:10px;
-}
-.hero-cap{
-  font-family:var(--mono);font-size:10px;letter-spacing:.6px;
-  color:rgba(255,255,255,0.5);text-align:right;line-height:1.55;
-}
-.hero-cap b{color:rgba(255,255,255,0.82);font-weight:400}
-
-/* --- two-agent system --- */
-.agents{max-width:1080px;margin:0 auto}
-.agent-diagram{
-  border:1px solid rgba(140,180,210,0.22);
-  border-radius:10px;padding:34px 30px 26px;
-  background:rgba(140,180,210,0.04);
-  position:relative;margin-bottom:14px;
-}
-.agent-diagram svg{width:100%;height:auto;display:block}
-.agent-boundary{
-  font-family:var(--mono);font-size:10.5px;letter-spacing:1.6px;
-  text-transform:uppercase;color:#8AAAC2;text-align:center;
-  padding-top:18px;margin-top:20px;
-  border-top:1px dashed rgba(140,180,210,0.28);
-}
-.agent-boundary b{color:var(--orange);font-weight:500}
-.agent-cards{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;
-}
-.agent-card{
-  border:1px solid rgba(255,255,255,0.09);border-radius:8px;
-  padding:24px 22px;background:rgba(255,255,255,0.02);
-}
-.agent-card.is-human{border-color:rgba(191,123,48,0.35);background:rgba(191,123,48,0.05)}
-.ac-kicker{
-  font-family:var(--mono);font-size:10px;letter-spacing:2px;
-  text-transform:uppercase;color:var(--orange);margin-bottom:10px;
-}
-.agent-card.is-human .ac-kicker{color:var(--orange-lt)}
-.ac-title{font-size:19px;font-weight:600;color:var(--white);margin-bottom:10px;line-height:1.25}
-.ac-body{font-size:14.5px;line-height:1.6;color:rgba(255,255,255,0.7);margin-bottom:14px}
-.ac-metric{
-  font-family:var(--mono);font-size:12px;line-height:1.55;
-  color:rgba(255,255,255,0.52);border-top:1px solid rgba(255,255,255,0.08);padding-top:12px;
-}
-.ac-metric b{color:var(--white);font-weight:500}
-
-/* --- the record / ledger --- */
-.ledger-tbl{
-  width:100%;border-collapse:collapse;margin-top:28px;
-  font-size:14.5px;
-}
-.ledger-tbl th{
-  text-align:left;font-family:var(--mono);font-size:10px;
-  letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);
-  font-weight:400;padding:0 14px 12px 0;border-bottom:1px solid rgba(255,255,255,0.1);
-}
-.ledger-tbl td{
-  padding:14px 14px 14px 0;border-bottom:1px solid rgba(255,255,255,0.06);
-  color:rgba(255,255,255,0.74);vertical-align:top;line-height:1.5;
-}
-.ledger-tbl td:first-child{color:var(--white)}
-.v-held{color:#28C840;font-family:var(--mono);font-size:12.5px;white-space:nowrap}
-.v-fals{color:var(--orange-lt);font-family:var(--mono);font-size:12.5px;white-space:nowrap}
-.ledger-close{
-  margin-top:28px;font-size:16px;line-height:1.65;
-  color:rgba(255,255,255,0.8);max-width:680px;
-}
-.ledger-close b{color:var(--white)}
-
-@media(max-width:860px){
-  .agent-cards{grid-template-columns:1fr}
-  .agent-diagram{padding:22px 16px 18px;overflow-x:auto}
-  .agent-diagram svg{min-width:720px}
-  .ledger-tbl{font-size:13px}
-  .ledger-tbl td,.ledger-tbl th{padding-right:8px}
-}
-
-.hero-more{
-  display:inline-block;margin-top:26px;
-  font-family:var(--mono);font-size:12px;letter-spacing:.08em;
-  color:var(--orange-lt);text-decoration:none;
-  border-bottom:1px solid rgba(191,123,48,.35);padding-bottom:3px;
-}
-.hero-more:hover{border-bottom-color:var(--orange-lt)}
-
-/* --- downstream: count / flag / export --- */
-.use-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;align-items:start}
-.use-card{
-  border:1px solid rgba(255,255,255,0.09);border-radius:10px;
-  background:rgba(255,255,255,0.02);padding:26px 24px 24px;
-  display:flex;flex-direction:column;gap:12px;height:100%;
-}
-.use-kicker{
-  font-family:var(--mono);font-size:10px;letter-spacing:2px;
-  text-transform:uppercase;color:var(--orange);
-}
-.use-title{font-size:19px;font-weight:600;color:var(--white);line-height:1.3;margin:0}
-.use-body{font-size:14.5px;line-height:1.62;color:rgba(255,255,255,0.72);margin:0}
-.use-shot{margin-top:auto;padding-top:6px;border-radius:6px;overflow:hidden;line-height:0}
-.use-shot img{width:100%;height:150px;object-fit:cover;display:block;border-radius:6px}
-
-/* --- the record --- */
-.ledger-wrap{margin-top:36px;overflow-x:auto}
-.ledger-tbl{min-width:640px}
-.ledger-tbl td em{font-style:normal;color:var(--white)}
-.ledger{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:40px}
-
-@media(max-width:860px){
-  .use-grid{grid-template-columns:1fr}
-  .ledger{grid-template-columns:1fr}
-  .use-shot img{height:180px}
-}
-
-/* --- mobile: stop the page scrolling sideways ---
-   One wide descendant anywhere widens the body, and every section is
-   body-width, so headings elsewhere stop wrapping and get clipped.
-   Cap the containers, let the two genuinely wide things scroll inside
-   their own box, and give every grid/flex child a min-width of 0. --- */
-@media(max-width:900px){
-  html{overflow-x:hidden}
-  section,footer,nav{max-width:100vw}
-  .section-inner,.cta-inner{max-width:100%;width:100%}
-  img,svg,video,iframe,table,pre{max-width:100%}
-  .howfig,.ledger-wrap,.agent-diagram{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .howsvg{min-width:640px}
-  .ledger-tbl{min-width:520px}
-  .dom-grid,.why-features,.use-grid,.agent-cards,.ledger,.rs-items,.founder-grid,
-  .timeline-steps,.hero-actions,.cta-actions,.footer-links,.nav-links{min-width:0}
-  .dom-card,.wf-row,.use-card,.agent-card,.ledger-item,.rs-item,.timeline-step{min-width:0}
-  h1,h2,h3,h4,p,td,th,figcaption,li{overflow-wrap:break-word}
-  .dom-meta code,.ac-metric,.ledger-key,.wf-fine{overflow-wrap:anywhere}
-}
-
-/* --- subpage (grid.html) --- */
-.grid-hero{padding-top:150px;padding-bottom:8px}
-.grid-h1{
-  font-family:var(--serif);font-size:clamp(34px,4.4vw,58px);
-  line-height:1.08;font-weight:700;margin:14px 0 22px;color:var(--white);
-}
-.grid-h1 em{font-style:italic;color:var(--accent)}
-.back-home{
-  display:inline-block;margin-bottom:22px;
-  font-family:var(--mono);font-size:11px;letter-spacing:.1em;
-  color:var(--muted);text-decoration:none;
-}
-.back-home:hover{color:var(--orange-lt)}
-.nav-links a.is-here{color:var(--orange-lt)}
-
-/* --- research scientist: closing line --- */
-.agent-foot{
-  margin:34px 0 0;max-width:760px;font-size:15.5px;line-height:1.7;
-  color:rgba(255,255,255,0.72);
-  border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;
-}
-.agent-foot strong{color:var(--white)}
-.agent-foot a{color:var(--orange-lt);text-decoration:none;border-bottom:1px solid rgba(191,123,48,.35)}
-.agent-foot a:hover{border-bottom-color:var(--orange-lt)}
-
-/* --- downstream: detection -> record -> your systems --- */
-.recfig{margin:40px 0 10px;padding:0}
-.recsvg{width:100%;height:auto;display:block;overflow:visible}
-.recfig figcaption{
-  margin-top:14px;font-family:var(--mono);font-size:12px;
-  color:var(--muted);letter-spacing:.02em;
-}
-.rec-dest{opacity:.40}
-.rec-dest rect{transition:stroke .3s,fill .3s}
-.rec-dot{opacity:0}
-.rec-box{opacity:.38}
-.rec-row{opacity:.30}
-.rec-fan{opacity:.35}
-
-/* one 6s cycle: detect -> record fills -> fans out to your systems */
-@keyframes recFlow{
-  0%   {opacity:0;transform:translate(214px,125px)}
-  5%   {opacity:1;transform:translate(214px,125px)}
-  16%  {opacity:1;transform:translate(250px,125px)}
-  21%  {opacity:0;transform:translate(260px,125px)}
-  100% {opacity:0;transform:translate(260px,125px)}
-}
-@keyframes recFlowB{
-  0%,50%  {opacity:0;transform:translate(646px,125px)}
-  56%     {opacity:1;transform:translate(646px,125px)}
-  70%     {opacity:1;transform:translate(688px,125px)}
-  78%     {opacity:0;transform:translate(696px,125px)}
-  100%    {opacity:0;transform:translate(696px,125px)}
-}
-@keyframes recBox{
-  0%,3%   {opacity:.38;transform:scale(.96);transform-origin:center}
-  10%,88% {opacity:1;transform:scale(1)}
-  100%    {opacity:.38}
-}
-@keyframes recRow{
-  0%,20%  {opacity:.30}
-  30%,92% {opacity:1}
-  100%    {opacity:.30}
-}
-@keyframes recCard{
-  0%,18%  {stroke-opacity:.35}
-  32%,52% {stroke-opacity:1}
-  100%    {stroke-opacity:.35}
-}
-@keyframes recLight{
-  0%,52%  {opacity:.40}
-  62%,92% {opacity:1}
-  100%    {opacity:.40}
-}
-@keyframes recFan{
-  0%,52%  {opacity:.30;stroke-dashoffset:12}
-  64%,92% {opacity:.85;stroke-dashoffset:0}
-  100%    {opacity:.30}
-}
-.recsvg .d-a{animation:recFlow 6s cubic-bezier(.5,0,.2,1) infinite}
-.recsvg .d-b{animation:recFlowB 6s cubic-bezier(.5,0,.2,1) infinite}
-.recsvg .rb1{animation:recBox 6s ease infinite;animation-delay:.15s}
-.recsvg .rb2{animation:recBox 6s ease infinite;animation-delay:.45s}
-.recsvg .rec-card{animation:recCard 6s ease infinite}
-.recsvg .rr1{animation:recRow 6s ease infinite;animation-delay:0s}
-.recsvg .rr2{animation:recRow 6s ease infinite;animation-delay:.1s}
-.recsvg .rr3{animation:recRow 6s ease infinite;animation-delay:.2s}
-.recsvg .rr4{animation:recRow 6s ease infinite;animation-delay:.3s}
-.recsvg .rr5{animation:recRow 6s ease infinite;animation-delay:.4s}
-.recsvg .rec-d1{animation:recLight 6s linear infinite;animation-delay:.10s}
-.recsvg .rec-d2{animation:recLight 6s linear infinite;animation-delay:.28s}
-.recsvg .rec-d3{animation:recLight 6s linear infinite;animation-delay:.46s}
-.recsvg .rf1{animation:recFan 6s ease infinite;animation-delay:.10s}
-.recsvg .rf3{animation:recFan 6s ease infinite;animation-delay:.46s}
-@media(prefers-reduced-motion:reduce){
-  .recsvg .rec-dot{display:none}
-  .recsvg .rec-box,.recsvg .rec-row,.recsvg .rec-dest,
-  .recsvg .rec-card,.recsvg .rec-fan{animation:none;opacity:1;stroke-opacity:1}
-}
-@media(max-width:900px){
-  .recfig{overflow-x:auto}
-  .recsvg{min-width:760px}
-}
-
-/* --- export card: the record itself, as shipped --- */
-.use-code{
-  margin-top:auto;white-space:pre;overflow-x:auto;
-  font-family:var(--mono);font-size:11.5px;line-height:1.75;
-  color:rgba(255,255,255,.62);
-  background:rgba(8,13,20,.55);
-  border:1px solid rgba(140,180,210,.18);border-radius:6px;
-  padding:14px 16px;
-}
-.use-code .cd-p{color:rgba(140,180,210,.55)}
-.use-code .cd-k{color:#8AAAC2}
-.use-code .cd-s{color:#D49040}
-.use-code .cd-n{color:#28C8B4}
 
 /* --- capture geometry: how the imagery was taken --- */
 .cap-strip{

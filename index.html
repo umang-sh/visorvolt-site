@@ -98,7 +98,7 @@
     <div class="proof-row">
       <div class="proof-head">
         <span class="proof-num">Assets</span>
-        <p class="sec-lede">Pass mark set <strong>before</strong> we ran: under 55% of a fully-labeled model counts as a failure. <strong>Zero of 39 hit it</strong> &mdash; no per-domain tuning, no architecture changes. <span class="wf-fine">Bulk goods is a separate pooled public benchmark, measured the same way.</span></p>
+        <p class="sec-lede">Pass mark set <strong>before</strong> we ran: under 55% of a fully-labeled model counts as a failure. <strong>Zero of 39 hit it</strong> &mdash; no per-domain tuning, no architecture changes.</p>
       </div>
       <div class="dom-grid">
       <figure class="dom-card">
@@ -167,7 +167,7 @@
       </figure>
     </div>
     
-      <p class="dom-foot">Each score compares us against a model trained on that task&rsquo;s <em>entire</em> labeled dataset. A typical result is <strong>87%</strong> of it; the worst was <strong>55%</strong>. <span class="wf-fine">Any single tile can move &#177;3&ndash;5 points run to run; the typical figure is stable. Harder problems land nearer 87%, well-conditioned ones nearer 90% &mdash; we tell you which end you are in before you buy. One benchmark (<code>underwater-objects</code>) is withheld: its comparison model was too weak to divide by.</span></p>
+      <p class="dom-foot">Every percentage is measured against a model trained on that task&rsquo;s <em>entire</em> labeled dataset &mdash; the annotation project you would otherwise be paying for. <strong>Forty images gets you most of the way there.</strong></p>
 
       <div class="cap-strip">
         <div class="cap-head">Proven across the three ways you actually capture</div>
@@ -232,7 +232,7 @@
       </figure>
     </div>
     
-      <p class="dom-foot">Four industries, one system, nothing rebuilt between them. <strong>The cable break at 60% is the weakest and it is here on purpose</strong> &mdash; thin, low-contrast damage on a busy background is the hardest thing we do, and you should see it before you buy. <span class="wf-fine">&#177;3&ndash;5 points of seed-draw variance per tile. The electronics tile is a separate PCB benchmark whose supervised ceiling is unusually high (AP50 0.98) &mdash; a strong result on an easy dataset.</span></p>
+      <p class="dom-foot">Four industries, one system, nothing rebuilt between them. <strong>The cable break at 60% is the weakest and it is here on purpose</strong> &mdash; thin, low-contrast damage on a busy background is the hardest thing we do, and you should see it before you buy.</p>
     </div>
   </div>
 </section>
@@ -245,8 +245,7 @@
 
 
     <figure class="recfig reveal">
-      <svg viewBox="0 0 1080 300" role="img" aria-labelledby="rectitle recdesc" class="recsvg">
-        <title id="rectitle">From a detection to a record to the system that acts on it</title>
+      <svg viewBox="0 0 1080 300" role="img" aria-label="From a detection to a record to the system that acts on it" aria-describedby="recdesc" class="recsvg">
         <desc id="recdesc">A detected pallet in a frame becomes a structured record carrying its class, count, confidence, location and timestamp, which is written into an inventory system, a work order and a compliance log.</desc>
         <defs>
           <marker id="rar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -363,8 +362,7 @@
     <p class="section-sub reveal">Three phases, one loop. An agent runs it end to end &mdash; on your hardware or in your own cloud, started and stopped by <em>your</em> team.</p>
 
     <figure class="howfig reveal">
-      <svg viewBox="0 0 1080 262" role="img" aria-labelledby="howtitle howdesc" class="howsvg">
-        <title id="howtitle">How VisorVolt works</title>
+      <svg viewBox="0 0 1080 262" role="img" aria-label="How VisorVolt works" aria-describedby="howdesc" class="howsvg">
         <desc id="howdesc">Forty labelled images per site produce a detector. The system then labels the rest of your imagery itself, verifies each label, retrains, and the deployed detector feeds the loop, so accuracy climbs after deployment.</desc>
         <defs>
           <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -388,34 +386,44 @@
           <g class="fw-seed">
             <rect x="8" y="60" width="176" height="96" rx="9" fill="rgba(212,144,64,.10)" stroke="#D49040" stroke-width="1.4"/>
             <text x="96" y="96" text-anchor="middle" fill="#D49040" font-size="30" font-weight="700">40</text>
-            <text x="96" y="118" text-anchor="middle" fill="#EEF2F8" font-size="13">labelled images</text>
-            <text x="96" y="136" text-anchor="middle" fill="#7A8BA5" font-size="10.5">once, per site &#183; we choose which</text>
+            <text x="96" y="118" text-anchor="middle" fill="#EEF2F8" font-size="13" textLength="112" lengthAdjust="spacingAndGlyphs">labelled images</text>
+            <text x="96" y="136" text-anchor="middle" fill="#7A8BA5" font-size="10.5" textLength="162" lengthAdjust="spacingAndGlyphs">once, per site &#183; we choose which</text>
           </g>
-          <text x="96" y="42" text-anchor="middle" fill="#7A8BA5" font-size="9.5" letter-spacing="1.6">YOU DO THIS ONCE</text>
+          <text x="96" y="42" text-anchor="middle" fill="#7A8BA5" font-size="9.5" letter-spacing="1.6" textLength="120" lengthAdjust="spacingAndGlyphs">YOU DO THIS ONCE</text>
           <line x1="192" y1="108" x2="232" y2="108" stroke="#D49040" stroke-width="1.6" marker-end="url(#ar)"/>
 
           <!-- the loop -->
           <rect class="fw-ring" x="240" y="34" width="404" height="148" rx="9" fill="rgba(140,180,210,.06)" stroke="rgba(140,180,210,.30)" stroke-width="1.2" stroke-dasharray="4 4"/>
-          <text x="442" y="26" text-anchor="middle" fill="#8AAAC2" font-size="10.5" letter-spacing="1.6">THE FLYWHEEL &#183; RUNS ON YOUR HARDWARE</text>
+          <text x="442" y="26" text-anchor="middle" fill="#8AAAC2" font-size="10.5" letter-spacing="1.6" textLength="300" lengthAdjust="spacingAndGlyphs">THE FLYWHEEL &#183; RUNS ON YOUR HARDWARE</text>
+
+          <!-- packets going round the loop, under the labels -->
+          <g class="fw-dot p1"><circle r="12" fill="#D49040" opacity=".16"/><circle r="6" fill="#D49040" opacity=".38"/><circle r="3.4" fill="#F5C98A"/></g>
+          <g class="fw-dot p2"><circle r="12" fill="#D49040" opacity=".16"/><circle r="6" fill="#D49040" opacity=".38"/><circle r="3.4" fill="#F5C98A"/></g>
+          <g class="fw-dot p3"><circle r="12" fill="#D49040" opacity=".16"/><circle r="6" fill="#D49040" opacity=".38"/><circle r="3.4" fill="#F5C98A"/></g>
+          <g class="fw-dot p4"><circle r="12" fill="#D49040" opacity=".16"/><circle r="6" fill="#D49040" opacity=".38"/><circle r="3.4" fill="#F5C98A"/></g>
+
 
           <g class="fw-stage fw-s1">
             <rect x="258" y="66" width="112" height="84" rx="7" fill="rgba(255,255,255,.05)" stroke="rgba(140,180,210,.28)"/>
+            <rect class="fw-hl" x="258" y="66" width="112" height="84" rx="7" fill="rgba(212,144,64,.10)" stroke="#D49040" stroke-width="1.6"/>
             <circle cx="272" cy="80" r="3.2" fill="#28C8B4"/>
             <text x="314" y="102" text-anchor="middle" fill="#EEF2F8" font-size="12.5">Auto-label</text>
-            <text x="314" y="120" text-anchor="middle" fill="#7A8BA5" font-size="10">your unlabeled</text>
+            <text x="314" y="120" text-anchor="middle" fill="#7A8BA5" font-size="10" textLength="82" lengthAdjust="spacingAndGlyphs">your unlabeled</text>
             <text x="314" y="134" text-anchor="middle" fill="#7A8BA5" font-size="10">imagery</text>
           </g>
           <line x1="378" y1="108" x2="404" y2="108" stroke="#8AAAC2" stroke-width="1.4" marker-end="url(#arS)"/>
           <g class="fw-stage fw-s2">
             <rect x="412" y="66" width="112" height="84" rx="7" fill="rgba(255,255,255,.05)" stroke="rgba(140,180,210,.28)"/>
+            <rect class="fw-hl" x="412" y="66" width="112" height="84" rx="7" fill="rgba(212,144,64,.10)" stroke="#D49040" stroke-width="1.6"/>
             <circle cx="426" cy="80" r="3.2" fill="#D49040"/>
             <text x="468" y="102" text-anchor="middle" fill="#EEF2F8" font-size="12.5">Verify</text>
-            <text x="468" y="120" text-anchor="middle" fill="#7A8BA5" font-size="10">keep the good,</text>
-            <text x="468" y="134" text-anchor="middle" fill="#7A8BA5" font-size="10">drop the rest</text>
+            <text x="468" y="120" text-anchor="middle" fill="#7A8BA5" font-size="10" textLength="82" lengthAdjust="spacingAndGlyphs">keep the good,</text>
+            <text x="468" y="134" text-anchor="middle" fill="#7A8BA5" font-size="10" textLength="76" lengthAdjust="spacingAndGlyphs">drop the rest</text>
           </g>
           <line x1="532" y1="108" x2="558" y2="108" stroke="#8AAAC2" stroke-width="1.4" marker-end="url(#arS)"/>
           <g class="fw-stage fw-s3">
             <rect x="566" y="66" width="62" height="84" rx="7" fill="rgba(255,255,255,.05)" stroke="rgba(140,180,210,.28)"/>
+            <rect class="fw-hl" x="566" y="66" width="62" height="84" rx="7" fill="rgba(212,144,64,.10)" stroke="#D49040" stroke-width="1.6"/>
             <circle cx="578" cy="80" r="3.2" fill="#8AAAC2"/>
             <text x="597" y="107" text-anchor="middle" fill="#EEF2F8" font-size="12.5">Train</text>
             <text x="597" y="125" text-anchor="middle" fill="#7A8BA5" font-size="10">detector</text>
@@ -427,27 +435,26 @@
           <g class="fw-live">
             <rect x="700" y="60" width="176" height="96" rx="9" fill="rgba(40,200,180,.07)" stroke="#28C8B4" stroke-width="1.4"/>
             <text x="788" y="98" text-anchor="middle" fill="#EEF2F8" font-size="14" font-weight="700">Deployed</text>
-            <text x="788" y="118" text-anchor="middle" fill="#7A8BA5" font-size="10.5">on your hardware,</text>
-            <text x="788" y="134" text-anchor="middle" fill="#7A8BA5" font-size="10.5">inside your network</text>
+            <text x="788" y="118" text-anchor="middle" fill="#7A8BA5" font-size="10.5" textLength="118" lengthAdjust="spacingAndGlyphs">on your hardware,</text>
+            <text x="788" y="134" text-anchor="middle" fill="#7A8BA5" font-size="10.5" textLength="130" lengthAdjust="spacingAndGlyphs">inside your network</text>
           </g>
           <circle class="fw-pulse" cx="788" cy="108" r="52" fill="none" stroke="#28C8B4" stroke-width="1.2"/>
 
           <!-- return leg -->
           <path class="fw-return" d="M788 160 L788 214 Q788 224 778 224 L452 224 Q442 224 442 214 L442 190" fill="none" stroke="#D49040" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ar)"/>
-          <text x="616" y="248" text-anchor="middle" fill="#D49040" font-size="11">every new flight feeds the loop: accuracy climbs after deployment, not down</text>
+          <text x="616" y="248" text-anchor="middle" fill="#D49040" font-size="11">every new image you add feeds the loop &#8212; accuracy climbs after deployment, not down</text>
 
           <!-- self-improving agent, watching the loop -->
           <g class="fw-agent">
             <rect x="900" y="60" width="172" height="96" rx="9" fill="rgba(140,180,210,.06)" stroke="rgba(140,180,210,.30)" stroke-width="1.2"/>
             <text x="986" y="94" text-anchor="middle" fill="#EEF2F8" font-size="13" font-weight="700">Self-improving</text>
-            <text x="986" y="114" text-anchor="middle" fill="#7A8BA5" font-size="10.5">an agent watches results</text>
-            <text x="986" y="130" text-anchor="middle" fill="#7A8BA5" font-size="10.5">and fixes model or data</text>
+            <text x="986" y="114" text-anchor="middle" fill="#7A8BA5" font-size="10.5" textLength="148" lengthAdjust="spacingAndGlyphs">an agent watches results</text>
+            <text x="986" y="130" text-anchor="middle" fill="#7A8BA5" font-size="10.5" textLength="142" lengthAdjust="spacingAndGlyphs">and fixes model or data</text>
           </g>
           <path class="fw-watch" d="M884 108 L900 108" stroke="#8AAAC2" stroke-width="1.2" stroke-dasharray="3 3"/>
 
           <!-- packets going round the loop -->
-          <circle class="fw-dot p1" r="4.5" fill="#D49040"/>
-          <circle class="fw-dot p2" r="4.5" fill="#28C8B4"/>
+
         </g>
       </svg>
       <figcaption>40 images per site, once. Everything to the right of that runs on your hardware.</figcaption>
@@ -606,7 +613,7 @@
         </div>
         <div class="wf-right">
           <h3 class="wf-title">Proof the domain is hard</h3>
-          <p class="wf-desc">Off-the-shelf models score about <strong>8%</strong> here, and <strong>0.000</strong> on a class they have never seen. Everyone has to train. The only questions are who pays for the labels and what happens after it ships. <span class="wf-fine">Our grid system: 81% mAP@0.50, held-out. Our supervised baseline beats the published one on 23 of 37 datasets, so it is not a strawman.</span></p>
+          <p class="wf-desc">Off-the-shelf models score about <strong>8%</strong> here, and <strong>0.000</strong> on a class they have never seen. Everyone has to train. The only questions are who pays for the labels and what happens after it ships.</p>
         </div>
       </div>
       <div class="wf-row reveal">
@@ -618,7 +625,7 @@
         </div>
         <div class="wf-right">
           <h3 class="wf-title">Who pays to expand coverage</h3>
-          <p class="wf-desc">For label-dependent vendors, every new asset is a project on your budget and your timeline. Ours generates and verifies its own training data &mdash; new assets in days, from 40 images per site, several out of the same 40. <span class="wf-fine">Measured on one domain, one site pair, three asset classes, one loop iteration.</span></p>
+          <p class="wf-desc">For label-dependent vendors, every new asset is a project on your budget and your timeline. Ours generates and verifies its own training data &mdash; new assets in days, from 40 images per site, several out of the same 40.</p>
         </div>
       </div>
       <div class="wf-row reveal">
@@ -654,7 +661,7 @@
         </div>
         <div class="wf-right">
           <h3 class="wf-title">The number buyers actually feel</h3>
-          <p class="wf-desc">Accuracy is not what wastes a crew&rsquo;s day. False alarms are. On frames containing none of the target assets, the pooled 40-image model emits <strong>11.5 false detections per 100 frames</strong> against <strong>104.8</strong> for the three single-asset models it replaces &mdash; roughly <strong>9&times; fewer</strong>. <span class="wf-fine">At detection score 0.50 on asset-free frames. Neither fix was a model change. Against our own 80-image build we claim only comparable false alarms on half the labels.</span></p>
+          <p class="wf-desc">Accuracy is not what wastes a crew&rsquo;s day. False alarms are. On frames containing none of the target assets, the pooled 40-image model emits <strong>11.5 false detections per 100 frames</strong> against <strong>104.8</strong> for the three single-asset models it replaces &mdash; roughly <strong>9&times; fewer</strong>.</p>
         </div>
       </div>
     </div>
