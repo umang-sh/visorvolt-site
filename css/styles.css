@@ -1506,6 +1506,7 @@ footer{
   .handfig .hc-sep{width:100%;height:1px}
 }
 .h-you{opacity:.42}
+.h-agentic{opacity:.42}
 .h-cb .h-chip{opacity:.32}
 .h-ring{opacity:0}
 .h-tok{opacity:0}
@@ -1537,6 +1538,7 @@ footer{
   0%,32%   {opacity:1}
   56%,100% {opacity:.5}
 }
+@keyframes hLive{0%,100%{opacity:1}50%{opacity:.25}}
 @keyframes hYou{
   0%,44%   {opacity:.42}
   62%,100% {opacity:1}
@@ -1556,6 +1558,8 @@ footer{
 .handsvg .h-baton{animation:hBaton 8s ease infinite}
 .handsvg .h-us{animation:hUs 8s ease infinite}
 .handsvg .h-you{animation:hYou 8s ease infinite}
+.handsvg .h-agentic{animation:hYou 8s ease infinite;animation-delay:.35s}
+.handsvg .h-liv{animation:hLive 1.6s ease-in-out infinite}
 .handsvg .h-ca .h-chip:nth-of-type(1){animation:hChipA 8s ease infinite}
 .handsvg .h-ca .h-chip:nth-of-type(2){animation:hChipA 8s ease infinite;animation-delay:.5s}
 .handsvg .h-ca .h-chip:nth-of-type(3){animation:hChipA 8s ease infinite;animation-delay:1s}
@@ -1565,7 +1569,7 @@ footer{
 @media(prefers-reduced-motion:reduce){
   .handsvg .h-tok,.handsvg .h-ring{display:none}
   .handsvg .h-us,.handsvg .h-you,.handsvg .h-baton,
-  .handsvg .h-chip{animation:none;opacity:1}
+  .handsvg .h-agentic,.handsvg .h-liv,.handsvg .h-chip{animation:none;opacity:1}
 }
 @media(max-width:900px){
   .handfig{overflow-x:auto}
