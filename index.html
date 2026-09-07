@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VisorVolt: 40 images. Any domain.</title>
-<meta name="description" content="You give us 40 images per site; the system generates and verifies the rest of its own training data. A median 87% of a fully hand-labeled model across public benchmark datasets: telecom, medical, microscopy, thermal, subsea, documents, aerial and the electric grid. Runs fully air-gapped inside your network.">
+<meta name="description" content="You give us 40 images per site; the system generates and verifies the rest of its own training data. Typically 87% of a fully hand-labeled model across public benchmark datasets: telecom, medical, microscopy, thermal, subsea, documents, aerial and the electric grid. Runs fully air-gapped inside your network.">
 <link rel="canonical" href="https://visorvolt.ai/">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VisorVolt">
 <meta property="og:url" content="https://visorvolt.ai/">
 <meta property="og:title" content="VisorVolt: 40 images. Any domain.">
-<meta property="og:description" content="You give us 40 images per site; the system generates and verifies the rest of its own training data. A median 87% of a fully hand-labeled model across public benchmark datasets: telecom, medical, microscopy, thermal, subsea, documents, aerial and the electric grid. Runs fully air-gapped inside your network.">
+<meta property="og:description" content="You give us 40 images per site; the system generates and verifies the rest of its own training data. Typically 87% of a fully hand-labeled model across public benchmark datasets: telecom, medical, microscopy, thermal, subsea, documents, aerial and the electric grid. Runs fully air-gapped inside your network.">
 <meta property="og:image" content="https://visorvolt.ai/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -19,7 +19,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="VisorVolt: 40 images. Any domain.">
-<meta name="twitter:description" content="You give us 40 images per site; the system generates and verifies the rest of its own training data. A median 87% of a fully hand-labeled model across public benchmark datasets: telecom, medical, microscopy, thermal, subsea, documents, aerial and the electric grid. Runs fully air-gapped inside your network.">
+<meta name="twitter:description" content="You give us 40 images per site; the system generates and verifies the rest of its own training data. Typically 87% of a fully hand-labeled model across public benchmark datasets: telecom, medical, microscopy, thermal, subsea, documents, aerial and the electric grid. Runs fully air-gapped inside your network.">
 <meta name="twitter:image" content="https://visorvolt.ai/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -98,7 +98,7 @@
     <div class="proof-row">
       <div class="proof-head">
         <span class="proof-num">Assets</span>
-        <p class="sec-lede">Pass mark set <strong>before</strong> we ran: under 55% of a fully-labeled model counts as a failure. <strong>Zero of 39 hit it</strong> &mdash; no per-domain tuning, no architecture changes.</p>
+        <p class="sec-lede">Pass mark set <strong>before</strong> we ran: under 55% of a fully-labeled model counts as a failure. <strong>Zero of 39 hit it</strong> &mdash; no per-domain tuning, no architecture changes. <span class="wf-fine">Bulk goods is a separate pooled public benchmark, measured the same way.</span></p>
       </div>
       <div class="dom-grid">
       <figure class="dom-card">
@@ -157,9 +157,17 @@
           <span class="dom-score">97%<em>of a hand-labeled model</em></span>
         </figcaption>
       </figure>
+      <figure class="dom-card">
+        <img src="assets/domains/sacks.jpg" alt="Jute sacks detected on a pallet stack by a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Bulk Goods</span>
+          <span class="dom-meta">Jute sacks &middot; <code>sack</code></span>
+          <span class="dom-score">83%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
     </div>
     
-      <p class="dom-foot">Each score is against a model trained on that task&rsquo;s <em>entire</em> labeled dataset. Median <strong>87%</strong>, <strong>none below 55%</strong>. <span class="wf-fine">Single tiles carry &#177;3&ndash;5 points of seed-draw variance; the median is stable. Harder problems land nearer 87%, well-conditioned ones nearer 90% &mdash; we tell you which end you are in before you buy. One benchmark (<code>underwater-objects</code>) is withheld: its comparison model was too weak to divide by.</span></p>
+      <p class="dom-foot">Each score compares us against a model trained on that task&rsquo;s <em>entire</em> labeled dataset. A typical result is <strong>87%</strong> of it; the worst was <strong>55%</strong>. <span class="wf-fine">Any single tile can move &#177;3&ndash;5 points run to run; the typical figure is stable. Harder problems land nearer 87%, well-conditioned ones nearer 90% &mdash; we tell you which end you are in before you buy. One benchmark (<code>underwater-objects</code>) is withheld: its comparison model was too weak to divide by.</span></p>
     </div>
 
     <div class="proof-row"><span id="defects"></span>
@@ -168,15 +176,7 @@
         <p class="sec-lede">Finding the asset is the easy half; the value is in the damage &mdash; rare, subjective, and expensive for an expert to box. <strong>Same recipe, unchanged.</strong></p>
       </div>
       <div class="dom-grid">
-      <figure class="dom-card">
-        <img src="assets/defects/wind-corrosion.jpg" alt="Wind turbine blade corrosion detected on a real inspection frame" loading="lazy" width="900" height="900">
-        <figcaption>
-          <span class="dom-name">Wind Energy</span>
-          <span class="dom-meta">Blade leading-edge corrosion · <code>corrosion</code></span>
-          <span class="dom-score">0.94<em>detection confidence · field imagery</em></span>
-        </figcaption>
-      </figure>
-      <figure class="dom-card">
+            <figure class="dom-card">
         <img src="assets/defects/corrosion-bi3q3.jpg" alt="Civil / Bridges defect detection, real output from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
         <figcaption>
           <span class="dom-name">Civil / Bridges</span>
@@ -210,7 +210,7 @@
       </figure>
     </div>
     
-      <p class="dom-foot">Five industries, one system, nothing rebuilt between them. <strong>The cable break at 60% is the weakest and it is here on purpose</strong> &mdash; thin, low-contrast damage on a busy background is the hardest thing we do, and you should see it before you buy. <span class="wf-fine">&#177;3&ndash;5 points of seed-draw variance per tile. The wind blade is live field imagery, not one of the 39, so it carries detection confidence rather than a ratio we haven&rsquo;t measured. The electronics tile is a separate PCB benchmark whose supervised ceiling is unusually high (AP50 0.98) &mdash; a strong result on an easy dataset.</span></p>
+      <p class="dom-foot">Four industries, one system, nothing rebuilt between them. <strong>The cable break at 60% is the weakest and it is here on purpose</strong> &mdash; thin, low-contrast damage on a busy background is the hardest thing we do, and you should see it before you buy. <span class="wf-fine">&#177;3&ndash;5 points of seed-draw variance per tile. The electronics tile is a separate PCB benchmark whose supervised ceiling is unusually high (AP50 0.98) &mdash; a strong result on an easy dataset.</span></p>
     </div>
   </div>
 </section>
@@ -223,57 +223,83 @@
 
 
     <figure class="recfig reveal">
-      <svg viewBox="0 0 1080 268" role="img" aria-labelledby="rectitle recdesc" class="recsvg">
+      <svg viewBox="0 0 1080 300" role="img" aria-labelledby="rectitle recdesc" class="recsvg">
         <title id="rectitle">From a detection to a record to the system that acts on it</title>
         <desc id="recdesc">A detected pallet in a frame becomes a structured record carrying its class, count, confidence, location and timestamp, which is written into an inventory system, a work order and a compliance log.</desc>
         <defs>
           <marker id="rar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
             <path d="M0 0 L10 5 L0 10 z" fill="#D49040"/>
           </marker>
+          <radialGradient id="rgTeal"><stop offset="0%" stop-color="#28C8B4" stop-opacity=".16"/><stop offset="100%" stop-color="#28C8B4" stop-opacity="0"/></radialGradient>
+          <radialGradient id="rgOrange"><stop offset="0%" stop-color="#D49040" stop-opacity=".20"/><stop offset="100%" stop-color="#D49040" stop-opacity="0"/></radialGradient>
+          <radialGradient id="rgSlate"><stop offset="0%" stop-color="#8AAAC2" stop-opacity=".14"/><stop offset="100%" stop-color="#8AAAC2" stop-opacity="0"/></radialGradient>
+          <linearGradient id="rgWire" x1="0" x2="1"><stop offset="0%" stop-color="#D49040" stop-opacity=".15"/><stop offset="50%" stop-color="#D49040" stop-opacity=".55"/><stop offset="100%" stop-color="#D49040" stop-opacity=".15"/></linearGradient>
         </defs>
+
+        <!-- ambient glows -->
+        <circle cx="112" cy="140" r="132" fill="url(#rgTeal)"/>
+        <circle cx="452" cy="140" r="168" fill="url(#rgOrange)"/>
+        <circle cx="822" cy="140" r="150" fill="url(#rgSlate)"/>
+
         <g font-family="DM Mono, monospace">
 
-          <!-- 1 · the frame -->
-          <text x="8" y="26" fill="#7A8BA5" font-size="10" letter-spacing="1.8">01 &#183; DETECTION</text>
-          <rect x="8" y="40" width="196" height="150" rx="8" fill="rgba(140,180,210,.05)" stroke="rgba(140,180,210,.28)" stroke-width="1.2"/>
-          <rect x="34" y="112" width="66" height="34" rx="2" fill="none" stroke="#28C8B4" stroke-width="2"/>
-          <rect x="110" y="104" width="74" height="42" rx="2" fill="none" stroke="#28C8B4" stroke-width="2"/>
-          <text x="34" y="106" fill="#28C8B4" font-size="9">1</text>
-          <text x="110" y="98" fill="#28C8B4" font-size="9">2</text>
-          <text x="106" y="176" text-anchor="middle" fill="#5A6B85" font-size="9.5">one frame, on your camera</text>
-          <line x1="212" y1="115" x2="252" y2="115" stroke="#D49040" stroke-width="1.6" marker-end="url(#rar)"/>
+          <!-- 01 · detection -->
+          <text x="16" y="34" fill="#28C8B4" font-size="10" letter-spacing="2.2">01</text>
+          <text x="40" y="34" fill="#5A6B85" font-size="10" letter-spacing="2.2">DETECTION</text>
+          <rect x="16" y="50" width="192" height="150" rx="9" fill="rgba(140,180,210,.05)" stroke="rgba(140,180,210,.26)" stroke-width="1.2"/>
+          <g class="rec-box rb1">
+            <rect x="42" y="122" width="64" height="34" rx="2" fill="rgba(40,200,180,.10)" stroke="#28C8B4" stroke-width="2"/>
+            <text x="42" y="116" fill="#28C8B4" font-size="9">1</text>
+          </g>
+          <g class="rec-box rb2">
+            <rect x="116" y="114" width="72" height="42" rx="2" fill="rgba(40,200,180,.10)" stroke="#28C8B4" stroke-width="2"/>
+            <text x="116" y="108" fill="#28C8B4" font-size="9">2</text>
+          </g>
+          <text x="112" y="186" text-anchor="middle" fill="#5A6B85" font-size="9.5">one frame, your camera</text>
+          <line x1="216" y1="125" x2="256" y2="125" stroke="url(#rgWire)" stroke-width="1.8" marker-end="url(#rar)"/>
 
-          <!-- 2 · the record -->
-          <text x="262" y="26" fill="#D49040" font-size="10" letter-spacing="1.8">02 &#183; STRUCTURED RECORD</text>
-          <rect x="262" y="40" width="380" height="150" rx="8" fill="rgba(212,144,64,.07)" stroke="#D49040" stroke-width="1.4"/>
-          <text x="282" y="68" fill="#5A6B85" font-size="11">class</text><text x="392" y="68" fill="#EEF2F8" font-size="11">pallet</text>
-          <text x="282" y="92" fill="#5A6B85" font-size="11">count</text><text x="392" y="92" fill="#EEF2F8" font-size="11">7</text>
-          <text x="282" y="116" fill="#5A6B85" font-size="11">confidence</text><text x="392" y="116" fill="#EEF2F8" font-size="11">0.94</text>
-          <text x="282" y="140" fill="#5A6B85" font-size="11">location</text><text x="392" y="140" fill="#EEF2F8" font-size="11">aisle 3 &#183; bay 12</text>
-          <text x="282" y="164" fill="#5A6B85" font-size="11">captured</text><text x="392" y="164" fill="#EEF2F8" font-size="11">2026&#8209;09&#8209;07 04:18</text>
-          <line x1="650" y1="115" x2="690" y2="115" stroke="#D49040" stroke-width="1.6" marker-end="url(#rar)"/>
+          <!-- 02 · record -->
+          <text x="266" y="34" fill="#D49040" font-size="10" letter-spacing="2.2">02</text>
+          <text x="290" y="34" fill="#D49040" font-size="10" letter-spacing="2.2">STRUCTURED RECORD</text>
+          <rect class="rec-card" x="266" y="50" width="376" height="150" rx="9" fill="rgba(212,144,64,.07)" stroke="#D49040" stroke-width="1.4"/>
+          <g class="rec-row rr1"><text x="288" y="80" fill="#5A6B85" font-size="11">class</text><text x="400" y="80" fill="#EEF2F8" font-size="11">pallet</text></g>
+          <g class="rec-row rr2"><text x="288" y="104" fill="#5A6B85" font-size="11">count</text><text x="400" y="104" fill="#EEF2F8" font-size="11">7</text></g>
+          <g class="rec-row rr3"><text x="288" y="128" fill="#5A6B85" font-size="11">confidence</text><text x="400" y="128" fill="#EEF2F8" font-size="11">0.94</text></g>
+          <g class="rec-row rr4"><text x="288" y="152" fill="#5A6B85" font-size="11">location</text><text x="400" y="152" fill="#EEF2F8" font-size="11">aisle 3 &#183; bay 12</text></g>
+          <g class="rec-row rr5"><text x="288" y="176" fill="#5A6B85" font-size="11">captured</text><text x="400" y="176" fill="#EEF2F8" font-size="11">04:18</text></g>
+          <line x1="650" y1="125" x2="690" y2="125" stroke="url(#rgWire)" stroke-width="1.8" marker-end="url(#rar)"/>
 
-          <!-- 3 · destinations -->
-          <text x="700" y="26" fill="#7A8BA5" font-size="10" letter-spacing="1.8">03 &#183; YOUR SYSTEMS</text>
+          <!-- 03 · destinations -->
+          <text x="700" y="34" fill="#8AAAC2" font-size="10" letter-spacing="2.2">03</text>
+          <text x="724" y="34" fill="#5A6B85" font-size="10" letter-spacing="2.2">YOUR SYSTEMS</text>
           <g class="rec-dest rec-d1">
-            <rect x="700" y="40" width="238" height="42" rx="7" fill="rgba(255,255,255,.04)" stroke="rgba(140,180,210,.30)"/>
-            <text x="718" y="66" fill="#EEF2F8" font-size="12">Inventory system</text>
+            <rect x="700" y="50" width="248" height="42" rx="7" fill="rgba(255,255,255,.045)" stroke="rgba(140,180,210,.30)"/>
+            <circle cx="722" cy="71" r="3.5" fill="#28C8B4"/>
+            <text x="740" y="75" fill="#EEF2F8" font-size="12">Inventory system</text>
           </g>
           <g class="rec-dest rec-d2">
-            <rect x="700" y="94" width="238" height="42" rx="7" fill="rgba(255,255,255,.04)" stroke="rgba(140,180,210,.30)"/>
-            <text x="718" y="120" fill="#EEF2F8" font-size="12">Work order</text>
+            <rect x="700" y="104" width="248" height="42" rx="7" fill="rgba(255,255,255,.045)" stroke="rgba(140,180,210,.30)"/>
+            <circle cx="722" cy="125" r="3.5" fill="#D49040"/>
+            <text x="740" y="129" fill="#EEF2F8" font-size="12">Work order</text>
           </g>
           <g class="rec-dest rec-d3">
-            <rect x="700" y="148" width="238" height="42" rx="7" fill="rgba(255,255,255,.04)" stroke="rgba(140,180,210,.30)"/>
-            <text x="718" y="174" fill="#EEF2F8" font-size="12">Compliance log</text>
+            <rect x="700" y="158" width="248" height="42" rx="7" fill="rgba(255,255,255,.045)" stroke="rgba(140,180,210,.30)"/>
+            <circle cx="722" cy="179" r="3.5" fill="#8AAAC2"/>
+            <text x="740" y="183" fill="#EEF2F8" font-size="12">Compliance log</text>
           </g>
-          <text x="700" y="216" fill="#5A6B85" font-size="9.5">open formats &#183; no new platform to adopt</text>
+          <!-- fan-out from the second arrow into each destination -->
+          <path d="M690 125 L700 125" stroke="rgba(212,144,64,.5)" stroke-width="1.4"/>
+          <path class="rec-fan rf1" d="M690 125 Q698 125 698 96 Q698 71 700 71" fill="none" stroke="#D49040" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <path class="rec-fan rf3" d="M690 125 Q698 125 698 154 Q698 179 700 179" fill="none" stroke="#D49040" stroke-width="1.2" stroke-dasharray="3 3"/>
 
-          <!-- travelling dot -->
-          <circle class="rec-dot" r="4" fill="#D49040"/>
+          <text x="700" y="226" fill="#5A6B85" font-size="9.5">open formats &#183; no new platform to adopt</text>
+          <text x="16" y="262" fill="#3E4A5E" font-size="9.5">Same record, whatever the object &#183; a pallet &#183; a cracked insulator &#183; a sack &#183; a solder bridge</text>
+
+          <!-- travelling packets -->
+          <circle class="rec-dot d-a" r="4" fill="#28C8B4"/>
+          <circle class="rec-dot d-b" r="4" fill="#D49040"/>
         </g>
       </svg>
-      <figcaption>Same record, whatever the object. A pallet, a cracked insulator, a sack, a solder bridge.</figcaption>
     </figure>
 
     <div class="use-grid reveal">
@@ -293,6 +319,16 @@
         <div class="use-kicker">// Export</div>
         <h3 class="use-title">Into the system that acts on it</h3>
         <p class="use-body">Boxes, counts, classes and confidences in open, standard formats &mdash; inventory systems, work orders, GIS, compliance logs. Nothing has to move to a new platform.</p>
+        <div class="use-code" aria-label="Example of an exported detection record">
+<span class="cd-p">{</span>
+  <span class="cd-k">"class"</span>: <span class="cd-s">"pallet"</span>,
+  <span class="cd-k">"count"</span>: <span class="cd-n">7</span>,
+  <span class="cd-k">"confidence"</span>: <span class="cd-n">0.94</span>,
+  <span class="cd-k">"bbox"</span>: [<span class="cd-n">412</span>,<span class="cd-n">688</span>,<span class="cd-n">203</span>,<span class="cd-n">96</span>],
+  <span class="cd-k">"site"</span>: <span class="cd-s">"aisle 3 / bay 12"</span>,
+  <span class="cd-k">"captured"</span>: <span class="cd-s">"2026-09-07T04:18Z"</span>
+<span class="cd-p">}</span>
+        </div>
       </div>
     </div>
   </div>
@@ -397,7 +433,7 @@
     </div>    </div>
 
     <div class="how-proof reveal"><span id="flywheel"></span>
-      <p class="how-proof-line">Assets, novel assets and defects &mdash; detected, self-improved, delivered in open formats. Held-out across 22 public datasets, the loop improved the deployed detector <strong>20 times out of 22</strong>, recovering a median <strong>18% of the remaining gap</strong> with no further labelling on your side.</p>
+      <p class="how-proof-line">Assets, novel assets and defects &mdash; detected, self-improved, delivered in open formats. Held-out across 22 public datasets, the loop improved the deployed detector <strong>20 times out of 22</strong>, closing a typical <strong>18% of the remaining gap</strong> with no further labelling on your side.</p>
     </div>
   </div>
 </section>

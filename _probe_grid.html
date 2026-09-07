@@ -1,0 +1,125 @@
+<link rel="stylesheet" href="css/styles.css"><body style="background:#0D1420"><section id="domains">
+  <div class="section-inner">
+    <div class="eyebrow">// The Proof</div>
+    <h2 class="reveal">39 datasets. None of them ours.<br><em>None of them failed.</em></h2>
+    <p class="sec-lede">Assets first, then damage. Every box is a real detection on a held-out frame.</p>
+
+    <div class="proof-row">
+      <div class="proof-head">
+        <span class="proof-num">Assets</span>
+        <p class="sec-lede">Pass mark set <strong>before</strong> we ran: under 55% of a fully-labeled model counts as a failure. <strong>Zero of 39 hit it</strong> &mdash; no per-domain tuning, no architecture changes. <span class="wf-fine">Bulk goods is a separate pooled public benchmark, measured the same way.</span></p>
+      </div>
+      <div class="dom-grid">
+      <figure class="dom-card">
+        <img src="assets/domains/cell-towers.jpg" alt="Telecom, real detections from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Telecom</span>
+          <span class="dom-meta">Tower joints · public benchmark · <code>joint</code></span>
+          <span class="dom-score">75%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/domains/construction-safety-gsnvb.jpg" alt="Construction, real detections from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Construction</span>
+          <span class="dom-meta">Site safety · <code>person</code></span>
+          <span class="dom-score">96%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/domains/flir-camera-objects.jpg" alt="Thermal, real detections from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Thermal</span>
+          <span class="dom-meta">Night imagery · <code>person</code></span>
+          <span class="dom-score">77%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/domains/stomata-cells.jpg" alt="Microscopy, real detections from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Microscopy</span>
+          <span class="dom-meta">Plant stomata · <code>open</code></span>
+          <span class="dom-score">82%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/domains/truck-movement.jpg" alt="Logistics, chassis detection in a container terminal, real output from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Logistics</span>
+          <span class="dom-meta">Container terminal · <code>otr_chassis</code></span>
+          <span class="dom-score">93%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/domains/aerial-pool.jpg" alt="Aerial survey, real detections from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Aerial Survey</span>
+          <span class="dom-meta">Overhead drone · <code>bodysurface</code></span>
+          <span class="dom-score">85%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/domains/document-parts.jpg" alt="Documents, real detections from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Documents</span>
+          <span class="dom-meta">Table extraction · <code>table</code></span>
+          <span class="dom-score">97%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/domains/sacks.jpg" alt="Jute sacks detected on a pallet stack by a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Bulk Goods</span>
+          <span class="dom-meta">Jute sacks &middot; <code>sack</code></span>
+          <span class="dom-score">83%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+    </div>
+    
+      <p class="dom-foot">Each score is against a model trained on that task&rsquo;s <em>entire</em> labeled dataset. Median <strong>87%</strong>, <strong>none below 55%</strong>. <span class="wf-fine">Single tiles carry &#177;3&ndash;5 points of seed-draw variance; the median is stable. Harder problems land nearer 87%, well-conditioned ones nearer 90% &mdash; we tell you which end you are in before you buy. One benchmark (<code>underwater-objects</code>) is withheld: its comparison model was too weak to divide by.</span></p>
+    </div>
+
+    <div class="proof-row"><span id="defects"></span>
+      <div class="proof-head">
+        <span class="proof-num">Defects</span>
+        <p class="sec-lede">Finding the asset is the easy half; the value is in the damage &mdash; rare, subjective, and expensive for an expert to box. <strong>Same recipe, unchanged.</strong></p>
+      </div>
+      <div class="dom-grid">
+            <figure class="dom-card">
+        <img src="assets/defects/corrosion-bi3q3.jpg" alt="Civil / Bridges defect detection, real output from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Civil / Bridges</span>
+          <span class="dom-meta">Structural cracking · <code>crack</code></span>
+          <span class="dom-score">79%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/defects/leaf-disease-nsdsr.jpg" alt="Agriculture defect detection, real output from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Agriculture</span>
+          <span class="dom-meta">Crop mildew · <code>mildew</code></span>
+          <span class="dom-score">80%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/defects/cable-damage.jpg" alt="Industrial defect detection, real output from a 40-label VisorVolt model" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Industrial</span>
+          <span class="dom-meta">Cable break · <code>break</code></span>
+          <span class="dom-score">60%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+      <figure class="dom-card">
+        <img src="assets/defects/pcb-open.jpg" alt="Electronics manufacturing, open-circuit defects detected on a held-out inspection frame" loading="lazy" width="640" height="640">
+        <figcaption>
+          <span class="dom-name">Electronics Mfg</span>
+          <span class="dom-meta">PCB inspection &middot; <code>open</code></span>
+          <span class="dom-score">96%<em>of a hand-labeled model</em></span>
+        </figcaption>
+      </figure>
+    </div>
+    
+      <p class="dom-foot">Four industries, one system, nothing rebuilt between them. <strong>The cable break at 60% is the weakest and it is here on purpose</strong> &mdash; thin, low-contrast damage on a busy background is the hardest thing we do, and you should see it before you buy. <span class="wf-fine">&#177;3&ndash;5 points of seed-draw variance per tile. The electronics tile is a separate PCB benchmark whose supervised ceiling is unusually high (AP50 0.98) &mdash; a strong result on an easy dataset.</span></p>
+    </div>
+  </div>
+</section></body>

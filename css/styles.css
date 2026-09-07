@@ -916,10 +916,11 @@ footer{
 
 /* ---------- DOMAINS: cross-domain proof grid ---------- */
 .sec-lede{max-width:820px;color:var(--slate);font-size:17px;line-height:1.65;margin:0 0 38px}
-.dom-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:18px}
+/* 8 asset tiles + 4 defect tiles: both divide by 4, so the grid is always full */
+.dom-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 /* the defects row carries 5 tiles: let it run 5-up on wide screens rather than
    leaving a single orphan on a second line */
-@media(min-width:1180px){.proof-row:last-child .dom-grid{grid-template-columns:repeat(5,1fr)}}
+
 .dom-card{margin:0;background:var(--card);border:1px solid var(--border-slate);border-radius:10px;
   overflow:hidden;transition:transform .25s ease,border-color .25s ease}
 .dom-card:hover{transform:translateY(-3px);border-color:rgba(212,144,64,.45)}
@@ -932,7 +933,8 @@ footer{
 .dom-score em{display:block;font-style:normal;font-size:11px;color:var(--muted);letter-spacing:.03em}
 .dom-foot{margin:30px 0 0;max-width:820px;color:var(--muted);font-size:14.5px;line-height:1.7}
 .dom-foot strong{color:var(--slate)}
-@media(max-width:640px){.dom-grid{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}}
+@media(max-width:1000px){.dom-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
+@media(max-width:420px){.dom-grid{grid-template-columns:1fr}}
 
 /* ---------- HERO domain strip: breadth visible above the fold ---------- */
 .hero-strip{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:26px 0 6px}
@@ -1257,35 +1259,88 @@ footer{
   margin-top:14px;font-family:var(--mono);font-size:12px;
   color:var(--muted);letter-spacing:.02em;
 }
-.rec-dest{opacity:.42}
+.rec-dest{opacity:.40}
 .rec-dest rect{transition:stroke .3s,fill .3s}
 .rec-dot{opacity:0}
-/* enters the record on arrow 1, re-emerges on arrow 2 as output */
+.rec-box{opacity:.38}
+.rec-row{opacity:.30}
+.rec-fan{opacity:.35}
+
+/* one 6s cycle: detect -> record fills -> fans out to your systems */
 @keyframes recFlow{
-  0%   {opacity:0;transform:translate(214px,115px)}
-  6%   {opacity:1;transform:translate(214px,115px)}
-  20%  {opacity:1;transform:translate(250px,115px)}
-  26%  {opacity:0;transform:translate(258px,115px)}
-  54%  {opacity:0;transform:translate(648px,115px)}
-  60%  {opacity:1;transform:translate(652px,115px)}
-  76%  {opacity:1;transform:translate(688px,115px)}
-  84%  {opacity:0;transform:translate(692px,115px)}
-  100% {opacity:0;transform:translate(692px,115px)}
+  0%   {opacity:0;transform:translate(214px,125px)}
+  5%   {opacity:1;transform:translate(214px,125px)}
+  16%  {opacity:1;transform:translate(250px,125px)}
+  21%  {opacity:0;transform:translate(260px,125px)}
+  100% {opacity:0;transform:translate(260px,125px)}
+}
+@keyframes recFlowB{
+  0%,50%  {opacity:0;transform:translate(646px,125px)}
+  56%     {opacity:1;transform:translate(646px,125px)}
+  70%     {opacity:1;transform:translate(688px,125px)}
+  78%     {opacity:0;transform:translate(696px,125px)}
+  100%    {opacity:0;transform:translate(696px,125px)}
+}
+@keyframes recBox{
+  0%,3%   {opacity:.38;transform:scale(.96);transform-origin:center}
+  10%,88% {opacity:1;transform:scale(1)}
+  100%    {opacity:.38}
+}
+@keyframes recRow{
+  0%,20%  {opacity:.30}
+  30%,92% {opacity:1}
+  100%    {opacity:.30}
+}
+@keyframes recCard{
+  0%,18%  {stroke-opacity:.35}
+  32%,52% {stroke-opacity:1}
+  100%    {stroke-opacity:.35}
 }
 @keyframes recLight{
-  0%,14%   {opacity:.42}
-  26%,64%  {opacity:1}
-  100%     {opacity:.42}
+  0%,52%  {opacity:.40}
+  62%,92% {opacity:1}
+  100%    {opacity:.40}
 }
-.recsvg .rec-dot{animation:recFlow 5.4s cubic-bezier(.5,0,.2,1) infinite}
-.recsvg .rec-d1{animation:recLight 5.4s linear infinite;animation-delay:.5s}
-.recsvg .rec-d2{animation:recLight 5.4s linear infinite;animation-delay:.85s}
-.recsvg .rec-d3{animation:recLight 5.4s linear infinite;animation-delay:1.2s}
+@keyframes recFan{
+  0%,52%  {opacity:.30;stroke-dashoffset:12}
+  64%,92% {opacity:.85;stroke-dashoffset:0}
+  100%    {opacity:.30}
+}
+.recsvg .d-a{animation:recFlow 6s cubic-bezier(.5,0,.2,1) infinite}
+.recsvg .d-b{animation:recFlowB 6s cubic-bezier(.5,0,.2,1) infinite}
+.recsvg .rb1{animation:recBox 6s ease infinite;animation-delay:.15s}
+.recsvg .rb2{animation:recBox 6s ease infinite;animation-delay:.45s}
+.recsvg .rec-card{animation:recCard 6s ease infinite}
+.recsvg .rr1{animation:recRow 6s ease infinite;animation-delay:0s}
+.recsvg .rr2{animation:recRow 6s ease infinite;animation-delay:.1s}
+.recsvg .rr3{animation:recRow 6s ease infinite;animation-delay:.2s}
+.recsvg .rr4{animation:recRow 6s ease infinite;animation-delay:.3s}
+.recsvg .rr5{animation:recRow 6s ease infinite;animation-delay:.4s}
+.recsvg .rec-d1{animation:recLight 6s linear infinite;animation-delay:.10s}
+.recsvg .rec-d2{animation:recLight 6s linear infinite;animation-delay:.28s}
+.recsvg .rec-d3{animation:recLight 6s linear infinite;animation-delay:.46s}
+.recsvg .rf1{animation:recFan 6s ease infinite;animation-delay:.10s}
+.recsvg .rf3{animation:recFan 6s ease infinite;animation-delay:.46s}
 @media(prefers-reduced-motion:reduce){
   .recsvg .rec-dot{display:none}
-  .recsvg .rec-d1,.recsvg .rec-d2,.recsvg .rec-d3{animation:none;opacity:1}
+  .recsvg .rec-box,.recsvg .rec-row,.recsvg .rec-dest,
+  .recsvg .rec-card,.recsvg .rec-fan{animation:none;opacity:1;stroke-opacity:1}
 }
 @media(max-width:900px){
   .recfig{overflow-x:auto}
-  .recsvg{min-width:720px}
+  .recsvg{min-width:760px}
 }
+
+/* --- export card: the record itself, as shipped --- */
+.use-code{
+  margin-top:auto;white-space:pre;overflow-x:auto;
+  font-family:var(--mono);font-size:11.5px;line-height:1.75;
+  color:rgba(255,255,255,.62);
+  background:rgba(8,13,20,.55);
+  border:1px solid rgba(140,180,210,.18);border-radius:6px;
+  padding:14px 16px;
+}
+.use-code .cd-p{color:rgba(140,180,210,.55)}
+.use-code .cd-k{color:#8AAAC2}
+.use-code .cd-s{color:#D49040}
+.use-code .cd-n{color:#28C8B4}
