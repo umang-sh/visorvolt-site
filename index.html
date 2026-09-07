@@ -341,54 +341,91 @@
     <p class="section-sub reveal">Three phases, one loop, on your hardware or your own cloud.</p>
 
     <figure class="howfig reveal">
-      <svg viewBox="0 0 1080 250" role="img" aria-labelledby="howtitle howdesc" class="howsvg">
+      <svg viewBox="0 0 1080 262" role="img" aria-labelledby="howtitle howdesc" class="howsvg">
         <title id="howtitle">How VisorVolt works</title>
         <desc id="howdesc">Forty labelled images per site produce a detector. The system then labels the rest of your imagery itself, verifies each label, retrains, and the deployed detector feeds the loop, so accuracy climbs after deployment.</desc>
         <defs>
           <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
             <path d="M0 0 L10 5 L0 10 z" fill="#D49040"/>
           </marker>
+          <marker id="arS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#8AAAC2"/>
+          </marker>
+          <radialGradient id="fwSeed"><stop offset="0%" stop-color="#D49040" stop-opacity=".22"/><stop offset="100%" stop-color="#D49040" stop-opacity="0"/></radialGradient>
+          <radialGradient id="fwLoop"><stop offset="0%" stop-color="#8AAAC2" stop-opacity=".13"/><stop offset="100%" stop-color="#8AAAC2" stop-opacity="0"/></radialGradient>
+          <radialGradient id="fwLive"><stop offset="0%" stop-color="#28C8B4" stop-opacity=".18"/><stop offset="100%" stop-color="#28C8B4" stop-opacity="0"/></radialGradient>
         </defs>
+
+        <circle cx="96" cy="108" r="120" fill="url(#fwSeed)"/>
+        <circle cx="442" cy="112" r="215" fill="url(#fwLoop)"/>
+        <circle cx="788" cy="108" r="128" fill="url(#fwLive)"/>
+
         <g font-family="DM Mono, monospace">
-          <g>
+
+          <!-- seed: 40 labelled images -->
+          <g class="fw-seed">
             <rect x="8" y="60" width="176" height="96" rx="9" fill="rgba(212,144,64,.10)" stroke="#D49040" stroke-width="1.4"/>
             <text x="96" y="96" text-anchor="middle" fill="#D49040" font-size="30" font-weight="700">40</text>
             <text x="96" y="118" text-anchor="middle" fill="#EEF2F8" font-size="13">labelled images</text>
             <text x="96" y="136" text-anchor="middle" fill="#7A8BA5" font-size="10.5">once, per site &#183; we choose which</text>
           </g>
+          <text x="96" y="42" text-anchor="middle" fill="#7A8BA5" font-size="9.5" letter-spacing="1.6">YOU DO THIS ONCE</text>
           <line x1="192" y1="108" x2="232" y2="108" stroke="#D49040" stroke-width="1.6" marker-end="url(#ar)"/>
-          <g>
-            <rect x="240" y="34" width="404" height="148" rx="9" fill="rgba(140,180,210,.06)" stroke="rgba(140,180,210,.30)" stroke-width="1.2" stroke-dasharray="4 4"/>
-            <text x="442" y="26" text-anchor="middle" fill="#8AAAC2" font-size="10.5" letter-spacing="1.6">THE FLYWHEEL · RUNS ON YOUR HARDWARE</text>
+
+          <!-- the loop -->
+          <rect class="fw-ring" x="240" y="34" width="404" height="148" rx="9" fill="rgba(140,180,210,.06)" stroke="rgba(140,180,210,.30)" stroke-width="1.2" stroke-dasharray="4 4"/>
+          <text x="442" y="26" text-anchor="middle" fill="#8AAAC2" font-size="10.5" letter-spacing="1.6">THE FLYWHEEL &#183; RUNS ON YOUR HARDWARE</text>
+
+          <g class="fw-stage fw-s1">
             <rect x="258" y="66" width="112" height="84" rx="7" fill="rgba(255,255,255,.05)" stroke="rgba(140,180,210,.28)"/>
-            <text x="314" y="98" text-anchor="middle" fill="#EEF2F8" font-size="12.5">Auto-label</text>
-            <text x="314" y="116" text-anchor="middle" fill="#7A8BA5" font-size="10">your unlabeled</text>
-            <text x="314" y="130" text-anchor="middle" fill="#7A8BA5" font-size="10">imagery</text>
-            <line x1="378" y1="108" x2="404" y2="108" stroke="#8AAAC2" stroke-width="1.4" marker-end="url(#ar)"/>
-            <rect x="412" y="66" width="112" height="84" rx="7" fill="rgba(255,255,255,.05)" stroke="rgba(140,180,210,.28)"/>
-            <text x="468" y="98" text-anchor="middle" fill="#EEF2F8" font-size="12.5">Verify</text>
-            <text x="468" y="116" text-anchor="middle" fill="#7A8BA5" font-size="10">keep the good,</text>
-            <text x="468" y="130" text-anchor="middle" fill="#7A8BA5" font-size="10">drop the rest</text>
-            <line x1="532" y1="108" x2="558" y2="108" stroke="#8AAAC2" stroke-width="1.4" marker-end="url(#ar)"/>
-            <rect x="566" y="66" width="62" height="84" rx="7" fill="rgba(255,255,255,.05)" stroke="rgba(140,180,210,.28)"/>
-            <text x="597" y="103" text-anchor="middle" fill="#EEF2F8" font-size="12.5">Train</text>
-            <text x="597" y="121" text-anchor="middle" fill="#7A8BA5" font-size="10">detector</text>
+            <circle cx="272" cy="80" r="3.2" fill="#28C8B4"/>
+            <text x="314" y="102" text-anchor="middle" fill="#EEF2F8" font-size="12.5">Auto-label</text>
+            <text x="314" y="120" text-anchor="middle" fill="#7A8BA5" font-size="10">your unlabeled</text>
+            <text x="314" y="134" text-anchor="middle" fill="#7A8BA5" font-size="10">imagery</text>
           </g>
+          <line x1="378" y1="108" x2="404" y2="108" stroke="#8AAAC2" stroke-width="1.4" marker-end="url(#arS)"/>
+          <g class="fw-stage fw-s2">
+            <rect x="412" y="66" width="112" height="84" rx="7" fill="rgba(255,255,255,.05)" stroke="rgba(140,180,210,.28)"/>
+            <circle cx="426" cy="80" r="3.2" fill="#D49040"/>
+            <text x="468" y="102" text-anchor="middle" fill="#EEF2F8" font-size="12.5">Verify</text>
+            <text x="468" y="120" text-anchor="middle" fill="#7A8BA5" font-size="10">keep the good,</text>
+            <text x="468" y="134" text-anchor="middle" fill="#7A8BA5" font-size="10">drop the rest</text>
+          </g>
+          <line x1="532" y1="108" x2="558" y2="108" stroke="#8AAAC2" stroke-width="1.4" marker-end="url(#arS)"/>
+          <g class="fw-stage fw-s3">
+            <rect x="566" y="66" width="62" height="84" rx="7" fill="rgba(255,255,255,.05)" stroke="rgba(140,180,210,.28)"/>
+            <circle cx="578" cy="80" r="3.2" fill="#8AAAC2"/>
+            <text x="597" y="107" text-anchor="middle" fill="#EEF2F8" font-size="12.5">Train</text>
+            <text x="597" y="125" text-anchor="middle" fill="#7A8BA5" font-size="10">detector</text>
+          </g>
+
           <line x1="652" y1="108" x2="692" y2="108" stroke="#D49040" stroke-width="1.6" marker-end="url(#ar)"/>
-          <g>
-            <rect x="700" y="60" width="176" height="96" rx="9" fill="rgba(212,144,64,.10)" stroke="#D49040" stroke-width="1.4"/>
+
+          <!-- deployed -->
+          <g class="fw-live">
+            <rect x="700" y="60" width="176" height="96" rx="9" fill="rgba(40,200,180,.07)" stroke="#28C8B4" stroke-width="1.4"/>
             <text x="788" y="98" text-anchor="middle" fill="#EEF2F8" font-size="14" font-weight="700">Deployed</text>
             <text x="788" y="118" text-anchor="middle" fill="#7A8BA5" font-size="10.5">on your hardware,</text>
             <text x="788" y="134" text-anchor="middle" fill="#7A8BA5" font-size="10.5">inside your network</text>
           </g>
-          <path d="M788 160 L788 214 Q788 224 778 224 L452 224 Q442 224 442 214 L442 190" fill="none" stroke="#D49040" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ar)"/>
-          <text x="616" y="242" text-anchor="middle" fill="#D49040" font-size="11">every new flight feeds the loop: accuracy climbs after deployment, not down</text>
-          <g>
+          <circle class="fw-pulse" cx="788" cy="108" r="52" fill="none" stroke="#28C8B4" stroke-width="1.2"/>
+
+          <!-- return leg -->
+          <path class="fw-return" d="M788 160 L788 214 Q788 224 778 224 L452 224 Q442 224 442 214 L442 190" fill="none" stroke="#D49040" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+          <text x="616" y="248" text-anchor="middle" fill="#D49040" font-size="11">every new flight feeds the loop: accuracy climbs after deployment, not down</text>
+
+          <!-- self-improving agent, watching the loop -->
+          <g class="fw-agent">
             <rect x="900" y="60" width="172" height="96" rx="9" fill="rgba(140,180,210,.06)" stroke="rgba(140,180,210,.30)" stroke-width="1.2"/>
             <text x="986" y="94" text-anchor="middle" fill="#EEF2F8" font-size="13" font-weight="700">Self-improving</text>
             <text x="986" y="114" text-anchor="middle" fill="#7A8BA5" font-size="10.5">an agent watches results</text>
             <text x="986" y="130" text-anchor="middle" fill="#7A8BA5" font-size="10.5">and fixes model or data</text>
           </g>
+          <path class="fw-watch" d="M884 108 L900 108" stroke="#8AAAC2" stroke-width="1.2" stroke-dasharray="3 3"/>
+
+          <!-- packets going round the loop -->
+          <circle class="fw-dot p1" r="4.5" fill="#D49040"/>
+          <circle class="fw-dot p2" r="4.5" fill="#28C8B4"/>
         </g>
       </svg>
       <figcaption>40 images per site, once. Everything to the right of that runs on your hardware.</figcaption>
