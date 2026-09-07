@@ -1419,3 +1419,28 @@ footer{
 .use-code .cd-k{color:#8AAAC2}
 .use-code .cd-s{color:#D49040}
 .use-code .cd-n{color:#28C8B4}
+
+/* --- capture geometry: how the imagery was taken --- */
+.cap-strip{
+  margin:38px 0 0;padding:24px 26px 22px;
+  border:1px solid rgba(140,180,210,.16);border-radius:12px;
+  background:rgba(140,180,210,.035);
+}
+.cap-head{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--slate);margin-bottom:20px;
+}
+.cap-items{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.cap-item{min-width:0;display:flex;flex-direction:column;gap:7px}
+.cap-item svg{width:56px;height:38px;display:block;margin-bottom:4px}
+.cap-item b{font-size:14px;color:#EEF2F8;font-weight:600;letter-spacing:.01em}
+.cap-item span{font-size:13px;line-height:1.55;color:var(--muted)}
+.cap-foot{
+  margin:20px 0 0;padding-top:16px;border-top:1px solid rgba(140,180,210,.12);
+  font-size:13px;line-height:1.6;color:var(--muted);
+}
+.cap-foot strong{color:#C9D6E4;font-weight:600}
+@media(max-width:820px){
+  .cap-items{grid-template-columns:1fr;gap:20px}
+  .cap-strip{padding:20px}
+}

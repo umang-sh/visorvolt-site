@@ -168,6 +168,28 @@
     </div>
     
       <p class="dom-foot">Each score compares us against a model trained on that task&rsquo;s <em>entire</em> labeled dataset. A typical result is <strong>87%</strong> of it; the worst was <strong>55%</strong>. <span class="wf-fine">Any single tile can move &#177;3&ndash;5 points run to run; the typical figure is stable. Harder problems land nearer 87%, well-conditioned ones nearer 90% &mdash; we tell you which end you are in before you buy. One benchmark (<code>underwater-objects</code>) is withheld: its comparison model was too weak to divide by.</span></p>
+
+      <div class="cap-strip">
+        <div class="cap-head">Proven across the three ways you actually capture</div>
+        <div class="cap-items">
+          <div class="cap-item">
+            <svg viewBox="0 0 56 38" aria-hidden="true"><g fill="none" stroke="#D49040" stroke-width="1.5" stroke-linecap="round"><ellipse cx="9" cy="7" rx="7" ry="2.4"/><ellipse cx="47" cy="7" rx="7" ry="2.4"/><path d="M9 9 L21 15 M47 9 L35 15"/><rect x="21" y="14" width="14" height="8" rx="2.5"/><path d="M25 22 L22 27 M31 22 L34 27" stroke-opacity=".5" stroke-dasharray="2.5 2.5"/><path d="M14 33 h28" stroke-opacity=".38"/></g></svg>
+            <b>Drone &amp; aerial</b>
+            <span>Oblique and nadir flight imagery &mdash; the telecom, aerial-survey and grid tiles above.</span>
+          </div>
+          <div class="cap-item">
+            <svg viewBox="0 0 56 38" aria-hidden="true"><g fill="none" stroke="#D49040" stroke-width="1.5" stroke-linecap="round"><path d="M12 4 v29"/><path d="M12 7 h6"/><rect x="17" y="4" width="11" height="7" rx="2"/><path d="M24 11 L18 30 M27 11 L40 30" stroke-opacity=".45" stroke-dasharray="3 3"/><path d="M8 33 h40" stroke-opacity=".38"/></g></svg>
+            <b>Pole &amp; mast, looking down</b>
+            <span>Fixed cameras over a yard or aisle &mdash; the container-terminal tile, and the warehouse counts below.</span>
+          </div>
+          <div class="cap-item">
+            <svg viewBox="0 0 56 38" aria-hidden="true"><g fill="none" stroke="#D49040" stroke-width="1.5" stroke-linecap="round"><rect x="8" y="12" width="20" height="13" rx="2.5"/><path d="M28 16 l8-4 v13 l-8-4z"/><path d="M13 12 l2.5-3.5 h7 L25 12"/><path d="M36 17 l12-4 M36 22 l12 4" stroke-opacity=".4" stroke-dasharray="3 3"/><path d="M4 33 h48" stroke-opacity=".38"/></g></svg>
+            <b>Ground level &amp; handheld</b>
+            <span>Phone, body-cam and vehicle imagery &mdash; the construction, thermal and bulk-goods tiles.</span>
+          </div>
+        </div>
+        <p class="cap-foot">Same 40-image recipe in all three. What changes the score is <strong>how big the object is in the frame</strong>, not what the camera was bolted to &mdash; so tell us the camera and the standoff distance and we will tell you where you will land before you buy.</p>
+      </div>
     </div>
 
     <div class="proof-row"><span id="defects"></span>
@@ -338,7 +360,7 @@
   <div class="section-inner">
     <div class="eyebrow reveal">// How It Works</div>
     <h2 class="reveal">From raw imagery<br>to <em>operational intelligence.</em></h2>
-    <p class="section-sub reveal">Three phases, one loop, on your hardware or your own cloud.</p>
+    <p class="section-sub reveal">Three phases, one loop. An agent runs it end to end &mdash; on your hardware or in your own cloud, started and stopped by <em>your</em> team.</p>
 
     <figure class="howfig reveal">
       <svg viewBox="0 0 1080 262" role="img" aria-labelledby="howtitle howdesc" class="howsvg">
@@ -563,7 +585,7 @@
       </div>
     </div>
 
-    <p class="agent-foot reveal">That is the half that improves the <strong>model</strong>. The other half improves the <strong>data</strong> &mdash; the auto-labelling flywheel mines your own archive, verifies what it finds and retrains, with nobody drawing a box. <a href="#platform">See how the flywheel works &rarr;</a></p>
+    <p class="agent-foot reveal">That is the half that improves the <strong>model</strong>. The other half improves the <strong>data</strong> &mdash; the auto-labelling flywheel mines your own archive, verifies what it finds and retrains, with nobody drawing a box. <a href="#platform">See how the flywheel works &rarr;</a> Both are agents, both run inside your environment, and both are yours to start, pause and audit.</p>
   </div>
 </section>
 
@@ -609,6 +631,18 @@
         <div class="wf-right">
           <h3 class="wf-title">Beats the cloud. Without the cloud.</h3>
           <p class="wf-desc">Everyone else phones home to the cloud for the hard part &mdash; checking what it found. Ours doesn&rsquo;t. Our on-prem verifier <strong>scores F1 0.80 against a leading cloud model&rsquo;s 0.71</strong>, held-out, with nothing leaving your network &mdash; and it tells you <strong>when it is unsure</strong>. The whole pipeline, verification included, runs inside your NERC CIP boundary. <span class="wf-fine">Zero external calls, on-prem or in your own cloud.</span></p>
+        </div>
+      </div>
+      <div class="wf-row reveal">
+        <div class="wf-left">
+          <div class="stat stat--inline">
+            <div class="stat-fig">0</div>
+            <div class="stat-label">of our people in your loop</div>
+          </div>
+        </div>
+        <div class="wf-right">
+          <h3 class="wf-title">You run it. Not us.</h3>
+          <p class="wf-desc">Both halves &mdash; the labelling flywheel and the research scientist &mdash; are <strong>agents your team operates</strong>, installed inside your environment. Your engineers start a run, review what it proposes, and promote what they accept. It works through the queue unattended and reports back. <strong>No VisorVolt seat on your network, no data shipped out for us to look at, no services retainer to keep it improving.</strong> <span class="wf-fine">We are on the other end of a support line, not inside the loop.</span></p>
         </div>
       </div>
       <div class="wf-row reveal">
