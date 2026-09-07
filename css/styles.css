@@ -1016,21 +1016,19 @@ footer{
 @keyframes fwWatch{0%,100%{opacity:.22}50%{opacity:.9}}
 @keyframes fwRing{0%,100%{stroke-opacity:.28}50%{stroke-opacity:.68}}
 
-.howsvg .p1{animation:fwRun 7s cubic-bezier(.55,0,.4,1) infinite}
-.howsvg .p2{animation:fwRun 7s cubic-bezier(.55,0,.4,1) infinite;animation-delay:-1.75s}
-.howsvg .p3{animation:fwRun 7s cubic-bezier(.55,0,.4,1) infinite;animation-delay:-3.5s}
-.howsvg .p4{animation:fwRun 7s cubic-bezier(.55,0,.4,1) infinite;animation-delay:-5.25s}
-.howsvg .fw-s1{animation:fwStage 7s ease infinite}
-.howsvg .fw-s2{animation:fwStage 7s ease infinite;animation-delay:1.05s}
-.howsvg .fw-s3{animation:fwStage 7s ease infinite;animation-delay:2.1s}
-.howsvg .fw-s1 .fw-hl{animation:fwHl 7s ease infinite}
-.howsvg .fw-s2 .fw-hl{animation:fwHl 7s ease infinite;animation-delay:1.05s}
-.howsvg .fw-s3 .fw-hl{animation:fwHl 7s ease infinite;animation-delay:2.1s}
-.howsvg .fw-live{animation:fwLive 7s ease infinite}
-.howsvg .fw-pulse{animation:fwPulse 7s ease-out infinite}
-.howsvg .fw-return{animation:fwReturn 7s ease infinite,fwMarch 1.1s linear infinite}
-.howsvg .fw-ring{animation:fwRing 7s ease infinite}
-.howsvg .fw-watch{animation:fwWatch 2.4s ease-in-out infinite}
+.howsvg .p1{animation:fwRun 10.5s cubic-bezier(.55,0,.4,1) infinite}
+.howsvg .p2{animation:fwRun 10.5s cubic-bezier(.55,0,.4,1) infinite;animation-delay:-5.25s}
+.howsvg .fw-s1{animation:fwStage 10.5s ease infinite}
+.howsvg .fw-s2{animation:fwStage 10.5s ease infinite;animation-delay:1.6s}
+.howsvg .fw-s3{animation:fwStage 10.5s ease infinite;animation-delay:3.2s}
+.howsvg .fw-s1 .fw-hl{animation:fwHl 10.5s ease infinite}
+.howsvg .fw-s2 .fw-hl{animation:fwHl 10.5s ease infinite;animation-delay:1.6s}
+.howsvg .fw-s3 .fw-hl{animation:fwHl 10.5s ease infinite;animation-delay:3.2s}
+.howsvg .fw-live{animation:fwLive 10.5s ease infinite}
+.howsvg .fw-pulse{animation:fwPulse 10.5s ease-out infinite}
+.howsvg .fw-return{animation:fwReturn 10.5s ease infinite,fwMarch 2s linear infinite}
+.howsvg .fw-ring{animation:fwRing 10.5s ease infinite}
+.howsvg .fw-watch{animation:fwWatch 3.4s ease-in-out infinite}
 @media(prefers-reduced-motion:reduce){
   .howsvg .fw-dot,.howsvg .fw-pulse,.howsvg .fw-hl{display:none}
   .howsvg .fw-stage,.howsvg .fw-live,.howsvg .fw-return,
@@ -1340,69 +1338,104 @@ footer{
   color:var(--muted);letter-spacing:.02em;
 }
 .rec-dest{opacity:.40}
-.rec-dest rect{transition:stroke .3s,fill .3s}
-.rec-dot{opacity:0}
+.rec-hl{opacity:0}
+.rec-dot,.rec-out{opacity:0}
 .rec-box{opacity:.38}
 .rec-row{opacity:.30}
 .rec-fan{opacity:.35}
 
-/* one 6s cycle: detect -> record fills -> fans out to your systems */
+/* 5s cycle: detections land -> the record fills -> it sweeps into all three systems */
 @keyframes recFlow{
-  0%   {opacity:0;transform:translate(214px,125px)}
-  5%   {opacity:1;transform:translate(214px,125px)}
-  16%  {opacity:1;transform:translate(250px,125px)}
-  21%  {opacity:0;transform:translate(260px,125px)}
-  100% {opacity:0;transform:translate(260px,125px)}
+  0%   {opacity:0;transform:translate(212px,125px)}
+  5%   {opacity:1;transform:translate(212px,125px)}
+  16%  {opacity:1;transform:translate(252px,125px)}
+  22%  {opacity:0;transform:translate(262px,125px)}
+  100% {opacity:0;transform:translate(262px,125px)}
 }
 @keyframes recFlowB{
-  0%,50%  {opacity:0;transform:translate(646px,125px)}
-  56%     {opacity:1;transform:translate(646px,125px)}
-  70%     {opacity:1;transform:translate(688px,125px)}
-  78%     {opacity:0;transform:translate(696px,125px)}
-  100%    {opacity:0;transform:translate(696px,125px)}
+  0%,40%  {opacity:0;transform:translate(644px,125px)}
+  46%     {opacity:1;transform:translate(644px,125px)}
+  56%     {opacity:1;transform:translate(692px,125px)}
+  62%     {opacity:0;transform:translate(700px,125px)}
+  100%    {opacity:0;transform:translate(700px,125px)}
+}
+/* each output sweeps the full width of its destination row */
+@keyframes recOut1{
+  0%,58%   {opacity:0;transform:translate(700px,125px)}
+  63%      {opacity:1;transform:translate(704px,110px)}
+  70%      {opacity:1;transform:translate(722px,71px)}
+  90%      {opacity:1;transform:translate(930px,71px)}
+  96%,100% {opacity:0;transform:translate(940px,71px)}
+}
+@keyframes recOut2{
+  0%,58%   {opacity:0;transform:translate(700px,125px)}
+  66%      {opacity:1;transform:translate(722px,125px)}
+  90%      {opacity:1;transform:translate(930px,125px)}
+  96%,100% {opacity:0;transform:translate(940px,125px)}
+}
+@keyframes recOut3{
+  0%,58%   {opacity:0;transform:translate(700px,125px)}
+  63%      {opacity:1;transform:translate(704px,140px)}
+  70%      {opacity:1;transform:translate(722px,179px)}
+  90%      {opacity:1;transform:translate(930px,179px)}
+  96%,100% {opacity:0;transform:translate(940px,179px)}
 }
 @keyframes recBox{
   0%,3%   {opacity:.38;transform:scale(.96);transform-origin:center}
-  10%,88% {opacity:1;transform:scale(1)}
+  10%,84% {opacity:1;transform:scale(1)}
   100%    {opacity:.38}
 }
 @keyframes recRow{
-  0%,20%  {opacity:.30}
-  30%,92% {opacity:1}
+  0%,16%  {opacity:.30}
+  26%,88% {opacity:1}
   100%    {opacity:.30}
 }
 @keyframes recCard{
-  0%,18%  {stroke-opacity:.35}
-  32%,52% {stroke-opacity:1}
+  0%,14%  {stroke-opacity:.35}
+  28%,52% {stroke-opacity:1}
   100%    {stroke-opacity:.35}
 }
 @keyframes recLight{
-  0%,52%  {opacity:.40}
-  62%,92% {opacity:1}
+  0%,60%  {opacity:.40}
+  70%,92% {opacity:1}
   100%    {opacity:.40}
+}
+@keyframes recHl{
+  0%,62%   {opacity:0}
+  72%,88%  {opacity:1}
+  96%,100% {opacity:0}
 }
 @keyframes recFan{
   0%,52%  {opacity:.30;stroke-dashoffset:12}
-  64%,92% {opacity:.85;stroke-dashoffset:0}
+  64%,92% {opacity:.9;stroke-dashoffset:0}
   100%    {opacity:.30}
 }
-.recsvg .d-a{animation:recFlow 6s cubic-bezier(.5,0,.2,1) infinite}
-.recsvg .d-b{animation:recFlowB 6s cubic-bezier(.5,0,.2,1) infinite}
-.recsvg .rb1{animation:recBox 6s ease infinite;animation-delay:.15s}
-.recsvg .rb2{animation:recBox 6s ease infinite;animation-delay:.45s}
-.recsvg .rec-card{animation:recCard 6s ease infinite}
-.recsvg .rr1{animation:recRow 6s ease infinite;animation-delay:0s}
-.recsvg .rr2{animation:recRow 6s ease infinite;animation-delay:.1s}
-.recsvg .rr3{animation:recRow 6s ease infinite;animation-delay:.2s}
-.recsvg .rr4{animation:recRow 6s ease infinite;animation-delay:.3s}
-.recsvg .rr5{animation:recRow 6s ease infinite;animation-delay:.4s}
-.recsvg .rec-d1{animation:recLight 6s linear infinite;animation-delay:.10s}
-.recsvg .rec-d2{animation:recLight 6s linear infinite;animation-delay:.28s}
-.recsvg .rec-d3{animation:recLight 6s linear infinite;animation-delay:.46s}
-.recsvg .rf1{animation:recFan 6s ease infinite;animation-delay:.10s}
-.recsvg .rf3{animation:recFan 6s ease infinite;animation-delay:.46s}
+@keyframes recMarch{from{stroke-dashoffset:0}to{stroke-dashoffset:-24}}
+
+.recsvg .d-a{animation:recFlow 5s cubic-bezier(.5,0,.2,1) infinite}
+.recsvg .d-a2{animation:recFlow 5s cubic-bezier(.5,0,.2,1) infinite;animation-delay:-.55s}
+.recsvg .d-b{animation:recFlowB 5s cubic-bezier(.5,0,.2,1) infinite}
+.recsvg .o1{animation:recOut1 5s cubic-bezier(.4,0,.3,1) infinite}
+.recsvg .o2{animation:recOut2 5s cubic-bezier(.4,0,.3,1) infinite;animation-delay:.1s}
+.recsvg .o3{animation:recOut3 5s cubic-bezier(.4,0,.3,1) infinite;animation-delay:.2s}
+.recsvg .rb1{animation:recBox 5s ease infinite;animation-delay:.1s}
+.recsvg .rb2{animation:recBox 5s ease infinite;animation-delay:.35s}
+.recsvg .rec-card{animation:recCard 5s ease infinite}
+.recsvg .rr1{animation:recRow 5s ease infinite}
+.recsvg .rr2{animation:recRow 5s ease infinite;animation-delay:.08s}
+.recsvg .rr3{animation:recRow 5s ease infinite;animation-delay:.16s}
+.recsvg .rr4{animation:recRow 5s ease infinite;animation-delay:.24s}
+.recsvg .rr5{animation:recRow 5s ease infinite;animation-delay:.32s}
+.recsvg .rec-d1{animation:recLight 5s linear infinite}
+.recsvg .rec-d2{animation:recLight 5s linear infinite;animation-delay:.1s}
+.recsvg .rec-d3{animation:recLight 5s linear infinite;animation-delay:.2s}
+.recsvg .rec-d1 .rec-hl{animation:recHl 5s ease infinite}
+.recsvg .rec-d2 .rec-hl{animation:recHl 5s ease infinite;animation-delay:.1s}
+.recsvg .rec-d3 .rec-hl{animation:recHl 5s ease infinite;animation-delay:.2s}
+.recsvg .rf1{animation:recFan 5s ease infinite,recMarch 1.1s linear infinite}
+.recsvg .rf3{animation:recFan 5s ease infinite,recMarch 1.1s linear infinite}
 @media(prefers-reduced-motion:reduce){
-  .recsvg .rec-dot{display:none}
+  .recsvg .rec-dot,.recsvg .rec-out,.recsvg .rec-hl{display:none}
   .recsvg .rec-box,.recsvg .rec-row,.recsvg .rec-dest,
   .recsvg .rec-card,.recsvg .rec-fan{animation:none;opacity:1;stroke-opacity:1}
 }
