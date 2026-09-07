@@ -1249,3 +1249,43 @@ footer{
 .agent-foot strong{color:var(--white)}
 .agent-foot a{color:var(--orange-lt);text-decoration:none;border-bottom:1px solid rgba(191,123,48,.35)}
 .agent-foot a:hover{border-bottom-color:var(--orange-lt)}
+
+/* --- downstream: detection -> record -> your systems --- */
+.recfig{margin:40px 0 10px;padding:0}
+.recsvg{width:100%;height:auto;display:block;overflow:visible}
+.recfig figcaption{
+  margin-top:14px;font-family:var(--mono);font-size:12px;
+  color:var(--muted);letter-spacing:.02em;
+}
+.rec-dest{opacity:.42}
+.rec-dest rect{transition:stroke .3s,fill .3s}
+.rec-dot{opacity:0}
+/* enters the record on arrow 1, re-emerges on arrow 2 as output */
+@keyframes recFlow{
+  0%   {opacity:0;transform:translate(214px,115px)}
+  6%   {opacity:1;transform:translate(214px,115px)}
+  20%  {opacity:1;transform:translate(250px,115px)}
+  26%  {opacity:0;transform:translate(258px,115px)}
+  54%  {opacity:0;transform:translate(648px,115px)}
+  60%  {opacity:1;transform:translate(652px,115px)}
+  76%  {opacity:1;transform:translate(688px,115px)}
+  84%  {opacity:0;transform:translate(692px,115px)}
+  100% {opacity:0;transform:translate(692px,115px)}
+}
+@keyframes recLight{
+  0%,14%   {opacity:.42}
+  26%,64%  {opacity:1}
+  100%     {opacity:.42}
+}
+.recsvg .rec-dot{animation:recFlow 5.4s cubic-bezier(.5,0,.2,1) infinite}
+.recsvg .rec-d1{animation:recLight 5.4s linear infinite;animation-delay:.5s}
+.recsvg .rec-d2{animation:recLight 5.4s linear infinite;animation-delay:.85s}
+.recsvg .rec-d3{animation:recLight 5.4s linear infinite;animation-delay:1.2s}
+@media(prefers-reduced-motion:reduce){
+  .recsvg .rec-dot{display:none}
+  .recsvg .rec-d1,.recsvg .rec-d2,.recsvg .rec-d3{animation:none;opacity:1}
+}
+@media(max-width:900px){
+  .recfig{overflow-x:auto}
+  .recsvg{min-width:720px}
+}

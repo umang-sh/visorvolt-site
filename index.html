@@ -221,6 +221,61 @@
     <h2 class="reveal">Detection is the input.<br><em>The output is a decision.</em></h2>
     <p class="section-sub reveal">A box on an image is not a business outcome. Every detection leaves as a structured record &mdash; what it is, where, how confident &mdash; in open formats your systems already read.</p>
 
+
+    <figure class="recfig reveal">
+      <svg viewBox="0 0 1080 268" role="img" aria-labelledby="rectitle recdesc" class="recsvg">
+        <title id="rectitle">From a detection to a record to the system that acts on it</title>
+        <desc id="recdesc">A detected pallet in a frame becomes a structured record carrying its class, count, confidence, location and timestamp, which is written into an inventory system, a work order and a compliance log.</desc>
+        <defs>
+          <marker id="rar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#D49040"/>
+          </marker>
+        </defs>
+        <g font-family="DM Mono, monospace">
+
+          <!-- 1 · the frame -->
+          <text x="8" y="26" fill="#7A8BA5" font-size="10" letter-spacing="1.8">01 &#183; DETECTION</text>
+          <rect x="8" y="40" width="196" height="150" rx="8" fill="rgba(140,180,210,.05)" stroke="rgba(140,180,210,.28)" stroke-width="1.2"/>
+          <rect x="34" y="112" width="66" height="34" rx="2" fill="none" stroke="#28C8B4" stroke-width="2"/>
+          <rect x="110" y="104" width="74" height="42" rx="2" fill="none" stroke="#28C8B4" stroke-width="2"/>
+          <text x="34" y="106" fill="#28C8B4" font-size="9">1</text>
+          <text x="110" y="98" fill="#28C8B4" font-size="9">2</text>
+          <text x="106" y="176" text-anchor="middle" fill="#5A6B85" font-size="9.5">one frame, on your camera</text>
+          <line x1="212" y1="115" x2="252" y2="115" stroke="#D49040" stroke-width="1.6" marker-end="url(#rar)"/>
+
+          <!-- 2 · the record -->
+          <text x="262" y="26" fill="#D49040" font-size="10" letter-spacing="1.8">02 &#183; STRUCTURED RECORD</text>
+          <rect x="262" y="40" width="380" height="150" rx="8" fill="rgba(212,144,64,.07)" stroke="#D49040" stroke-width="1.4"/>
+          <text x="282" y="68" fill="#5A6B85" font-size="11">class</text><text x="392" y="68" fill="#EEF2F8" font-size="11">pallet</text>
+          <text x="282" y="92" fill="#5A6B85" font-size="11">count</text><text x="392" y="92" fill="#EEF2F8" font-size="11">7</text>
+          <text x="282" y="116" fill="#5A6B85" font-size="11">confidence</text><text x="392" y="116" fill="#EEF2F8" font-size="11">0.94</text>
+          <text x="282" y="140" fill="#5A6B85" font-size="11">location</text><text x="392" y="140" fill="#EEF2F8" font-size="11">aisle 3 &#183; bay 12</text>
+          <text x="282" y="164" fill="#5A6B85" font-size="11">captured</text><text x="392" y="164" fill="#EEF2F8" font-size="11">2026&#8209;09&#8209;07 04:18</text>
+          <line x1="650" y1="115" x2="690" y2="115" stroke="#D49040" stroke-width="1.6" marker-end="url(#rar)"/>
+
+          <!-- 3 · destinations -->
+          <text x="700" y="26" fill="#7A8BA5" font-size="10" letter-spacing="1.8">03 &#183; YOUR SYSTEMS</text>
+          <g class="rec-dest rec-d1">
+            <rect x="700" y="40" width="238" height="42" rx="7" fill="rgba(255,255,255,.04)" stroke="rgba(140,180,210,.30)"/>
+            <text x="718" y="66" fill="#EEF2F8" font-size="12">Inventory system</text>
+          </g>
+          <g class="rec-dest rec-d2">
+            <rect x="700" y="94" width="238" height="42" rx="7" fill="rgba(255,255,255,.04)" stroke="rgba(140,180,210,.30)"/>
+            <text x="718" y="120" fill="#EEF2F8" font-size="12">Work order</text>
+          </g>
+          <g class="rec-dest rec-d3">
+            <rect x="700" y="148" width="238" height="42" rx="7" fill="rgba(255,255,255,.04)" stroke="rgba(140,180,210,.30)"/>
+            <text x="718" y="174" fill="#EEF2F8" font-size="12">Compliance log</text>
+          </g>
+          <text x="700" y="216" fill="#5A6B85" font-size="9.5">open formats &#183; no new platform to adopt</text>
+
+          <!-- travelling dot -->
+          <circle class="rec-dot" r="4" fill="#D49040"/>
+        </g>
+      </svg>
+      <figcaption>Same record, whatever the object. A pallet, a cracked insulator, a sack, a solder bridge.</figcaption>
+    </figure>
+
     <div class="use-grid reveal">
       <div class="use-card">
         <div class="use-kicker">// Count</div>
