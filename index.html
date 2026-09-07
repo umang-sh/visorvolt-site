@@ -56,7 +56,6 @@
     <a href="#domains">Proof</a>
     <a href="#downstream">What It Does</a>
     <a href="#platform">How It Works</a>
-    <a href="#rigor">The Record</a>
     <a href="grid.html">Grid</a>
     <a href="mailto:umang@visorvolt.ai" class="nav-cta">Request Demo</a>
   </div>
@@ -89,7 +88,6 @@
     <div class="hero-dots" id="hero-dots"></div>
   </div>
 </section>
-
 
 <section id="domains">
   <div class="section-inner">
@@ -239,7 +237,7 @@
       <div class="use-card">
         <div class="use-kicker">// Export</div>
         <h3 class="use-title">Into the system that acts on it</h3>
-        <p class="use-body">Boxes, counts, classes and confidences in open, standard formats &mdash; inventory systems, work orders, GIS, compliance logs. Nothing has to move to a new platform. <span class="wf-fine">// Roadmap: native connectors into the major asset and GIS platforms are not shipped today. We will not claim an integration we have not built.</span></p>
+        <p class="use-body">Boxes, counts, classes and confidences in open, standard formats &mdash; inventory systems, work orders, GIS, compliance logs. Nothing has to move to a new platform.</p>
       </div>
     </div>
   </div>
@@ -341,7 +339,6 @@
           </div>
         </div>
 
-      
     </div>    </div>
 
     <div class="how-proof reveal"><span id="flywheel"></span>
@@ -354,76 +351,91 @@
   <div class="section-inner">
     <div class="eyebrow reveal">// After It Ships</div>
     <h2 class="reveal">A research scientist<br><em>that never sleeps.</em></h2>
-    <p class="section-sub reveal">A fixed, hand-labelled model starts drifting the day it ships. Ours ships with <strong>two agents, and you run both</strong> &mdash; one improves the <strong>data</strong>, one improves the <strong>model</strong>. Both run inside your network, with no ML engineer of yours in the loop. <strong>Nothing deploys itself: a human approves every promotion.</strong></p>
+    <p class="section-sub reveal">A fixed, hand-labelled model starts drifting from field conditions the day it ships, and the usual fix is another labelling round. Yours ships with a research scientist instead. It reads the literature, finds the methods worth trying on <em>your</em> problem, designs the experiment, runs it overnight on your hardware, and keeps only what raises the score &mdash; then goes again. <strong>One recent experiment lifted accuracy by 4.4 points.</strong> Nobody asked it to.</p>
 
-    <div class="agents reveal">
-      <div class="agent-diagram">
-        <svg viewBox="0 0 1000 300" role="img" aria-labelledby="agtitle agdesc">
-          <title id="agtitle">Two agents around one deployed detector</title>
-          <desc id="agdesc">Forty images produce a deployed detector. A model agent above it diagnoses results, runs experiments and proposes an updated model. A data agent below it harvests your archive, verifies candidates and retrains. Both loops run on your hardware, and every promotion is approved by a person.</desc>
-          <defs>
-            <marker id="agar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-              <path d="M0 0 L10 5 L0 10 z" fill="#D49040"/>
-            </marker>
-            <marker id="agarb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-              <path d="M0 0 L10 5 L0 10 z" fill="#8AAAC2"/>
-            </marker>
-          </defs>
-          <g font-family="DM Mono, monospace">
-            <!-- input -->
-            <rect x="6" y="118" width="150" height="64" rx="8" fill="rgba(212,144,64,.10)" stroke="#D49040" stroke-width="1.4"/>
-            <text x="81" y="146" text-anchor="middle" fill="#D49040" font-size="26" font-weight="700">40</text>
-            <text x="81" y="167" text-anchor="middle" fill="#EEF2F8" font-size="12">images, once</text>
-            <line x1="162" y1="150" x2="200" y2="150" stroke="#D49040" stroke-width="1.6" marker-end="url(#agar)"/>
-            <!-- detector -->
-            <rect x="208" y="112" width="196" height="76" rx="8" fill="rgba(255,255,255,.06)" stroke="#D49040" stroke-width="1.6"/>
-            <text x="306" y="145" text-anchor="middle" fill="#EEF2F8" font-size="15" font-weight="700">Deployed detector</text>
-            <text x="306" y="167" text-anchor="middle" fill="#7A8BA5" font-size="10.5">on your hardware</text>
-            <line x1="410" y1="150" x2="448" y2="150" stroke="#D49040" stroke-width="1.6" marker-end="url(#agar)"/>
-            <!-- results -->
-            <rect x="456" y="118" width="132" height="64" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(140,180,210,.35)" stroke-width="1.2"/>
-            <text x="522" y="155" text-anchor="middle" fill="#EEF2F8" font-size="14">results</text>
-            <!-- MODEL AGENT loop, above -->
-            <path d="M522 114 L522 56 Q522 46 512 46 L316 46 Q306 46 306 56 L306 106" fill="none" stroke="#D49040" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#agar)"/>
-            <text x="414" y="26" text-anchor="middle" fill="#D49040" font-size="12.5" font-weight="700" letter-spacing="1.6">MODEL AGENT</text>
-            <text x="414" y="40" text-anchor="middle" fill="#7A8BA5" font-size="10.5">diagnose &rarr; experiment &rarr; propose</text>
-            <text x="760" y="70" fill="#D49040" font-size="11">runs overnight</text>
-            <!-- DATA AGENT loop, below -->
-            <path d="M522 186 L522 244 Q522 254 512 254 L316 254 Q306 254 306 244 L306 194" fill="none" stroke="#8AAAC2" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#agarb)"/>
-            <text x="414" y="276" text-anchor="middle" fill="#8AAAC2" font-size="12.5" font-weight="700" letter-spacing="1.6">DATA AGENT</text>
-            <text x="414" y="290" text-anchor="middle" fill="#7A8BA5" font-size="10.5">harvest &rarr; verify &rarr; retrain</text>
-            <text x="820" y="232" text-anchor="end" fill="#8AAAC2" font-size="11">runs continuously</text>
-            <!-- archive feed -->
-            <rect x="828" y="222" width="166" height="60" rx="8" fill="rgba(140,180,210,.06)" stroke="rgba(140,180,210,.30)" stroke-width="1.2"/>
-            <text x="911" y="247" text-anchor="middle" fill="#EEF2F8" font-size="12">your unlabelled</text>
-            <text x="911" y="264" text-anchor="middle" fill="#EEF2F8" font-size="12">archive</text>
-            <line x1="824" y1="252" x2="700" y2="252" stroke="#8AAAC2" stroke-width="1.3" marker-end="url(#agarb)"/>
-          </g>
-        </svg>
-        <div class="agent-boundary">Everything above runs on your hardware, inside your network &nbsp;&middot;&nbsp; <b>you approve every promotion</b></div>
-      </div>
+    <div class="loop-tri reveal">
+      <svg class="lt-svg" viewBox="0 0 600 568" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- Subtle node glows -->
+        <circle cx="300" cy="68" r="72" fill="rgba(191,123,48,0.055)"/>
+        <circle cx="68" cy="480" r="72" fill="rgba(64,200,232,0.055)"/>
+        <circle cx="532" cy="480" r="72" fill="rgba(40,200,64,0.055)"/>
+
+        <!-- Triangle interior fill -->
+        <polygon points="300,68 68,480 532,480" fill="rgba(238,242,248,0.012)"/>
+
+        <!-- Triangle edges -->
+        <line x1="300" y1="68" x2="68" y2="480" stroke="rgba(238,242,248,0.10)" stroke-width="1.5"/>
+        <line x1="68" y1="480" x2="532" y2="480" stroke="rgba(238,242,248,0.10)" stroke-width="1.5"/>
+        <line x1="532" y1="480" x2="300" y2="68" stroke="rgba(238,242,248,0.10)" stroke-width="1.5"/>
+
+        <!-- Traveling dots -->
+        <circle class="lt-dot lt-dot-1" r="5.5" fill="#BF7B30"/>
+        <circle class="lt-dot lt-dot-2" r="5.5" fill="#40C8E8"/>
+        <circle class="lt-dot lt-dot-3" r="5.5" fill="#28C840"/>
+
+        <!-- ── DETECT node (top) ── -->
+        <circle cx="300" cy="68" r="36" stroke="#BF7B30" stroke-width="1.5" fill="rgba(10,14,22,0.97)"/>
+        <text x="300" y="62" text-anchor="middle" font-family="DM Mono,monospace" font-size="13" letter-spacing="1.5" fill="#BF7B30">01</text>
+        <text x="300" y="78" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" letter-spacing="0.5" fill="rgba(191,123,48,0.55)">read</text>
+        <!-- Label above -->
+        <text x="300" y="14" text-anchor="middle" font-family="DM Mono,monospace" font-size="16" letter-spacing="3" fill="rgba(191,123,48,0.92)">READ</text>
+        <text x="300" y="31" text-anchor="middle" font-family="DM Mono,monospace" font-size="11" letter-spacing="0.5" fill="rgba(191,123,48,0.48)">the literature &amp; your results</text>
+
+        <!-- ── DIAGNOSE node (bottom-left) ── -->
+        <circle cx="68" cy="480" r="36" stroke="#40C8E8" stroke-width="1.5" fill="rgba(10,14,22,0.97)"/>
+        <text x="68" y="474" text-anchor="middle" font-family="DM Mono,monospace" font-size="13" letter-spacing="1.5" fill="#40C8E8">02</text>
+        <text x="68" y="490" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" letter-spacing="0.5" fill="rgba(64,200,232,0.55)">design</text>
+        <!-- Label below -->
+        <text x="68" y="528" text-anchor="middle" font-family="DM Mono,monospace" font-size="16" letter-spacing="3" fill="rgba(64,200,232,0.92)">EXPERIMENT</text>
+        <text x="68" y="547" text-anchor="middle" font-family="DM Mono,monospace" font-size="11" letter-spacing="0.5" fill="rgba(64,200,232,0.48)">designs it, runs it overnight</text>
+
+        <!-- ── FIX node (bottom-right) ── -->
+        <circle cx="532" cy="480" r="36" stroke="#28C840" stroke-width="1.5" fill="rgba(10,14,22,0.97)"/>
+        <text x="532" y="474" text-anchor="middle" font-family="DM Mono,monospace" font-size="13" letter-spacing="1.5" fill="#28C840">03</text>
+        <text x="532" y="490" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" letter-spacing="0.5" fill="rgba(40,200,64,0.55)">keep</text>
+        <!-- Label below -->
+        <text x="532" y="528" text-anchor="middle" font-family="DM Mono,monospace" font-size="16" letter-spacing="3" fill="rgba(40,200,64,0.92)">KEEP</text>
+        <text x="532" y="547" text-anchor="middle" font-family="DM Mono,monospace" font-size="11" letter-spacing="0.5" fill="rgba(40,200,64,0.48)">only what raises the score</text>
+
+        <!-- ── Edge annotations (new info only) ── -->
+        <!-- Left edge: Detect→Diagnose, positioned along left edge outside triangle -->
+        <text x="178" y="265" text-anchor="end" font-family="DM Mono,monospace" font-size="14" letter-spacing="0.5" fill="rgba(238,242,248,0.50)">a method worth trying ›</text>
+        <!-- Right edge: Fix→Detect, positioned along right edge outside triangle -->
+        <text x="422" y="265" text-anchor="start" font-family="DM Mono,monospace" font-size="14" letter-spacing="0.5" fill="rgba(238,242,248,0.50)">‹ score improved</text>
+        <!-- Bottom edge: near Diagnose→Fix, y~455 -->
+        <text x="300" y="457" text-anchor="middle" font-family="DM Mono,monospace" font-size="14" letter-spacing="0.5" fill="rgba(238,242,248,0.50)">built and measured</text>
+
+        <!-- ── Center content ── -->
+        <text x="300" y="304" text-anchor="middle" font-family="DM Mono,monospace" font-size="9.5" letter-spacing="3.5" fill="rgba(238,242,248,0.22)">ONE CYCLE</text>
+        <text x="300" y="348" text-anchor="middle" font-family="DM Mono,monospace" font-size="40" font-weight="700" fill="rgba(238,242,248,0.055)" letter-spacing="-1">&lt;24h</text>
+        <text x="300" y="370" text-anchor="middle" font-family="DM Mono,monospace" font-size="9.5" letter-spacing="1.5" fill="rgba(238,242,248,0.18)">read → experiment → keep</text>
+
+      </svg>
+
     </div>
 
     <div class="agent-cards reveal">
       <div class="agent-card">
-        <div class="ac-kicker">// Data agent</div>
-        <h3 class="ac-title">It mines the imagery you already have</h3>
-        <p class="ac-body">Harvests your unlabelled archive, verifies every candidate it finds, discards what fails, and retrains on what survives &mdash; without anyone drawing a box.</p>
-        <div class="ac-metric">Measured, held-out: the loop improved the deployed detector on <b>20 of 22</b> public datasets, recovering a median <b>18% of the remaining gap</b> to full supervision with no new labelling.</div>
+        <div class="ac-kicker">// It reads</div>
+        <h3 class="ac-title">Finds the methods worth trying on your problem</h3>
+        <p class="ac-body">New work appears constantly and almost none of it applies to you. The agent reads it against your results and your imagery, and shortlists what is worth an experiment.</p>
       </div>
       <div class="agent-card">
-        <div class="ac-kicker">// Model agent</div>
-        <h3 class="ac-title">It runs its own experiments and keeps what wins</h3>
-        <p class="ac-body">Reads every result, separates a <strong>model problem</strong> from a <strong>data problem</strong>, tunes the training configuration or triggers a fresh harvest, and proposes an updated model by morning.</p>
-        <div class="ac-metric">The same machinery retired <b>four of our own</b> difficulty predictors when their forecasts failed. <a href="#rigor" style="color:var(--orange-lt)">See the record &rarr;</a></div>
+        <div class="ac-kicker">// It experiments</div>
+        <h3 class="ac-title">Runs it overnight, on your hardware</h3>
+        <p class="ac-body">It builds the experiment, runs it against your held-out data, and measures the result &mdash; with no ML engineer of yours in the loop and nothing leaving your network.</p>
+        <div class="ac-metric">Most recent gain: <b>+4.4 points of accuracy</b>, from an experiment nobody scheduled.</div>
       </div>
       <div class="agent-card is-human">
-        <div class="ac-kicker">// You</div>
+        <div class="ac-kicker">// You approve</div>
         <h3 class="ac-title">Nothing ships without this step</h3>
-        <p class="ac-body">Review what changed and why, then approve or reject. The agents run unattended; the promotion does not.</p>
-        <div class="ac-metric">Autonomous experimentation, <b>human-gated deployment</b>. <span class="wf-fine">// Roadmap: having the model agent read and apply methods from current literature is a roadmap item, not a shipped capability.</span></div>
+        <p class="ac-body">See what changed, what it was measured against, and by how much. Then approve or reject.</p>
+        <div class="ac-metric">Autonomous experimentation, <b>human-gated deployment</b>.</div>
       </div>
     </div>
+
+    <p class="agent-foot reveal">That is the half that improves the <strong>model</strong>. The other half improves the <strong>data</strong> &mdash; the auto-labelling flywheel mines your own archive, verifies what it finds and retrains, with nobody drawing a box. <a href="#platform">See how the flywheel works &rarr;</a></p>
   </div>
 </section>
 
@@ -468,7 +480,7 @@
         </div>
         <div class="wf-right">
           <h3 class="wf-title">Beats the cloud. Without the cloud.</h3>
-          <p class="wf-desc">Everyone else phones home to the cloud for the hard part &mdash; checking what it found. Ours doesn&rsquo;t. Our on-prem verifier <strong>scores F1 0.80 against a leading cloud model&rsquo;s 0.71</strong>, held-out, with nothing leaving your network &mdash; and it tells you <strong>when it is unsure</strong>. The whole pipeline, verification included, runs inside your NERC CIP boundary. <span class="wf-fine">Zero external calls. // Roadmap: formal BCSI attestation is in progress, not certified today.</span></p>
+          <p class="wf-desc">Everyone else phones home to the cloud for the hard part &mdash; checking what it found. Ours doesn&rsquo;t. Our on-prem verifier <strong>scores F1 0.80 against a leading cloud model&rsquo;s 0.71</strong>, held-out, with nothing leaving your network &mdash; and it tells you <strong>when it is unsure</strong>. The whole pipeline, verification included, runs inside your NERC CIP boundary. <span class="wf-fine">Zero external calls, on-prem or in your own cloud.</span></p>
         </div>
       </div>
       <div class="wf-row reveal">
@@ -485,13 +497,7 @@
       </div>
     </div>
 
-    <div class="roadmap-strip reveal">
-      <div class="rs-head">// Roadmap, so you know what is not built yet</div>
-      <div class="rs-items">
-        <div class="rs-item"><h4>Works inside what you already have</h4><p>Detection runs on your hardware and writes to open, standard formats, so nothing has to move to a new system. <span class="wf-fine">// Roadmap: native connectors into the major GIS and asset platforms are not shipped today, and we will not claim an integration we have not built.</span></p></div>
-        <div class="rs-item"><h4>Compliance evidence, assembled <span class="wf-fine">// Roadmap</span></h4><p>Automatic NERC FAC-003 packages built from detection output. <span class="wf-fine">// The detections that would feed them are measured and on this page. The packaging is not built yet, and we will not imply it is.</span></p></div>
-      </div>
-    </div>
+    
 
     <p class="problem-close reveal">Same category. Different economics.</p>
   </div>
@@ -503,46 +509,6 @@
     <div class="reveal"><a href="mailto:umang@visorvolt.ai" class="btn-primary">Request a demo &rarr;</a></div>
   </div>
 </section>
-
-<section class="why-bg" id="rigor">
-  <div class="section-inner">
-    <div class="eyebrow reveal">// The Record</div>
-    <h2 class="reveal">Every forecast written down<br><em>before the result existed.</em></h2>
-    <p class="section-sub reveal">This is what the model agent does to your deployment, and it is why we measure your assets rather than predict them. Four times we proposed a way to tell in advance which classes would be hard. Four times our own measurements retired it.</p>
-
-    <div class="ledger-wrap reveal">
-      <table class="ledger-tbl">
-        <thead><tr><th>What we predicted</th><th>What we measured</th><th>Verdict</th></tr></thead>
-        <tbody>
-          <tr><td>Visually similar classes are the hard ones</td><td>The most confusable class scored <em>higher</em> than the distinct one</td><td class="v-fals">retired</td></tr>
-          <tr><td>40 labels always return ~80% of full supervision</td><td>Held on three classes, fell to 57% on the fourth</td><td class="v-fals">retired</td></tr>
-          <tr><td>Small objects predict difficulty</td><td>The smallest class landed at the <em>easy</em> end</td><td class="v-fals">retired</td></tr>
-          <tr><td>Ambiguous boundaries predict difficulty</td><td>The ambiguous class beat the clear-cut one</td><td class="v-fals">retired</td></tr>
-          <tr><td>Skipping our own pretrained detector costs accuracy</td><td>It cost 4% &mdash; and on some datasets, nothing</td><td class="v-held">held</td></tr>
-          <tr><td>The self-improving loop works outside our own domain</td><td>Closed 58% of the remaining gap on a domain we&rsquo;d never seen</td><td class="v-held">held</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="ledger-close reveal"><b>Twelve pre-registered forecasts are on record: six held, six were falsified.</b> Each was committed before the result existed, which is the only reason we can tell you which half is which &mdash; and why we quote your range from a measurement that takes about twenty minutes, not from a prediction.</p>
-
-    <div class="ledger reveal">
-      <article class="ledger-item">
-        <div class="ledger-fig">0</div>
-        <div class="ledger-key">synthetic-data wins claimed</div>
-        <p class="ledger-body">Synthetic augmentation ran head to head against real photographs and <strong>lost</strong>. It is claimed nowhere &mdash; not in the product, not on this page, not in the deck.</p>
-      </article>
-      <article class="ledger-item">
-        <div class="ledger-fig">0.87</div>
-        <div class="ledger-key">promised &middot; 0.43&ndash;0.73 delivered</div>
-        <p class="ledger-body">A known defect, stated: our 40-frame calibration <strong>does not transfer to a full archive</strong>. Today a customer cannot tell from the system alone how clean its auto-labels are. <strong>The fix ships before we call onboarding autonomous.</strong></p>
-      </article>
-    </div>
-  </div>
-</section>
-
-
-
 
 <section class="founder-bg" id="founder">
   <div class="section-inner">
@@ -616,7 +582,6 @@
     <a href="#downstream">What It Does</a>
     <a href="#platform">How It Works</a>
     <a href="#economics">After It Ships</a>
-    <a href="#rigor">The Record</a>
     <a href="grid.html">Grid Case Study</a>
     <a href="#founder">Founder</a>
     <a href="#contact">Contact</a>

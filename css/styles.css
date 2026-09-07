@@ -1239,3 +1239,13 @@ footer{
 }
 .back-home:hover{color:var(--orange-lt)}
 .nav-links a.is-here{color:var(--orange-lt)}
+
+/* --- research scientist: closing line --- */
+.agent-foot{
+  margin:34px 0 0;max-width:760px;font-size:15.5px;line-height:1.7;
+  color:rgba(255,255,255,0.72);
+  border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;
+}
+.agent-foot strong{color:var(--white)}
+.agent-foot a{color:var(--orange-lt);text-decoration:none;border-bottom:1px solid rgba(191,123,48,.35)}
+.agent-foot a:hover{border-bottom-color:var(--orange-lt)}
