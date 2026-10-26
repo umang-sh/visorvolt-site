@@ -285,9 +285,23 @@ def home_proof(ctx):
 KIND = {"prolifics": "Partnership", "zebra": "Partnership", "healthfields": "Customer"}
 
 def home_flash(ctx):
-    n = NEWS[0]
-    return (f'<a class="hero-flash" href="{ctx.url(n["path"])}"><span class="hf-new">New</span>'
-            f'<span class="hf-text">{n["headline"]}</span><span class="hf-go" aria-hidden="true">&rarr;</span></a>')
+    """The newest three posts rotate in the hero. Without JavaScript only the first shows, as plain text."""
+    items = NEWS[:3]
+    slides = []
+    for k, n in enumerate(items):
+        hidden = "" if k == 0 else ' aria-hidden="true" tabindex="-1"'
+        active = " is-active" if k == 0 else ""
+        slides.append(f'<a class="hero-flash{active}" href="{ctx.url(n["path"])}"{hidden}>'
+                      f'<span class="hf-new">New</span><span class="hf-kind">{KIND[n["about"]]}</span>'
+                      f'<span class="hf-text">{n["headline"]}</span><span class="hf-go" aria-hidden="true">&rarr;</span></a>')
+    dots = "".join(f'<button type="button" class="hf-dot" aria-label="Show news {k + 1} of {len(items)}"'
+                   f'{" aria-current=\"true\"" if k == 0 else ""}><span></span></button>' for k in range(len(items)))
+    return (f'<div class="hf-wrap" role="region" aria-roledescription="carousel" aria-label="Latest news">'
+            f'<div class="hf-viewport">{"".join(slides)}</div>'
+            f'<div class="hf-controls"><button type="button" class="hf-pause" aria-label="Pause news" aria-pressed="false">'
+            f'<svg viewBox="0 0 12 12" aria-hidden="true"><rect class="i-pause" x="2" y="1.5" width="2.6" height="9" rx=".6"/>'
+            f'<rect class="i-pause" x="7.4" y="1.5" width="2.6" height="9" rx=".6"/><path class="i-play" d="M3 1.5v9l7.5-4.5z"/></svg></button>'
+            f'<span class="hf-dots">{dots}</span></div></div>')
 
 def home_news(ctx):
     cards = []

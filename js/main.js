@@ -62,6 +62,55 @@ document.querySelectorAll('.img-break-bg[data-bg-jpg]').forEach(el => bgObserver
   document.addEventListener('visibilitychange', () => document.hidden ? pause() : (timer || play()));
 })();
 
+// Hero news flash: rotates the newest posts; pauses on hover, focus, the pause button, or reduced motion
+(function(){
+  const wrap = document.querySelector('.hf-wrap');
+  if (!wrap) return;
+  const items = [...wrap.querySelectorAll('.hero-flash')];
+  const dots = [...wrap.querySelectorAll('.hf-dot')];
+  const btn = wrap.querySelector('.hf-pause');
+  const MS = 7000;
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let cur = 0, timer = null, stopped = still, held = false;
+  wrap.style.setProperty('--hf-ms', MS + 'ms');
+  if (items.length < 2) { wrap.querySelector('.hf-controls').hidden = true; return; }
+
+  function show(n) {
+    items[cur].classList.remove('is-active');
+    items[cur].setAttribute('aria-hidden', 'true');
+    items[cur].tabIndex = -1;
+    dots[cur].removeAttribute('aria-current');
+    cur = n;
+    items[cur].classList.add('is-active');
+    items[cur].removeAttribute('aria-hidden');
+    items[cur].removeAttribute('tabindex');
+    dots[cur].setAttribute('aria-current', 'true');
+    restartFill();
+  }
+  function restartFill() {           // restart the dot's countdown bar
+    wrap.classList.remove('is-playing');
+    void wrap.offsetWidth;
+    if (!stopped) wrap.classList.add('is-playing');
+  }
+  function tick() { show((cur + 1) % items.length); }
+  function play() { clearInterval(timer); timer = null; if (!stopped && !held) timer = setInterval(tick, MS); }
+  function hold(on) { held = on; wrap.classList.toggle('is-held', on); if (on) { clearInterval(timer); timer = null; } else { restartFill(); play(); } }
+
+  dots.forEach((d, n) => d.addEventListener('click', () => { show(n); play(); }));
+  btn.addEventListener('click', () => {
+    stopped = !stopped;
+    btn.setAttribute('aria-pressed', String(stopped));
+    btn.setAttribute('aria-label', stopped ? 'Play news' : 'Pause news');
+    restartFill(); play();
+  });
+  wrap.addEventListener('mouseenter', () => hold(true));
+  wrap.addEventListener('mouseleave', () => hold(false));
+  wrap.addEventListener('focusin', () => hold(true));
+  wrap.addEventListener('focusout', e => { if (!wrap.contains(e.relatedTarget)) hold(false); });
+  document.addEventListener('visibilitychange', () => document.hidden ? (clearInterval(timer), timer = null) : play());
+  restartFill(); play();
+})();
+
 // Hamburger nav
 const ham = document.getElementById('nav-hamburger');
 const navLinks = document.getElementById('nav-links');
