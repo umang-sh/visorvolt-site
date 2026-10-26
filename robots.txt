@@ -1,0 +1,25 @@
+# Search engines and AI answer engines may read the site.
+User-agent: *
+Allow: /
+Disallow: /demo.html
+
+# Crawlers that collect training data for AI models may not.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+Sitemap: https://visorvolt.ai/sitemap.xml

@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VisorVolt: 40 images. Any domain.</title>
-<meta name="description" content="You give us 40 images per site; the system generates and verifies the rest of its own training data. Typically 87% of a fully hand-labeled model across public benchmark datasets: telecom, medical, microscopy, thermal, subsea, documents, aerial and the electric grid. Runs fully air-gapped inside your network.">
+<meta name="description" content="40 images per site, and we pick and label them. A median 89% of a fully hand-labeled model across 39 public datasets. Runs on your own hardware with no internet.">
 <link rel="canonical" href="https://visorvolt.ai/">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VisorVolt">
 <meta property="og:url" content="https://visorvolt.ai/">
 <meta property="og:title" content="VisorVolt: 40 images. Any domain.">
-<meta property="og:description" content="You give us 40 images per site; the system generates and verifies the rest of its own training data. Typically 87% of a fully hand-labeled model across public benchmark datasets: telecom, medical, microscopy, thermal, subsea, documents, aerial and the electric grid. Runs fully air-gapped inside your network.">
+<meta property="og:description" content="40 images per site, and we pick and label them. A median 89% of a fully hand-labeled model across 39 public datasets. Runs on your own hardware with no internet.">
 <meta property="og:image" content="https://visorvolt.ai/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -19,22 +19,70 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="VisorVolt: 40 images. Any domain.">
-<meta name="twitter:description" content="You give us 40 images per site; the system generates and verifies the rest of its own training data. Typically 87% of a fully hand-labeled model across public benchmark datasets: telecom, medical, microscopy, thermal, subsea, documents, aerial and the electric grid. Runs fully air-gapped inside your network.">
+<meta name="twitter:description" content="40 images per site, and we pick and label them. A median 89% of a fully hand-labeled model across 39 public datasets. Runs on your own hardware with no internet.">
 <meta name="twitter:image" content="https://visorvolt.ai/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon_32.png">
 <link rel="apple-touch-icon" sizes="192x192" href="icon_192.png">
-<link rel="preload" as="image" href="assets/hero/grid.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" imagesrcset="assets/hero-set/01-telecom-900.webp 900w, assets/hero-set/01-telecom-1800.webp 1800w" imagesizes="100vw" fetchpriority="high">
+<script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<!-- BUILD:JSONLD -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://visorvolt.ai/#org",
+   "name": "VisorVolt",
+   "legalName": "VisorVolt Inc.",
+   "url": "https://visorvolt.ai/",
+   "logo": "https://visorvolt.ai/icon_192.png",
+   "email": "umang@visorvolt.ai",
+   "description": "Vision AI that learns a new site from 40 images and keeps improving after it ships. Counting and inspection run on the customer's own hardware with no internet.",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Allerton Street",
+    "addressLocality": "Redwood City",
+    "addressRegion": "CA",
+    "postalCode": "94063",
+    "addressCountry": "US"
+   },
+   "founder": {
+    "@type": "Person",
+    "name": "Umang Sharma",
+    "jobTitle": "Founder and CEO",
+    "sameAs": [
+     "https://www.linkedin.com/in/umang-sharma-datascience"
+    ]
+   },
+   "sameAs": [
+    "https://www.linkedin.com/company/visorvolt/"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://visorvolt.ai/#site",
+   "url": "https://visorvolt.ai/",
+   "name": "VisorVolt",
+   "publisher": {
+    "@id": "https://visorvolt.ai/#org"
+   }
+  }
+ ]
+}
+</script>
+<!-- /BUILD:JSONLD -->
 </head>
 <body>
 
-<!-- NAV -->
+<!-- BUILD:NAV -->
 <nav>
-  <a class="nav-logo" href="#">
+  <a class="nav-logo" href="./">
     <svg viewBox="0 0 500 100" role="img" aria-label="VisorVolt">
       <polygon points="50,10 84,30 84,70 50,90 16,70 16,30" fill="none" stroke="#1E4080" stroke-width="5" stroke-linejoin="round"/>
       <polyline points="16,30 50,10 84,30" fill="none" stroke="#E07B00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -49,39 +97,38 @@
       <text x="100" y="78" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400" fill="#6B8BB0" letter-spacing="2.5">DOMAIN-AGNOSTIC VISION</text>
     </svg>
   </a>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false">
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
     <span></span><span></span><span></span>
   </button>
   <div class="nav-links" id="nav-links">
     <a href="#domains">Proof</a>
-    <a href="#downstream">What It Does</a>
     <a href="#platform">How It Works</a>
-    <a href="#economics">Self-Improving</a>
-    <a href="#handover">Handover</a>
-    <a href="#moat">Why Us</a>
-    <a href="grid.html">Grid</a>
-    <a href="mailto:umang@visorvolt.ai" class="nav-cta">Request Demo</a>
+    <a href="case-studies/">Customers</a>
+    <a href="partners/">Partners</a>
+    <a href="news/">News</a>
+    <a href="mailto:umang@visorvolt.ai?subject=Start%20with%2040%20images" class="nav-cta">Start with 40 images</a>
   </div>
 </nav>
+<!-- /BUILD:NAV -->
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-scanline"></div>
   <div class="hero-run" id="hero-run" role="img" aria-label="Real detections across five industries: telecom antennas, construction site safety, warehouse pallets, grid crossarms, sacks counted in a container">
-    <div class="hs active" style="background-image:url('assets/hero-set/01-telecom.jpg')" data-cap="Telecom &middot; panel antennas + RRUs"></div>
-    <div class="hs" data-src="assets/hero-set/02-construction.jpg" data-cap="Construction &middot; site safety, people on site"></div>
-    <div class="hs" data-src="assets/hero-set/03-warehouse-count.jpg" data-cap="Warehouse &middot; pallets found and counted"></div>
-    <div class="hs" data-src="assets/hero-set/04-crossarm.jpg" data-cap="Grid &middot; held-out circuit, never trained on"></div>
-    <div class="hs" data-src="assets/hero-set/05-sacks.jpg" data-cap="Logistics &middot; 109 sacks counted, 0 false"></div>
+    <div class="hs active" data-cap="Telecom &middot; panel antennas + RRUs"><img src="assets/hero-set/01-telecom-900.webp" srcset="assets/hero-set/01-telecom-900.webp 900w, assets/hero-set/01-telecom-1800.webp 1800w" sizes="100vw" width="1800" height="1013" alt="" fetchpriority="high" decoding="async"></div>
+    <div class="hs" data-src="assets/hero-set/02-construction-900.webp" data-src-lg="assets/hero-set/02-construction-1800.webp" data-cap="Construction &middot; site safety, people on site"></div>
+    <div class="hs" data-src="assets/hero-set/03-warehouse-count-900.webp" data-src-lg="assets/hero-set/03-warehouse-count-1800.webp" data-cap="Warehouse &middot; pallets found and counted"></div>
+    <div class="hs" data-src="assets/hero-set/04-crossarm-900.webp" data-src-lg="assets/hero-set/04-crossarm-1800.webp" data-cap="Grid &middot; held-out circuit, never trained on"></div>
+    <div class="hs" data-src="assets/hero-set/05-sacks-900.webp" data-src-lg="assets/hero-set/05-sacks-1800.webp" data-cap="Logistics &middot; 109 sacks counted, 0 false"></div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-grid-lines"></div>
   <div class="hero-content">
     <div class="hero-tag">// Domain-Agnostic Vision</div>
     <h1>Any domain. 40 images.<br><em>A working detector.</em></h1>
-    <p class="hero-sub">Label 40 images. Get a detector that finds what you asked for, on your own imagery, in days. <strong>Tested on 39 public datasets we didn&rsquo;t pick &mdash; it worked on every one.</strong></p>
+    <p class="hero-sub">Label 40 images. Get a detector that finds what you asked for, on your own imagery, in days. <strong>Tested on 39 public datasets we didn&rsquo;t pick, and it worked on every one.</strong></p>
     <div class="hero-actions">
-      <a href="mailto:umang@visorvolt.ai" class="btn-primary">Request a demo &rarr;</a>
+      <a href="mailto:umang@visorvolt.ai?subject=Start%20with%2040%20images" class="btn-primary">Start with 40 images &rarr;</a>
       <a href="#platform" class="btn-outline">See how it works</a>
     </div>
 <a href="#domains" class="hero-more">See all 39 datasets &rarr;</a>
@@ -91,6 +138,13 @@
     <div class="hero-dots" id="hero-dots"></div>
   </div>
 </section>
+<!-- BUILD:PROOF -->
+<div class="proof-strip" aria-label="Customers and partners">
+  <a href="case-studies/healthfields/"><span class="ps-k">Customer</span>Live in production at Healthfields</a>
+  <a href="partners/prolifics/"><span class="ps-k">Systems integrator</span>Prolifics, 2,000+ experts worldwide</a>
+  <a href="partners/zebra/"><span class="ps-k">ISV partner</span>Zebra Technologies Registered ISV</a>
+</div>
+<!-- /BUILD:PROOF -->
 
 <section id="domains">
   <div class="section-inner">
@@ -101,7 +155,7 @@
     <div class="proof-row">
       <div class="proof-head">
         <span class="proof-num">Assets</span>
-        <p class="sec-lede">Pass mark set <strong>before</strong> we ran: under 55% of a fully-labeled model counts as a failure. <strong>Zero of 39 hit it</strong> &mdash; no per-domain tuning, no architecture changes.</p>
+        <p class="sec-lede">Pass mark set <strong>before</strong> we ran: under 55% of a fully-labeled model counts as a failure. <strong>Zero of 39 hit it</strong>, with no per-domain tuning and no architecture changes.</p>
       </div>
       <div class="dom-grid">
       <figure class="dom-card">
@@ -170,7 +224,7 @@
       </figure>
     </div>
     
-      <p class="dom-foot">Every percentage is measured against a model trained on that task&rsquo;s <em>entire</em> labeled dataset &mdash; the annotation project you would otherwise be paying for. <strong>Forty images gets you most of the way there.</strong></p>
+      <p class="dom-foot">Every percentage is measured against a model trained on that task&rsquo;s <em>entire</em> labeled dataset, the annotation project you would otherwise be paying for. <strong>Forty images gets you most of the way there.</strong></p>
 
       <div class="cap-strip">
         <div class="cap-head">Proven across the three ways you actually capture</div>
@@ -178,27 +232,27 @@
           <div class="cap-item">
             <svg viewBox="0 0 56 38" aria-hidden="true"><g fill="none" stroke="#D49040" stroke-width="1.5" stroke-linecap="round"><ellipse cx="9" cy="7" rx="7" ry="2.4"/><ellipse cx="47" cy="7" rx="7" ry="2.4"/><path d="M9 9 L21 15 M47 9 L35 15"/><rect x="21" y="14" width="14" height="8" rx="2.5"/><path d="M25 22 L22 27 M31 22 L34 27" stroke-opacity=".5" stroke-dasharray="2.5 2.5"/><path d="M14 33 h28" stroke-opacity=".38"/></g></svg>
             <b>Drone &amp; aerial</b>
-            <span>Oblique and nadir flight imagery &mdash; the telecom, aerial-survey and grid tiles above.</span>
+            <span>Oblique and nadir flight imagery: the telecom, aerial-survey and grid tiles above.</span>
           </div>
           <div class="cap-item">
             <svg viewBox="0 0 56 38" aria-hidden="true"><g fill="none" stroke="#D49040" stroke-width="1.5" stroke-linecap="round"><path d="M12 4 v29"/><path d="M12 7 h6"/><rect x="17" y="4" width="11" height="7" rx="2"/><path d="M24 11 L18 30 M27 11 L40 30" stroke-opacity=".45" stroke-dasharray="3 3"/><path d="M8 33 h40" stroke-opacity=".38"/></g></svg>
             <b>Pole &amp; mast, looking down</b>
-            <span>Fixed cameras over a yard or aisle &mdash; the container-terminal tile, and the warehouse counts below.</span>
+            <span>Fixed cameras over a yard or aisle: the container-terminal tile, and the warehouse counts below.</span>
           </div>
           <div class="cap-item">
             <svg viewBox="0 0 56 38" aria-hidden="true"><g fill="none" stroke="#D49040" stroke-width="1.5" stroke-linecap="round"><rect x="8" y="12" width="20" height="13" rx="2.5"/><path d="M28 16 l8-4 v13 l-8-4z"/><path d="M13 12 l2.5-3.5 h7 L25 12"/><path d="M36 17 l12-4 M36 22 l12 4" stroke-opacity=".4" stroke-dasharray="3 3"/><path d="M4 33 h48" stroke-opacity=".38"/></g></svg>
             <b>Ground level &amp; handheld</b>
-            <span>Phone, body-cam and vehicle imagery &mdash; the construction, thermal and bulk-goods tiles.</span>
+            <span>Phone, body-cam and vehicle imagery: the construction, thermal and bulk-goods tiles.</span>
           </div>
         </div>
-        <p class="cap-foot">Same 40-image recipe in all three. What changes the score is <strong>how big the object is in the frame</strong>, not what the camera was bolted to &mdash; so tell us the camera and the standoff distance and we will tell you where you will land before you buy.</p>
+        <p class="cap-foot">Same 40-image recipe in all three. What changes the score is <strong>how big the object is in the frame</strong>, not what the camera was bolted to. So tell us the camera and the standoff distance and we will tell you where you will land before you buy.</p>
       </div>
     </div>
 
     <div class="proof-row"><span id="defects"></span>
       <div class="proof-head">
         <span class="proof-num">Defects</span>
-        <p class="sec-lede">Finding the asset is the easy half; the value is in the damage &mdash; rare, subjective, and expensive for an expert to box. <strong>Same recipe, unchanged.</strong></p>
+        <p class="sec-lede">Finding the asset is the easy half; the value is in the damage: rare, subjective, and expensive for an expert to box. <strong>Same recipe, unchanged.</strong></p>
       </div>
       <div class="dom-grid">
             <figure class="dom-card">
@@ -235,16 +289,29 @@
       </figure>
     </div>
     
-      <p class="dom-foot">Four industries, one system, nothing rebuilt between them. <strong>The cable break at 60% is the weakest and it is here on purpose</strong> &mdash; thin, low-contrast damage on a busy background is the hardest thing we do, and you should see it before you buy.</p>
+      <p class="dom-foot">Four industries, one system, nothing rebuilt between them. <strong>The cable break at 60% is the weakest and it is here on purpose</strong>. Thin, low-contrast damage on a busy background is the hardest thing we do, and you should see it before you buy.</p>
     </div>
   </div>
 </section>
+
+<!-- BUILD:LIVE -->
+<section class="live-band" id="live" aria-labelledby="live-h">
+  <div class="section-inner">
+    <div class="eyebrow"><span class="live-dot" aria-hidden="true"></span>// Live in production</div>
+    <h2 id="live-h">At Healthfields, it counts<br><em>on cameras they already had.</em></h2>
+    <p class="section-sub">Cartons counted at dispatch and on the packing line, on site with no internet, and written into their warehouse system. Measured on days the models never saw.</p>
+    <div class="tiles"><div class="tile"><div class="tile-fig">&minus;1%</div><div class="tile-label">Cartons, held-out day</div><p class="tile-def">102 counted against 103 by a person counting each carton, on a day the model never saw.</p></div><div class="tile"><div class="tile-fig">7/7</div><div class="tile-label">Packing counts exact</div><p class="tile-def">Exact on 7 of 7 hand-counted windows at the carton sealer, which handles about 450 items a day.</p></div><div class="tile"><div class="tile-fig">100%</div><div class="tile-label">Truck arrivals caught</div><p class="tile-def">The bay trigger caught every truck arrival in the test. It was trained from about 40 frames.</p></div></div>
+    <p class="live-foot"><a href="case-studies/healthfields/" class="btn-outline">Read the live case study &rarr;</a>
+      <span class="live-upd">Last updated <time datetime="2026-10-26">26 October 2026</time></span></p>
+  </div>
+</section>
+<!-- /BUILD:LIVE -->
 
 <section class="problem-bg" id="downstream">
   <div class="section-inner">
     <div class="eyebrow reveal">// What It Does</div>
     <h2 class="reveal">Detection is the input.<br><em>The output is a decision.</em></h2>
-    <p class="section-sub reveal">A box on an image is not a business outcome. Every detection leaves as a structured record &mdash; what it is, where, how confident &mdash; in open formats your systems already read.</p>
+    <p class="section-sub reveal">A box on an image is not a business outcome. Every detection leaves as a structured record (what it is, where, how confident) in open formats your systems already read.</p>
 
 
     <figure class="recfig reveal">
@@ -340,19 +407,19 @@
       <div class="use-card">
         <div class="use-kicker">// Count</div>
         <h3 class="use-title">Inventory, from footage you already capture</h3>
-        <p class="use-body">Stock counted per frame, per aisle, per bay. On a fixed camera, averaging a handful of frames cuts count error to <strong>11&ndash;13%</strong> &mdash; without touching the detector.</p>
+        <p class="use-body">Stock counted per frame, per aisle, per bay. On a fixed camera, averaging a handful of frames cuts count error to <strong>11&ndash;13%</strong>, without touching the detector.</p>
         <div class="use-shot"><img src="assets/warehouse/hero-pallets.jpg" alt="Warehouse pallets detected and numbered" loading="lazy" width="1400" height="788"></div>
       </div>
       <div class="use-card">
         <div class="use-kicker">// Flag</div>
         <h3 class="use-title">Defects surfaced at a threshold you set</h3>
-        <p class="use-body">One dial, three modes: cast a <strong>wide net</strong> for review, run <strong>balanced</strong>, or flag only what it is <strong>certain</strong> of. You choose where the false-alarm cost sits &mdash; not us.</p>
+        <p class="use-body">One dial, three modes: cast a <strong>wide net</strong> for review, run <strong>balanced</strong>, or flag only what it is <strong>certain</strong> of. You choose where the false-alarm cost sits, not us.</p>
         <div class="use-shot"><img src="assets/defects/wind-corrosion.jpg" alt="Blade corrosion detected on a wind turbine" loading="lazy" width="900" height="900"></div>
       </div>
       <div class="use-card">
         <div class="use-kicker">// Export</div>
         <h3 class="use-title">Into the system that acts on it</h3>
-        <p class="use-body">Boxes, counts, classes and confidences in open, standard formats &mdash; inventory systems, work orders, GIS, compliance logs. Nothing has to move to a new platform.</p>
+        <p class="use-body">Boxes, counts, classes and confidences in open, standard formats: inventory systems, work orders, GIS, compliance logs. Nothing has to move to a new platform.</p>
         <div class="use-code" aria-label="Example of an exported detection record">
 <span class="cd-p">{</span>
   <span class="cd-k">"class"</span>: <span class="cd-s">"pallet"</span>,
@@ -372,7 +439,7 @@
   <div class="section-inner">
     <div class="eyebrow reveal">// How It Works</div>
     <h2 class="reveal">From raw imagery<br>to <em>operational intelligence.</em></h2>
-    <p class="section-sub reveal">Three phases, one loop. An agent runs it end to end &mdash; on your hardware or in your own cloud. We stand it up with you; after that it is <em>yours</em> to run.</p>
+    <p class="section-sub reveal">Three phases, one loop. An agent runs it end to end, on your hardware or in your own cloud. We stand it up with you; after that it is <em>yours</em> to run.</p>
 
     <figure class="howfig reveal">
       <svg viewBox="0 0 1080 262" role="img" aria-label="How VisorVolt works" aria-describedby="howdesc" class="howsvg">
@@ -453,7 +520,7 @@
 
           <!-- return leg -->
           <path class="fw-return" d="M788 160 L788 214 Q788 224 778 224 L452 224 Q442 224 442 214 L442 190" fill="none" stroke="#D49040" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ar)"/>
-          <text x="616" y="248" text-anchor="middle" fill="#D49040" font-size="11">every new image you add feeds the loop &#8212; accuracy climbs after deployment, not down</text>
+          <text x="616" y="248" text-anchor="middle" fill="#D49040" font-size="11">every new image you add feeds the loop, so accuracy climbs after deployment, not down</text>
 
           <!-- self-improving agent, watching the loop -->
           <g class="fw-agent">
@@ -492,7 +559,7 @@
           <div class="timeline-content">
             <div class="tc-phase">// Phase 02 · Days per new asset</div>
             <h3 class="tc-title">Auto Expansion</h3>
-            <p class="tc-desc">A brand-new asset onboarded in days from <strong>40 images per site</strong> &mdash; and multiple assets come out of that one pool of 40.</p>
+            <p class="tc-desc">A brand-new asset onboarded in days from <strong>40 images per site</strong>, and multiple assets come out of that one pool of 40.</p>
           </div>
         </div>
 
@@ -583,7 +650,7 @@
     </figure>
 
     <div class="how-proof reveal"><span id="flywheel"></span>
-      <p class="how-proof-line">Assets, novel assets and defects &mdash; detected, self-improved, delivered in open formats. Held-out across 22 public datasets, the loop improved the deployed detector <strong>20 times out of 22</strong>, closing a typical <strong>18% of the remaining gap</strong> with no further labelling on your side.</p>
+      <p class="how-proof-line">Assets, novel assets and defects: detected, self-improved, delivered in open formats. Held-out across 22 public datasets, the loop improved the deployed detector <strong>20 times out of 22</strong>, closing a typical <strong>18% of the remaining gap</strong> with no further labelling on your side.</p>
     </div>
   </div>
 </section>
@@ -592,7 +659,7 @@
   <div class="section-inner">
     <div class="eyebrow reveal">// After It Ships</div>
     <h2 class="reveal">A research scientist<br><em>that never sleeps.</em></h2>
-    <p class="section-sub reveal">A fixed, hand-labelled model starts drifting from field conditions the day it ships, and the usual fix is another labelling round. Yours ships with a research scientist instead. It reads the literature, finds the methods worth trying on <em>your</em> problem, designs the experiment, runs it overnight on your hardware, and keeps only what raises the score &mdash; then goes again. <strong>One recent experiment lifted accuracy by 4.4 points.</strong> Nobody asked it to.</p>
+    <p class="section-sub reveal">A fixed, hand-labelled model starts drifting from field conditions the day it ships, and the usual fix is another labelling round. Yours ships with a research scientist instead. It reads the literature, finds the methods worth trying on <em>your</em> problem, designs the experiment, runs it overnight on your hardware, and keeps only what raises the score, then goes again. <strong>One recent experiment lifted accuracy by 4.4 points.</strong> Nobody asked it to.</p>
 
     <div class="loop-tri reveal">
       <svg class="lt-svg" viewBox="0 0 600 568" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -665,7 +732,7 @@
       <div class="agent-card">
         <div class="ac-kicker">// It experiments</div>
         <h3 class="ac-title">Runs it overnight, on your hardware</h3>
-        <p class="ac-body">It builds the experiment, runs it against your held-out data, and measures the result &mdash; with no ML engineer of yours in the loop and nothing leaving your network.</p>
+        <p class="ac-body">It builds the experiment, runs it against your held-out data, and measures the result, with no ML engineer of yours in the loop and nothing leaving your network.</p>
         <div class="ac-metric">Most recent gain: <b>+4.4 points of accuracy</b>, from an experiment nobody scheduled.</div>
       </div>
       <div class="agent-card is-human">
@@ -676,7 +743,7 @@
       </div>
     </div>
 
-    <p class="agent-foot reveal">That is the half that improves the <strong>model</strong>. The other half improves the <strong>data</strong> &mdash; the auto-labelling flywheel mines your own archive, verifies what it finds and retrains, with nobody drawing a box. <a href="#platform">See how the flywheel works &rarr;</a> Both are agents, both run inside your environment, and both are designed to hand over &mdash; yours to start, pause and audit.</p>
+    <p class="agent-foot reveal">That is the half that improves the <strong>model</strong>. The other half improves the <strong>data</strong>: the auto-labelling flywheel mines your own archive, verifies what it finds and retrains, with nobody drawing a box. <a href="#platform">See how the flywheel works &rarr;</a> Both are agents, both run inside your environment, and both are designed to hand over: yours to start, pause and audit.</p>
   </div>
 </section>
 
@@ -685,7 +752,7 @@
     <div class="eyebrow reveal">// Why VisorVolt</div>
     <h2 class="reveal">Every serious vendor trains on your data.<br><em>The question is who pays for it.</em></h2>
     <span id="differentiation"></span>
-    <p class="section-sub reveal">Every vendor trains on your data. Almost all of them make you label it, one vertical at a time, so each new asset is a fresh annotation project on your budget. Ours generates and verifies its own. The difference is not a benchmark score &mdash; it is who pays to expand coverage, and which direction accuracy moves after deployment.</p>
+    <p class="section-sub reveal">Every vendor trains on your data. Almost all of them make you label it, one vertical at a time, so each new asset is a fresh annotation project on your budget. Ours generates and verifies its own. The difference is not a benchmark score. It is who pays to expand coverage, and which direction accuracy moves after deployment.</p>
 
     <div class="why-features">
       <div class="wf-row reveal">
@@ -709,7 +776,7 @@
         </div>
         <div class="wf-right">
           <h3 class="wf-title">Who pays to expand coverage</h3>
-          <p class="wf-desc">For label-dependent vendors, every new asset is a project on your budget and your timeline. Ours generates and verifies its own training data &mdash; new assets in days, from 40 images per site, several out of the same 40.</p>
+          <p class="wf-desc">For label-dependent vendors, every new asset is a project on your budget and your timeline. Ours generates and verifies its own training data: new assets in days, from 40 images per site, several out of the same 40.</p>
         </div>
       </div>
       <div class="wf-row reveal">
@@ -721,7 +788,7 @@
         </div>
         <div class="wf-right">
           <h3 class="wf-title">Beats the cloud. Without the cloud.</h3>
-          <p class="wf-desc">Everyone else phones home to the cloud for the hard part &mdash; checking what it found. Ours doesn&rsquo;t. Our on-prem verifier <strong>scores F1 0.80 against a leading cloud model&rsquo;s 0.71</strong>, held-out, with nothing leaving your network &mdash; and it tells you <strong>when it is unsure</strong>. The whole pipeline, verification included, runs inside your NERC CIP boundary. <span class="wf-fine">Zero external calls, on-prem or in your own cloud.</span></p>
+          <p class="wf-desc">Everyone else phones home to the cloud for the hard part: checking what it found. Ours doesn&rsquo;t. Our on-prem verifier <strong>scores F1 0.80 against a leading cloud model&rsquo;s 0.71</strong>, held-out, with nothing leaving your network, and it tells you <strong>when it is unsure</strong>. The whole pipeline, verification included, runs inside your NERC CIP boundary. <span class="wf-fine">Zero external calls, on-prem or in your own cloud.</span></p>
         </div>
       </div>
       <div class="wf-row reveal">
@@ -733,7 +800,7 @@
         </div>
         <div class="wf-right">
           <h3 class="wf-title">We stand it up. Then it runs without us.</h3>
-          <p class="wf-desc">Our engineers deploy forward, on your site, and get it running on your imagery and your hardware. After that both halves &mdash; the labelling flywheel and the research scientist &mdash; are <strong>agents your own team operates</strong>: start a run, review what it proposes, promote what you accept. <strong>It is designed to run without us</strong>, and it improves on its own rather than on a services contract. <span class="wf-fine">Hands-on while we onboard you; self-serve once it is yours. <a href="#handover">See the handover &rarr;</a></span></p>
+          <p class="wf-desc">Our engineers deploy forward, on your site, and get it running on your imagery and your hardware. After that both halves, the labelling flywheel and the research scientist, are <strong>agents your own team operates</strong>: start a run, review what it proposes, promote what you accept. <strong>It is designed to run without us</strong>, and it improves on its own rather than on a services contract. <span class="wf-fine">Hands-on while we onboard you; self-serve once it is yours. <a href="#handover">See the handover &rarr;</a></span></p>
         </div>
       </div>
       <div class="wf-row reveal">
@@ -745,7 +812,7 @@
         </div>
         <div class="wf-right">
           <h3 class="wf-title">The number buyers actually feel</h3>
-          <p class="wf-desc">Accuracy is not what wastes a crew&rsquo;s day. False alarms are. On frames containing none of the target assets, the pooled 40-image model emits <strong>11.5 false detections per 100 frames</strong> against <strong>104.8</strong> for the three single-asset models it replaces &mdash; roughly <strong>9&times; fewer</strong>.</p>
+          <p class="wf-desc">Accuracy is not what wastes a crew&rsquo;s day. False alarms are. On frames containing none of the target assets, the pooled 40-image model emits <strong>11.5 false detections per 100 frames</strong> against <strong>104.8</strong> for the three single-asset models it replaces, roughly <strong>9&times; fewer</strong>.</p>
         </div>
       </div>
     </div>
@@ -759,7 +826,7 @@
 <section class="cta-bg cta-band">
   <div class="cta-inner">
     <p class="cta-band-line reveal">Forty images. Everything after that runs on your hardware.</p>
-    <div class="reveal"><a href="mailto:umang@visorvolt.ai" class="btn-primary">Request a demo &rarr;</a></div>
+    <div class="reveal"><a href="mailto:umang@visorvolt.ai?subject=Start%20with%2040%20images" class="btn-primary">Start with 40 images &rarr;</a></div>
   </div>
 </section>
 
@@ -805,43 +872,41 @@
       40 images per site, and we pick the 40. Days, not months. No labelling project, no infrastructure change, no commitment.
     </p>
     <div class="cta-actions reveal">
-      <a href="mailto:umang@visorvolt.ai" class="btn-primary" style="font-size:15px;padding:15px 32px">Request a demo →</a>
+      <a href="mailto:umang@visorvolt.ai?subject=Start%20with%2040%20images" class="btn-primary" style="font-size:15px;padding:15px 32px">Start with 40 images &rarr;</a>
       <a href="mailto:umang@visorvolt.ai" class="btn-outline" style="font-size:15px;padding:15px 32px">Talk to the founder</a>
     </div>
     <p class="cta-note reveal">umang@visorvolt.ai · visorvolt.ai</p>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div>
-    <svg viewBox="0 0 500 100" style="height:30px;width:auto">
+<!-- BUILD:FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <a class="footer-logo" href="./" aria-label="VisorVolt home"><svg viewBox="0 0 500 100" aria-hidden="true">
       <polygon points="50,10 84,30 84,70 50,90 16,70 16,30" fill="none" stroke="#1E4080" stroke-width="5" stroke-linejoin="round"/>
-      <polyline points="16,30 50,10 84,30" fill="none" stroke="#BF7B30" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="16,30 50,10 84,30" fill="none" stroke="#E07B00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
       <polygon points="50,26 72,38 72,62 50,74 28,62 28,38" fill="none" stroke="#1E4080" stroke-width="2" stroke-linejoin="round"/>
-      <line x1="16" y1="50" x2="84" y2="50" stroke="#BF7B30" stroke-width="2.5" stroke-linecap="round"/>
-      <circle cx="16" cy="30" r="3.5" fill="#BF7B30"/>
-      <circle cx="84" cy="30" r="3.5" fill="#1E4080" stroke="#BF7B30" stroke-width="2"/>
-      <polygon points="50,28 40,48 49,48 44,64 62,49 52,49 57,28" fill="#BF7B30"/>
+      <line x1="16" y1="50" x2="84" y2="50" stroke="#E07B00" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="16" cy="30" r="3.5" fill="#E07B00"/>
+      <circle cx="84" cy="30" r="3.5" fill="#1E4080" stroke="#E07B00" stroke-width="2"/>
+      <polygon points="50,28 40,48 49,48 44,64 62,49 52,49 57,28" fill="#E07B00"/>
       <text font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="800" letter-spacing="-1">
-        <tspan x="100" y="58" fill="#EEF2F8">Visor</tspan><tspan fill="#BF7B30">Volt</tspan>
+        <tspan x="100" y="58" fill="#FFFFFF">Visor</tspan><tspan fill="#BF7B30">Volt</tspan>
       </text>
       <text x="100" y="78" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400" fill="#6B8BB0" letter-spacing="2.5">DOMAIN-AGNOSTIC VISION</text>
-    </svg>
+    </svg></a>
+    <div class="footer-groups">
+    <div class="footer-group"><h2 class="footer-h">Product</h2><a href="#domains">Proof</a><a href="#platform">How It Works</a><a href="#economics">After It Ships</a><a href="no-internet/">Runs with no internet</a></div>
+    <div class="footer-group"><h2 class="footer-h">Customers</h2><a href="case-studies/healthfields/">Healthfields</a></div>
+    <div class="footer-group"><h2 class="footer-h">Partners</h2><a href="partners/prolifics/">Prolifics</a><a href="partners/zebra/">Zebra Technologies</a></div>
+    <div class="footer-group"><h2 class="footer-h">Company</h2><a href="news/">News</a><a href="#founder">Founder</a><a href="#contact">Contact</a><a href="https://www.linkedin.com/company/visorvolt/">LinkedIn</a></div>
+    </div>
   </div>
-  <div class="footer-copy">© 2026 VisorVolt Inc. &nbsp;·&nbsp; Allerton Street, Redwood City, CA 94063</div>
-  <div class="footer-links">
-    <a href="#domains">Proof</a>
-    <a href="#downstream">What It Does</a>
-    <a href="#platform">How It Works</a>
-    <a href="#economics">After It Ships</a>
-    <a href="grid.html">Grid Case Study</a>
-    <a href="#founder">Founder</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <div class="footer-copy">&copy; 2026 VisorVolt Inc. &nbsp;&middot;&nbsp; Allerton Street, Redwood City, CA 94063 &nbsp;&middot;&nbsp; umang@visorvolt.ai</div>
 </footer>
+<!-- /BUILD:FOOTER -->
 
 <script src="js/main.js"></script>
-<script data-goatcounter="https://umangai.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://umangai.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

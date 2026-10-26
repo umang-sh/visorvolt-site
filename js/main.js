@@ -16,7 +16,7 @@ const bgObserver = new IntersectionObserver(entries => {
 }, { rootMargin: '200px' });
 document.querySelectorAll('.img-break-bg[data-bg-jpg]').forEach(el => bgObserver.observe(el));
 
-// Hero run — 5 detection frames, crossfade
+// Hero run: 5 detection frames, crossfade
 (function(){
   const run = document.getElementById('hero-run');
   if (!run) return;
@@ -26,10 +26,13 @@ document.querySelectorAll('.img-break-bg[data-bg-jpg]').forEach(el => bgObserver
   if (slides.length < 2) return;
 
   // decode the deferred frames once the first has painted
+  const big = window.innerWidth * (window.devicePixelRatio || 1) > 1100;
   const warm = () => slides.forEach(s => {
-    if (s.dataset.src) { s.style.backgroundImage = `url('${s.dataset.src}')`; delete s.dataset.src; }
+    const src = (big && s.dataset.srcLg) || s.dataset.src;
+    if (src) { s.style.backgroundImage = `url('${src}')`; delete s.dataset.src; delete s.dataset.srcLg; }
   });
-  (window.requestIdleCallback || (fn => setTimeout(fn, 400)))(warm);
+  const later = () => (window.requestIdleCallback || (fn => setTimeout(fn, 400)))(warm);
+  document.readyState === 'complete' ? later() : window.addEventListener('load', later, { once: true });
 
   const dots = slides.map((_, i) => {
     const b = document.createElement('button');
@@ -62,12 +65,12 @@ document.querySelectorAll('.img-break-bg[data-bg-jpg]').forEach(el => bgObserver
 // Hamburger nav
 const ham = document.getElementById('nav-hamburger');
 const navLinks = document.getElementById('nav-links');
-ham.addEventListener('click', () => {
+if (ham && navLinks) ham.addEventListener('click', () => {
   const open = navLinks.classList.toggle('open');
   ham.classList.toggle('open', open);
   ham.setAttribute('aria-expanded', open);
 });
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+if (navLinks) navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   navLinks.classList.remove('open');
   ham.classList.remove('open');
   ham.setAttribute('aria-expanded', 'false');

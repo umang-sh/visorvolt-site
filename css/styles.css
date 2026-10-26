@@ -176,7 +176,7 @@ h2 em{font-style:italic;color:var(--accent)}
 }
 
 /* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.6s,transform 0.6s}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity 0.6s,transform 0.6s}
 .reveal.visible{opacity:1;transform:none}
 
 /* ── PROBLEM ── */
@@ -1305,21 +1305,6 @@ footer{
   .dom-meta code,.ac-metric,.ledger-key,.wf-fine{overflow-wrap:anywhere}
 }
 
-/* --- subpage (grid.html) --- */
-.grid-hero{padding-top:150px;padding-bottom:8px}
-.grid-h1{
-  font-family:var(--serif);font-size:clamp(34px,4.4vw,58px);
-  line-height:1.08;font-weight:700;margin:14px 0 22px;color:var(--white);
-}
-.grid-h1 em{font-style:italic;color:var(--accent)}
-.back-home{
-  display:inline-block;margin-bottom:22px;
-  font-family:var(--mono);font-size:11px;letter-spacing:.1em;
-  color:var(--muted);text-decoration:none;
-}
-.back-home:hover{color:var(--orange-lt)}
-.nav-links a.is-here{color:var(--orange-lt)}
-
 /* --- research scientist: closing line --- */
 .agent-foot{
   margin:34px 0 0;max-width:760px;font-size:15.5px;line-height:1.7;
@@ -1601,3 +1586,174 @@ footer{
   .cap-strip{padding:20px}
 }
 
+
+@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
+
+/* ── HERO: first frame is a real image so the browser can find it early ── */
+.hero-run .hs img{width:100%;height:100%;object-fit:cover;object-position:62% center;display:block}
+
+/* ── PROOF STRIP (under the hero) ── */
+.proof-strip{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  background:var(--navy3);
+}
+.proof-strip a{
+  display:flex;flex-direction:column;gap:4px;padding:20px 32px;
+  color:var(--white);text-decoration:none;font-size:15px;font-weight:500;line-height:1.35;
+  border-right:1px solid var(--border);transition:background .2s;min-width:0;
+}
+.proof-strip a:last-child{border-right:none}
+.proof-strip a:hover,.proof-strip a:focus-visible{background:var(--navy-mid)}
+.ps-k{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--orange)}
+@media(max-width:820px){
+  .proof-strip{grid-template-columns:1fr}
+  .proof-strip a{border-right:none;border-bottom:1px solid var(--border);padding:16px 20px}
+  .proof-strip a:last-child{border-bottom:none}
+}
+
+/* ── LIVE CUSTOMER BAND (home) ── */
+.live-band{background:var(--navy2);border-top:1px solid var(--border)}
+.live-band .section-sub{margin-bottom:36px}
+.live-foot{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:32px}
+.live-upd{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.live-dot{
+  display:inline-block;width:8px;height:8px;border-radius:50%;background:#4CC38A;
+  margin-right:8px;vertical-align:middle;box-shadow:0 0 0 0 rgba(76,195,138,.6);animation:livepulse 2.4s infinite;
+}
+@keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(76,195,138,.55)}70%{box-shadow:0 0 0 8px rgba(76,195,138,0)}100%{box-shadow:0 0 0 0 rgba(76,195,138,0)}}
+@media(prefers-reduced-motion:reduce){.live-dot{animation:none}}
+
+/* ── METRIC TILES (home band + case study) ── */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1px;
+  background:var(--border-slate);border:1px solid var(--border-slate);border-radius:8px;overflow:hidden;margin:28px 0 12px}
+.tile{background:var(--navy);padding:24px 24px 22px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.tile-fig{font-family:var(--mono);font-size:clamp(28px,2.9vw,36px);font-weight:500;color:var(--orange);
+  line-height:1;letter-spacing:-1px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tile-label{font-size:15px;font-weight:600;color:var(--white);line-height:1.3}
+.tile-def{font-size:13.5px;color:var(--slate);line-height:1.55;margin:0}
+
+/* ── SUB-PAGES ── */
+.page{padding:128px 80px 96px;background:var(--navy)}
+.page-inner{max-width:1040px;margin:0 auto}
+.page section{padding:0}
+.crumbs{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);
+  margin-bottom:36px;display:flex;flex-wrap:wrap;gap:8px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--white)}
+.crumbs .sep{opacity:.5}
+.crumbs [aria-current]{color:var(--slate)}
+.page-head{margin-bottom:40px}
+.page-head .eyebrow{margin:24px 0 14px}
+.page h1{font-family:var(--serif);font-weight:700;font-size:clamp(34px,4.8vw,58px);line-height:1.08;
+  letter-spacing:-.02em;margin:0 0 20px;text-wrap:balance;max-width:900px}
+.page-lede{font-size:19px;color:rgba(255,255,255,.74);line-height:1.65;max-width:720px}
+.page-meta{font-family:var(--mono);font-size:12px;color:var(--slate);letter-spacing:.5px;margin:0 0 18px}
+.page h2{font-size:clamp(24px,2.8vw,34px);margin:0 0 14px;text-wrap:balance}
+.page-sec{margin:56px 0 0}
+.page p,.page li{font-size:16.5px;line-height:1.7;color:rgba(255,255,255,.78);max-width:720px}
+.page p{margin:0 0 14px}
+.page a:not(.btn-primary):not(.btn-outline):not(.case-card){color:var(--orange-lt)}
+.page strong{color:var(--white)}
+.page .small{font-size:14px;color:var(--slate)}
+.ticks{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.ticks li{position:relative;padding-left:26px}
+.ticks li::before{content:'';position:absolute;left:2px;top:.72em;width:10px;height:2px;background:var(--orange)}
+.steps{list-style:none;padding:0;margin:0;counter-reset:step;display:grid;gap:14px}
+.steps li{counter-increment:step;position:relative;padding-left:46px;min-height:32px}
+.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;
+  border:1px solid var(--orange);color:var(--orange);font-family:var(--mono);font-size:13px;
+  display:flex;align-items:center;justify-content:center}
+.facts{display:flex;flex-wrap:wrap;gap:1px;margin:32px 0 0;
+  background:var(--border-slate);border:1px solid var(--border-slate);border-radius:8px;overflow:hidden}
+.facts div{flex:1 1 220px;background:var(--navy2);padding:14px 18px;min-width:0}
+.facts dt{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.facts dd{margin:0;font-size:15px;color:var(--white);line-height:1.4}
+.logo-plate{display:inline-flex;align-items:center;background:#FFFFFF;border-radius:6px;padding:14px 22px}
+.logo-plate img{height:32px;width:auto;display:block}
+.logo-plate--text{font-family:Georgia,serif;font-weight:700;font-size:24px;color:#2E5B2A;letter-spacing:-.01em}
+/* Zebra brand rules: black or white logo only, clear space on every side, never locked up with another logo */
+.zebra-mark{display:inline-block;padding:16px 4px}
+.zebra-mark img{height:46px;width:auto;display:block}
+.zebra-mark--lg img{height:60px}
+.partner-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:20px}
+.partner-card{border:1px solid var(--border-slate);border-radius:8px;padding:28px;background:var(--navy2);
+  display:flex;flex-direction:column;gap:10px;align-items:flex-start;min-width:0}
+.partner-card .logo-plate{margin:8px 0}
+.partner-card .zebra-mark{padding:15px 4px}
+.partner-card h2{margin:12px 0 0;font-size:26px}
+.partner-card h2 a{color:var(--white) !important;text-decoration:none}
+.partner-role{font-family:var(--mono);font-size:11px !important;letter-spacing:1.5px;text-transform:uppercase;color:var(--slate) !important;margin:0 !important}
+.text-link{font-weight:600;text-decoration:none}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;margin-top:24px}
+.figs figure{margin:0;min-width:0}
+.figs img,.case-card img{width:100%;height:auto;display:block;border-radius:6px;border:1px solid var(--border)}
+.figs figcaption{font-family:var(--mono);font-size:11.5px;color:var(--slate);margin-top:8px;line-height:1.5}
+.quote{margin:40px 0 0;padding:24px 28px;border-left:3px solid var(--orange);background:var(--navy2);border-radius:0 8px 8px 0}
+.quote blockquote{margin:0}
+.quote p{font-family:var(--serif);font-size:22px;line-height:1.45;color:var(--white)}
+.quote figcaption{font-family:var(--mono);font-size:12px;color:var(--slate);margin-top:10px}
+.log{list-style:none;padding:0;margin:20px 0 0;border-left:1px solid var(--border-slate)}
+.log-entry{position:relative;padding:0 0 26px 26px;display:grid;gap:6px}
+.log-entry::before{content:'';position:absolute;left:-5px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--navy);border:2px solid var(--orange)}
+.log-entry:first-child::before{background:var(--orange)}
+.log-date{font-family:var(--mono);font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--orange)}
+.log-body p{margin:0 0 6px}
+.log-k{display:inline-block;min-width:9.5em;font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.ticks + p,.steps + p{margin-top:18px}
+.link-list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.page .page-cta{margin:72px 0 0;padding:40px;border:1px solid var(--border-slate);border-radius:8px;background:var(--navy2);text-align:center}
+.page-cta p{margin:0 auto 22px}
+.case-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:28px;align-items:center;
+  text-decoration:none;border:1px solid var(--border-slate);border-radius:8px;padding:20px;background:var(--navy2);transition:border-color .2s}
+.case-card:hover,.case-card:focus-visible{border-color:var(--orange)}
+.case-body{display:flex;flex-direction:column;gap:10px;min-width:0}
+.case-body .eyebrow{margin:0}
+.case-title{font-size:24px;font-weight:600;color:var(--white);line-height:1.3}
+.case-sub{font-size:15px;color:var(--slate)}
+.news-list{list-style:none;padding:0;margin:0;display:grid;gap:0;border-top:1px solid var(--border)}
+.news-item{padding:24px 0;border-bottom:1px solid var(--border);display:grid;gap:6px}
+.news-item time{font-family:var(--mono);font-size:12px;color:var(--orange);letter-spacing:1px;text-transform:uppercase}
+.news-item h2{font-size:24px;margin:0}
+.news-item h2 a{color:var(--white) !important;text-decoration:none}
+.news-item h2 a:hover{color:var(--orange-lt) !important}
+.news-item p{margin:0}
+.media-kit{margin-top:64px}
+.post-body{max-width:720px}
+.post-body h2{font-size:22px;margin:36px 0 10px}
+.about{margin-top:44px;padding-top:28px;border-top:1px solid var(--border);max-width:720px}
+.about h2{font-size:18px;margin:0 0 8px}
+.about p{font-size:15px}
+.post-end{font-family:var(--mono);color:var(--muted);margin-top:24px}
+.faq{display:grid;gap:10px;max-width:760px}
+.faq details{border:1px solid var(--border-slate);border-radius:8px;background:var(--navy2);padding:0 20px}
+.faq summary{cursor:pointer;padding:16px 0;font-weight:600;color:var(--white);font-size:16px}
+.faq summary:focus-visible{outline:2px solid var(--orange-lt);outline-offset:4px}
+.faq details p{padding-bottom:6px}
+.nav-links a[aria-current="page"]{color:var(--white)}
+@media(max-width:1100px){.page{padding:48px 20px 72px}}
+@media(max-width:640px){
+  .page{padding:36px 16px 56px}
+  .page-lede{font-size:17px}
+  .case-card{grid-template-columns:1fr}
+  .page .page-cta{padding:28px 20px}
+  .log-k{display:block;min-width:0}
+  .tile{padding:20px}
+}
+
+/* ── FOOTER (grouped) ── */
+footer.site-footer{display:block;padding:48px 80px 32px}
+.footer-top{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:40px;align-items:start}
+.footer-logo svg{height:30px;width:auto;display:block}
+.footer-groups{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.footer-group{display:flex;flex-direction:column;gap:9px;min-width:0}
+.footer-h{font-family:var(--mono);font-size:10px !important;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin:0 0 4px;font-weight:500;line-height:1.4}
+.footer-group a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-group a:hover{color:var(--white)}
+.site-footer .footer-copy{margin-top:36px;padding-top:20px;border-top:1px solid var(--border);line-height:1.7}
+.footer-tm{font-size:11px;color:var(--muted);margin:10px 0 0;max-width:820px;line-height:1.6}
+@media(max-width:1100px){footer.site-footer{padding:40px 20px 28px}}
+@media(max-width:820px){
+  .footer-top{grid-template-columns:1fr;gap:28px}
+  .footer-groups{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px}
+}

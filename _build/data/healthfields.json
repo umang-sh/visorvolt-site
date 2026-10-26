@@ -1,0 +1,27 @@
+{
+  "published": "2026-10-26",
+  "live_since": "October 2026",
+  "metrics": {
+    "cartons": {
+      "fig": "&minus;1%",
+      "label": "Cartons, held-out day",
+      "def": "102 counted against 103 by a person counting each carton, on a day the model never saw."
+    },
+    "packing": {
+      "fig": "7/7",
+      "label": "Packing counts exact",
+      "def": "Exact on 7 of 7 hand-counted windows at the carton sealer, which handles about 450 items a day."
+    },
+    "trucks": {
+      "fig": "100%",
+      "label": "Truck arrivals caught",
+      "def": "The bay trigger caught every truck arrival in the test. It was trained from about 40 frames."
+    }
+  },
+  "quote": {
+    "approved": false,
+    "text": "",
+    "name": "",
+    "title": ""
+  }
+}

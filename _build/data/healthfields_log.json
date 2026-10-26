@@ -1,0 +1,5 @@
+[
+{"date": "2026-10-26", "did": "Published this case study with the measurements so far.", "next": "Add the dispatch-register checks to this log as they finish."},
+{"date": "2026-10-12", "did": "Tested the carton counter on a day it never saw.", "measured": "102 cartons counted against 103 by a person counting each one (&minus;1%).", "next": "Check carton counts against the dispatch register, day by day."},
+{"date": "2026-10-05", "did": "Truck-arrival trigger went live at the unloading dock, and the packing counter went live at the carton sealer. A person counted every carton on one dispatch truck, so the carton counter could be tested on a day it never saw.", "next": "Measure each counter against a person&rsquo;s count."}
+]
