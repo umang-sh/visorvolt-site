@@ -13,9 +13,9 @@
       "def": "Exact on 7 of 7 hand-counted windows at the carton sealer, which handles about 450 items a day."
     },
     "trucks": {
-      "fig": "1.00",
+      "fig": "100%",
       "label": "Truck arrivals caught",
-      "def": "Share of truck arrivals the bay trigger caught. It was trained from about 40 frames."
+      "def": "The bay trigger caught every truck arrival in the test. It was trained from about 40 frames."
     }
   },
   "quote": {
