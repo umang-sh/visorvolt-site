@@ -206,7 +206,7 @@ def page_body(name):
 
 # ---------------------------------------------------------------- Healthfields blocks
 
-def hf_tiles(which=("cartons", "sacks", "packing", "trucks")):
+def hf_tiles(which=("cartons", "packing", "trucks")):
     out = []
     for k in which:
         m = HF["metrics"][k]
@@ -245,8 +245,8 @@ def home_live(ctx):
   <div class="section-inner">
     <div class="eyebrow"><span class="live-dot" aria-hidden="true"></span>// Live in production</div>
     <h2 id="live-h">At Healthfields, it counts<br><em>on cameras they already had.</em></h2>
-    <p class="section-sub">Cartons, sacks and packing counted on site with no internet, and written into their warehouse system. Measured on days the models never saw.</p>
-    {hf_tiles(("cartons", "sacks", "packing"))}
+    <p class="section-sub">Cartons counted at dispatch and on the packing line, on site with no internet, and written into their warehouse system. Measured on days the models never saw.</p>
+    {hf_tiles(("cartons", "packing", "trucks"))}
     <p class="live-foot"><a href="{ctx.url('case-studies/healthfields/')}" class="btn-outline">Read the live case study &rarr;</a>
       <span class="live-upd">Last updated <time datetime="{LAST}">{nice(LAST)}</time></span></p>
   </div>
@@ -311,12 +311,12 @@ def pages():
     hf_path = "case-studies/healthfields/"
     add(path=hf_path, nav="case-studies/", ogtype="article",
         title="Healthfields Case Study: Warehouse Counting with Computer Vision | VisorVolt",
-        desc="Live case study: Healthfields counts cartons and sacks on its existing cameras with VisorVolt, on site with no internet. Cartons -1% on a held-out day.",
-        og="assets/og/healthfields.jpg", og_alt="Healthfields case study: cartons and sacks counted on existing cameras",
+        desc="Live case study: Healthfields counts cartons on its existing cameras with VisorVolt, on site with no internet. Cartons within 1% on a held-out day.",
+        og="assets/og/healthfields.jpg", og_alt="Healthfields case study: cartons counted on existing cameras",
         trail=[("Customers", "case-studies/"), ("Healthfields", hf_path)], body=page_body("healthfields.html"),
         ld=[ORG_REF, {"@type": "Article", "@id": SITE + hf_path + "#article", "url": SITE + hf_path,
                       "mainEntityOfPage": SITE + hf_path,
-                      "headline": "Healthfields counts cartons and sacks on the cameras it already had",
+                      "headline": "Healthfields counts cartons on the cameras it already had",
                       "image": [SITE + "assets/og/healthfields.jpg"], "datePublished": HF["published"],
                       "dateModified": LAST, "author": {"@id": SITE + "#org"}, "publisher": {"@id": SITE + "#org"},
                       "about": HEALTHFIELDS},

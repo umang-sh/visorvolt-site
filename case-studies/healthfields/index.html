@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Healthfields Case Study: Warehouse Counting with Computer Vision | VisorVolt</title>
-<meta name="description" content="Live case study: Healthfields counts cartons and sacks on its existing cameras with VisorVolt, on site with no internet. Cartons -1% on a held-out day.">
+<meta name="description" content="Live case study: Healthfields counts cartons on its existing cameras with VisorVolt, on site with no internet. Cartons within 1% on a held-out day.">
 <link rel="canonical" href="https://visorvolt.ai/case-studies/healthfields/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="VisorVolt">
 <meta property="og:url" content="https://visorvolt.ai/case-studies/healthfields/">
 <meta property="og:title" content="Healthfields Case Study: Warehouse Counting with Computer Vision | VisorVolt">
-<meta property="og:description" content="Live case study: Healthfields counts cartons and sacks on its existing cameras with VisorVolt, on site with no internet. Cartons -1% on a held-out day.">
+<meta property="og:description" content="Live case study: Healthfields counts cartons on its existing cameras with VisorVolt, on site with no internet. Cartons within 1% on a held-out day.">
 <meta property="og:image" content="https://visorvolt.ai/assets/og/healthfields.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Healthfields case study: cartons and sacks counted on existing cameras">
+<meta property="og:image:alt" content="Healthfields case study: cartons counted on existing cameras">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Healthfields Case Study: Warehouse Counting with Computer Vision | VisorVolt">
-<meta name="twitter:description" content="Live case study: Healthfields counts cartons and sacks on its existing cameras with VisorVolt, on site with no internet. Cartons -1% on a held-out day.">
+<meta name="twitter:description" content="Live case study: Healthfields counts cartons on its existing cameras with VisorVolt, on site with no internet. Cartons within 1% on a held-out day.">
 <meta name="twitter:image" content="https://visorvolt.ai/assets/og/healthfields.jpg">
 <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="../../favicon_32.png">
@@ -42,7 +42,7 @@
    "@id": "https://visorvolt.ai/case-studies/healthfields/#article",
    "url": "https://visorvolt.ai/case-studies/healthfields/",
    "mainEntityOfPage": "https://visorvolt.ai/case-studies/healthfields/",
-   "headline": "Healthfields counts cartons and sacks on the cameras it already had",
+   "headline": "Healthfields counts cartons on the cameras it already had",
    "image": [
     "https://visorvolt.ai/assets/og/healthfields.jpg"
    ],
@@ -129,13 +129,13 @@
 <header class="page-head">
   <span class="logo-plate logo-plate--text">Healthfields</span>
   <div class="eyebrow">// Live case study</div>
-  <h1>Healthfields counts cartons and sacks on the cameras it already had</h1>
+  <h1>Healthfields counts cartons on the cameras it already had</h1>
   <p class="page-meta"><span class="live-dot" aria-hidden="true"></span>Live since October 2026 <span aria-hidden="true">&middot;</span> Last updated <time datetime="2026-10-26">26 October 2026</time></p>
   <p class="page-lede">Healthfields makes and sells organic staples, with more than 600 products. At its site in Greater Noida, VisorVolt counts what arrives and what leaves on the existing CCTV cameras, and writes the counts into the warehouse system. It all runs on one computer on site, with no internet needed.</p>
 </header>
 
-<div class="tiles"><div class="tile"><div class="tile-fig">&minus;1%</div><div class="tile-label">Cartons, held-out day</div><p class="tile-def">102 counted against 103 by a person counting each carton, on a day the model never saw.</p></div><div class="tile"><div class="tile-fig">91% / 93%</div><div class="tile-label">Sacks found / counts correct</div><p class="tile-def">On held-out minutes a person counted: 91% of sacks found, and 93% of counts correct.</p></div><div class="tile"><div class="tile-fig">7/7</div><div class="tile-label">Packing counts exact</div><p class="tile-def">Exact on 7 of 7 hand-counted windows at the carton sealer, which handles about 450 items a day.</p></div><div class="tile"><div class="tile-fig">1.00</div><div class="tile-label">Truck arrivals caught</div><p class="tile-def">Share of truck arrivals the bay trigger caught. It was trained from about 40 frames.</p></div></div>
-<p class="small">Held-out means tested on days or minutes the models never saw. How we measured is <a href="#measured">below</a>.</p>
+<div class="tiles"><div class="tile"><div class="tile-fig">&minus;1%</div><div class="tile-label">Cartons, held-out day</div><p class="tile-def">102 counted against 103 by a person counting each carton, on a day the model never saw.</p></div><div class="tile"><div class="tile-fig">7/7</div><div class="tile-label">Packing counts exact</div><p class="tile-def">Exact on 7 of 7 hand-counted windows at the carton sealer, which handles about 450 items a day.</p></div><div class="tile"><div class="tile-fig">1.00</div><div class="tile-label">Truck arrivals caught</div><p class="tile-def">Share of truck arrivals the bay trigger caught. It was trained from about 40 frames.</p></div></div>
+<p class="small">Held-out means tested on days the models never saw. How we measured is <a href="#measured">below</a>.</p>
 
 <dl class="facts">
   <div><dt>Company</dt><dd>Healthfields (Brahhm Arpan Organic Private Limited)</dd></div>
@@ -150,7 +150,7 @@
 
 <section class="page-sec">
   <h2>The challenge</h2>
-  <p>Stock moves through many doors. Raw material arrives by truck in sacks and cartons, finished goods are packed into cartons, and dispatch loads them onto trucks. Counting by hand is slow, and every count has to agree with the barcode scans and the registers.</p>
+  <p>Stock moves through many doors. Goods arrive by truck, finished goods are packed into cartons, and dispatch loads them onto trucks. Counting by hand is slow, and every count has to agree with the barcode scans and the registers.</p>
   <p>Healthfields wanted counts it could trust, from the cameras it already owned, without sending its footage off site.</p>
 </section>
 
@@ -159,33 +159,31 @@
   <ul class="ticks">
     <li><strong>Truck triggers.</strong> A camera spots a truck at the bay and starts the count. The trigger was trained from about 40 frames.</li>
     <li><strong>Carton counter.</strong> A detector built from 40 labelled images, with a tracker, counts each carton loaded at dispatch.</li>
-    <li><strong>Sack counter.</strong> Counts sacks as they come off the truck at unloading.</li>
     <li><strong>Packing counter.</strong> Counts every carton that passes the sealer on the packing line.</li>
     <li><strong>Into the warehouse system.</strong> Counts are written into the warehouse system. Mismatches go to review with the video clip, and camera counts and barcode scans are reconciled every day into one stock position.</li>
   </ul>
   <p>Five services and four nightly reports run on one computer on site, and keep running with no internet.</p>
   <div class="figs">
     <figure>
-      <picture><source type="image/webp" srcset="../../assets/case-studies/healthfields/rm1-640.webp 640w, ../../assets/case-studies/healthfields/rm1-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 33vw"><img src="../../assets/case-studies/healthfields/rm1-1280.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="Cartons arriving on a hand trolley at the Raw Material unloading 1 dock, with a truck behind. Faces are blurred."></picture>
-      <figcaption>Raw Material unloading 1: cartons arriving at the dock.</figcaption>
+      <picture><source type="image/webp" srcset="../../assets/case-studies/healthfields/unloading-640.webp 640w, ../../assets/case-studies/healthfields/unloading-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 33vw"><img src="../../assets/case-studies/healthfields/unloading-1280.jpg" width="1280" height="550" loading="lazy" decoding="async" alt="Cartons arriving on a hand trolley at the unloading dock, with a truck behind. Faces are blurred."></picture>
+      <figcaption>Unloading: cartons arriving at the dock.</figcaption>
     </figure>
     <figure>
-      <picture><source type="image/webp" srcset="../../assets/case-studies/healthfields/csd-640.webp 640w, ../../assets/case-studies/healthfields/csd-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 33vw"><img src="../../assets/case-studies/healthfields/csd-1280.jpg" width="1280" height="614" loading="lazy" decoding="async" alt="Inside a truck at dispatch, a carton carried by a worker is boxed and numbered by the carton counter. Faces and the number plate are blurred."></picture>
-      <figcaption>Loading 1 CSD: the carton counter tracks each carton loaded at dispatch.</figcaption>
+      <picture><source type="image/webp" srcset="../../assets/case-studies/healthfields/dispatch-640.webp 640w, ../../assets/case-studies/healthfields/dispatch-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 33vw"><img src="../../assets/case-studies/healthfields/dispatch-1280.jpg" width="1280" height="530" loading="lazy" decoding="async" alt="Inside a truck at dispatch, a carton carried by a worker is boxed and numbered by the carton counter. Faces and the number plate are blurred."></picture>
+      <figcaption>Dispatch: the carton counter tracks each carton loaded onto the truck.</figcaption>
     </figure>
     <figure>
-      <picture><source type="image/webp" srcset="../../assets/case-studies/healthfields/packing-640.webp 640w, ../../assets/case-studies/healthfields/packing-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 33vw"><img src="../../assets/case-studies/healthfields/packing-1280.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="The carton packing line seen from above: a carton sealer, a stretch wrapper and stacks of flat carton blanks. Faces are blurred."></picture>
-      <figcaption>Carton Packing: every packed carton passes the sealer.</figcaption>
+      <picture><source type="image/webp" srcset="../../assets/case-studies/healthfields/packing-640.webp 640w, ../../assets/case-studies/healthfields/packing-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 33vw"><img src="../../assets/case-studies/healthfields/packing-1280.jpg" width="1280" height="550" loading="lazy" decoding="async" alt="The packing line seen from above: a carton sealer, a stretch wrapper and stacks of flat carton blanks. Faces are blurred."></picture>
+      <figcaption>Packing line: every packed carton passes the sealer.</figcaption>
     </figure>
   </div>
 </section>
 
 <section class="page-sec" id="measured">
   <h2>What we measured</h2>
-  <p>Every number here was measured on days or minutes the models never saw, against a person&rsquo;s own count.</p>
+  <p>Every number here was measured on days the models never saw, against a person&rsquo;s own count.</p>
   <ul class="ticks">
     <li><strong>Cartons, &minus;1%.</strong> A person counted each carton loaded on a dispatch truck on a held-out day. The counter said 102; the person counted 103.</li>
-    <li><strong>Sacks, 91% / 93%.</strong> On held-out minutes a person counted, the counter found 91% of the sacks, and 93% of what it counted was a real sack.</li>
     <li><strong>Packing, 7/7.</strong> Exact on all 7 hand-counted windows at the carton sealer, which handles about 450 items a day.</li>
     <li><strong>Truck arrivals, 1.00.</strong> The bay trigger caught every truck arrival in the test, from about 40 training frames.</li>
   </ul>
@@ -195,7 +193,7 @@
 <section class="page-sec">
   <h2>Progress log</h2>
   <p>The deployment is live and changes every week. Newest first.</p>
-  <ol class="log" reversed><li class="log-entry"><time class="log-date" datetime="2026-10-26">Week of 26 October 2026</time><div class="log-body"><p><span class="log-k">What we did</span> Published this case study with the measurements so far.</p><p><span class="log-k">What&rsquo;s next</span> Check carton counts against the dispatch register, day by day.</p></div></li><li class="log-entry"><time class="log-date" datetime="2026-10-19">Week of 19 October 2026</time><div class="log-body"><p><span class="log-k">What we did</span> Added a review step for raw-material trucks: each truck&rsquo;s count goes to a person, with its video clip, before it reaches the warehouse system.</p><p><span class="log-k">What&rsquo;s next</span> Test the step on the next three trucks that arrive with a goods receipt.</p></div></li><li class="log-entry"><time class="log-date" datetime="2026-10-12">Week of 12 October 2026</time><div class="log-body"><p><span class="log-k">What we did</span> Tested the counters on days and minutes they never saw.</p><p><span class="log-k">What we measured</span> Cartons: 102 counted against 103 by a person (&minus;1%). Sacks: 91% found and 93% of counts correct.</p><p><span class="log-k">What&rsquo;s next</span> Keep the sack counter current as trucks and light change.</p></div></li><li class="log-entry"><time class="log-date" datetime="2026-10-05">Week of 5 October 2026</time><div class="log-body"><p><span class="log-k">What we did</span> Truck-arrival trigger went live at the unloading dock, and the packing counter went live at the carton sealer. A person counted every carton on one dispatch truck, so the carton counter could be tested on a day it never saw.</p><p><span class="log-k">What&rsquo;s next</span> Measure each counter against a person&rsquo;s count.</p></div></li><li class="log-entry"><time class="log-date" datetime="2026-09-28">Week of 28 September 2026</time><div class="log-body"><p><span class="log-k">What we did</span> Installed the computer on site and connected it to the existing cameras. Counted the first unloading truck from recorded footage.</p><p><span class="log-k">What&rsquo;s next</span> Counters for cartons, sacks and packing.</p></div></li></ol>
+  <ol class="log" reversed><li class="log-entry"><time class="log-date" datetime="2026-10-26">Week of 26 October 2026</time><div class="log-body"><p><span class="log-k">What we did</span> Published this case study with the measurements so far.</p><p><span class="log-k">What&rsquo;s next</span> Add the dispatch-register checks to this log as they finish.</p></div></li><li class="log-entry"><time class="log-date" datetime="2026-10-12">Week of 12 October 2026</time><div class="log-body"><p><span class="log-k">What we did</span> Tested the carton counter on a day it never saw.</p><p><span class="log-k">What we measured</span> 102 cartons counted against 103 by a person counting each one (&minus;1%).</p><p><span class="log-k">What&rsquo;s next</span> Check carton counts against the dispatch register, day by day.</p></div></li><li class="log-entry"><time class="log-date" datetime="2026-10-05">Week of 5 October 2026</time><div class="log-body"><p><span class="log-k">What we did</span> Truck-arrival trigger went live at the unloading dock, and the packing counter went live at the carton sealer. A person counted every carton on one dispatch truck, so the carton counter could be tested on a day it never saw.</p><p><span class="log-k">What&rsquo;s next</span> Measure each counter against a person&rsquo;s count.</p></div></li></ol>
 </section>
 
 <section class="page-sec">

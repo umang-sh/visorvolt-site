@@ -22,7 +22,11 @@ BANNED = [  # (pattern, why)
     (r"(?i)LAE-DINO|RF-DETR|V-JEPA|OWLv2|DINOv2|Grounding DINO|\bSAM ?3\b|\bQwen|\bYOLO", "internal model name"),
     (r"(?i)\bch(?:annel)?\s?\d{1,2}\b", "camera channel number: use the camera name"),
     (r"(?i)labell?ing is (?:our|the) moat", "labelling is never the moat"),
+    # client-internal camera and area names never go on the public site (Umang 2026-10-26)
+    (r"(?i)loading 1|\bCSD\b|raw material unloading|carton packing|bathroom gallery|rear gallery|seeds roasting|container camera|return counting gate|pusht|\bRM ?1\b", "client-internal camera or area name"),
 ]
+# sack counting is no longer a Healthfields claim; the home page keeps its public-dataset sack examples
+NO_SACKS = r"(?i)\bsacks?\b"
 GUARDRAILS_HOME = ["we pick the 40", "None of them failed", "55%", "104.8"]
 
 class Text(HTMLParser):
@@ -85,6 +89,8 @@ def main():
                 ctx = (text + "\n" + visible_raw)[max(0, m.start() - 50):m.end() + 50].replace("\n", " ")
                 fails.append(f"{rel}: {why}: ...{ctx}...")
                 break
+        if rel != "index.html" and re.search(NO_SACKS, text):
+            fails.append(f"{rel}: mentions sacks")
         # 89% must never sit beside a dataset count other than 39
         for m in re.finditer(r"89%[^.]{0,120}?(\d+) (?:public )?datasets|(\d+) (?:public )?datasets[^.]{0,120}?89%", text):
             n = m.group(1) or m.group(2)
