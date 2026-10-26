@@ -225,12 +225,16 @@ def hf_log():
                     f'<div class="log-body">{"".join(parts)}</div></li>')
     return '<ol class="log" reversed>' + "".join(rows) + "</ol>"
 
-def hf_logo(ctx):
-    for ext in ("svg", "png", "webp"):
-        rel = f"assets/case-studies/healthfields/healthfields-logo.{ext}"
-        if os.path.exists(os.path.join(ROOT, rel)):
-            return f'<span class="logo-plate"><img src="{ctx.url(rel)}" alt="Healthfields" height="40"></span>'
-    return '<span class="logo-plate logo-plate--text">Healthfields</span>'
+def hf_logo(ctx, big=False):
+    base = "assets/case-studies/healthfields/healthfields-logo"
+    if not os.path.exists(os.path.join(ROOT, base + "-480.jpg")):
+        return '<span class="logo-plate logo-plate--text">Healthfields</span>'
+    h = 104 if big else 68
+    w = round(h * 1218 / 703)
+    return (f'<span class="logo-plate logo-plate--hf{" logo-plate--hf-lg" if big else ""}"><picture>'
+            f'<source type="image/webp" srcset="{ctx.url(base + "-240.webp")} 240w, {ctx.url(base + "-480.webp")} 480w" sizes="{w}px">'
+            f'<img src="{ctx.url(base + "-480.jpg")}" srcset="{ctx.url(base + "-240.jpg")} 240w, {ctx.url(base + "-480.jpg")} 480w" '
+            f'sizes="{w}px" width="{w}" height="{h}" alt="Healthfields"></picture></span>')
 
 def hf_quote():
     q = HF.get("quote")
@@ -462,7 +466,7 @@ def update_home(preview):
 
 def expand(body, ctx):
     body = body.replace("{{hf_tiles}}", hf_tiles()).replace("{{hf_log}}", hf_log())
-    body = body.replace("{{hf_logo}}", hf_logo(ctx)).replace("{{hf_quote}}", hf_quote())
+    body = body.replace("{{hf_logo}}", hf_logo(ctx, big=True)).replace("{{hf_logo_sm}}", hf_logo(ctx)).replace("{{hf_quote}}", hf_quote())
     body = body.replace("{{hf_last}}", f'<time datetime="{LAST}">{nice(LAST)}</time>')
     body = body.replace("{{hf_since}}", HF["live_since"]).replace("{{faq}}", faq_html())
     body = body.replace("{{news_list}}", news_list(ctx)).replace("{{zebra_tm}}", ZEBRA_TM)

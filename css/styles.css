@@ -1692,7 +1692,9 @@ footer{
 }
 .pb-card:hover,.pb-card:focus-visible{border-color:var(--orange);background:rgba(191,123,48,0.06);transform:translateY(-2px)}
 .pb-k{font-family:var(--mono);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--orange)}
-.pb-logo{min-height:76px;display:flex;align-items:center}
+.pb-logo{min-height:92px;display:flex;align-items:center}
+.pb-logo .logo-plate--hf{padding:4px 12px}
+.pb-logo .logo-plate--hf img{height:76px}
 .pb-logo .logo-plate{margin:0}
 .pb-logo .zebra-mark{padding:15px 4px}
 .pb-title{font-size:19px;font-weight:600;line-height:1.3}
@@ -1822,6 +1824,10 @@ html:not(.js) .hero-flash:not(.is-active){display:none}
 .facts dd{margin:0;font-size:15px;color:var(--white);line-height:1.4}
 .logo-plate{display:inline-flex;align-items:center;background:#FFFFFF;border-radius:6px;padding:14px 22px}
 .logo-plate img{height:32px;width:auto;display:block}
+.logo-plate--hf{padding:8px 14px}
+.logo-plate--hf img{height:68px;width:auto}
+.logo-plate--hf-lg img{height:104px}
+.case-body .logo-plate{align-self:flex-start}
 .logo-plate--text{font-family:Georgia,serif;font-weight:700;font-size:24px;color:#2E5B2A;letter-spacing:-.01em}
 /* Zebra brand rules: black or white logo only, clear space on every side, never locked up with another logo */
 .zebra-mark{display:inline-block;padding:16px 4px}
