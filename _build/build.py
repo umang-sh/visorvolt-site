@@ -182,9 +182,8 @@ def head(ctx, p):
 <link rel="icon" type="image/png" sizes="32x32" href="{ctx.url('favicon_32.png')}">
 <link rel="apple-touch-icon" sizes="192x192" href="{ctx.url('icon_192.png')}">
 <script>document.documentElement.classList.add('js')</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="preload" href="{ctx.url('assets/fonts/DMSans-normal-151a53.woff2')}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{ctx.url('assets/fonts/PlayfairDisplay-normal-542c91.woff2')}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{ctx.url('css/styles.css')}">
 {ld_script(p['ld'])}
 </head>
