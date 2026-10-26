@@ -1,0 +1,7 @@
+[
+{"date": "2026-10-26", "did": "Published this case study with the measurements so far.", "next": "Check carton counts against the dispatch register, day by day."},
+{"date": "2026-10-19", "did": "Added a review step for raw-material trucks: each truck&rsquo;s count goes to a person, with its video clip, before it reaches the warehouse system.", "next": "Test the step on the next three trucks that arrive with a goods receipt."},
+{"date": "2026-10-12", "did": "Tested the counters on days and minutes they never saw.", "measured": "Cartons: 102 counted against 103 by a person (&minus;1%). Sacks: 91% found and 93% of counts correct.", "next": "Keep the sack counter current as trucks and light change."},
+{"date": "2026-10-05", "did": "Truck-arrival trigger went live at the unloading dock, and the packing counter went live at the carton sealer. A person counted every carton on one dispatch truck, so the carton counter could be tested on a day it never saw.", "next": "Measure each counter against a person&rsquo;s count."},
+{"date": "2026-09-28", "did": "Installed the computer on site and connected it to the existing cameras. Counted the first unloading truck from recorded footage.", "next": "Counters for cartons, sacks and packing."}
+]

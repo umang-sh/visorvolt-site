@@ -1,0 +1,11 @@
+{
+  "published": "2026-10-26",
+  "live_since": "October 2026",
+  "metrics": {
+    "cartons": {"fig": "&minus;1%", "label": "Cartons, held-out day", "def": "102 counted against 103 by a person counting each carton, on a day the model never saw."},
+    "sacks":   {"fig": "91% / 93%", "label": "Sacks found / counts correct", "def": "On held-out minutes a person counted: 91% of sacks found, and 93% of counts correct."},
+    "packing": {"fig": "7/7", "label": "Packing counts exact", "def": "Exact on 7 of 7 hand-counted windows at the carton sealer, which handles about 450 items a day."},
+    "trucks":  {"fig": "1.00", "label": "Truck arrivals caught", "def": "Share of truck arrivals the bay trigger caught. It was trained from about 40 frames."}
+  },
+  "quote": {"approved": false, "text": "", "name": "", "title": ""}
+}
