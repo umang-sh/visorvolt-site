@@ -252,11 +252,60 @@ def home_live(ctx):
 </section>"""
 
 def home_proof(ctx):
-    return f"""<div class="proof-strip" aria-label="Customers and partners">
-  <a href="{ctx.url('case-studies/healthfields/')}"><span class="ps-k">Customer</span>Live in production at Healthfields</a>
-  <a href="{ctx.url('partners/prolifics/')}"><span class="ps-k">Systems integrator</span>Prolifics, 2,000+ experts worldwide</a>
-  <a href="{ctx.url('partners/zebra/')}"><span class="ps-k">ISV partner</span>Zebra Technologies Registered ISV</a>
-</div>"""
+    cards = [
+        ("case-studies/healthfields/", "Customer &middot; live in production", hf_logo(ctx),
+         "Healthfields counts cartons on the cameras it already had",
+         "Within 1% of a person&rsquo;s count on a held-out day.", "Read the live case study"),
+        ("partners/prolifics/", "Systems integrator partner",
+         f'<span class="logo-plate"><img src="{ctx.url("assets/partners/prolifics-wordmark.png")}" alt="Prolifics" width="214" height="32"></span>',
+         "Prolifics delivers VisorVolt in every industry",
+         "A global systems integrator with 2,000+ experts.", "See the partnership"),
+        ("partners/zebra/", "ISV partner",
+         f'<span class="zebra-mark"><img src="{ctx.url("assets/partners/zebra-logo-white.svg")}" alt="Zebra Technologies" width="150" height="46"></span>',
+         "Zebra Technologies Registered ISV",
+         "In North America and Asia-Pacific.", "What it means for you"),
+    ]
+    items = "\n".join(
+        f'''  <a class="pb-card" href="{ctx.url(t)}">
+    <span class="pb-k">{k}</span>
+    <span class="pb-logo">{logo}</span>
+    <span class="pb-title">{title}</span>
+    <span class="pb-sub">{sub}</span>
+    <span class="pb-go">{go} &rarr;</span>
+  </a>''' for t, k, logo, title, sub, go in cards)
+    return f'''<section class="proof-band" aria-labelledby="proof-h">
+  <div class="section-inner">
+  <h2 class="pb-h" id="proof-h"><span class="live-dot" aria-hidden="true"></span>Live in production. Delivered with global partners.</h2>
+  <div class="pb-grid">
+{items}
+  </div>
+  </div>
+</section>'''
+
+KIND = {"prolifics": "Partnership", "zebra": "Partnership", "healthfields": "Customer"}
+
+def home_flash(ctx):
+    n = NEWS[0]
+    return (f'<a class="hero-flash" href="{ctx.url(n["path"])}"><span class="hf-new">New</span>'
+            f'<span class="hf-text">{n["headline"]}</span><span class="hf-go" aria-hidden="true">&rarr;</span></a>')
+
+def home_news(ctx):
+    cards = []
+    for n in NEWS[:3]:
+        cards.append(f'<a class="nu-card" href="{ctx.url(n["path"])}"><span class="nu-meta"><span class="nu-kind">{KIND[n["about"]]}</span>'
+                     f'<time datetime="{n["date"]}">{nice(n["date"])}</time></span><span class="nu-title">{n["headline"]}</span>'
+                     f'<span class="nu-sub">{n["summary"]}</span></a>')
+    e = LOG[0]
+    cards.append(f'<a class="nu-card nu-card--log" href="{ctx.url("case-studies/healthfields/")}"><span class="nu-meta"><span class="nu-kind">'
+                 f'<span class="live-dot" aria-hidden="true"></span>Live log</span><time datetime="{e["date"]}">{nice(e["date"])}</time></span>'
+                 f'<span class="nu-title">Healthfields case study updated</span><span class="nu-sub">{e["did"]}</span></a>')
+    return f'''<section class="news-band" id="news" aria-labelledby="news-h">
+  <div class="section-inner">
+    <div class="eyebrow">// News and updates</div>
+    <div class="nu-head"><h2 id="news-h">What&rsquo;s new</h2><a class="text-link" href="{ctx.url("news/")}">All news &rarr;</a></div>
+    <div class="nu-grid">{"".join(cards)}</div>
+  </div>
+</section>'''
 
 def news_list(ctx):
     rows = []
@@ -383,7 +432,9 @@ def update_home(preview):
         "NAV": nav(ctx),
         "PROOF": home_proof(ctx),
         "LIVE": home_live(ctx),
-        "FOOTER": footer(ctx),
+        "FLASH": home_flash(ctx),
+        "NEWS": home_news(ctx),
+        "FOOTER": footer(ctx, zebra_logo=True),
         "JSONLD": ld_script([ORG_FULL, {"@type": "WebSite", "@id": SITE + "#site", "url": SITE, "name": "VisorVolt",
                                         "publisher": {"@id": SITE + "#org"}}]),
     }
