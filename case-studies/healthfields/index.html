@@ -3,29 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Healthfields Case Study: Warehouse Counting with Computer Vision | VisorVolt</title>
-<meta name="description" content="Live case study: Healthfields counts cartons on its existing cameras with VisorVolt, on site with no internet. Cartons within 1% on a held-out day.">
+<title>Healthfields Case Study: Cartons Counted v a Person | VisorVolt</title>
+<meta name="description" content="Healthfields counts cartons at dispatch and on a packing line on its existing cameras, with no internet. Dated results v a person, and a live progress log.">
+<meta name="theme-color" content="#0E1520">
 <link rel="canonical" href="https://visorvolt.ai/case-studies/healthfields/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="VisorVolt">
 <meta property="og:url" content="https://visorvolt.ai/case-studies/healthfields/">
-<meta property="og:title" content="Healthfields Case Study: Warehouse Counting with Computer Vision | VisorVolt">
-<meta property="og:description" content="Live case study: Healthfields counts cartons on its existing cameras with VisorVolt, on site with no internet. Cartons within 1% on a held-out day.">
-<meta property="og:image" content="https://visorvolt.ai/assets/og/healthfields.jpg">
+<meta property="og:title" content="Healthfields Case Study: Cartons Counted v a Person | VisorVolt">
+<meta property="og:description" content="Healthfields counts cartons at dispatch and on a packing line on its existing cameras, with no internet. Dated results v a person, and a live progress log.">
+<meta property="og:image" content="https://visorvolt.ai/assets/v3/og/og-healthfields.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Healthfields case study: cartons counted on existing cameras">
+<meta property="og:image:alt" content="Healthfields and VisorVolt.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Healthfields Case Study: Warehouse Counting with Computer Vision | VisorVolt">
-<meta name="twitter:description" content="Live case study: Healthfields counts cartons on its existing cameras with VisorVolt, on site with no internet. Cartons within 1% on a held-out day.">
-<meta name="twitter:image" content="https://visorvolt.ai/assets/og/healthfields.jpg">
+<meta name="twitter:title" content="Healthfields Case Study: Cartons Counted v a Person | VisorVolt">
+<meta name="twitter:description" content="Healthfields counts cartons at dispatch and on a packing line on its existing cameras, with no internet. Dated results v a person, and a live progress log.">
+<meta name="twitter:image" content="https://visorvolt.ai/assets/v3/og/og-healthfields.jpg">
 <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="../../favicon_32.png">
 <link rel="apple-touch-icon" sizes="192x192" href="../../icon_192.png">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preload" href="../../assets/fonts/DMSans-normal-151a53.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../assets/fonts/PlayfairDisplay-normal-542c91.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../css/styles.css">
+<link rel="stylesheet" href="../../css/site.css">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -43,10 +44,10 @@
    "mainEntityOfPage": "https://visorvolt.ai/case-studies/healthfields/",
    "headline": "Healthfields counts cartons on the cameras it already had",
    "image": [
-    "https://visorvolt.ai/assets/og/healthfields.jpg"
+    "https://visorvolt.ai/assets/v3/og/og-healthfields.jpg"
    ],
    "datePublished": "2026-10-26",
-   "dateModified": "2026-10-26",
+   "dateModified": "2026-11-20",
    "author": {
     "@id": "https://visorvolt.ai/#org"
    },
@@ -56,7 +57,6 @@
    "about": {
     "@type": "Organization",
     "name": "Healthfields",
-    "legalName": "Brahhm Arpan Organic Private Limited",
     "url": "https://healthfields.in/",
     "sameAs": [
      "https://www.linkedin.com/showcase/health-fields",
@@ -78,7 +78,7 @@
     {
      "@type": "ListItem",
      "position": 2,
-     "name": "Customers",
+     "name": "Case studies",
      "item": "https://visorvolt.ai/case-studies/"
     },
     {
@@ -94,8 +94,9 @@
 </script>
 </head>
 <body class="subpage">
-<nav>
-  <a class="nav-logo" href="../../">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="site-nav" aria-label="Main">
+  <a class="nav-logo" href="../../" aria-label="VisorVolt home">
     <svg viewBox="0 0 500 100" role="img" aria-label="VisorVolt">
       <polygon points="50,10 84,30 84,70 50,90 16,70 16,30" fill="none" stroke="#1E4080" stroke-width="5" stroke-linejoin="round"/>
       <polyline points="16,30 50,10 84,30" fill="none" stroke="#E07B00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -107,37 +108,34 @@
       <text font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="800" letter-spacing="-1">
         <tspan x="100" y="58" fill="#FFFFFF">Visor</tspan><tspan fill="#BF7B30">Volt</tspan>
       </text>
-      <text x="100" y="78" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400" fill="#6B8BB0" letter-spacing="2.5">DOMAIN-AGNOSTIC VISION</text>
     </svg>
   </a>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links" type="button">
     <span></span><span></span><span></span>
   </button>
   <div class="nav-links" id="nav-links">
-    <a href="../../#domains">Proof</a>
-    <a href="../../#platform">How It Works</a>
-    <a href="../../case-studies/" aria-current="page">Customers</a>
-    <a href="../../partners/">Partners</a>
-    <a href="../../news/">News</a>
-    <a href="mailto:umang@visorvolt.ai?subject=Start%20with%2040%20images" class="nav-cta">Start with 40 images</a>
+    <div class="nav-item"><a href="../../checkpoints/">Checkpoints</a></div><div class="nav-item"><a href="../../how-it-works/">How it works</a></div><div class="nav-item has-sub"><a href="../../proof/" aria-current="page">Proof</a><div class="nav-sub"><a href="../../case-studies/healthfields/">Healthfields case study</a><a href="../../proof/#research">Research</a><a href="../../news/">News</a></div></div><div class="nav-item has-sub"><a href="../../partners/">Partners</a><div class="nav-sub"><a href="../../partners/prolifics/">Prolifics</a><a href="../../partners/zebra/">Zebra</a></div></div><div class="nav-item"><a href="../../company/">Company</a></div>
+    <a href="mailto:umang@visorvolt.ai?subject=Show%20us%20a%20checkpoint" class="nav-cta">Show us a checkpoint</a>
   </div>
 </nav>
-<main class="page" id="main">
-<div class="page-inner">
-<div class="crumbs" role="navigation" aria-label="Breadcrumb"><a href="../../">Home</a><span class="sep" aria-hidden="true">/</span><a href="../../case-studies/">Customers</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Healthfields</span></div>
+<main id="main" class="page">
+<div class="wrap">
+<div class="crumbs" role="navigation" aria-label="Breadcrumb"><a href="../../">Home</a><span class="sep" aria-hidden="true">/</span><a href="../../case-studies/">Case studies</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Healthfields</span></div>
 <header class="page-head">
   <span class="logo-plate logo-plate--hf logo-plate--hf-lg"><picture><source type="image/webp" srcset="../../assets/case-studies/healthfields/healthfields-logo-240.webp 240w, ../../assets/case-studies/healthfields/healthfields-logo-480.webp 480w" sizes="180px"><img src="../../assets/case-studies/healthfields/healthfields-logo-480.jpg" srcset="../../assets/case-studies/healthfields/healthfields-logo-240.jpg 240w, ../../assets/case-studies/healthfields/healthfields-logo-480.jpg 480w" sizes="180px" width="180" height="104" alt="Healthfields"></picture></span>
-  <div class="eyebrow">// Live case study</div>
+  <div class="eyebrow">Case study, ongoing</div>
   <h1>Healthfields counts cartons on the cameras it already had</h1>
-  <p class="page-meta"><span class="live-dot" aria-hidden="true"></span>Live since October 2026 <span aria-hidden="true">&middot;</span> Last updated <time datetime="2026-10-26">26 October 2026</time></p>
-  <p class="page-lede">Healthfields makes and sells organic staples, with more than 600 products. At its site in Greater Noida, VisorVolt counts what arrives and what leaves on the existing CCTV cameras, and writes the counts into the warehouse system. It all runs on one computer on site, with no internet needed.</p>
+  <p class="page-meta"><span aria-hidden="true">&#9679;</span> Running since October 2026 <span aria-hidden="true">&middot;</span> Last updated <time datetime="2026-11-20">20 November 2026</time></p>
+  <p class="page-lede">Healthfields makes and sells organic staples, with more than 600 products. At its site in Greater Noida, VisorVolt counts what leaves on the existing CCTV cameras, and writes the counts into the warehouse system. It runs on one computer on site, with no internet needed.</p>
 </header>
 
-<div class="tiles"><div class="tile"><div class="tile-fig">&minus;1%</div><div class="tile-label">Cartons, held-out day</div><p class="tile-def">102 counted against 103 by a person counting each carton, on a day the model never saw.</p></div><div class="tile"><div class="tile-fig">7/7</div><div class="tile-label">Packing counts exact</div><p class="tile-def">Exact on 7 of 7 hand-counted windows at the carton sealer, which handles about 450 items a day.</p></div><div class="tile"><div class="tile-fig">100%</div><div class="tile-label">Truck arrivals caught</div><p class="tile-def">The bay trigger caught every truck arrival in the test. It was trained from about 40 frames.</p></div></div>
-<p class="small">Held-out means tested on days the models never saw. How we measured is <a href="#measured">below</a>.</p>
+<p class="banner"><strong>This is an ongoing deployment.</strong> Every number below is development-stage evidence, not a final figure for any use case.</p>
+
+<div id="measured"><div class="tiles"><div class="tile"><div class="tile-fig">141 v 141</div><div class="tile-label">Packing line, 18 and 19 November 2026</div><p class="tile-def">The camera counted 141 cartons and a person counted 141, over 38 sampled windows on two days the system had never seen. 23 windows matched exactly; the range is about 7% either way.</p></div><div class="tile"><div class="tile-fig">102 v 103</div><div class="tile-label">Dispatch, 12 October 2026</div><p class="tile-def">On a day the model had never seen, the camera counted 102 cartons loaded at the dock and a person counting each carton counted 103.</p></div><div class="tile"><div class="tile-fig">Every arrival caught</div><div class="tile-label">Truck arrivals</div><p class="tile-def">The truck-arrival trigger caught every truck arrival in its test. It was trained from about 40 frames.</p></div></div></div>
+<p class="small">Held out means tested on days the models never saw. How we measured is <a href="#how-measured">below</a>.</p>
 
 <dl class="facts">
-  <div><dt>Company</dt><dd>Healthfields (Brahhm Arpan Organic Private Limited)</dd></div>
+  <div><dt>Company</dt><dd>Healthfields</dd></div>
   <div><dt>Industry</dt><dd>Food manufacturing and distribution</dd></div>
   <div><dt>Site</dt><dd>Greater Noida, India</dd></div>
   <div><dt>Cameras</dt><dd>Existing CCTV cameras</dd></div>
@@ -149,50 +147,37 @@
 
 <section class="page-sec">
   <h2>The challenge</h2>
-  <p>Stock moves through many doors. Goods arrive by truck, finished goods are packed into cartons, and dispatch loads them onto trucks. Counting by hand is slow, and every count has to agree with the barcode scans and the registers.</p>
-  <p>Healthfields wanted counts it could trust, from the cameras it already owned, without sending its footage off site.</p>
+  <p>Stock moves through many doors. Goods arrive by truck, finished goods are packed into cartons, and dispatch loads them onto trucks. Counting by hand is slow, and every count has to agree with barcode scans and registers. Healthfields wanted counts it could trust, from the cameras it already owned, without sending its footage off site.</p>
 </section>
 
 <section class="page-sec">
-  <h2>What we deployed</h2>
+  <h2>What we built</h2>
   <ul class="ticks">
-    <li><strong>Truck triggers.</strong> A camera spots a truck at the bay and starts the count. The trigger was trained from about 40 frames.</li>
-    <li><strong>Carton counter.</strong> A detector built from 40 labelled images, with a tracker, counts each carton loaded at dispatch.</li>
-    <li><strong>Packing counter.</strong> Counts every carton that passes the sealer on the packing line.</li>
-    <li><strong>Into the warehouse system.</strong> Counts are written into the warehouse system. Mismatches go to review with the video clip, and camera counts and barcode scans are reconciled every day into one stock position.</li>
+    <li><strong>Vehicle gate and truck triggers.</strong> A camera spots a truck at the bay and starts the count. Trained from about 40 frames.</li>
+    <li><strong>Dispatch counter.</strong> A detector built from 40 labelled images, with a tracker, counts each carton loaded at dispatch.</li>
+    <li><strong>Packing line counter.</strong> A running count of cartons at the end of the line.</li>
+    <li><strong>Into the warehouse system.</strong> Counts are written into the warehouse system. Mismatches go to review with the clip. Camera counts and barcode scans are compared every day.</li>
   </ul>
-  <p>Five services and four nightly reports run on one computer on site, and keep running with no internet.</p>
+  <p>One computer on site runs five services and four nightly reports, and keeps running with no internet.</p>
   <div class="figs">
-    <figure>
-      <picture><source type="image/webp" srcset="../../assets/case-studies/healthfields/unloading-640.webp 640w, ../../assets/case-studies/healthfields/unloading-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 33vw"><img src="../../assets/case-studies/healthfields/unloading-1280.jpg" width="1280" height="550" loading="lazy" decoding="async" alt="Cartons arriving on a hand trolley at the unloading dock, with a truck behind. Faces are blurred."></picture>
-      <figcaption>Unloading: cartons arriving at the dock.</figcaption>
-    </figure>
-    <figure>
-      <picture><source type="image/webp" srcset="../../assets/case-studies/healthfields/dispatch-640.webp 640w, ../../assets/case-studies/healthfields/dispatch-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 33vw"><img src="../../assets/case-studies/healthfields/dispatch-1280.jpg" width="1280" height="530" loading="lazy" decoding="async" alt="Inside a truck at dispatch, a carton carried by a worker is boxed and numbered by the carton counter. Faces and the number plate are blurred."></picture>
-      <figcaption>Dispatch: the carton counter tracks each carton loaded onto the truck.</figcaption>
-    </figure>
-    <figure>
-      <picture><source type="image/webp" srcset="../../assets/case-studies/healthfields/packing-640.webp 640w, ../../assets/case-studies/healthfields/packing-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 33vw"><img src="../../assets/case-studies/healthfields/packing-1280.jpg" width="1280" height="550" loading="lazy" decoding="async" alt="The packing line seen from above: a carton sealer, a stretch wrapper and stacks of flat carton blanks. Faces are blurred."></picture>
-      <figcaption>Packing line: every packed carton passes the sealer.</figcaption>
-    </figure>
+    <figure><div class="clipbox" id="clip-1" data-clip style="aspect-ratio:960/416"><img src="../../assets/v3/clips/gate-vehicle-plate.webp" width="960" height="416" alt="A truck arrives at a gate. Its number plate is read and the entry time is logged." loading="lazy" decoding="async"><video muted loop playsinline preload="none" width="960" height="416" aria-hidden="true" hidden><source src="../../assets/v3/clips/gate-vehicle-plate.webm" type="video/webm"><source src="../../assets/v3/clips/gate-vehicle-plate.mp4" type="video/mp4"></video><button type="button" class="clip-ctl" data-label="clip" aria-pressed="true" aria-label="Play clip" hidden><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="i-pause" x="2" y="1.5" width="2.6" height="9" rx=".6"/><rect class="i-pause" x="7.4" y="1.5" width="2.6" height="9" rx=".6"/><path class="i-play" d="M3 1.5v9l7.5-4.5z"/></svg></button></div><figcaption class="cap-note">Real footage from Healthfields. Faces blurred.</figcaption></figure>
+    <figure><div class="clipbox" id="clip-2" data-clip style="aspect-ratio:960/416"><img src="../../assets/v3/clips/dock-in-out.webp" width="960" height="416" alt="A truck at a dock, then leaving the dock, with log lines showing each time." loading="lazy" decoding="async"><video muted loop playsinline preload="none" width="960" height="416" aria-hidden="true" hidden><source src="../../assets/v3/clips/dock-in-out.webm" type="video/webm"><source src="../../assets/v3/clips/dock-in-out.mp4" type="video/mp4"></video><button type="button" class="clip-ctl" data-label="clip" aria-pressed="true" aria-label="Play clip" hidden><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="i-pause" x="2" y="1.5" width="2.6" height="9" rx=".6"/><rect class="i-pause" x="7.4" y="1.5" width="2.6" height="9" rx=".6"/><path class="i-play" d="M3 1.5v9l7.5-4.5z"/></svg></button></div><figcaption class="cap-note">Real footage from Healthfields. Faces blurred.</figcaption></figure>
+    <figure><div class="clipbox" id="clip-3" data-clip style="aspect-ratio:960/416"><img src="../../assets/v3/clips/packing-running-count.webp" width="960" height="416" alt="A packing line carton counter going from 0 to 1 as a carton passes the turntable." loading="lazy" decoding="async"><video muted loop playsinline preload="none" width="960" height="416" aria-hidden="true" hidden><source src="../../assets/v3/clips/packing-running-count.webm" type="video/webm"><source src="../../assets/v3/clips/packing-running-count.mp4" type="video/mp4"></video><button type="button" class="clip-ctl" data-label="clip" aria-pressed="true" aria-label="Play clip" hidden><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="i-pause" x="2" y="1.5" width="2.6" height="9" rx=".6"/><rect class="i-pause" x="7.4" y="1.5" width="2.6" height="9" rx=".6"/><path class="i-play" d="M3 1.5v9l7.5-4.5z"/></svg></button></div><figcaption class="cap-note">Real footage from Healthfields. Faces blurred.</figcaption></figure>
+    <figure><div class="clipbox " style="aspect-ratio:16/9"><img src="../../assets/v3/stills/still-dock-truck-800.webp" srcset="../../assets/v3/stills/still-dock-truck-800.webp 800w, ../../assets/v3/stills/still-dock-truck-1200.webp 1200w" sizes="(max-width:900px) 100vw, 600px" width="800" height="449" alt="A truck at a loading dock during dispatch." loading="lazy" decoding="async"></div><figcaption class="cap-note">Real footage from Healthfields. Faces blurred.</figcaption></figure>
+    <figure><div class="clipbox " style="aspect-ratio:16/9"><img src="../../assets/v3/stills/still-packing-line-800.webp" srcset="../../assets/v3/stills/still-packing-line-800.webp 800w, ../../assets/v3/stills/still-packing-line-1200.webp 1200w" sizes="(max-width:900px) 100vw, 600px" width="800" height="449" alt="A packing line where cartons are counted as they pass the sealer." loading="lazy" decoding="async"></div><figcaption class="cap-note">Real footage from Healthfields. Faces blurred.</figcaption></figure>
   </div>
 </section>
 
-<section class="page-sec" id="measured">
-  <h2>What we measured</h2>
-  <p>Every number here was measured on days the models never saw, against a person&rsquo;s own count.</p>
-  <ul class="ticks">
-    <li><strong>Cartons, &minus;1%.</strong> A person counted each carton loaded on a dispatch truck on a held-out day. The counter said 102; the person counted 103.</li>
-    <li><strong>Packing, 7/7.</strong> Exact on all 7 hand-counted windows at the carton sealer, which handles about 450 items a day.</li>
-    <li><strong>Truck arrivals, 100%.</strong> The bay trigger caught every truck arrival in the test, from about 40 training frames.</li>
-  </ul>
-  <p>Checks against the dispatch register are under way. We will add them to the log below as they finish.</p>
+<section class="page-sec" id="how-measured">
+  <h2>How we measured</h2>
+  <p>A person counts, without relying on the camera's answer, and we compare. For dispatch, the person counted each carton loaded on one truck. For the packing line, random windows were drawn from two days (18 and 19 November 2026) and counted by eye. The version under test was fixed before those days.</p>
+  <p>Earlier versions over-counted on random windows. Those results are why the version under test was changed before these days.</p>
 </section>
 
 <section class="page-sec">
   <h2>Progress log</h2>
-  <p>The deployment is live and changes every week. Newest first.</p>
-  <ol class="log" reversed><li class="log-entry"><time class="log-date" datetime="2026-10-26">Week of 26 October 2026</time><div class="log-body"><p><span class="log-k">What we did</span> Published this case study with the measurements so far.</p><p><span class="log-k">What&rsquo;s next</span> Add the dispatch-register checks to this log as they finish.</p></div></li><li class="log-entry"><time class="log-date" datetime="2026-10-12">Week of 12 October 2026</time><div class="log-body"><p><span class="log-k">What we did</span> Tested the carton counter on a day it never saw.</p><p><span class="log-k">What we measured</span> 102 cartons counted against 103 by a person counting each one (&minus;1%).</p><p><span class="log-k">What&rsquo;s next</span> Check carton counts against the dispatch register, day by day.</p></div></li><li class="log-entry"><time class="log-date" datetime="2026-10-05">Week of 5 October 2026</time><div class="log-body"><p><span class="log-k">What we did</span> Truck-arrival trigger went live at the unloading dock, and the packing counter went live at the carton sealer. A person counted every carton on one dispatch truck, so the carton counter could be tested on a day it never saw.</p><p><span class="log-k">What&rsquo;s next</span> Measure each counter against a person&rsquo;s count.</p></div></li></ol>
+  <p>The deployment is ongoing and changes every week. Newest first.</p>
+  <ol class="log" reversed><li class="log-entry"><time class="log-date" datetime="2026-11-20">20 November 2026</time><div class="log-body"><p><span class="log-k">What we did</span> Tested the packing line counter on two days it never saw: 141 counted by camera and 141 by a person over 38 sampled windows.</p><p><span class="log-k">What&rsquo;s next</span> Keep measuring on new days and add more checkpoints at the site.</p></div></li><li class="log-entry"><time class="log-date" datetime="2026-10-26">26 October 2026</time><div class="log-body"><p><span class="log-k">What we did</span> Published this case study with the measurements so far.</p></div></li><li class="log-entry"><time class="log-date" datetime="2026-10-12">12 October 2026</time><div class="log-body"><p><span class="log-k">What we did</span> Tested the dispatch counter on a day it never saw.</p><p><span class="log-k">What we measured</span> 102 cartons counted by camera and 103 by a person counting each carton.</p></div></li><li class="log-entry"><time class="log-date" datetime="2026-10-05">5 October 2026</time><div class="log-body"><p><span class="log-k">What we did</span> Truck-arrival trigger went live at the unloading dock, and the packing counter started running at the sealer. A person counted every carton on one dispatch truck, so the carton counter could be tested on a day it never saw.</p><p><span class="log-k">What&rsquo;s next</span> Measure each counter against a person&rsquo;s count.</p></div></li></ol>
 </section>
 
 <section class="page-sec">
@@ -200,14 +185,13 @@
   <ul class="link-list">
     <li><a href="../../no-internet/">How VisorVolt runs with no internet</a></li>
     <li><a href="../../partners/prolifics/">Partnered with Prolifics, a global systems integrator</a></li>
-    <li><a href="../../news/healthfields-live/">Announcement: Healthfields live in production</a></li>
+    <li><a href="../../news/healthfields-live/">Announcement</a></li>
   </ul>
 </section>
 
 <section class="page-cta">
   <h2>Count what moves through your site</h2>
-  <p>40 images per site, and we pick the 40.</p>
-  <a href="mailto:umang@visorvolt.ai?subject=Start%20with%2040%20images" class="btn-primary">Start with 40 images &rarr;</a>
+  <div class="btns"><a class="btn btn-primary" href="mailto:umang@visorvolt.ai?subject=Show%20us%20a%20checkpoint">Show us a checkpoint</a></div>
 </section>
 
 </div>
@@ -225,18 +209,22 @@
       <text font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="800" letter-spacing="-1">
         <tspan x="100" y="58" fill="#FFFFFF">Visor</tspan><tspan fill="#BF7B30">Volt</tspan>
       </text>
-      <text x="100" y="78" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400" fill="#6B8BB0" letter-spacing="2.5">DOMAIN-AGNOSTIC VISION</text>
     </svg></a>
     <div class="footer-groups">
-    <div class="footer-group"><h2 class="footer-h">Product</h2><a href="../../#domains">Proof</a><a href="../../#platform">How It Works</a><a href="../../#economics">After It Ships</a><a href="../../no-internet/">Runs with no internet</a></div>
-    <div class="footer-group"><h2 class="footer-h">Customers</h2><a href="../../case-studies/healthfields/">Healthfields</a></div>
-    <div class="footer-group"><h2 class="footer-h">Partners</h2><a href="../../partners/prolifics/">Prolifics</a><a href="../../partners/zebra/">Zebra Technologies</a></div>
-    <div class="footer-group"><h2 class="footer-h">Company</h2><a href="../../news/">News</a><a href="../../#founder">Founder</a><a href="../../#contact">Contact</a><a href="https://www.linkedin.com/company/visorvolt/">LinkedIn</a></div>
+    <div class="footer-group"><h2 class="footer-h">Product</h2><a href="../../checkpoints/">Checkpoints</a><a href="../../how-it-works/">How it works</a><a href="../../no-internet/">Runs with no internet</a><a href="../../proof/">Proof</a></div>
+    <div class="footer-group"><h2 class="footer-h">Customers and news</h2><a href="../../case-studies/healthfields/">Healthfields case study</a><a href="../../case-studies/">All case studies</a><a href="../../news/">News</a></div>
+    <div class="footer-group"><h2 class="footer-h">Partners</h2><a href="../../partners/prolifics/">Prolifics</a><a href="../../partners/zebra/">Zebra Technologies Registered ISV</a></div>
+    <div class="footer-group"><h2 class="footer-h">Company</h2><a href="../../company/#investors">About VisorVolt and investors</a><a href="https://www.linkedin.com/company/visorvolt/">LinkedIn</a><a href="mailto:umang@visorvolt.ai">umang@visorvolt.ai</a></div>
     </div>
   </div>
   <div class="footer-copy">&copy; 2026 VisorVolt Inc. &nbsp;&middot;&nbsp; Allerton Street, Redwood City, CA 94063 &nbsp;&middot;&nbsp; umang@visorvolt.ai</div>
+  <p class="footer-note">Healthfields results are from an ongoing deployment and are development-stage evidence.</p>
 </footer>
-<script src="../../js/main.js"></script>
+<dialog class="vdlg" id="vdlg" aria-label="VisorVolt in two minutes">
+  <video controls playsinline preload="none" data-src="../../assets/v3/video/visorvolt-checkpoints-site.mp4" data-poster="../../assets/v3/video/visorvolt-checkpoints-site-poster.webp" aria-label="VisorVolt in two minutes. Captions are burned into the picture."></video>
+  <div class="vdlg-bar"><a class="text-link" href="../../transcript/">Read the transcript</a><button type="button" class="vdlg-close" data-close>Close</button></div>
+</dialog>
+<script src="../../js/site.js" defer></script>
 <script data-goatcounter="https://umangai.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

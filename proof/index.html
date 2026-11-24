@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proof: Healthfields Counts v a Person, and 39 Datasets Tested | VisorVolt</title>
+<meta name="description" content="Dated results: 141 v 141 on a packing line over 38 sampled windows, 102 v 103 at dispatch, and a median 89% of a fully labelled model across 39 datasets.">
+<meta name="theme-color" content="#0E1520">
+<link rel="canonical" href="https://visorvolt.ai/proof/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VisorVolt">
+<meta property="og:url" content="https://visorvolt.ai/proof/">
+<meta property="og:title" content="Proof: Healthfields Counts v a Person, and 39 Datasets Tested | VisorVolt">
+<meta property="og:description" content="Dated results: 141 v 141 on a packing line over 38 sampled windows, 102 v 103 at dispatch, and a median 89% of a fully labelled model across 39 datasets.">
+<meta property="og:image" content="https://visorvolt.ai/assets/v3/og/og-packing.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A packing line where cartons are counted.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Proof: Healthfields Counts v a Person, and 39 Datasets Tested | VisorVolt">
+<meta name="twitter:description" content="Dated results: 141 v 141 on a packing line over 38 sampled windows, 102 v 103 at dispatch, and a median 89% of a fully labelled model across 39 datasets.">
+<meta name="twitter:image" content="https://visorvolt.ai/assets/v3/og/og-packing.jpg">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon_32.png">
+<link rel="apple-touch-icon" sizes="192x192" href="../icon_192.png">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preload" href="../assets/fonts/DMSans-normal-151a53.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/PlayfairDisplay-normal-542c91.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://visorvolt.ai/#org",
+   "name": "VisorVolt",
+   "url": "https://visorvolt.ai/"
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://visorvolt.ai/proof/",
+   "url": "https://visorvolt.ai/proof/",
+   "name": "VisorVolt proof",
+   "publisher": {
+    "@id": "https://visorvolt.ai/#org"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://visorvolt.ai/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Proof",
+     "item": "https://visorvolt.ai/proof/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="subpage">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="site-nav" aria-label="Main">
+  <a class="nav-logo" href="../" aria-label="VisorVolt home">
+    <svg viewBox="0 0 500 100" role="img" aria-label="VisorVolt">
+      <polygon points="50,10 84,30 84,70 50,90 16,70 16,30" fill="none" stroke="#1E4080" stroke-width="5" stroke-linejoin="round"/>
+      <polyline points="16,30 50,10 84,30" fill="none" stroke="#E07B00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <polygon points="50,26 72,38 72,62 50,74 28,62 28,38" fill="none" stroke="#1E4080" stroke-width="2" stroke-linejoin="round"/>
+      <line x1="16" y1="50" x2="84" y2="50" stroke="#E07B00" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="16" cy="30" r="3.5" fill="#E07B00"/>
+      <circle cx="84" cy="30" r="3.5" fill="#1E4080" stroke="#E07B00" stroke-width="2"/>
+      <polygon points="50,28 40,48 49,48 44,64 62,49 52,49 57,28" fill="#E07B00"/>
+      <text font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="800" letter-spacing="-1">
+        <tspan x="100" y="58" fill="#FFFFFF">Visor</tspan><tspan fill="#BF7B30">Volt</tspan>
+      </text>
+    </svg>
+  </a>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links" type="button">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <div class="nav-item"><a href="../checkpoints/">Checkpoints</a></div><div class="nav-item"><a href="../how-it-works/">How it works</a></div><div class="nav-item has-sub"><a href="../proof/" aria-current="page">Proof</a><div class="nav-sub"><a href="../case-studies/healthfields/">Healthfields case study</a><a href="../proof/#research">Research</a><a href="../news/">News</a></div></div><div class="nav-item has-sub"><a href="../partners/">Partners</a><div class="nav-sub"><a href="../partners/prolifics/">Prolifics</a><a href="../partners/zebra/">Zebra</a></div></div><div class="nav-item"><a href="../company/">Company</a></div>
+    <a href="mailto:umang@visorvolt.ai?subject=Show%20us%20a%20checkpoint" class="nav-cta">Show us a checkpoint</a>
+  </div>
+</nav>
+<main id="main" class="page">
+<div class="wrap">
+<div class="crumbs" role="navigation" aria-label="Breadcrumb"><a href="../">Home</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Proof</span></div>
+<header class="page-head">
+  <h1>Proof</h1>
+  <p class="page-lede">Every number below says what was counted, by whom, on which days, and how many samples. Healthfields is an ongoing deployment, so these are development-stage results. They are not final figures, and we will update this page as they change.</p>
+</header>
+
+<section class="page-sec" id="healthfields" aria-labelledby="hf-h">
+  <h2 id="hf-h">Measured against a person, on days the system had never seen.</h2>
+  <div class="two" style="margin-top:22px;align-items:start">
+    <article class="card-r">
+      <div class="clipbox" id="clip-1" data-clip style="aspect-ratio:960/416"><img src="../assets/v3/clips/packing-running-count.webp" width="960" height="416" alt="A packing line carton counter going from 0 to 1 as a carton passes the turntable." loading="lazy" decoding="async"><video muted loop playsinline preload="none" width="960" height="416" aria-hidden="true" hidden><source src="../assets/v3/clips/packing-running-count.webm" type="video/webm"><source src="../assets/v3/clips/packing-running-count.mp4" type="video/mp4"></video><button type="button" class="clip-ctl" data-label="clip" aria-pressed="true" aria-label="Play clip" hidden><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="i-pause" x="2" y="1.5" width="2.6" height="9" rx=".6"/><rect class="i-pause" x="7.4" y="1.5" width="2.6" height="9" rx=".6"/><path class="i-play" d="M3 1.5v9l7.5-4.5z"/></svg></button></div>
+      <h3 style="margin-top:16px">Packing line. 18 and 19 November 2026.</h3>
+      <p><strong>141 cartons counted by camera. 141 counted by a person. 38 sampled windows over two unseen days.</strong></p>
+      <p>23 of the 38 windows matched exactly. The range that the true total could fall in is about 7% either way (95% interval, minus 6.9% to plus 7.8%). The test version was fixed before the test days.</p>
+    </article>
+    <article class="card-r">
+      <div class="clipbox " style="aspect-ratio:16/9"><img src="../assets/v3/stills/still-dock-truck-800.webp" srcset="../assets/v3/stills/still-dock-truck-800.webp 800w, ../assets/v3/stills/still-dock-truck-1200.webp 1200w" sizes="(max-width:900px) 100vw, 600px" width="800" height="449" alt="A truck at a loading dock where cartons are counted at dispatch." loading="lazy" decoding="async"></div>
+      <h3 style="margin-top:16px">Dispatch. 12 October 2026.</h3>
+      <p><strong>102 cartons counted by camera at the dock. 103 counted by a person counting each carton.</strong> A day the model had never seen.</p>
+    </article>
+  </div>
+  <p style="margin-top:8px"><a class="text-link" href="../case-studies/healthfields/">Read the full Healthfields case study &rarr;</a></p>
+</section>
+
+<section class="page-sec" id="audit" aria-labelledby="au-h">
+  <h2 id="au-h">A person counts. The camera does not mark its own homework.</h2>
+  <p>A person counts a random sample of windows. We compare the two counts and keep the clip for every row. We report the sample size with every result, so you can see how much weight it carries.</p>
+</section>
+
+<section class="page-sec" id="research" aria-labelledby="re-h">
+  <h2 id="re-h">39 datasets. None of them ours. None of them failed.</h2>
+  <p>We built a model from 40 images on each of 39 public datasets we did not choose. The pass mark was set before we ran: under 55% of a fully labelled model counts as a failure. Zero of 39 hit it, with no per-domain tuning. The median was 89% of a fully hand-labelled model, and for each site we pick the 40.</p>
+  <p>On frames with none of the target objects, the single 40-image model made 11.5 false detections per 100 frames, against 104.8 for the three separate single-object models it replaces, roughly 9 times fewer.</p>
+  <div class="tiles">
+    <div class="tile"><div class="tile-fig">89%</div><div class="tile-label">Median</div><p class="tile-def">Of a fully hand-labelled model, from 40 images.</p></div>
+    <div class="tile"><div class="tile-fig">39</div><div class="tile-label">Datasets</div><p class="tile-def">Public, and none of them chosen by us.</p></div>
+    <div class="tile"><div class="tile-fig">0 of 39</div><div class="tile-label">Below the 55% pass mark</div><p class="tile-def">The pass mark was set before the run.</p></div>
+  </div>
+  <p class="small">Public benchmark results. They show the method works across many kinds of image; they are not customer results. The 89% is the median across 39 datasets; individual datasets vary.</p>
+</section>
+
+<section class="page-sec" id="pilot" aria-labelledby="pi-h">
+  <h2 id="pi-h">Photos instead of counts.</h2>
+  <p>In a pilot with one of the world's largest telecom tower companies, the same platform checked photos for bolt and rust faults on 74 towers it had never seen. It flagged 42 of 45 photos with a fault and cleared 33 of 41 clean photos. This is a pilot, not a finished product.</p>
+</section>
+
+<section class="page-sec" id="not-shown" aria-labelledby="ns-h">
+  <h2 id="ns-h">What we do not claim.</h2>
+  <ul class="ticks">
+    <li>We do not claim a final error bar for any Healthfields use case. The deployment is ongoing.</li>
+    <li>We do not claim results in industries where we have no customer. Other industries on this site are examples of where a checkpoint exists.</li>
+    <li>Protective-gear checks are a labelled demonstration, not a measured result.</li>
+  </ul>
+</section>
+
+<section class="page-cta"><h2>Your checkpoint, built for your site.</h2><div class="btns"><a class="btn btn-primary" href="mailto:umang@visorvolt.ai?subject=Show%20us%20a%20checkpoint">Show us a checkpoint</a><a class="btn btn-outline" href="../#video" data-open-video>Watch the 2-minute video</a></div></section>
+
+</div>
+</main>
+<footer class="site-footer">
+  <div class="footer-top">
+    <a class="footer-logo" href="../" aria-label="VisorVolt home"><svg viewBox="0 0 500 100" aria-hidden="true">
+      <polygon points="50,10 84,30 84,70 50,90 16,70 16,30" fill="none" stroke="#1E4080" stroke-width="5" stroke-linejoin="round"/>
+      <polyline points="16,30 50,10 84,30" fill="none" stroke="#E07B00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <polygon points="50,26 72,38 72,62 50,74 28,62 28,38" fill="none" stroke="#1E4080" stroke-width="2" stroke-linejoin="round"/>
+      <line x1="16" y1="50" x2="84" y2="50" stroke="#E07B00" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="16" cy="30" r="3.5" fill="#E07B00"/>
+      <circle cx="84" cy="30" r="3.5" fill="#1E4080" stroke="#E07B00" stroke-width="2"/>
+      <polygon points="50,28 40,48 49,48 44,64 62,49 52,49 57,28" fill="#E07B00"/>
+      <text font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="800" letter-spacing="-1">
+        <tspan x="100" y="58" fill="#FFFFFF">Visor</tspan><tspan fill="#BF7B30">Volt</tspan>
+      </text>
+    </svg></a>
+    <div class="footer-groups">
+    <div class="footer-group"><h2 class="footer-h">Product</h2><a href="../checkpoints/">Checkpoints</a><a href="../how-it-works/">How it works</a><a href="../no-internet/">Runs with no internet</a><a href="../proof/">Proof</a></div>
+    <div class="footer-group"><h2 class="footer-h">Customers and news</h2><a href="../case-studies/healthfields/">Healthfields case study</a><a href="../case-studies/">All case studies</a><a href="../news/">News</a></div>
+    <div class="footer-group"><h2 class="footer-h">Partners</h2><a href="../partners/prolifics/">Prolifics</a><a href="../partners/zebra/">Zebra Technologies Registered ISV</a></div>
+    <div class="footer-group"><h2 class="footer-h">Company</h2><a href="../company/#investors">About VisorVolt and investors</a><a href="https://www.linkedin.com/company/visorvolt/">LinkedIn</a><a href="mailto:umang@visorvolt.ai">umang@visorvolt.ai</a></div>
+    </div>
+  </div>
+  <div class="footer-copy">&copy; 2026 VisorVolt Inc. &nbsp;&middot;&nbsp; Allerton Street, Redwood City, CA 94063 &nbsp;&middot;&nbsp; umang@visorvolt.ai</div>
+  <p class="footer-note">Healthfields results are from an ongoing deployment and are development-stage evidence.</p>
+</footer>
+<dialog class="vdlg" id="vdlg" aria-label="VisorVolt in two minutes">
+  <video controls playsinline preload="none" data-src="../assets/v3/video/visorvolt-checkpoints-site.mp4" data-poster="../assets/v3/video/visorvolt-checkpoints-site-poster.webp" aria-label="VisorVolt in two minutes. Captions are burned into the picture."></video>
+  <div class="vdlg-bar"><a class="text-link" href="../transcript/">Read the transcript</a><button type="button" class="vdlg-close" data-close>Close</button></div>
+</dialog>
+<script src="../js/site.js" defer></script>
+<script data-goatcounter="https://umangai.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

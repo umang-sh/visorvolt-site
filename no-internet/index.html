@@ -3,21 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vision AI That Runs With No Internet: On-Premises and Air-Gapped | VisorVolt</title>
-<meta name="description" content="Computer vision that counts and inspects on your own hardware with no internet. Updates arrive as a signed file, and a person approves every change.">
+<title>Camera AI That Runs With No Internet | VisorVolt</title>
+<meta name="description" content="VisorVolt detects, counts and reviews on a computer on your site. Your video stays on your network. Updates arrive as a signed file that a person approves.">
+<meta name="theme-color" content="#0E1520">
 <link rel="canonical" href="https://visorvolt.ai/no-internet/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VisorVolt">
 <meta property="og:url" content="https://visorvolt.ai/no-internet/">
-<meta property="og:title" content="Vision AI That Runs With No Internet: On-Premises and Air-Gapped | VisorVolt">
-<meta property="og:description" content="Computer vision that counts and inspects on your own hardware with no internet. Updates arrive as a signed file, and a person approves every change.">
+<meta property="og:title" content="Camera AI That Runs With No Internet | VisorVolt">
+<meta property="og:description" content="VisorVolt detects, counts and reviews on a computer on your site. Your video stays on your network. Updates arrive as a signed file that a person approves.">
 <meta property="og:image" content="https://visorvolt.ai/assets/og/no-internet.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Vision AI that runs with no internet">
+<meta property="og:image:alt" content="VisorVolt runs on a computer on your site with no internet.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Vision AI That Runs With No Internet: On-Premises and Air-Gapped | VisorVolt">
-<meta name="twitter:description" content="Computer vision that counts and inspects on your own hardware with no internet. Updates arrive as a signed file, and a person approves every change.">
+<meta name="twitter:title" content="Camera AI That Runs With No Internet | VisorVolt">
+<meta name="twitter:description" content="VisorVolt detects, counts and reviews on a computer on your site. Your video stays on your network. Updates arrive as a signed file that a person approves.">
 <meta name="twitter:image" content="https://visorvolt.ai/assets/og/no-internet.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon_32.png">
@@ -25,7 +26,7 @@
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preload" href="../assets/fonts/DMSans-normal-151a53.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/PlayfairDisplay-normal-542c91.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/site.css">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -40,7 +41,7 @@
    "@type": "WebPage",
    "@id": "https://visorvolt.ai/no-internet/",
    "url": "https://visorvolt.ai/no-internet/",
-   "name": "Vision AI that runs with no internet",
+   "name": "Camera AI that runs with no internet",
    "publisher": {
     "@id": "https://visorvolt.ai/#org"
    }
@@ -86,7 +87,7 @@
      "name": "Does it work with the cameras we already have?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Usually, yes. At Healthfields it runs on the existing CCTV cameras. Tell us the camera and how far it sits from the objects, and we will tell you what to expect before you buy."
+      "text": "Usually, yes. At Healthfields it runs on the existing CCTV cameras. Tell us the camera and what you want counted, and we will tell you what to expect before you buy."
      }
     },
     {
@@ -94,7 +95,7 @@
      "name": "What hardware does it need?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "One GPU computer on site. At Healthfields, one such computer runs five services and four nightly reports, and processes recorded footage about five times faster than real time."
+      "text": "One GPU computer on site. At Healthfields, one such computer runs five services and four nightly reports."
      }
     }
    ]
@@ -111,6 +112,12 @@
     {
      "@type": "ListItem",
      "position": 2,
+     "name": "How it works",
+     "item": "https://visorvolt.ai/how-it-works/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
      "name": "Runs with no internet",
      "item": "https://visorvolt.ai/no-internet/"
     }
@@ -121,8 +128,9 @@
 </script>
 </head>
 <body class="subpage">
-<nav>
-  <a class="nav-logo" href="../">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="site-nav" aria-label="Main">
+  <a class="nav-logo" href="../" aria-label="VisorVolt home">
     <svg viewBox="0 0 500 100" role="img" aria-label="VisorVolt">
       <polygon points="50,10 84,30 84,70 50,90 16,70 16,30" fill="none" stroke="#1E4080" stroke-width="5" stroke-linejoin="round"/>
       <polyline points="16,30 50,10 84,30" fill="none" stroke="#E07B00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -134,66 +142,60 @@
       <text font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="800" letter-spacing="-1">
         <tspan x="100" y="58" fill="#FFFFFF">Visor</tspan><tspan fill="#BF7B30">Volt</tspan>
       </text>
-      <text x="100" y="78" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400" fill="#6B8BB0" letter-spacing="2.5">DOMAIN-AGNOSTIC VISION</text>
     </svg>
   </a>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links" type="button">
     <span></span><span></span><span></span>
   </button>
   <div class="nav-links" id="nav-links">
-    <a href="../#domains">Proof</a>
-    <a href="../#platform">How It Works</a>
-    <a href="../case-studies/">Customers</a>
-    <a href="../partners/">Partners</a>
-    <a href="../news/">News</a>
-    <a href="mailto:umang@visorvolt.ai?subject=Start%20with%2040%20images" class="nav-cta">Start with 40 images</a>
+    <div class="nav-item"><a href="../checkpoints/">Checkpoints</a></div><div class="nav-item"><a href="../how-it-works/" aria-current="page">How it works</a></div><div class="nav-item has-sub"><a href="../proof/">Proof</a><div class="nav-sub"><a href="../case-studies/healthfields/">Healthfields case study</a><a href="../proof/#research">Research</a><a href="../news/">News</a></div></div><div class="nav-item has-sub"><a href="../partners/">Partners</a><div class="nav-sub"><a href="../partners/prolifics/">Prolifics</a><a href="../partners/zebra/">Zebra</a></div></div><div class="nav-item"><a href="../company/">Company</a></div>
+    <a href="mailto:umang@visorvolt.ai?subject=Show%20us%20a%20checkpoint" class="nav-cta">Show us a checkpoint</a>
   </div>
 </nav>
-<main class="page" id="main">
-<div class="page-inner">
-<div class="crumbs" role="navigation" aria-label="Breadcrumb"><a href="../">Home</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Runs with no internet</span></div>
+<main id="main" class="page">
+<div class="wrap">
+<div class="crumbs" role="navigation" aria-label="Breadcrumb"><a href="../">Home</a><span class="sep" aria-hidden="true">/</span><a href="../how-it-works/">How it works</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Runs with no internet</span></div>
 <header class="page-head">
-  <div class="eyebrow">// Runs with no internet</div>
-  <h1>Vision AI that runs with no internet</h1>
+  <div class="eyebrow">Runs with no internet</div>
+  <h1>Camera AI that runs with no internet</h1>
   <p class="page-lede">Detection, counting and review run on a computer on your site. Nothing on site has to reach the internet. Retraining happens in our cloud, or in yours, and comes back as a signed update that a person approves.</p>
 </header>
 
 <section class="page-sec">
   <h2>What runs on your site</h2>
   <ul class="ticks">
-    <li><strong>Detection and counting</strong> on your cameras&rsquo; live or recorded video.</li>
-    <li><strong>Tracking</strong>, so each item is counted once as it moves.</li>
-    <li><strong>The review queue.</strong> Mismatches go to a person with the video clip.</li>
-    <li><strong>Writing results</strong> into the systems you already run, such as a warehouse or maintenance system.</li>
-    <li><strong>Nightly reports.</strong></li>
+    <li>Detection and counting on your cameras' live or recorded video.</li>
+    <li>Tracking, so each item is counted once as it moves.</li>
+    <li>The review queue. Mismatches go to a person with the clip.</li>
+    <li>Writing results into the systems you already run.</li>
+    <li>Nightly reports.</li>
   </ul>
-  <p>At <a href="../case-studies/healthfields/">Healthfields</a>, five services and four nightly reports run on one computer on site, and keep running with no internet.</p>
+  <p style="margin-top:16px">At Healthfields, five services and four nightly reports run on one computer on site, and keep running with no internet.</p>
 </section>
 
 <section class="page-sec">
   <h2>How it keeps improving</h2>
-  <ol class="steps">
-    <li><strong>It spots its own misses.</strong> The improvement agent compares counts with your records and flags where the model is unsure.</li>
-    <li><strong>Retraining happens off site.</strong> In our cloud by agreement, or in your own cloud account if your images cannot leave it.</li>
+  <ul class="ticks">
+    <li><strong>It spots its own misses.</strong> Counts are compared with your records and with a person's sample.</li>
+    <li><strong>Retraining happens off site,</strong> in our cloud by agreement, or in your own cloud account if your images cannot leave it.</li>
     <li><strong>The update arrives as a signed file.</strong> Your computer checks the signature before it installs anything.</li>
-    <li><strong>A person approves it.</strong> Nothing deploys itself: a human approves every promotion.</li>
-  </ol>
+    <li><strong>A person approves it.</strong> Nothing deploys itself.</li>
+  </ul>
 </section>
 
 <section class="page-sec">
-  <h2>Offline inference is not the same as running offline</h2>
-  <p>Many vision tools can run a model without a connection once its weights are cached. With most of them, the rest of the job happens in the cloud: reviewing results, checking them against your records, and fixing the model when the site changes. VisorVolt runs that whole job on site. Only the retraining leaves it.</p>
+  <h2>Offline is not the same as running offline</h2>
+  <p>Many vision tools can run a model without a connection once its weights are stored. With most of them, the rest of the job still happens in the cloud: reviewing results, checking them against your records, and fixing the model when the site changes. VisorVolt runs that whole job on site. Only the retraining leaves it.</p>
 </section>
 
 <section class="page-sec">
   <h2>Questions</h2>
-  <div class="faq"><details><summary>Does counting need an internet connection?</summary><p>No. Detection, counting, tracking, the review queue and the nightly reports all run on a computer on your site. If the connection drops, nothing stops.</p></details><details><summary>How does the model improve without the internet?</summary><p>Retraining happens in our cloud, by agreement, or in your own cloud account if your images cannot leave it. The new model comes back as a signed file. Your computer checks the signature before installing it, and a person approves every promotion.</p></details><details><summary>What leaves the site?</summary><p>Only what you agree to, such as the frames we pick for labelling. Live video and counts stay on your network.</p></details><details><summary>Can it run on an air-gapped network?</summary><p>Yes. Nothing on site needs to reach the internet. Updates cross the gap as a signed file, in whatever way your security team approves.</p></details><details><summary>Does it work with the cameras we already have?</summary><p>Usually, yes. At Healthfields it runs on the existing CCTV cameras. Tell us the camera and how far it sits from the objects, and we will tell you what to expect before you buy.</p></details><details><summary>What hardware does it need?</summary><p>One GPU computer on site. At Healthfields, one such computer runs five services and four nightly reports, and processes recorded footage about five times faster than real time.</p></details></div>
+  <div class="faq"><details><summary>Does counting need an internet connection?</summary><p>No. Detection, counting, tracking, the review queue and the nightly reports all run on a computer on your site. If the connection drops, nothing stops.</p></details><details><summary>How does the model improve without the internet?</summary><p>Retraining happens in our cloud, by agreement, or in your own cloud account if your images cannot leave it. The new model comes back as a signed file. Your computer checks the signature before installing it, and a person approves every promotion.</p></details><details><summary>What leaves the site?</summary><p>Only what you agree to, such as the frames we pick for labelling. Live video and counts stay on your network.</p></details><details><summary>Can it run on an air-gapped network?</summary><p>Yes. Nothing on site needs to reach the internet. Updates cross the gap as a signed file, in whatever way your security team approves.</p></details><details><summary>Does it work with the cameras we already have?</summary><p>Usually, yes. At Healthfields it runs on the existing CCTV cameras. Tell us the camera and what you want counted, and we will tell you what to expect before you buy.</p></details><details><summary>What hardware does it need?</summary><p>One GPU computer on site. At Healthfields, one such computer runs five services and four nightly reports.</p></details></div>
 </section>
 
 <section class="page-cta">
   <h2>Keep your footage on your network</h2>
-  <p>40 images per site, and we pick the 40.</p>
-  <a href="mailto:umang@visorvolt.ai?subject=Start%20with%2040%20images" class="btn-primary">Start with 40 images &rarr;</a>
+  <div class="btns"><a class="btn btn-primary" href="mailto:umang@visorvolt.ai?subject=Show%20us%20a%20checkpoint">Show us a checkpoint</a></div>
 </section>
 
 </div>
@@ -211,18 +213,22 @@
       <text font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="800" letter-spacing="-1">
         <tspan x="100" y="58" fill="#FFFFFF">Visor</tspan><tspan fill="#BF7B30">Volt</tspan>
       </text>
-      <text x="100" y="78" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400" fill="#6B8BB0" letter-spacing="2.5">DOMAIN-AGNOSTIC VISION</text>
     </svg></a>
     <div class="footer-groups">
-    <div class="footer-group"><h2 class="footer-h">Product</h2><a href="../#domains">Proof</a><a href="../#platform">How It Works</a><a href="../#economics">After It Ships</a><a href="../no-internet/">Runs with no internet</a></div>
-    <div class="footer-group"><h2 class="footer-h">Customers</h2><a href="../case-studies/healthfields/">Healthfields</a></div>
-    <div class="footer-group"><h2 class="footer-h">Partners</h2><a href="../partners/prolifics/">Prolifics</a><a href="../partners/zebra/">Zebra Technologies</a></div>
-    <div class="footer-group"><h2 class="footer-h">Company</h2><a href="../news/">News</a><a href="../#founder">Founder</a><a href="../#contact">Contact</a><a href="https://www.linkedin.com/company/visorvolt/">LinkedIn</a></div>
+    <div class="footer-group"><h2 class="footer-h">Product</h2><a href="../checkpoints/">Checkpoints</a><a href="../how-it-works/">How it works</a><a href="../no-internet/">Runs with no internet</a><a href="../proof/">Proof</a></div>
+    <div class="footer-group"><h2 class="footer-h">Customers and news</h2><a href="../case-studies/healthfields/">Healthfields case study</a><a href="../case-studies/">All case studies</a><a href="../news/">News</a></div>
+    <div class="footer-group"><h2 class="footer-h">Partners</h2><a href="../partners/prolifics/">Prolifics</a><a href="../partners/zebra/">Zebra Technologies Registered ISV</a></div>
+    <div class="footer-group"><h2 class="footer-h">Company</h2><a href="../company/#investors">About VisorVolt and investors</a><a href="https://www.linkedin.com/company/visorvolt/">LinkedIn</a><a href="mailto:umang@visorvolt.ai">umang@visorvolt.ai</a></div>
     </div>
   </div>
   <div class="footer-copy">&copy; 2026 VisorVolt Inc. &nbsp;&middot;&nbsp; Allerton Street, Redwood City, CA 94063 &nbsp;&middot;&nbsp; umang@visorvolt.ai</div>
+  <p class="footer-note">Healthfields results are from an ongoing deployment and are development-stage evidence.</p>
 </footer>
-<script src="../js/main.js"></script>
+<dialog class="vdlg" id="vdlg" aria-label="VisorVolt in two minutes">
+  <video controls playsinline preload="none" data-src="../assets/v3/video/visorvolt-checkpoints-site.mp4" data-poster="../assets/v3/video/visorvolt-checkpoints-site-poster.webp" aria-label="VisorVolt in two minutes. Captions are burned into the picture."></video>
+  <div class="vdlg-bar"><a class="text-link" href="../transcript/">Read the transcript</a><button type="button" class="vdlg-close" data-close>Close</button></div>
+</dialog>
+<script src="../js/site.js" defer></script>
 <script data-goatcounter="https://umangai.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
