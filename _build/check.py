@@ -22,10 +22,17 @@ BANNED = [  # (pattern, why)
     (r"(?i)LAE-DINO|RF-DETR|V-JEPA|OWLv2|DINOv2|Grounding DINO|\bSAM ?3\b|\bQwen|\bYOLO", "internal model name"),
     (r"(?i)\bch(?:annel)?\s?\d{1,2}\b", "camera channel number: use the camera name"),
     (r"(?i)labell?ing is (?:our|the) moat", "labelling is never the moat"),
+    # redesign v3 rules (RULES.md)
+    (r"(?i)stallion", "never name Stallion"),
+    (r"(?i)brahhm", "never name Brahhm (Healthfields is the only client name)"),
+    (r"(?i)\bcertified\b", "never 'certified': the word is audited"),
+    (r"(?i)comvision|hikvision", "no competitor or vendor names"),
+    (r"(?i)zero[- ]shot", "zero-shot is not a capability we claim"),
+    (r"[$\u20b9\u20ac\u00a3]\s?\d", "no prices"),
     # client-internal camera and area names never go on the public site (Umang 2026-10-26)
     (r"(?i)loading 1|\bCSD\b|raw material unloading|carton packing|bathroom gallery|rear gallery|seeds roasting|container camera|return counting gate|pusht|\bRM ?1\b", "client-internal camera or area name"),
 ]
-# sack counting is no longer a Healthfields claim; the home page keeps its public-dataset sack examples
+# sack counting is not a claim anywhere on the site, home page included
 NO_SACKS = r"(?i)\bsacks?\b"
 GUARDRAILS_HOME = ["we pick the 40", "None of them failed", "55%", "104.8"]
 
@@ -35,6 +42,7 @@ class Text(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.blocks, self.cur, self.skip = [], [], 0
         self.imgs, self.links, self.h1, self.ld, self._ld = [], [], 0, [], None
+        self.videos = []
     def handle_starttag(self, tag, a):
         a = dict(a)
         if tag in ("script", "style"):
@@ -43,6 +51,15 @@ class Text(HTMLParser):
                 self._ld = []
         if tag == "img":
             self.imgs.append(a)
+        if tag == "video":
+            self.videos.append(a)
+            if a.get("poster"):
+                self.links.append(a["poster"])
+        for k in ("data-src", "data-poster"):
+            if a.get(k):
+                self.links.append(a[k])
+        if tag == "link" and a.get("imagesrcset"):
+            self.links += [u.strip().split(" ")[0] for u in a["imagesrcset"].split(",")]
         if tag in ("a", "link") and a.get("href"):
             self.links.append(a["href"])
         for k in ("src", "srcset"):
@@ -89,8 +106,17 @@ def main():
                 ctx = (text + "\n" + visible_raw)[max(0, m.start() - 50):m.end() + 50].replace("\n", " ")
                 fails.append(f"{rel}: {why}: ...{ctx}...")
                 break
-        if rel != "index.html" and re.search(NO_SACKS, text):
+        if re.search(NO_SACKS, text + "\n" + "\n".join(t.ld)):
             fails.append(f"{rel}: mentions sacks")
+        for pat, why in BANNED:
+            if re.search(pat, "\n".join(t.ld)):
+                fails.append(f"{rel}: {why} in JSON-LD")
+        # generated illustrations must carry a visible 'Illustration' badge and caption
+        if re.search(r"assets/v3/illustrations/|ppe-illustration", raw):
+            if "badge-illus" not in raw or "Illustration" not in text:
+                fails.append(f"{rel}: illustration media without a visible 'Illustration' badge/caption")
+        if "ppe-illustration" in raw and "Illustration / demo" not in text:
+            fails.append(f"{rel}: PPE demo without the 'Illustration / demo' label")
         # 89% must never sit beside a dataset count other than 39
         for m in re.finditer(r"89%[^.]{0,120}?(\d+) (?:public )?datasets|(\d+) (?:public )?datasets[^.]{0,120}?89%", text):
             n = m.group(1) or m.group(2)
@@ -121,6 +147,13 @@ def main():
         for img in t.imgs:
             if "alt" not in img:
                 fails.append(f"{rel}: img without alt: {img.get('src')}")
+            if not (img.get("width") and img.get("height")):
+                fails.append(f"{rel}: img without width/height: {img.get('src')}")
+        for v in t.videos:
+            if "autoplay" in v:
+                fails.append(f"{rel}: video with autoplay attribute (start it from script, honour reduced motion)")
+            if v.get("preload") != "none":
+                fails.append(f"{rel}: video without preload=none")
         for blob in t.ld:
             try:
                 json.loads(blob)
@@ -129,6 +162,8 @@ def main():
         # internal links and assets resolve
         base = os.path.dirname(os.path.join(ROOT, rel))
         for u in t.links:
+            if rel == "404.html" and u.startswith("/"):
+                u = u[1:]
             if re.match(r"^(https?:|mailto:|tel:|#|data:|//)", u) or not u:
                 continue
             path = u.split("#")[0].split("?")[0]
