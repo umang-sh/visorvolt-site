@@ -1,5 +1,52 @@
 [
-{"about": "prolifics", "date": "2026-10-26", "path": "news/prolifics-partnership/", "body": "news-prolifics.html", "og": "assets/og/prolifics.png", "crumb": "Prolifics partnership", "headline": "VisorVolt and Prolifics sign a systems integrator partnership", "title": "VisorVolt and Prolifics Sign a Systems Integrator Partnership | VisorVolt News", "desc": "VisorVolt and Prolifics, a global systems integrator with 2,000+ experts, signed a partnership to deliver vision AI to clients in every industry.", "summary": "Prolifics, a global systems integrator with 2,000+ experts, will deliver VisorVolt vision AI to its clients, across every industry."},
-{"about": "zebra", "date": "2026-10-26", "path": "news/zebra-isv-partner/", "body": "news-zebra.html", "og": "assets/og/zebra.png", "crumb": "Zebra Registered ISV", "headline": "VisorVolt becomes a Zebra Technologies Registered ISV", "title": "VisorVolt Becomes a Zebra Technologies Registered ISV | VisorVolt News", "desc": "VisorVolt joined Zebra Technologies' PartnerConnect program as a Registered ISV in North America and Asia-Pacific.", "summary": "VisorVolt joined Zebra Technologies&rsquo; PartnerConnect program as a Registered ISV, in North America and Asia-Pacific."},
-{"about": "healthfields", "date": "2026-10-26", "path": "news/healthfields-live/", "body": "news-healthfields.html", "og": "assets/og/healthfields.jpg", "crumb": "Healthfields live", "headline": "Healthfields counts cartons with VisorVolt, live in production", "title": "Healthfields Is Live in Production With VisorVolt | VisorVolt News", "desc": "Healthfields counts cartons at dispatch and on the packing line with VisorVolt, on its existing cameras and with no internet. Read the live case study.", "summary": "Healthfields counts cartons at dispatch and on the packing line with its existing cameras, on site with no internet. The case study is kept up to date."}
+ {
+  "about": "prolifics",
+  "date": "2026-10-26",
+  "path": "news/prolifics-partnership/",
+  "body": "news-prolifics.html",
+  "og": "assets/og/prolifics.png",
+  "crumb": "Prolifics partnership",
+  "headline": "VisorVolt and Prolifics sign a systems integrator partnership",
+  "title": "VisorVolt and Prolifics Sign a Systems Integrator Partnership | VisorVolt News",
+  "desc": "VisorVolt and Prolifics, a global systems integrator with 2,000+ experts, signed a partnership to deliver vision AI to clients in every industry.",
+  "summary": "Prolifics, a global systems integrator with 2,000+ experts, will deliver VisorVolt vision AI to its clients, across every industry."
+ },
+ {
+  "about": "zebra",
+  "date": "2026-10-26",
+  "path": "news/zebra-isv-partner/",
+  "body": "news-zebra.html",
+  "og": "assets/og/zebra.png",
+  "crumb": "Zebra Registered ISV",
+  "headline": "VisorVolt becomes a Zebra Technologies Registered ISV",
+  "title": "VisorVolt Becomes a Zebra Technologies Registered ISV | VisorVolt News",
+  "desc": "VisorVolt joined Zebra Technologies' PartnerConnect program as a Registered ISV in North America and Asia-Pacific.",
+  "summary": "VisorVolt joined Zebra Technologies&rsquo; PartnerConnect program as a Registered ISV, in North America and Asia-Pacific."
+ },
+ {
+  "about": "healthfields",
+  "date": "2026-10-26",
+  "path": "news/healthfields-live/",
+  "body": "news-healthfields.html",
+  "og": "assets/og/healthfields.jpg",
+  "crumb": "Healthfields results",
+  "headline": "Healthfields counts cartons with VisorVolt on the cameras it already has",
+  "title": "Healthfields Counts Cartons With VisorVolt on Its Existing Cameras | VisorVolt News",
+  "desc": "Healthfields counts cartons at dispatch and on its packing line with VisorVolt, on its existing cameras and with no internet. Dated results v a person.",
+  "summary": "On a dispatch day the system had never seen, the camera counted 102 cartons and a person counted 103. On a packing line, 141 and 141.",
+  "modified": "2026-11-25"
+ },
+ {
+  "about": "healthfields",
+  "date": "2026-11-25",
+  "path": "news/healthfields-packing-141-v-141/",
+  "body": "news-packing.html",
+  "og": "assets/v3/og/og-packing.jpg",
+  "crumb": "Packing line 141 v 141",
+  "headline": "Healthfields packing line: 141 cartons counted by camera, 141 by a person",
+  "title": "Healthfields Packing Line: 141 Counted by Camera, 141 by a Person | VisorVolt",
+  "desc": "Over 38 sampled windows on two days it had never seen (18-19 Nov 2026), VisorVolt counted 141 cartons on a Healthfields packing line. A person counted 141.",
+  "summary": "Over 38 sampled windows on two days the system had never seen, the camera and a person agreed on the total.",
+  "new": true
+ }
 ]

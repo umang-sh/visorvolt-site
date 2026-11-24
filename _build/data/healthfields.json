@@ -2,20 +2,20 @@
   "published": "2026-10-26",
   "live_since": "October 2026",
   "metrics": {
-    "cartons": {
-      "fig": "&minus;1%",
-      "label": "Cartons, held-out day",
-      "def": "102 counted against 103 by a person counting each carton, on a day the model never saw."
-    },
     "packing": {
-      "fig": "7/7",
-      "label": "Packing counts exact",
-      "def": "Exact on 7 of 7 hand-counted windows at the carton sealer, which handles about 450 items a day."
+      "fig": "141 v 141",
+      "label": "Packing line, 18 and 19 November 2026",
+      "def": "The camera counted 141 cartons and a person counted 141, over 38 sampled windows on two days the system had never seen. 23 windows matched exactly; the range is about 7% either way."
+    },
+    "cartons": {
+      "fig": "102 v 103",
+      "label": "Dispatch, 12 October 2026",
+      "def": "On a day the model had never seen, the camera counted 102 cartons loaded at the dock and a person counting each carton counted 103."
     },
     "trucks": {
-      "fig": "100%",
-      "label": "Truck arrivals caught",
-      "def": "The bay trigger caught every truck arrival in the test. It was trained from about 40 frames."
+      "fig": "Every arrival caught",
+      "label": "Truck arrivals",
+      "def": "The truck-arrival trigger caught every truck arrival in its test. It was trained from about 40 frames."
     }
   },
   "quote": {
